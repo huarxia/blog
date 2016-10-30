@@ -107,11 +107,11 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* Import the font file with the icons in it */
 @font-face {
     font-family: "casper-icons";
-    src:url("../fonts/casper-icons.eot?v=1");
-    src:url("../fonts/casper-icons.eot?v=1#iefix") format("embedded-opentype"),
-        url("../fonts/casper-icons.woff?v=1") format("woff"),
-        url("../fonts/casper-icons.ttf?v=1") format("truetype"),
-        url("../fonts/casper-icons.svg?v=1#icons") format("svg");
+    src:url("../fonts/casper-icons.eot");
+    src:url("../fonts/casper-icons.eot#iefix") format("embedded-opentype"),
+        url("../fonts/casper-icons.woff") format("woff"),
+        url("../fonts/casper-icons.ttf") format("truetype"),
+        url("../fonts/casper-icons.svg#icons") format("svg");
     font-weight: normal;
     font-style: normal;
 }

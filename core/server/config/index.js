@@ -142,14 +142,12 @@ ConfigManager.prototype.set = function (config) {
     }
 
     subdir = localPath === '/' ? '' : localPath;
-
     // Allow contentPath to be over-written by passed in config object
     // Otherwise default to default content path location
     contentPath = this._config.paths.contentPath || path.resolve(appRoot, 'content');
 
     assetHash = this._config.assetHash ||
         (crypto.createHash('md5').update(packageInfo.version + Date.now()).digest('hex')).substring(0, 10);
-
     if (!knexInstance && this._config.database && this._config.database.client) {
         configureDriver(this._config.database.client);
         knexInstance = knex(this._config.database);

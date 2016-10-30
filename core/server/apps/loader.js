@@ -18,7 +18,6 @@ function getAppAbsolutePath(name) {
 // to be relative to __dirname
 function getAppRelativePath(name, relativeTo) {
     relativeTo = relativeTo || __dirname;
-
     return path.relative(relativeTo, getAppAbsolutePath(name));
 }
 
