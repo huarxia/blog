@@ -1,3 +1,5 @@
+#博客靜態站點不需要上傳
+static
 # Logs
 logs
 *.log
