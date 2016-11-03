@@ -108,8 +108,8 @@
   },
   "deploy": {
     "type": "git",
-    "repo": "https://github.com/liubiao0810/test.git",
-    "branch": "master",
+    "repo": "https://github.com/liubiao0810/blog.git",
+    "branch": "gh-pages",
     "dir": "static"
   }
 }
