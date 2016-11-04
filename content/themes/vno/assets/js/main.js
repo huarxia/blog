@@ -1,28 +1,29 @@
 $(document).ready(function() {
 
     $('a.blog-button').click(function() {
+        currentWidth = $('.panel-cover').width();
+        if (currentWidth < 960) {
+            $('.panel-cover').animate({
+                'max-width': '100%',
+                'width': '100%'
+            }, 400, swing = 'swing', function() {});
+        } else {
+            $('.panel-cover').css('max-width', currentWidth);
+            $('.panel-cover').animate({
+                'max-width': '700px',
+                'width': '30%'
+            }, 400, swing = 'swing', function() {});
+        }
         // If already in blog, return early without animate overlay panel again.
         if (location.hash && location.hash == "#blog") {
             $('.panel-cover').removeClass('panel-cover--collapsed');
             $('.main-post-list').addClass('hidden');
             window.location.hash = "#";
         }else {
-            // if ($('.panel-cover').hasClass('panel-cover--collapsed')) return;
             $('.panel-cover').addClass('panel-cover--collapsed');
             $('.main-post-list').removeClass('hidden');
             window.location.hash = "#blog";
         }
-        currentWidth = $('.panel-cover').width();
-        // if (currentWidth < 960) {
-        //     $('.panel-cover').addClass('panel-cover--collapsed');
-        //     $('.content-wrapper').addClass('animated slideInRight');
-        // } else {
-        //     $('.panel-cover').css('max-width', currentWidth);
-        //     $('.panel-cover').animate({
-        //         'max-width': '700px',
-        //         'width': '30%'
-        //     }, 400, swing = 'swing', function() {});
-        // }
     });
 
     if (window.location.hash && window.location.hash == "#blog") {
