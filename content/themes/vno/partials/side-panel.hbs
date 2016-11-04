@@ -5,9 +5,9 @@
     <div class="panel-main__content">
 
         {{#if @blog.logo}}
-        <a href="/#blog" class="blog-button" title="前往 {{@blog.title}} 的主页"><img src="{{@blog.logo}}" width="80" alt="{{@blog.title}} logo" class="panel-cover__logo logo" /></a>
+        <a class="blog-button" title="前往 {{@blog.title}} 的主页"><img src="{{@blog.logo}}" width="80" alt="{{@blog.title}} logo" class="panel-cover__logo logo" /></a>
         {{/if}}
-        <h1 class="panel-cover__title panel-title"><a href="/" title="前往 {{@blog.title}} 的主页">{{@blog.title}}</a></h1>
+        <h1 class="panel-cover__title panel-title"><a class="blog-button" title="前往 {{@blog.title}} 的主页">{{@blog.title}}</a></h1>
         <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
         <hr class="panel-cover__divider" />
         <p class="panel-cover__description">{{@blog.description}}</p>
@@ -17,7 +17,7 @@
           <div>
           <nav class="cover-navigation cover-navigation--primary">
             <ul class="navigation">
-              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+              <li class="navigation__item"><a title="访问博客" class="blog-button">博客</a></li>
               <li class="navigation__item"><a href="http://www.huar.com" target="_blank" title="花夏集">花夏集</a></li>
               <li class="navigation__item"><a href="http://s.huar.love/shuangshiji/" title="雙食記">雙食記</a></li>
               <li class="navigation__item"><a href="http://s.huar.love/blog/about" title="了解更多关于我">关于我</a></li>
