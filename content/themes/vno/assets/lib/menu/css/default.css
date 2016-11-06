@@ -1,7 +1,7 @@
 /* General Demo Style */
 /*@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext);*/
 
-@font-face {
+/*@font-face {
 	font-family: 'fontawesome';
 	src:url('../fonts/fontawesome.eot');
 	src:url('../fonts/fontawesome.eot?#iefix') format('embedded-opentype'),
@@ -10,9 +10,7 @@
 		url('../fonts/fontawesome.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
-}
-
-body, html { font-size: 100%; 	padding: 0; margin: 0;}
+}*/
 
 /* Reset */
 *,
@@ -34,10 +32,10 @@ body, html { font-size: 100%; 	padding: 0; margin: 0;}
 	clear: both;
 }
 
-body {
+/*body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
 
-}
+}*/
 #cbp-spmenu-s2 a:hover {
 	color: #fff;
 }

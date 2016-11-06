@@ -1,8 +1,10 @@
 $(document).ready(function() {
-
+    var  bodyWidth = $('body').width();
     $('a.blog-button').click(function() {
         currentWidth = $('.panel-cover').width();
         if (currentWidth < 960) {
+            console.log(1);
+            $('.panel-cover').css('max-width', '30%');
             $('.panel-cover').animate({
                 'max-width': '100%',
                 'width': '100%'
@@ -24,15 +26,17 @@ $(document).ready(function() {
             $('.panel-cover').addClass('panel-cover--collapsed');
             $('.main-post-list').addClass('hidden');
         }
+        return false;
     });
     $('a.blog-index').click(function () {
-        currentWidth = $('.panel-cover').width();
-        $('.panel-cover').css('max-width', currentWidth);
-        $('.panel-cover').css({
-            'max-width': '700px',
-            'width': '30%'
-        });
-        $('.main-post-list').removeClass('hidden');
+        if (bodyWidth >= 960) {
+            $('.panel-cover').css('max-width', currentWidth);
+            $('.panel-cover').css({
+                'max-width': '700px',
+                'width': '30%'
+            });
+            $('.main-post-list').removeClass('hidden');
+        } 
     });
     if (window.location.hash && (window.location.hash == "#blog" || window.location.hash == "###")) {
         $('.panel-cover').addClass('panel-cover--collapsed');
