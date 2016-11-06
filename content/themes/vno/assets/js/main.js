@@ -7,26 +7,32 @@ $(document).ready(function() {
                 'max-width': '100%',
                 'width': '100%'
             }, 400, swing = 'swing', function() {});
+            window.location.hash = "#";
         } else {
             $('.panel-cover').css('max-width', currentWidth);
             $('.panel-cover').animate({
                 'max-width': '700px',
                 'width': '30%'
             }, 400, swing = 'swing', function() {});
+            window.location.hash = "#blog";
         }
         // If already in blog, return early without animate overlay panel again.
         if (location.hash && location.hash == "#blog") {
             $('.panel-cover').removeClass('panel-cover--collapsed');
-            $('.main-post-list').addClass('hidden');
-            window.location.hash = "#";
+            $('.main-post-list').removeClass('hidden');
         }else {
             $('.panel-cover').addClass('panel-cover--collapsed');
-            $('.main-post-list').removeClass('hidden');
-            window.location.hash = "#blog";
+            $('.main-post-list').addClass('hidden');
         }
     });
-
-    if (window.location.hash && window.location.hash == "#blog") {
+    $('a.blog-index').click(function () {
+        $('.panel-cover').css('max-width', currentWidth);
+        $('.panel-cover').css({
+            'max-width': '700px',
+            'width': '30%'
+        });
+    });
+    if (window.location.hash && (window.location.hash == "#blog" || window.location.hash == "###")) {
         $('.panel-cover').addClass('panel-cover--collapsed');
         $('.main-post-list').removeClass('hidden');
     }

@@ -2131,6 +2131,7 @@ define('ghost/components/gh-search-input', ['exports', 'ember', 'ic-ajax'], func
 
                 if (!selectize.hasOptions) {
                     selectize.open();
+                    console.log(1);
                     selectize.$empty_results_container.show();
                 } else {
                     selectize.$empty_results_container.hide();
