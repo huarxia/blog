@@ -26,11 +26,13 @@ $(document).ready(function() {
         }
     });
     $('a.blog-index').click(function () {
+        currentWidth = $('.panel-cover').width();
         $('.panel-cover').css('max-width', currentWidth);
         $('.panel-cover').css({
             'max-width': '700px',
             'width': '30%'
         });
+        $('.main-post-list').removeClass('hidden');
     });
     if (window.location.hash && (window.location.hash == "#blog" || window.location.hash == "###")) {
         $('.panel-cover').addClass('panel-cover--collapsed');
