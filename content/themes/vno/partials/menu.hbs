@@ -7,12 +7,12 @@
     <div id="shade-box" class="shade-box"></div>
     <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
         <h3>菜單</h3>
-        <a href="#">Celery seakale</a>
-        <a href="#">Dulse daikon</a>
-        <a href="#">Zucchini garlic</a>
-        <a href="#">Catsear azuki bean</a>
-        <a href="#">Dandelion bunya</a>
-        <a href="#">Rutabaga</a>
+        {{! Tag Cloud }}
+        {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+            {{#foreach tags}}
+                <a href="/tag/{{slug}}" class="tag-item">{{name}} ({{count.posts}})</a>
+            {{/foreach}}
+        {{/get}}
         <button id="showRightPush"></button>
     </nav>
 </section>
