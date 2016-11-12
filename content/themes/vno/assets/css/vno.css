@@ -189,7 +189,12 @@ pre {
 .excerpt {
   margin: 0;
   font-size: .9em;
-  color: #999999; }
+  color: #999999;
+  word-break:break-all;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap; 
+}
 
 .intro {
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
@@ -579,7 +584,7 @@ i {
 .post-list__post-title {
   margin-top: 0;
   margin-bottom: .2em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: 1.3em; }
   .post-list__post-title a {
     color: #333333; }
@@ -703,8 +708,8 @@ input[type="tel"] {
 
 .read-more-item {
   display: inline;
-  width: 48%;
-  margin-top: 20pt;
+  width: 50%;
+  margin-top: 14pt;
   margin-bottom: 20pt; }
 
 .read-more-item-dim {
@@ -823,6 +828,14 @@ input[type="tel"] {
   .navigation__item {
     width: 100%;
     margin: 0 0 .4em 0; } }
+@media all and (max-width: 610px) {
+  .read-more-item {
+    display: inline;
+    width: 85%;
+    margin-top: 14pt;
+    margin-bottom: 20pt;
+  }
+}
 @media all and (max-width: 340px) {
   .panel-main__inner {
     padding: 0 5%; }
