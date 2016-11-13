@@ -349,6 +349,9 @@ pre code {
     overflow: hidden;
     white-space: nowrap;
 }
+.read-more p.excerpt {
+    width: 50%;
+}
 
 .intro {
     font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
@@ -838,6 +841,12 @@ i {
 
 .post-list__post-title a {
     color: #333333;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    width: 90%;
 }
 
 .post-list__post-title a:hover {
@@ -861,7 +870,7 @@ i {
 }
 
 .post-list__divider {
-    width: 30%;
+    width: 100%;
     margin: 2.2em 0 2.1em 0;
     border-top: 1px solid #DDDDDD;
 }
@@ -1121,7 +1130,7 @@ input[type="tel"]:-ms-input-placeholder {
 @media all and (max-width: 610px) {
     .read-more-item {
         display: inline;
-        width: 85%;
+        width: 45%;
         margin-top: 14pt;
         margin-bottom: 20pt;
     }
