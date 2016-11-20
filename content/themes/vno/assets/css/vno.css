@@ -206,6 +206,7 @@ h5 {
     font-weight: lighter;
     color: #333333;
     -webkit-font-smoothing: antialiased;
+    line-height: 1.8rem;
 }
 
 h1 {
