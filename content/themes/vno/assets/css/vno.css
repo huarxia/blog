@@ -180,7 +180,12 @@ body {
 ::-moz-selection {
     background: rgba(248, 173, 70, .382);
 }
-
+code::selection {
+    background: rgba(255, 255, 255, .23);
+}
+code::-moz-selection {
+    background: rgba(255, 255, 255, .23);
+}
 a {
     text-decoration: none;
     color: #f8ad46;
