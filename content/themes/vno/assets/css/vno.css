@@ -93,7 +93,17 @@ video {
     vertical-align: baseline;
 }
 
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+pre,
+fieldset {
+    margin-bottom: 10px;
+}
 /* HTML5 display-role reset for older browsers */
 
 article,
@@ -180,12 +190,17 @@ body {
 ::-moz-selection {
     background: rgba(248, 173, 70, .382);
 }
-code, code *::selection {
+
+code,
+code *::selection {
     background: rgba(255, 255, 255, .23);
 }
-code, code *::-moz-selection {
+
+code,
+code *::-moz-selection {
     background: rgba(255, 255, 255, .23);
 }
+
 a {
     text-decoration: none;
     color: #f8ad46;
@@ -355,6 +370,7 @@ pre code {
     overflow: hidden;
     white-space: nowrap;
 }
+
 .read-more p.excerpt {
     width: 50%;
 }
