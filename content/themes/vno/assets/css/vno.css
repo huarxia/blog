@@ -1179,3 +1179,18 @@ input[type="tel"]:-ms-input-placeholder {
 .blog-button {
     cursor: pointer;
 }
+/*@花夏 2016-12-25 14:31:07 修改markdown  table 語法*/
+
+section.post > table {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-collapse: collapse;
+    margin-bottom: 28px;
+}
+section.post th, section.post td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+}
+section.post > table  th {
+    background: #f0f0f0;
+}
