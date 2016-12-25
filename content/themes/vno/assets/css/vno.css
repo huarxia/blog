@@ -1182,7 +1182,6 @@ input[type="tel"]:-ms-input-placeholder {
 /*@花夏 2016-12-25 14:31:07 修改markdown  table 語法*/
 
 section.post > table {
-    width: 100%;
     border: 1px solid #e0e0e0;
     border-collapse: collapse;
     margin-bottom: 28px;
