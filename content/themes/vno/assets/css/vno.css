@@ -1193,3 +1193,8 @@ section.post th, section.post td {
 section.post > table  th {
     background: #f0f0f0;
 }
+@media all and (max-width: 720px) {
+    section.post th, section.post td {
+        padding: 10px 4px;
+    }
+}
