@@ -2131,7 +2131,6 @@ define('ghost/components/gh-search-input', ['exports', 'ember', 'ic-ajax'], func
 
                 if (!selectize.hasOptions) {
                     selectize.open();
-                    console.log(1);
                     selectize.$empty_results_container.show();
                 } else {
                     selectize.$empty_results_container.hide();
@@ -7734,7 +7733,6 @@ define('ghost/mixins/editor-base-controller', ['exports', 'ember', 'ghost/models
             var path = this.get('model.absoluteUrl');
             var type = this.get('postOrPage');
             var notifications = this.get('notifications');
-
             if (status === 'published') {
                 message += '&nbsp;<a href="' + path + '">查看 ' + type + '</a>';
             }
@@ -29769,7 +29767,6 @@ define('ghost/utils/ghost-paths', ['exports'], function (exports) {
         var subdir = path.substr(0, path.search('/ghost/'));
         var adminRoot = subdir + '/ghost';
         var apiRoot = subdir + '/ghost/api/v0.1';
-
         function assetUrl(src) {
             return subdir + src;
         }
