@@ -109,7 +109,7 @@
   },
   "deploy": {
     "type": "git",
-    "repo": "https://github.com/liubiao0810/blog.git",
+    "repo": "https://github.com/huarxia/blog.git",
     "branch": "gh-pages",
     "dir": "static"
   }
