@@ -259,7 +259,6 @@ h5 {
 p {
     margin-bottom: 1.3em;
     line-height: 1.7em;
-    text-indent: 2em;
 }
 
 strong {
@@ -517,6 +516,14 @@ hr {
     width: 30%;
     margin: 2em 0;
     border-top: 1px solid #DDDDDD;
+}
+.post > p {
+    text-indent: 2em;
+    line-height: 2em;
+}
+.post > p:first-child:first-letter {
+    font-size: 2em;
+    color: #e78133;
 }
 
 .panel {
