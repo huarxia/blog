@@ -1206,3 +1206,37 @@ section.post > table  th {
         padding: 10px 4px;
     }
 }
+
+/* 打賞設置 */
+
+.reward {
+    text-align: center;
+    display: static;
+}
+.reward-button {
+    width: 70px;
+    height: 70px;
+    background: #e78133;
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+    line-height: 70px;
+    font: 400 35px/75px "microsofty";
+    color: #fff;
+    margin: 0 auto 12px;
+}
+.reward > div {
+    display: inline-block;
+    margin: 0 6px;
+}
+.reward > div > img {
+    border: 1px solid #ccc;
+    max-width: 100%;
+    width: 200px;
+}
+.reward > div > p {
+    display: block;
+    width: 100px;
+    margin: 6px auto 0;
+    font-size: 14px;
+}
