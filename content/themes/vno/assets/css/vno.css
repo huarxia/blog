@@ -1211,7 +1211,8 @@ section.post > table  th {
 
 .reward {
     text-align: center;
-    display: static;
+    border-top: 1px solid #cccccc;
+    padding-top: 12px;
 }
 .reward-button {
     width: 70px;
