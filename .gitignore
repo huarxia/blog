@@ -1,0 +1,5 @@
+node_modules
+.deploy_git/
+node_modules/
+npm-debug.log
+static/
