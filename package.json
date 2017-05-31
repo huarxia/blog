@@ -102,6 +102,7 @@
     "rewire": "2.3.3",
     "rimraf-then": "^1.0.0",
     "should": "6.0.3",
+    "showdown": "^1.6.4",
     "sinon": "1.14.1",
     "supertest": "1.0.1",
     "testem": "0.8.3",
