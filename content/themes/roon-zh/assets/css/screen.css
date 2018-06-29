@@ -1,12 +1,12 @@
 /* Link colour */
 a {
-    color: #d35c5c;
+    color: #4fc08d;
 }
 
 /* Border at the top of the page */
 body>header,
 body.noimage {
-    border-color: #d35c5c;
+    border-color: #4fc08d;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -102,7 +102,7 @@ body.serif article>menu #btn_comment span {
     color: #b168cd
 }
 .highlight .l {
-    color: #d35c5c
+    color: #4fc08d
 }
 .highlight .n {
     color: #21272d
@@ -171,7 +171,7 @@ body.serif article>menu #btn_comment span {
     color: #46ad55
 }
 .highlight .m {
-    color: #d35c5c
+    color: #4fc08d
 }
 .highlight .s {
     color: #46ad55
@@ -186,7 +186,7 @@ body.serif article>menu #btn_comment span {
     color: #deb328
 }
 .highlight .no {
-    color: #d35c5c
+    color: #4fc08d
 }
 .highlight .nd {
     color: #51bac8
@@ -225,16 +225,16 @@ body.serif article>menu #btn_comment span {
     color: #4d4d4c
 }
 .highlight .mf {
-    color: #d35c5c
+    color: #4fc08d
 }
 .highlight .mh {
-    color: #d35c5c
+    color: #4fc08d
 }
 .highlight .mi {
-    color: #d35c5c
+    color: #4fc08d
 }
 .highlight .mo {
-    color: #d35c5c
+    color: #4fc08d
 }
 .highlight .sb {
     color: #46ad55
@@ -249,13 +249,13 @@ body.serif article>menu #btn_comment span {
     color: #46ad55
 }
 .highlight .se {
-    color: #d35c5c
+    color: #4fc08d
 }
 .highlight .sh {
     color: #46ad55
 }
 .highlight .si {
-    color: #d35c5c
+    color: #4fc08d
 }
 .highlight .sx {
     color: #46ad55
@@ -282,7 +282,7 @@ body.serif article>menu #btn_comment span {
     color: #c82829
 }
 .highlight .il {
-    color: #d35c5c
+    color: #4fc08d
 }
 html, body {
     height: 100%;
@@ -969,18 +969,19 @@ body.user>#load_more {
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
-    transition-duration: 0.2s
+    transition-duration: 0.2s;
+    font-size: 18px;
 }
 #post_nav #post_next {
     float: left
 }
 #post_nav #post_next span {
     margin-right: 2px;
-    -webkit-transform: rotate(180deg) translate(0, 6px);
-    -moz-transform: rotate(180deg) translate(0, 6px);
-    -ms-transform: rotate(180deg) translate(0, 6px);
-    -o-transform: rotate(180deg) translate(0, 6px);
-    transform: rotate(180deg) translate(0, 6px)
+    -webkit-transform: rotate(180deg) translate(0, 2px);
+    -moz-transform: rotate(180deg) translate(0, 2px);
+    -ms-transform: rotate(180deg) translate(0, 2px);
+    -o-transform: rotate(180deg) translate(0, 2px);
+    transform: rotate(180deg) translate(0, 2px)
 }
 #post_nav #post_prev {
     position: relative;
@@ -989,24 +990,25 @@ body.user>#load_more {
     padding: 5px 30px 5px 0
 }
 #post_nav #post_prev span {
-    position: absolute;
-    right: 0;
-    margin-top: -5px
+    /* position: absolute;
+    right: 0; */
+    margin-top: -2px
 }
 body>a.btn.nav {
     position: relative;
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 10px 70px 10px;
-    padding: 15px 28px
+    padding: 10px 8px;
 }
 body>a.btn.nav span {
     position: absolute;
-    top: 11px;
-    font-size: 25px;
-    margin-top: 1px
+    top: 7px;
+    font-size: 20px;
+    margin-top: 1px;
 }
 body>a.btn.nav.next {
-    padding-right: 46px
+    padding-right: 46px;
+    padding-left: 20px;
 }
 body>a.btn.nav.next span {
     right: 14px;
@@ -1456,11 +1458,13 @@ body.touch.user article .readmore {
         padding: 40px 30px 38px 30px
     }
     #post_nav a {
-        display: block;
+        display: inline-block;
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
-        float: none !important
+        /* float: none !important; */
+        vertical-align: top;
+        font-size: 14px;
     }
     #post_nav #post_next {
         text-align: left;
@@ -1635,4 +1639,7 @@ body.touch.user article .readmore {
     body.noimage article {
         margin-top: 24px
     }
+}
+#cnzz_stat_icon_1260920122 {
+    display: none;
 }
