@@ -95,6 +95,7 @@
     "grunt-mocha-istanbul": "2.4.0",
     "grunt-shell": "1.1.2",
     "grunt-update-submodules": "0.4.1",
+    "hexo-fs": "^0.2.3",
     "istanbul": "0.4.1",
     "jscs-jsdoc": "1.2.0",
     "matchdep": "0.3.0",
@@ -113,6 +114,11 @@
     "type": "git",
     "repo": "https://github.com/huarxia/blog.git",
     "branch": "gh-pages",
+    "dir": "static"
+  },
+  "disTag": {
+    "type": "git",
+    "repo": "https://github.com/huarxia/blog.git",
     "dir": "static"
   }
 }
