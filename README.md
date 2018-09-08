@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /img/github.png
+heroImage: ./img/github.png
 actionText: Github →
 actionLink: https://www.github.com/huarxia
 sidebar: auto

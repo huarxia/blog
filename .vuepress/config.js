@@ -1,6 +1,7 @@
 module.exports = {
     title: '前面端个菜',
     description: '花夏的博客',
+    base: '/blog/',
     head: [
         ['link', {
             rel: 'icon',
@@ -12,26 +13,26 @@ module.exports = {
                 text: '主页',
                 link: '/'
             },
-            {
-                text: '某年',
-                items: [{
-                        text: '2018',
-                        link: '/2018'
-                    },
-                    {
-                        text: '2017',
-                        link: '/2017'
-                    },
-                    {
-                        text: '2016',
-                        link: '/2016'
-                    },
-                    {
-                        text: '2015',
-                        link: '/2015'
-                    }
-                ]
-            },
+            // {
+            //     text: '某年',
+            //     items: [{
+            //             text: '2018',
+            //             link: '/2018'
+            //         },
+            //         {
+            //             text: '2017',
+            //             link: '/2017'
+            //         },
+            //         {
+            //             text: '2016',
+            //             link: '/2016'
+            //         },
+            //         {
+            //             text: '2015',
+            //             link: '/2015'
+            //         }
+            //     ]
+            // },
             {
                 text: 'Github',
                 link: 'https://www.github.com/huarxia'

@@ -18,17 +18,13 @@
   "main": "./core/index",
   "scripts": {
     "dev": "vuepress dev .",
-    "build": "vuepress build ."
+    "build": "vuepress build .",
+    "deploy": "bash deploy.sh"
   },
   "engines": {
     "node": "~8.0.0"
   },
-  "dependencies": {},
-  "deploy": {
-    "type": "git",
-    "repo": "https://github.com/huarxia/blog.git",
-    "branch": "gh-pages",
-    "dir": "static"
+  "dependencies": {
   },
   "disTag": {
     "type": "git",
@@ -39,8 +35,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "devDependencies": {
-    "vuepress": "^0.14.2"
   }
 }
