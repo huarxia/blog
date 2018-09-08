@@ -4,6 +4,8 @@ slug: jie-jue-jsdui-ge-liu-lan-qi-de-jian-rong-wen-ti-bu-shi-zhi-you-csscai-you-
 date_published: 2015-01-07T13:09:00.000Z
 date_updated:   2016-11-12T13:24:46.544Z
 tags: js
+prev: false
+next: ./谁说原生JS不支持class获取DOM
 ---
 
 ```

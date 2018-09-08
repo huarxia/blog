@@ -1,12 +1,16 @@
-# 我的技術博客站點
+---
+home: true
+heroImage: /img/github.png
+actionText: Github →
+actionLink: https://www.github.com/huarxia
+sidebar: auto
+features:
+- title: 技能
+  details: 前端  设计  区块链智能合约  nodejs
+- title: 兴趣爱好
+  details: 诗词  音乐  美食  书法
+- title: 联系方式
+  details: 手机：19919910343  wechat：xhfb-huaxia  电邮：huaxia@huar.love
+footer: MIT Licensed | Copyright © 2018-present Huarxia
+---
 
-> 基於ghostj靜態化至gitpage博客
-
-```
-1. npm start // 啟動ghost
-2. buster generate --domain=http://127.0.0.1:2368 // 使用buster將ghost靜態化
-3. buster preview // 打開本地靜態化博客預覽
-
-```
-
-#### 具體怎麼使用請查看這篇文章 [在 Github Pages 上搭建 Ghost](http://www.huar.love/blog/2016/10/30/zai-github-pages-shang-da-jian-ghost-bo-ke-jiao-cheng-yu-xin-de/index.html)
