@@ -35,5 +35,11 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+},
+"deploy": {
+    "type": "git",
+    "repo": "https://github.com/huarxia/blog.git",
+    "branch": "gh-pages",
+    "dir": ".vuepress/dist"
   }
 }
