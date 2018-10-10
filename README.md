@@ -10,7 +10,6 @@ features:
 - title: 兴趣爱好
   details: 诗词  音乐  美食  书法
 - title: 联系方式
-  details: 手机：19919910343  wechat：xhfb-huaxia  电邮：huaxia@huar.love
+  details: 手机：19919910343  wechat：xhfb-huaxia  电邮：huaxia@itoxs.com
 footer: MIT Licensed | Copyright © 2018-present Huarxia
 ---
-
