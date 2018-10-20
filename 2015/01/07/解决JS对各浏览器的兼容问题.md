@@ -8,7 +8,7 @@ prev: false
 next: ./谁说原生JS不支持class获取DOM
 ---
 
-```
+```js
 var eventUtil={
              // 添加句柄
              addHandler:function(element,type,handler){
@@ -55,3 +55,4 @@ var eventUtil={
          }
   }
 ```
+

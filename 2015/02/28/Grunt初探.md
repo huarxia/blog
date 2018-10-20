@@ -18,7 +18,7 @@ tags: 工具
 安装流程 ：
 
 先安装nodejs和npm(包管理工具)
-```
+```shell
 npm install -g grunt-cli
 
 npm install grunt –save-dev
@@ -26,41 +26,41 @@ npm install grunt –save-dev
 grunt –version
 ```
 
-![](/content/images/2016/11/201502281425101611624181.png)
+![](./images/201502281425101611624181.png)
 
 然后下一步下一步安装即可
 
 然后打开命令行
 
-cmd
-![](/content/images/2016/11/201502281425101749282442.png)
+`cmd`
+
+![](./images/201502281425101749282442.png)
 
 一次输入下面命令，你可以选择复制进去即可
-```
+```sh
 npm install -g grunt-cli
 
 npm install grunt –save-dev
 
 grunt -version
 ```
-最后输入grunt -version这个时候显示
-![](/content/images/2016/11/201502281425101883621661.png)
-即证明安装成功
+最后输入`grunt -version`这个时候显示
+![](./images/201502281425101883621661.png)
 
-接下来我们来用这个试试，
+即证明安装成功, 接下来我们来用这个试试，
 
 在要处理的文件的根目录下创建一个package.json文件
-![](/content/images/2016/11/201502281425102078855214.png)
+![](./images/201502281425102078855214.png)
 
 这个文件里面是
-```
+```json
 {
   "name": "my-project-name",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.5",
-    "grunt-contrib-concat":"~0.4.0",//grunt官网找到的合并文件插件
-    "grunt-contrib-uglify":"~0.4.0"//grunt官网找到的压缩文件插件
+    "grunt-contrib-concat":"~0.4.0", // grunt官网找到的合并文件插件
+    "grunt-contrib-uglify":"~0.4.0" // grunt官网找到的压缩文件插件
   }
 }
 ```
@@ -68,9 +68,14 @@ grunt -version
 
 接下来就是下载插件到本地，在命令行中输入 npm install 等待下载
 
-当出现这个 ![](/content/images/2016/11/201502281425102328552893.png)
+当出现这个
+
+ ![](./images/201502281425102328552893.png)
+
 并且本地目录下存在这些
-![](/content/images/2016/11/201502281425102376490029.png)
+
+![](./images/201502281425102376490029.png)
+
 说明下载成功
 
 那么现在我们可以开始合并压缩了
@@ -78,39 +83,39 @@ grunt -version
 在合并文件的更目录创建Gruntfile.js
 
 里面编写需要执行的命令，具体可以去官网相应插件查找文档
-```
-module.exports = function(grunt){ 
+```js
+module.exports = function(grunt) { 
     grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
       concat: {
-        test:{
-            files:{
-                "dis/main.js":["move.js","script.js"]//表示将"move.js","script.js"合并为main.js创建dis文件夹放置
+        test: {
+            files: {
+                'dis/main.js': ['move.js', 'script.js'] // 表示将"move.js","script.js"合并为main.js创建dis文件夹放置
             }
         }
       },
       uglify: {
-        test:{
-            files:{
-                "dis/main.min.js":["dis/main.js"]//表示将dis/main.js压缩为main.min.js放置在dis文件夹中
+        test: {
+            files: {
+                'dis/main.min.js': ['dis/main.js'] // 表示将dis/main.js压缩为main.min.js放置在dis文件夹中
             }
         }
       }
     });
-    //下面的事官网的示例代码拿出来的，相当于执行上面的配置
+    // 下面的事官网的示例代码拿出来的，相当于执行上面的配置
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('default', ['concat',"uglify"]);
+    grunt.registerTask('default', ['concat', 'uglify']);
 }
 ```
 一切准备继续在命令行中输入grunt执行最后出现这个
-![](/content/images/2016/11/201502281425102711885395.png)
+![](./images/201502281425102711885395.png)
 即成功了，
 
 我们看看本地文件
-![](/content/images/2016/11/201502281425102761379526.png)
+![](./images/201502281425102761379526.png)
 再看看代码：
-![](/content/images/2016/11/201502281425102831562929.png)
+![](./images/201502281425102831562929.png)
 是一行吧，说明操作成功
 
 但有人问了，就这个啊，合并压缩，网上工具多的是，何必还命令行什么的多麻烦，

@@ -9,13 +9,14 @@ tags: js
 最开始我们使用笨笨的方法解决通过class选取元素见：class获取DOM
 
 这里我们再次使用正则表达式来优化
-```
-;function getByClass(obj,sclass){
-    var allEle = obj.getElementsByTagName("*");
+```js
+;function getByClass(obj, sclass) {
+    var allEle = obj.getElementsByTagName('*');
     var aResult = [];
-    var re = new RegExp("\\b"+sclass+"\\b"); //  \\b正则表达式单词边界
-    for(var i=0;i<allEle.length;i++){
-        if(re.test(allEle[i].className)){
+    // \\b正则表达式单词边界
+    var re = new RegExp('\\b' + sclass + '\\b');
+    for (var i = 0; i < allEle.length; i++) {
+        if(re.test(allEle[i].className)) {
             aResult.push(allEle[i]);
         }
     }

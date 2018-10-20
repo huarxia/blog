@@ -6,7 +6,7 @@ date_updated:   2016-11-12T13:07:05.275Z
 tags: js
 ---
 
-```
+```js
 //处理低版本的getElementsByClassName
 if(!document.getElementsByClassName){
     document.getElementsByClassName= function(cls){
@@ -25,3 +25,4 @@ if(!document.getElementsByClassName){
     }
 }
 ```
+

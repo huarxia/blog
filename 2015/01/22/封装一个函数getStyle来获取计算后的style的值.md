@@ -6,7 +6,7 @@ date_updated:   2016-11-12T13:29:15.325Z
 tags: js
 ---
 
-```
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -17,15 +17,13 @@ tags: js
 </style>
 <script>
 //封装一个函数getStyle来获取计算后的style的值，因为涉及到IE和其他浏览器的兼容问题
-    window.onload = function(){
-        var oDiv = document.getElementById("div");
+    window.onload = function() {
+        var oDiv = document.getElementById('div');
         function getStyle(obj,style){
-            return obj.currentStyle?
-             obj.currentStyle[style]//兼容IE
-            :
-            getComputedStyle(obj,false)[style];//兼容出IE浏览器以外的浏览器
+            //兼容IE、兼容出IE浏览器以外的浏览器
+            return obj.currentStyle ? obj.currentStyle[style] : getComputedStyle(obj,false)[style];
         }
-        alert(getStyle(oDiv,"width"));
+        alert(getStyle(oDiv, 'width'));
     }
 </script>
 </head>
@@ -34,3 +32,4 @@ tags: js
 </body>
 </html>
 ```
+

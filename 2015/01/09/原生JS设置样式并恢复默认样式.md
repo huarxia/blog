@@ -6,7 +6,7 @@ date_updated:   2016-11-12T13:26:02.721Z
 tags: js
 ---
 
-```
+```html
 <!DOCTYPE HTML>
 <html>
 <head>

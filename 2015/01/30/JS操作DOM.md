@@ -6,7 +6,7 @@ date_updated:   2016-11-15T09:00:17.215Z
 tags: js
 ---
 
-```
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,101 +14,105 @@ tags: js
 <title>无标题文档</title>
 <script type="text/javascript">
     window.onload = function(){
-        var tab = document.getElementById("tab");
-        var btn = document.getElementById("btn");
-        var search = document.getElementById("search");
-        var ipt = document.getElementById("ipt");
-        var sort = document.getElementById("sort");
-        var oldColor = "";
-        var nows = tab.tBodies[0].rows.length+1;
+        var tab = document.getElementById('tab');
+        var btn = document.getElementById('btn');
+        var search = document.getElementById('search');
+        var ipt = document.getElementById('ipt');
+        var sort = document.getElementById('sort');
+        var oldColor = '';
+        var nows = tab.tBodies[0].rows.length + 1;
         var sortSignal = true;
-        //隔行变色
+        // 隔行变色
         setColor();
-        function setColor(){
-            for(var i=0;i<tab.tBodies[0].rows.length;i++){
-                tab.tBodies[0].rows[i].style.background = i%2?"#ccc":"";
-                tab.tBodies[0].rows[i].onmouseover = function(){
+        function setColor() {
+            for (var i = 0; i < tab.tBodies[0].rows.length; i++) {
+                tab.tBodies[0].rows[i].style.background = i % 2 ? '#ccc' : '';
+                tab.tBodies[0].rows[i].onmouseover = function() {
                     oldColor = this.style.backgroundColor;
-                    this.style.background = "yellow";
+                    this.style.background = 'yellow';
                 }
-                tab.tBodies[0].rows[i].onmouseout = function(){
+                tab.tBodies[0].rows[i].onmouseout = function() {
                     this.style.background = oldColor;
                 }
             }
         }
-        //搜索功能
-        search.onclick = function(){
-            var txt = ipt.value.toLowerCase();//转换为小写
+        // 搜索功能
+        search.onclick = function() {
+            // 转换为小写
+            var txt = ipt.value.toLowerCase();
             var signal = false;
             var noNull = true;
-            if(txt==""){
-                alert("请输入文字再查找");
+            if(txt === '') {
+                alert('请输入文字再查找');
                 return;
             }
-            for(var i=0;i<tab.tBodies[0].rows.length;i++){
+            for (var i = 0; i < tab.tBodies[0].rows.length; i++) {
                 var target = tab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
-                var arr = txt.split(" ");//将搜索的东西用“ ”拆分成数组
+				// 将搜索的东西用' '拆分成数组
+                var arr = txt.split(' ');
                 oldColor = tab.tBodies[0].rows[i].style.backgroundColor;
-                for(var j=0;j<arr.length;j++){
-                    signal = target.search(arr[j])!=-1?true:false;
+                for (var j = 0; j < arr.length; j++) {
+                    signal = target.search(arr[j]) !== -1;
                     break;
                 }
                 if(signal){
-                    tab.tBodies[0].rows[i].style.background = "yellow";
+                    tab.tBodies[0].rows[i].style.background = 'yellow';
                 }else{
                     tab.tBodies[0].rows[i].style.background = oldColor;
                 }
             }
-            ipt.value = "";
+            ipt.value = '';
         }
-        //添加删除功能
-        btn.onclick = function(){
-            var oTr = document.createElement("tr");
+        // 添加删除功能
+        btn.onclick = function() {
+            var oTr = document.createElement('tr');
             var oTd = null;
-            var oTd = document.createElement("td");
+            var oTd = document.createElement('td');
             oTd.innerHTML = nows++;
             oTr.appendChild(oTd);
 
-            oTd = document.createElement("td");
+            oTd = document.createElement('td');
             oTd.innerHTML = ipt.value;
             oTr.appendChild(oTd);
 
-            oTd = document.createElement("td");
-            oTd.innerHTML = "<a href='javascript:;'>删除</a>";
+            oTd = document.createElement('td');
+            oTd.innerHTML = '<a href='javascript:;'>删除</a>';
             oTr.appendChild(oTd);
-            oTd.getElementsByTagName("a")[0].onclick = function(){
+            oTd.getElementsByTagName('a')[0].onclick = function() {
                 tab.tBodies[0].removeChild(this.parentNode.parentNode);
             }
             tab.tBodies[0].appendChild(oTr);
-            ipt.value = "";
+            ipt.value = '';
             setColor();
         }
-        //排序
-        sort.onclick = function(){
+        // 排序
+        sort.onclick = function() {
             var arr = [];
-            //现将其转换为数组
-            for(var i=0;i<tab.tBodies[0].rows.length;i++){
+            // 现将其转换为数组
+            for(var i = 0; i < tab.tBodies[0].rows.length; i++) {
                 arr[i] = tab.tBodies[0].rows[i];
             }
-            //排序实现
-            arr.sort(function(arr1,arr2){
+            // 排序实现
+            arr.sort(function(arr1,arr2) {
                 if(sortSignal){
-                    return parseInt(arr1.cells[0].innerHTML)-parseInt(arr2.cells[0].innerHTML);
+                    return parseInt(arr1.cells[0].innerHTML)
+                        - parseInt(arr2.cells[0].innerHTML);
                 }else{
-                    return parseInt(arr2.cells[0].innerHTML)-parseInt(arr1.cells[0].innerHTML);
+                    return parseInt(arr2.cells[0].innerHTML)
+                        - parseInt(arr1.cells[0].innerHTML);
                 }
             });
-            for(var i=0;i<arr.length;i++){
+            for (var i = 0; i < arr.length; i++) {
                 tab.tBodies[0].appendChild(arr[i]);
                 setColor();
             }
-            //sortSignal=!sortSignal;
-            if(sortSignal){
-                sortSignal=false;
-                sort.value = "降序";
+            // sortSignal=!sortSignal;
+            if (sortSignal) {
+                sortSignal = false;
+                sort.value = '降序';
             }else{
-                sortSignal=true;
-                sort.value = "升序";
+                sortSignal = true;
+                sort.value = '升序';
             }
         }
     }

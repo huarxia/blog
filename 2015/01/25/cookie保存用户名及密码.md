@@ -6,7 +6,7 @@ date_updated:   2016-11-12T13:49:50.486Z
 tags: js
 ---
 
-```
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -17,42 +17,42 @@ tags: js
     #div{ width: 100px;height: 100px;background: pink;position: absolute;}
 </style>
 <script>
-    function setCookie(name,value,itime){
+    function setCookie(name,value,itime) {
         var oDate = new Date();
-        oDate.setTime(oDate.getTime()+itime);
-        value!=null?document.cookie = name+"="+value+";expires="+oDate:return;
+        oDate.setTime(oDate.getTime() + itime);
+        value !== null ? document.cookie = name + '=' + value + ';expires=' + oDate:return;
     }
-    function getCookie(name){
-        var arr = document.cookie.split("; ");
-        for(var i=0;i<arr.length;i++){
-            var arr1  =arr[i].split("=");
-            if(name==arr1[0]){
+    function getCookie(name) {
+        var arr = document.cookie.split(';');
+        for (var i = 0; i < arr.length; i++) {
+            var arr1 = arr[i].split('=');
+            if (name === arr1[0]) {
                 return arr1[1];
             }
         }
-        return "";
+        return '';
     }
-    function removeCookie(name){
-        setCookie(name,getCookie(name),-1);
+    function removeCookie(name) {
+        setCookie(name,getCookie(name), -1);
     }
     window.onload = function() {
-        var form =document.getElementById("form");
-        var username =document.getElementById("username");
-        var password =document.getElementById("password");
-        var clear = document.getElementById("clear");
-        username.value = getCookie("username");
-        password.value = getCookie("password");
-        form.onsubmit = function(){
-            //保存用户名和密码
-            setCookie("username",username.value,15*60*60*24);
-            setCookie("password",password.value,15*60*60*24);
+        var form = document.getElementById('form');
+        var username = document.getElementById('username');
+        var password = document.getElementById('password');
+        var clear = document.getElementById('clear');
+        username.value = getCookie('username');
+        password.value = getCookie('password');
+        form.onsubmit = function() {
+            // 保存用户名和密码
+            setCookie('username', username.value, 15 * 60 * 60 * 24);
+            setCookie('password', password.value, 15 * 60 * 60 * 24);
         }
-        clear.onclick = function(){
-            //清除用户名和密码
-            removeCookie("username");
-            removeCookie("password");
-            username.value="";
-            password.value="";
+        clear.onclick = function() {
+            // 清除用户名和密码
+            removeCookie('username');
+            removeCookie('password');
+            username.value = '';
+            password.value = '';
         }
     }
 </script>

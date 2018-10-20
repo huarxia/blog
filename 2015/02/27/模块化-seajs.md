@@ -12,7 +12,7 @@ tags: js
 
 html:
 
-```
+```html
 <!DOCTYPE html PUBLIC "-//W3C//h2D XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/h2D/xhtml1-transitional.h2d">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -21,8 +21,9 @@ html:
 <style type="text/css"></style>
 <script type="text/javascript" src="js/sea.js"></script>
 <script type="text/javascript">
-    //seajs默认根目录就是sea.js
-    seajs.use("test.js",function(ex){//ex就是模块中的exports
+    // seajs默认根目录就是sea.js
+    seajs.use('test.js', function(ex){
+        // ex就是模块中的exports
         ex.tab();
     });
 </script>
@@ -33,35 +34,40 @@ html:
 ```
 模块中的一个test.js文件：
 
-```
-define(function(require, exports, module){
+```js
+define(function(require, exports, module) {
     function tab(){
         alert(a);
     }
-    //require依赖的接口
-    require("test2.js");
-    //如果依赖的接口是模块那么
+    // require依赖的接口
+    require('test2.js');
+    // 如果依赖的接口是模块那么
     /*function tab(){
         alert(require("test3.js").a);
     }*/
-    //异步加载test3.js即是说需要用到时才去加载他
-    function tab(){
-        require.async("test3.js",function(ex){
+    // 异步加载test3.js即是说需要用到时才去加载他
+    function tab() {
+        require.async('test3.js', function(ex) {
            alert(ex.a);
         });
     }
-    //exports对外提供接口
-    exports.tab=tab;
+    // exports对外提供接口
+    exports.tab = tab;
 });
 ```
 test.js依赖于test2.j
 
-```
-a=10;
+```js
+a = 10;
 ```
 test.js依赖的是一个模块的话：
+
+```js
 define(function(require, exports, module){
-    a=3;
-    exports.a=a;
+    a = 3;
+    exports.a = a;
 });
+```
+
+
 
