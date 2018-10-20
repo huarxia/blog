@@ -21,11 +21,11 @@ tags: express
 
 以下示例显示中间件函数调用的元素：
 
-![](/content/images/2017/01/BE42B99E-D7F1-48A6-9BEA-A356FF970DB3.png)
+![](./images/BE42B99E-D7F1-48A6-9BEA-A356FF970DB3.png)
 
 以下是`Hello World` Express 应用程序的简单示例，将为其定义两个中间件函数：
 
-```
+```js
 
 var express = require('express');
 var app = express();
@@ -43,7 +43,7 @@ app.listen(3000);
 
 以下是称为`myLogger`的中间件函数的简单示例。此函数仅在应用程序的请求通过它时显示`LOGGED`。中间件函数会分配给名为`myLogger`的变量。
 
-```
+```js
 
 var myLogger = function (req, res, next) {
   console.log('LOGGED');
@@ -56,7 +56,7 @@ var myLogger = function (req, res, next) {
 
 要装入中间件函数，请调用 `app.use()` 并指定中间件函数。 例如，以下代码在根路径 (/) 的路由之前装入 myLogger 中间件函数。
 
-```
+```js
 
 var express = require('express');
 var app = express();
@@ -86,7 +86,7 @@ app.listen(3000);
 
 下一个示例将名为 `requestTime` 的属性添加到请求对象。我们将此中间件函数命名为`requestTime`。
 
-```
+```js
 
 var requestTime = function (req, res, next) {
   req.requestTime = Date.now();
@@ -97,7 +97,7 @@ var requestTime = function (req, res, next) {
 
 现在，该应用程序使用 `requestTime` 中间件函数。此外，根路径路由的回调函数使用由中间件函数添加到 `req`（请求对象）的属性。
 
-```
+```js
 
 var express = require('express');
 var app = express();

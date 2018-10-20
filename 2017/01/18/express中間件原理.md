@@ -20,7 +20,7 @@ tags: express
 
 學`express`首先得會點`nodejs`吧，先來一段`nodejs`最基礎的`hello world`
 
-```
+```js
 var http = require('http');
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -33,7 +33,7 @@ http.createServer(function (req, res) {
 
 繼續看看`Express`的代码
 
-```
+```js
 var app = express();
 //...中间忽略
 http.createServer(app).listen(app.get('port'), function(){
@@ -44,7 +44,7 @@ http.createServer(app).listen(app.get('port'), function(){
 
 对比可以看出，执行express()后，会返回一个函数，赋值给app，app應該是：
 
-```
+```js
 function(req,res){//...}
 ```
 
@@ -52,13 +52,13 @@ function(req,res){//...}
 
 可以认为，在`express`内部，有一个函数的数组，暂时叫这个数组tasks，每来一个请求`express`内部会依次执行这个数组中的函数（这里说依次并不严谨，每个函数必须满足一定条件才行，这个后面说），应该可以想到，在这个函数数组里，每个函数的签名应该像下面那样實際上這個就是中間件的精髓所在...噓！
 
-```
+```js
 function(req, res){//...}
 ```
 
 實際上應該是：
 
-```
+```js
 function(req, res, next){//...}
 ```
 
@@ -78,7 +78,7 @@ function(req, res, next){//...}
 
 > 1. 长成下面这个样子
 
-```
+```js
 function(req, res, next){
     //...我们自己的逻辑
     next();
@@ -88,7 +88,7 @@ function(req, res, next){
 
 或者：
 
-```
+```js
 app.use(function(err,req,res,next){
     if(err){
         //自己的处理错误的逻辑
@@ -101,14 +101,14 @@ app.use(function(err,req,res,next){
 
 > 2. `app.use(customerFunc)` 要写在下面两句的前面
 
-```
+```js
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 ```
 一般情況下是這麼使用的，但是對於通用`error`處理可以放到最後，`http.createServer`之前
 
-```
+```js
 app.use(express.static(path.join(__dirname, '/web/dist')));
 // catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
@@ -127,7 +127,7 @@ http.createServer(app).listen(app.get('port'), function(req, res){
 
 关于第1点，写点代码繼續進行試驗：
 
-```
+```js
 app.use(function(req,res,next){
     console.log("111");
     next();
@@ -137,7 +137,7 @@ app.use(function(req,res,next){
 
 如果不写`next()`,那么后面注册的函数就不会执行(一個大臉疑問)，运行測試下不就知道了
 
-```
+```js
 app.use(function(req,res,next){
     console.log('111');
     next();
@@ -156,7 +156,7 @@ app.use(function(req,res,next){
 
 整个处理请求的模型还是比較简单的，在理解的上面的过程后，能不能不借助`express`，自己实现上面的过程呢，主要是怎么处理`next()`那一块
 
-```
+```js
 var http = require('http');
 function express(){
     var funcs = [];

@@ -19,14 +19,14 @@ tags: css, 面試
   a）单行文本垂直居中
 
 html:
-```
+```html
 div id="parent">
     <div id="child">test</div>
 </div>
 ```
 
 css:
-```
+```css
 #parent{
     width: 200px;
     height: 200px;
@@ -40,13 +40,13 @@ css:
 b）垂直居中一张图片
 
 html:
-```
+```html
 <div id="parent">
     <img src="test.gif">
 </div>
 ```
 css:
-```
+```css
 #parent{
     width: 200px;
     height: 200px;
@@ -60,7 +60,7 @@ img {
 ```
 > `vertical-align`：定义行内元素的基线相对于该元素所在行的基线的垂直对齐。
 
-```
+```tex
 值                        描述
 baseline                默认。元素放置在父元素的基线上。
 sub                        垂直对齐文本的下标。
@@ -78,14 +78,14 @@ inherit                规定应该从父元素继承 vertical-align 属性的�
 > 2）`css table`方法（适用：通用）
 
 html:
-```
+```html
 <div id="parent">
     <div id="child">test</div>
 </div>
 ```
 
 css:
-```
+```css
 #parent{
 	width: 200px;
 	height: 200px;
@@ -100,13 +100,13 @@ css:
 ```
 > 3）绝对定位和`负margin`方法（适用：块级元素）               缺点：需要知道元素的宽高
 html:
-```
+```html
 <div id="parent">
     <div id="child">test</div>
 </div>
 ```
 css:
-```
+```css
 #parent{
     position: relative;
     background: #ddd;
@@ -124,7 +124,7 @@ css:
 }
 ```
 ##### 用百分数要注意：
-```
+```css
 #parent{
     position: relative;
     background: #ddd;
@@ -150,7 +150,7 @@ css:
 > 优点：无需知道元素的宽高
 
 css: 
-```
+```css
 #parent{
     position: relative;
     background: #ddd;
@@ -171,7 +171,7 @@ css:
 ```
 > 5）`equal top and bottom padding`（适用：通用）
 css:
-```
+```css
 #parent{
     background: #ddd;
     width: 300px;
@@ -185,7 +185,7 @@ css:
 ```
 > 6）`floater div`（适用：通用）
 html:
-```
+```css
 <div id="parent">
     <div id="floater"></div>
     <div id="child">test</div>
@@ -193,7 +193,7 @@ html:
 ```
 
 css:
-```
+```css
 #parent{
     background: #ddd;
     height: 250px;
@@ -217,7 +217,7 @@ css:
 > 缺点：兼容性不好
 
 html: 
-```
+```html
 <div id="parent">
     <div id="child">
         <p>aaa</p>
@@ -229,7 +229,7 @@ html:
 ```
 
 css:
-```
+```css
 parent{
     background: #ddd;
     height: 250px;
@@ -250,7 +250,7 @@ parent{
 ##### 提示：`translate` 函数当中使用百分比是以该元素的内容区、补白(`padding`)、边框(`border`)为标准计算的
 
 html:
-```
+```css
 <div id="parent">
     <div id="child">
         <p>aaa</p>
@@ -262,7 +262,7 @@ html:
 ```
 
 css:
-```
+```css
 #parent{
     background: #ddd;
     height: 250px;
@@ -287,7 +287,7 @@ css:
 
 只需設置父級css即可
 
-```
+```css
 display: flex;
 justify-content:center;
 align-items:center;
@@ -295,7 +295,7 @@ align-items:center;
 
 > 9.display:inline-block
 
-```
+```css
 .parent{
   text-align:center;
   font-size:0;
@@ -318,7 +318,7 @@ align-items:center;
 
 > 10.display:flex和margin:auto
 
-```
+```css
 .parent {
     display: flex;
     text-align: center;
@@ -328,4 +328,4 @@ align-items:center;
 }
 ```
 
-[demo](http://www.huar.love/demo/center)
+[demo](/demo/center)

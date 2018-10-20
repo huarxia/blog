@@ -20,7 +20,7 @@ tags: 經驗
 
 css:
 
-```
+```css
 .box {
     width: 100px;
     height: 100px;
@@ -33,11 +33,11 @@ css:
 
 html:
 
-```
+```html
 <div class="box" tabIndex="-1"></div>
 ```
 
 注意`tabIndex`这个属性，这个属性可以是任何自然数，用于控制tab键在网页中的切换顺序，如果是-1相当于接收焦点，但不影响原有顺序；
 
-[点击查看我呀](http://www.huar.love/demo/click-css/)
+[点击查看我呀](/demo/click-css/)
 

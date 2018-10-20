@@ -31,13 +31,13 @@ tags: js
 
 #### 安装
 
-```
+```shell
 npm install -g eslint
 ```
 
 #### 使用
 
-```
+```shell
 eslint --init
 ```
 
@@ -45,7 +45,7 @@ eslint --init
 
 添加一个待检查的文件add.js
 
-```
+```js
 function add (a, b) {
     return a + b;
 }
@@ -53,13 +53,13 @@ function add (a, b) {
 
 执行检查命令
 
-```
+```shell
 eslint add.js
 ```
 
 指定配置文件
 
-```
+```shell
 eslint -c config.json add.js
 ```
 
@@ -67,7 +67,7 @@ eslint -c config.json add.js
 
 ESLint的配置最重要的是规则的配置，具体的格式如下
 
-```
+```yaml
 "quotes": [2, "double"]
 # 第一部分是规则名
 # 第二部分是表示级别：0-不验证；1-警告；2-错误
@@ -83,7 +83,7 @@ ESLint的配置最重要的是规则的配置，具体的格式如下
 
 配置文件中的：
 
-```
+```json
 "extends": "eslint:recommended"
 ```
 
@@ -91,7 +91,7 @@ ESLint的配置最重要的是规则的配置，具体的格式如下
 
 1. 文件中关闭验证
 
-```
+```js
 /*eslint-disable */
 //suppress all warnings between comments
 alert('foo');
@@ -100,7 +100,7 @@ alert('foo');
 
 2.文件中指定规则不验证
 
-```
+```j
 /*eslint-disable no-alert, no-console */
 alert('foo');
 console.log('bar');
@@ -109,7 +109,7 @@ console.log('bar');
 
 ### 规则说明
 
-```
+```json
 "no-alert": 0,//禁止使用alert confirm prompt
  "no-array-constructor": 2,//禁止使用数组构造器
  "no-bitwise": 0,//禁止使用按位运算符
@@ -290,7 +290,7 @@ console.log('bar');
 
 这是一个例子，可以直接使用，具体规格可以自己指定
 
-```
+```json
 {
   "globals": {
     "$": true                                 //zepto

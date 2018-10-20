@@ -6,32 +6,34 @@ date_updated:   2016-11-16T06:43:02.772Z
 tags: css
 ---
 
-```
-*{ 
-margin:0; 
-padding:0; 
+```css
+* { 
+    margin: 0; 
+    padding: 0; 
 } 
-body{ 
-padding:10px; 
-font-family:Arial; 
+body { 
+    padding: 10px; 
+    font-family: Arial; 
 } 
 #test { 
-position:relative; 
-width:150px; 
-height:20px; 
-line-height:20px; 
-overflow: hidden;
-text-overflow: ellipsis;
-vertical-align: middle;
- white-space: nowrap;
-border:1px solid #999; 
+	position: relative; 
+    width: 150px; 
+    height: 20px; 
+    line-height: 20px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+    border: 1px solid #999; 
 } 
-#test span{ 
-position:absolute; 
-top:0; 
-right:0; 
-display:block; 
-float:left; 
+#test span { 
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    display: block; 
+    float: left; 
 } 
-#test span:after{content:"...";} 
+#test span:after {
+    content: '...';
+} 
 ```

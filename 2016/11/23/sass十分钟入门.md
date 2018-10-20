@@ -8,7 +8,7 @@ tags: css
 
 #### 变量
 > sass中可以定义变量，方便统一修改和维护。
-```
+```scss
 //sass style
 //-----------------------------------
 $fontStack:    Helvetica, sans-serif;
@@ -19,7 +19,7 @@ body {
   color: $primaryColor;
 }
 ```
-```
+```css
 //css style
 //-----------------------------------
 body {
@@ -29,7 +29,7 @@ body {
 ```
 #### 嵌套
 > sass可以进行选择器的嵌套，表示层级关系，看起来很优雅整齐。
-```
+```scss
 //sass style
 //-----------------------------------
 nav {
@@ -48,7 +48,7 @@ nav {
   }
 }
 ```
-```
+```css
 //css style
 //-----------------------------------
 nav ul {
@@ -69,7 +69,7 @@ nav a {
 ```
 #### 导入
 > sass中如导入其他sass文件，最后编译为一个css文件，优于纯css的`@import`
-```
+```scss
 //sass style
 //-----------------------------------
 // _reset.scss
@@ -82,7 +82,7 @@ ol {
   padding: 0;
 }
 ```
-```
+```scss
 //sass style
 //-----------------------------------
 // base.scss 
@@ -94,7 +94,7 @@ body {
   background-color: #efefef;
 }
 ```
-```
+```css
 //css style
 //-----------------------------------
 html, body, ul, ol {
@@ -109,7 +109,7 @@ body {
 ```
 #### mixin
 > sass中可用mixin定义一些代码片段，且可传参数，方便日后根据需求调用。从此处理css3的前缀兼容轻松便捷。
-```
+```scss
 //sass style
 //-----------------------------------
 @mixin box-sizing ($sizing) {
@@ -122,7 +122,7 @@ body {
     @include box-sizing(border-box);
 }
 ```
-```
+```css
 //css style
 //-----------------------------------
 .box-border {
@@ -134,7 +134,7 @@ body {
 ```
 #### 扩展/继承
 > sass可通过@extend来实现代码组合声明，使代码更加优越简洁。
-```
+```scss
 //sass style
 //-----------------------------------
 .message {
@@ -158,7 +158,7 @@ body {
   border-color: yellow;
 }
 ```
-```
+```css
 //css style
 //-----------------------------------
 .message, .success, .error, .warning {
@@ -181,7 +181,7 @@ body {
 ```
 #### 运算
 > sass可进行简单的加减乘除运算等
-```
+```scss
 //sass style
 //-----------------------------------
 .container { width: 100%; }
@@ -196,7 +196,7 @@ aside[role="complimentary"] {
   width: 300px / 960px * 100%;
 }
 ```
-```
+```css
 //css style
 //-----------------------------------
 .container {
@@ -215,7 +215,7 @@ aside[role="complimentary"] {
 ```
 #### 颜色
 > sass中集成了大量的颜色函数，让变换颜色更加简单。
-```
+```scss
 //sass style
 //-----------------------------------
 $linkColor: #08c;
@@ -227,7 +227,7 @@ a {
     }
 }
 ```
-```
+```css
 //css style
 //-----------------------------------
 a {

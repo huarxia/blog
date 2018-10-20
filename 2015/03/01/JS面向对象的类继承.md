@@ -6,20 +6,23 @@ date_updated:   2017-02-23T09:06:36.691Z
 tags: js
 ---
 
-```
-function Fu(){
-    this.name = "小明";
+```js
+function Fu() {
+    this.name = '小明';
 }
-Fu.prototype.showName = function(){
+Fu.prototype.showName = function() {
     alert(this.name);
 }
 function Zi(){
-    Fu.call(this);// 只对属性进行继承
+    // 只对属性进行继承
+    Fu.call(this);
 }
-var F = function(){}// 避免属性的继承制方法继承
+// 避免属性的继承制方法继承
+var F = function(){}
 F.prototype = Fu.prototype;
 Zi.prototype = new F();
-Zi.prototype.constructor = Zi;// 修正指向问题，常常被遺漏
+// 修正指向问题，常常被遺漏
+Zi.prototype.constructor = Zi;
 var zi = new Zi();
 zi.showName();
 ```

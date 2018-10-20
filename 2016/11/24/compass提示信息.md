@@ -6,7 +6,7 @@ date_updated:   2016-11-24T10:44:04.335Z
 tags: 工具
 ---
 
-```
+```html
 *********************************************************************
 Congratulations! Your compass project has been created.
 

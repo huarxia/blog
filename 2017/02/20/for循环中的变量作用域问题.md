@@ -6,7 +6,7 @@ date_updated:   2017-02-20T08:11:18.024Z
 tags: 面試
 ---
 
-```
+```js
 for (var i = 0; i < 5; i++) {
     setTimeout(function () {
         console.log('i=' + i);
@@ -20,7 +20,7 @@ for (var i = 0; i < 5; i++) {
 
 那么要实际输出1~5应该怎么修改？
 
-```
+```js
 for (let i = 0; i<=5; i++) {
      setTimeout( function timer(){
          console.log('i=' + i);
@@ -30,7 +30,7 @@ for (let i = 0; i<=5; i++) {
 
 或者：
 
-```
+```js
 for (var i = 0; i<= 5; i++) {
      (function(j){
          setTimeout( function() {

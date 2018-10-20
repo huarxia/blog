@@ -14,7 +14,7 @@ tags: php
 
 > 2.通过brew来安装：
 
-```
+```shell
 brew tap homebrew/dupes  
 brew tap homebrew/versions  
 brew tap homebrew/homebrew-php  
@@ -45,7 +45,7 @@ Zend Engine v3.0.0, Copyright (c) 1998-2015 Zend Technologies
 
 > 3.配置Apache
 
-```
+```shell
 sudo vim /etc/apache2/httpd.conf
 找到这行注释掉(大概在168行）
 #Comment out the PHP5 module   
@@ -59,7 +59,7 @@ SetHandler application/x-httpd-php
 ```
 > 4.重启Apache
 
-```
+```shell
 sudo apachectl restart
 ```
 
@@ -67,4 +67,4 @@ sudo apachectl restart
 
 由于mac php环境的默认目录在`/Library/WebServer/Documents`下
 
-需要修改自己的开发目录，请参照[方法](http://www.huar.love/blog/2015/12/08/macxia-pei-zhi-apachexu-ni-zhu-ji-fang-wen-mu-lu-gai-zhi-zi-ji-de-fang-bian-fang-wen-de-mu-lu/index.html)修改
+需要修改自己的开发目录，请参照[方法](/2015/12/08/mac下配置Apache虚拟主机访问目录改至自己的方便访问的目录.html)修改

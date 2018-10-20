@@ -19,7 +19,7 @@ while 'C':
 
 > 1.请问以下代码会打印多少次“I love you！”
 
-```
+```python
 i = 10
 while i:
     print('I love you！')
@@ -30,7 +30,7 @@ while i:
 
 > 2.请写出与 10 < cost < 50 等价的表达式
 
-```
+```python
 10 < cost and cost < 50
 ```
 
@@ -42,13 +42,13 @@ while i:
 
  可以，一行过长的语句可以使用反斜杠或者括号分解成几行，例如
 
-```
+```python
 >>> 3 > 4 and \
   1 < 2
 
 ```
 
-```
+```python
 >>> ( 3 > 4 and 
   1 < 2 )
 ```
@@ -59,7 +59,7 @@ while i:
 
 > 6.听说过“短路逻辑（short-circuit logic）”吗？
 
-![](/content/images/2017/01/B856F2A2-7755-4683-BB3D-638C06938B79.png)
+![](./images/B856F2A2-7755-4683-BB3D-638C06938B79.png)
 
  逻辑操作符有个有趣的特性：在不需要求值的时候不进行操作。这么说可能比较“高深”，举个例子，表达式 x and y，需要 x 和 y 两个变量同时为真(True)的时候，结果才为真。因此，如果当 x 变量得知是假(False)的时候，表达式就会立刻返回 False，而不用去管 y 变量的值。
 
@@ -71,7 +71,7 @@ while i:
 
 > 0.完善第二个改进要求（为用户提供三次机会尝试，机会用完或者用户猜中答案均退出循环）并改进學習教程中的代码。
 
-```
+```python
 import random
 times = 3
 secret = random.randint(1, 10)
@@ -100,13 +100,13 @@ while (guess != secret) and (times > 0):
 print("游戏结束，不玩啦^_^")
 ```
 
-![](/content/images/2017/01/65D79DEB-BF03-4EC7-A972-0430FCD10F17.png)
+![](./images/65D79DEB-BF03-4EC7-A972-0430FCD10F17.png)
 
 > 1.尝试写代码实现以下截图功能：
 
-![](/content/images/2017/01/033003o0n7az822co10141.png)
+![](./images/033003o0n7az822co10141.png)
 
-```
+```python
 print('請輸入一個整數：', end = ' ')
 n = input()
 n = int(n)
@@ -118,13 +118,13 @@ print('輸出結束！！！')
 
 ```
 
-![](/content/images/2017/01/7A46DB14-3772-4210-949D-513E87586991.png)
+![](./images/7A46DB14-3772-4210-949D-513E87586991.png)
 
 > 2.尝试写代码实现以下截图功能：
 
-![](/content/images/2017/01/033020k3eoeyvppljjyyp1.png)
+![](./images/033020k3eoeyvppljjyyp1.png)
 
-```
+```python
 print('請輸入一個整數：', end = ' ')
 n = input()
 n = int(n)
@@ -135,5 +135,5 @@ while i <= n:
 print('輸出結束！！！')
 
 ```
-![](/content/images/2017/01/DB28F4F4-E450-4776-89BD-E5CA9BA7FB5A.png)
+![](./images/DB28F4F4-E450-4776-89BD-E5CA9BA7FB5A.png)
 

@@ -22,20 +22,20 @@ tags: js
 
 使用`document.createElement()`可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名。这个标签名在`HTML`文档中不区分大小写，在`XHTML`中区分大小写。
 
-```
+```js
 var div = document.createElement("div");
 ```
 
 使用`createElement()`方法创建新元素的同时，也为新元素设置了`ownerDocument`属性，可以操作元素的特性。
 
-```
+```js
 div.id = "myDiv";
 div.className = "div1";
 ```
 
 此时，新元素尚未被添加到文档树中，因此设置各种特性均不会影响浏览器的显示。要添加到文档树，可用`appendChild()`、`insertBefore()`、`replaceChild()`。（稍后讲到）
 
-```
+```js
 document.body.appendChild(div);
 ```
 
@@ -43,13 +43,13 @@ document.body.appendChild(div);
 
 在IE中可以为`createElement()`方法传入完整的元素标签和属性。(只在IE中兼容)
 
-```
+```js
 var div = document.createElement("<div id=\"mydiv\" class=\"div1\"></div>");
 // 不能再标签里加其他元素节点或者文本节点，如下的方式和上面的得出的节点一样
 var div = document.createElement("<div id=\"mydiv\" class=\"div1\">12212</div>"); 
 ```
 
-![](/content/images/2017/06/bVrdKB.png)
+![](./images/bVrdKB.png)
 
 ```
 创建文本节点 ：document.createTextNode
@@ -57,7 +57,7 @@ var div = document.createElement("<div id=\"mydiv\" class=\"div1\">12212</div>")
 
 使用`document.createTextNode()`来创建文本节点，这个方法接受一个参数：要插入节点的文本。与设置已有文本节点的值一样，作为参数的文本将按照HTML或XML的格式进行编码。
 
-```
+```js
 document.createTextNode("121212");
 ```
 
@@ -69,7 +69,7 @@ document.createTextNode("121212");
 
 文本关系如下：
 
-```
+```html
 <div id="div1">
     <div id="div2">2</div>
     <div id="div3">3</div>
@@ -86,7 +86,7 @@ document.createTextNode("121212");
 
 对于下面的节点类型: `Attr`, `Document`, `DocumentFragment`, `Entity`, `Notation`,其`parentNode`属性返回`null`。如果当前节点刚刚被建立,还没有被插入到`DOM`树中,则该节点的`parentNode`属性也返回`null`。
 
-```
+```js
 <script type="text/javascript">
     var child2 = document.getElementById("div2");
     var parent = child2.parentNode;
@@ -100,7 +100,7 @@ document.createTextNode("121212");
 `childNodes` 返回包含指定节点的子节点的集合，该集合为即时更新的集合（`live collection`）。
 即时更新就是对节点元素的任意修改都会立即反映到结果里。
 
-```
+```js
 <script type="text/javascript">
     var child2 = document.getElementById("div2");
     var parent = child2.parentNode;
@@ -122,7 +122,7 @@ document.createTextNode("121212");
 `nextSibling`返回某节点的下一个兄弟节点，`previousSibling`返回某节点的上一个兄弟节点，没有的话返回`null`。
 注意：可能因为元素换行的原因返回的是`text`节点。
 
-```
+```js
 <script type="text/javascript">
     var child3 = document.getElementById("div3");
     var next = child3.nextSibling;
@@ -140,7 +140,7 @@ document.createTextNode("121212");
 `firstChild`返回`node`的子节点中的第一个节点的引用，没有返回`null`
 `lastChild`返回`node`的子节点中的最后一个节点的引用，没有返回`null`
 
-```
+```js
 <script type="text/javascript">
     var child3 = document.getElementById("div3");
     var parent = child3.parentNode;
@@ -162,14 +162,14 @@ children： 返回所有元素子节点（`IE5+`、`ff3.5`、`opera3`、`chrome`
 
 ### 4.节点操作
 
-```
+```js
 appendChild()
 ```
 
 `appendChild()`用于向`childNodes`列表的末尾添加一个节点，并且返回这个新增的节点。
 如果传入到`appendChild()`里的节点已经是文档的一部分了，那结果就是将节点从原来的位置转移到新位置，任何一个节点不能同时出现在文档中的多个位置。
 
-```
+```js
 var returnNode = someNode.appendChild(someNode.firstChild); // 返回第一个节点
 console.log(returnNode === someNode.firstChild); // false
 console.log(returnNode === someNode.lastChild); // true
@@ -182,7 +182,7 @@ insetBefore()
 `insetBefore()`可以将节点插入到某个特定的位置。这个方法接受两个参数：要插入的节点和作为参照的节点。
 插入节点后，被插入的节点变成参照节点的前一个同胞节点，同时被方法返回。 如果参照节点是`null`，则与`appendChild()`执行相同的操作。
 
-```
+```js
 // 插入后成为最后一个子节点
 var returnNode = someNode.insetBefore(newNode, null);
 console.log(returnNode === someNode.lastChild); // true
@@ -203,20 +203,20 @@ console.log(returnNode === someNode.childNodes[someNode.childnodes.length - 2]) 
 
 `replaceChild()`接受两个参数：要插入的节点和要被替换的节点。被替换的节点将由这个方法返回并从文档中被移除，同时由要插入的节点占据其位置。
 
-```
+```js
 // 替换第一个子节点
 var returnNode = someNode.replaceChild(newNode, someNode.firstChild);
 ```
 
 使用`replaceChild()`后，被替换的节点的所有关系指针都会被复制到插入的节点上面。
 
-```
+```js
 删除节点：removeChild()
 ```
 
 该方法移除节点，接受一个参数，即要移除的节点，同时该方法返回被移除的节点。只能是一个节点，不能是一组节点。
 
-```
+```js
 // 移除第一个子节点
 var returnNode = someNode.removeChild(someNode.firstChild);
 ```
@@ -235,7 +235,7 @@ var returnNode = someNode.removeChild(someNode.firstChild);
 
 注意:为了防止一个文档中出现两个`ID`重复的元素,使用`cloneNode()`方法克隆的节点在需要时应该指定另外一个与原`ID`值不同的`ID`
 
-```
+```js
 var div1 = document.getElementById("div1");
 var cloneHtml = div1.cloneNode(true);
 document.body.appendChild(cloneHtml);
@@ -245,7 +245,7 @@ document.body.appendChild(cloneHtml);
 
 HTML代码示例：
 
-```
+```html
 <div id="div1">
     <p id="div2" class="one" name="nameone">2</p>
     <div id="div3">3</div>
@@ -269,13 +269,13 @@ HTML代码示例：
 
 选择器方法接受一个或多个用逗号分隔的选择器来确定需要被返回的元素。例如，要选择文档中所有CSS的类(class)是`warning`或者`note`的段落(p)元素,可以这样写：
 
-```
+```js
 var special = document.querySelectorAll( "p.warning, p.note" );
 ```
 
 也可以通过ID来查询，例如：
 
-```
+```js
 var el = document.querySelector( "#main, #basic, #exclamation" );
 ```
 
@@ -283,7 +283,7 @@ var el = document.querySelector( "#main, #basic, #exclamation" );
 
 `querySelector()` and `querySelectorAll()` 里可以使用任何CSS选择器，他们都不是`live Collection`：
 
-```
+```js
 var notLive = document.querySelectorAll("p");
 console.log(notLive);
 document.getElementById("div1").removeChild(document.getElementById("div2"));
@@ -296,7 +296,7 @@ console.log(notLive);
 返回一个匹配特定 `ID`的元素。id是大小写敏感的字符串，代表了所要查找的元素的唯一ID，如果没有则返回`null`。
 如果新建一个元素，还没有插入到文档中，则不能通过该方法获取到。
 
-```
+```js
 var notLive = document.getElementById("div2");
 console.log(notLive.innerHTML);
 document.getElementById("div1").removeChild(document.getElementById("div2"));
@@ -310,7 +310,7 @@ console.log(notLive.innerHTML);
 
 `Element.getElementsByTagName()`的搜索被限制为指定元素的后代而不是`document`
 
-```
+```js
 var live = document.getElementsByTagName("p");
 console.log(live[0].innerHTML);
 document.getElementById("div1").removeChild(document.getElementById("div2"));
@@ -324,7 +324,7 @@ console.log(live[0].innerHTML);
 
 注意：在`IE`和`opera`下，如果某个元素1的name和另一个元素2的id重合，且元素2在元素1的前面，则`getElementsByName()`会取到元素2。
 
-```
+```js
 var live = document.getElementsByName("div2");
 console.log(live[0].innerHTML);
 document.getElementById("div1").removeChild(document.getElementById("div2"));
@@ -341,7 +341,7 @@ console.log(live[0].innerHTML);
 
 `getElementsByClassName("class1 class2");`
 
-```
+```js
 var live = document.getElementsByClassName("one");
 console.log(live[0].innerHTML);
 document.getElementById("div1").removeChild(document.getElementById("div2"));
@@ -359,7 +359,7 @@ console.log(live[0].innerHTML);
 
 如果指定的属性已经存在，则其值变为传递的值。如果不存在，则创建指定的属性。也可指定为`null`。如果设置为`null`，最好使用`removeAttribute()`。
 
-```
+```js
 var div2 = document.getElementById("div2");
 div2.setAttribute("class", "new_class");
 div2.setAttribute("id", "new_id");
@@ -367,13 +367,13 @@ div2.setAttribute("id", "new_id");
 
 注意：在`IE7`下，修改了元素的`class`，如果已有`clas`s，则会出现两个`class`，通过`setAttribute()`添加的不生效；如果没有`class`，则添加上`class`，但这个添加上去的`class`的样式不会生效。
 
-![](/content/images/2017/06/bVreC2.png)
+![](./images/bVreC2.png)
 
 `removeAttribute()`
 
 该方法用于移除元素的属性。
 
-```
+```js
 var div2 = document.getElementById("div2");
 div2.removeAttribute("class");
 ```
@@ -384,7 +384,7 @@ div2.removeAttribute("class");
 
 该方法返回元素上指定属性（`attribute`）的值。如果指定的属性不存在，则返回 `null` 或 "" （空字符串）（`IE5+`都返回null）。
 
-```
+```js
 var div2 = document.getElementById("div2");
 var attr = div2.getAttribute("class");
 console.log(attr);
@@ -402,7 +402,7 @@ console.log(attr);
 
 `html5`里有一个`data-*`去设置获取元素的自定义属性值。
 
-```
+```html
 <div id="div1" data-aa="11">
 ```
 
@@ -411,7 +411,7 @@ console.log(attr);
 同样，通过设置`div1.dataset.bb = "22"`就可以设置一个自定义属性值。
 在不兼容的浏览器里，就使用`getAttribute`和`setAttribute`
 
-```
+```js
 var div1 = document.getElementById("div1");
 var a = null;
 if (div1.dataset) {
@@ -432,7 +432,7 @@ console.log(a);
 
 `IE8`及以下不支持此方法且只有事件冒泡没有事件捕获。`IE9`开始支持此方法，也就有了事件捕获。
 
-```
+```js
 var div1 = document.getElementById("div1");
 div1.addEventListener("click", listener, false);
 function listener() {
@@ -445,7 +445,7 @@ document.body.appendChild(cloneHtml);
 
 第一个参数是事件名，第二个是回调函数，第三个参数为`true`表示捕获，`false`表示冒泡。
 
-```
+```js
 var div1 = document.getElementById("div1");
 div1.addEventListener("click", listener1, true/fasle);
 function listener1() {
@@ -463,7 +463,7 @@ function listener2() {
 当这个`元素1`并不是触发事件的那个元素2时，则触发顺序会按照先 捕获 后 冒泡 的顺序触发；
 当这个`元素1`就是最底层的触发事件的元素时，则这个元素没有捕获和冒泡的区别，谁先绑定就先触发谁。
 
-```
+```js
 var div2 = document.getElementById("div2");
     
 div2.addEventListener("click", listener2, true);
@@ -483,7 +483,7 @@ function listener1() {
 
 与`addEventListener()`绑定事件对应的就是移除已绑定的事件。第三个参数的布尔值代表解绑的是捕获事件还是冒泡事件。两个事件互不相关。
 
-```
+```js
 var div2 = document.getElementById("div2"); 
 div2.addEventListener("click", listener2, true);
 function listener2() {
@@ -494,7 +494,7 @@ div2.removeEventListener("click", listener2, true);
 
 注意：只能通过`removeEventListener()`解绑有名字的函数，对于绑定的匿名函数无法解除绑定。
 
-```
+```js
 div2.addEventListener("click", function(){
     console.log('test');
     console.log(this);
@@ -513,7 +513,7 @@ div2.onclick = null;
 
 `IE8`及以下使用这两个方法绑定和解绑事件，当然，`IE9+`也支持这个事件。但这个方法绑定的事件默认为冒泡也只有冒泡。
 
-```
+```js
 // 这里需要在事件前加 on
 div2.attachEvent("onclick", listener1);
 function listener1() {
@@ -530,7 +530,7 @@ div2.detachEvent("onclick", listener1);
 
 标准事件和IE事件中的阻止默认事件和冒泡事件也有很大区别。
 
-```
+```js
 var div2 = document.getElementById("div2");
 if (div2.addEventListener) {
     div2.addEventListener("click", function(e) {
@@ -564,7 +564,7 @@ if (div2.addEventListener) {
 
 `target`就是要触发自定义事件的`DOM`元素
 
-```
+```js
 var div1 = document.getElementById("div1");
 div1.addEventListener("message", function(){
     console.log('test');
@@ -585,7 +585,7 @@ ev.initEvent("message", false, true); // 起泡参数变为true，div1的事件�
 
 当我们想获取元素计算后实际呈现在页面上的各个值，就用这两个方法。`IE8`及以下用`currentStyle()`,`IE9+`及其他标准浏览器用`getComputedStyle()`。
 
-```
+```js
 var div2 = document.getElementById("div2");
 var result = "";
 if (window.getComputedStyle) {
@@ -607,7 +607,7 @@ console.log(result);
 
 上面的例子`getComputedStyle`是用键值去访问的，也可用`getPropertyValue()`去访问。（`IE8、IE7`不支持）
 
-```
+```js
 result = (window || document.defaultView).getComputedStyle(div2, null).getPropertyValue("float");
 ```
 
@@ -617,7 +617,7 @@ result = (window || document.defaultView).getComputedStyle(div2, null).getProper
 
 `getClientRects()`是返回一个`ClientRectList`集合。
 
-```
+```js
 var div1 = document.getElementById("div1");
 var rects1 = div1.getClientRects();
 var rects2 = div1.getBoundingClientRect();

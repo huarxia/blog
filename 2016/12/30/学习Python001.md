@@ -43,7 +43,7 @@ Python是一种面向对象、解释型、动态类型计算机程序设计语�
 
 沒有任何區別
 
-![](/content/images/2016/12/A640665C-13E5-46FC-96D0-0FBD0984455C.png)
+![](./images/A640665C-13E5-46FC-96D0-0FBD0984455C.png)
 
 > 1.在交互模式中，使用 Python 计算一年有多少秒？
 
@@ -51,4 +51,4 @@ Python是一种面向对象、解释型、动态类型计算机程序设计语�
 print(365*24*60*60)
 ```
 
-![](/content/images/2016/12/DCDEBF6D-6586-4541-B64F-4B4006C5D7BC.png)
+![](./images/DCDEBF6D-6586-4541-B64F-4B4006C5D7BC.png)

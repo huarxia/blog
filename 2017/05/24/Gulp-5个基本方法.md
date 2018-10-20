@@ -20,15 +20,17 @@ Gulp有5个基本方法：`src`、`dest`、`task`、`run`、`watch`
 
 `gulp`模块的`src`方法，用于产生数据流。它的参数表示索要处理的文件，一般有以下几种形式：
 
-    js/app.js：指定确切的文件名
-    js/*.js：某个目录所有后缀为js的文件
-    js/**/*.js：某个目录及其所有子目录中的所有后缀为js的文件
-    !js/app.js：除了js/app.js以后的所有文件
-    *.+(js|css)：匹配项目更目录下，所有后缀为js/css的文件
+```js
+js/app.js：指定确切的文件名
+js/*.js：某个目录所有后缀为js的文件
+js/**/*.js：某个目录及其所有子目录中的所有后缀为js的文件
+!js/app.js：除了js/app.js以后的所有文件
+*.+(js|css)：匹配项目更目录下，所有后缀为js/css的文件
+```
 
 `src`方法的参数还可以是一个数组，用来指定多个成员：
 
-```
+```js
 gulp.src(['js/**/*.js','!js/**/*.min.js']);
 ```
 
@@ -36,7 +38,7 @@ gulp.src(['js/**/*.js','!js/**/*.min.js']);
 
 `gulp`模块的`dest`方法，可以用来传递文件，同时写入文件到指定目录。可以重复的发送传递给它的数据，因此可以讲文件传送到多个目录中：
 
-```
+```js
 gulp.src('app/templates/*.jade')
        .pipe(jade())
        .pipe(gulp.dest('/dist/templates'))
@@ -48,7 +50,7 @@ gulp.src('app/templates/*.jade')
 
 `gulp`模块的`task`方法，用于定义具体的任务。它的第一个参数是人物名，第二个参数是任务函数。
 
-```
+```js
 var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
  
@@ -61,13 +63,13 @@ gulp.task('minify',function(){
 
 上述创建了一个压缩html的任务，在命令行模式中使用下列命令继续执行
 
-```
+```shell
 gulp minify
 ```
 
 `task`方法还可以指定按顺序运行的一组任务：
 
-```
+```js
 gulp.task('build',['css','js','imgs']);
 ```
 
@@ -75,7 +77,7 @@ gulp.task('build',['css','js','imgs']);
 ps:由于每个任务都是异步调用，所以没有办法保证js任务开始的时间，就是css任务结束的时间。
 如果希望各个任务严格按次序运行，可以把前一个任务写成后一个任务的依赖模块：
 
-```
+```js
 gulp.task('css',['minify'],function(){
     //代码
 })
@@ -85,7 +87,7 @@ gulp.task('css',['minify'],function(){
 如果一个任务的名字为`defaul`t，就表明它是“默认任务”，在命令行直接输入`gulp`
 命令，就会运行该任务：
 
-```
+```js
 gulp.task('default',function(){
      // your default task
 })
@@ -96,7 +98,7 @@ gulp.task('default',function(){
 `gulp`模块的`run`方法，表示要执行的任务。可能会使用单个参数的形式传递多个任务。
 ps:任务是尽可能多的并行执行，并且可能不会按照指定的顺序执行。
 
-```
+```js
 gulp.run('scripts','copyfiles','builddocs');
  
 gulp.run('scripts','copyfiles','builddocs',function(err){
@@ -110,7 +112,7 @@ gulp.run('scripts','copyfiles','builddocs',function(err){
 
 `gulp`模块的`watch`方法，用于指定需要监视的文件。一旦这些文件发生变动，就运行指定任务：
 
-```
+```js
 gulp.task('watch',function(){
      gulp.watch('app/tamplates/*.jade',['build']);
 });
@@ -119,7 +121,7 @@ gulp.task('watch',function(){
 上面代码指定，一旦`templates`目录下后缀为`.jade`的文件发生变化，就运行`build`任务。
 `watch`方法也可以用毁掉函数，代替指定的任务：
 
-```
+```js
 gulp.watch('app/templates/*.jade',function(event){
      console.log('Event type:' + event.type);
      console.log('Event path:' + event.path);
@@ -128,7 +130,7 @@ gulp.watch('app/templates/*.jade',function(event){
 
 另一种写法是`watch`方法所监控的文件发生变化时（修改，增加，删除文件），会出发`change`事件，可以对`change`事件指定回调函数：
 
-```
+```js
 var watcher = gulp.watch('app/templates/*.jade',['build']);
  
 gulp.on('change',function(event){

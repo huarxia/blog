@@ -20,37 +20,38 @@ tags: js, 經驗
 他们当然也是取整的了
 
 没有这两样东西怎么能装的彻底嘞
-![](/content/images/2016/11/1426750514497-1.png)
+![](./images/1426750514497-1.png)
 特别注意的一点就是这两种方式是将小树后面的直接砍掉的当取负数的时候与Math.floor(-15.96)有所不同
-![](/content/images/2016/11/1426750546656-2.png)
+![](./images/1426750546656-2.png)
 下面多列举几个让大家明白
-![](/content/images/2016/11/1426750554134-3.png)
+![](./images/1426750554134-3.png)
 
 > 技巧二：javascript高逼格之匿名函数
 
 一般情况下的匿名函数是这样的
-```
+```js
 (function(){})();
 ```
 但是还有其他的写法
-![](/content/images/2016/11/1426750560636-4.png)
+![](./images/1426750560636-4.png)
 当然，这样的写法，没有什么区别，纯粹看装逼程度。
 这些可能只是一少部分，可能还有很多。我只是举例说明一下
 
 我们知道这种是闭包的一种形式，
 
-并且在编程中运算符（+ – ~ ! 优先级相对其他的代码程序较高）
+并且在编程中运算符（`+ – ~ ! `优先级相对其他的代码程序较高）
 
 所以闭包前面加个运算符是木有关系的只是写法不同
 > 技巧三：javascript高逼格之undefined
 
 从来不需要声明一个变量的值是undefined，因为JavaScript会自动把一个未赋值的变量置为undefined。所有如果你在代码里这么写，会被鄙视的：
-![](/content/images/2016/11/1426750571135-5.png)
+![](./images/1426750571135-5.png)
 正常情况下：
-![](/content/images/2016/11/1426750577864-6.png)
+![](./images/1426750577864-6.png)
 顺便说下void
 
-void在JavaScript中是一个操作符，对传入的操作不执行并且返回undefined。void后面可以跟()来用，例如 void(0)，看起来是不是很熟悉？没错，在HTML里阻止带href的默认点击操作时，都喜欢把href写成javascript:void(0)， 实际上也是依靠void操作不执行的意思。
+`void`在`JavaScript`中是一个操作符，对传入的操作不执行并且返回`undefined`。`void`后面可以跟()来用，例如 void(0)，看起来是不是很熟悉？没错，在HTML里阻止带href的默认点击操作时，都喜欢把href写成javascript:void(0)， 实际上也是依靠void操作不执行的意思。
+
 > 技巧四：javascript高逼格之|| 和&&
 
 ||和&&是用来替换if else的
@@ -58,19 +59,20 @@ void在JavaScript中是一个操作符，对传入的操作不执行并且返回
 当你的代码中有很多else if 这样的条件逻辑判断，那么代码相当可怕
 
 建议：先用if else 写 然后用 || 和 && 给代码瘦身
-```
-if(a===1) {
-a=0;
-}else if(a===5){
-a=5;
-}else{
-a=2;
+```js
+if (a === 1) {
+	a = 0;
+} else if (a === 5) {
+	a = 5;
+} else {
+	a = 2;
 }
 ```
-![](/content/images/2016/11/1426750585790-7.png)
+![](./images/1426750585790-7.png)
 如上代码 利用||和&& 如何写呢
-```
-((a===1)&amp;&amp;(a=0,true))||((a===5)&amp;&amp;(a=5,true))||(a=2)
+
+```js
+((a === 1) && (a = 0, true)) || ((a === 5) && (a = 5, true)) || (a = 2)
 ```
 > 技巧五：javascript高逼格之不加分号
 
@@ -88,23 +90,28 @@ Jq源码里面 有好多没有加分号的
 很多JavaScript教程都告诉我们，不要直接用内置对象的构造函数来创建基本变量，例如var arr = new Array(2); 的写法就应该用var arr = [1, 2];的写法来取代。
 
 但是，Function构造函数（注意是大写的Function）有点特别。Function构造函数接受的参数中，第一个是要传入的参数名，第二个是函数内的代码（用字符串来表示）。
-```
-var f = new Function('a', 'alert(a)');f('gudaochuan'); // 将会弹出窗口显示gudaochuan
+```js
+// 将会弹出窗口显示gudaochuan
+var f = new Function('a', 'alert(a)');
+f('gudaochuan');
 ```
 这种方式可以根据传入字符串内容来创建一个函数 是不是高大上？！
 
 最后给大家提供几种小的高逼格代码经验
 
-!! “!”是取反操作，两个“!”自然是负负得正了。还是原来的值？其实他还有转化成boolean类型的作用
-![](/content/images/2016/11/1426750592036-8.png)
-**当你准备用Object.prototype.toString.call()的时候不妨用用toString.call()
+!! '!'是取反操作，两个'!'自然是负负得正了。还是原来的值？其实他还有转化成boolean类型的作用
+![](./images/1426750592036-8.png)
 
-当你准备用[].contact()的时候不妨用[].push.apply()**
-![](/content/images/2016/11/1426750600168-9.png)
-*切忌 toString.call() 在ie下不可用
+当你准备用`Object.prototype.toString.call()`的时候不妨用用`toString.call()`
+
+当你准备用`[].contact()`的时候不妨用`[].push.apply()`
+
+![](./images/1426750600168-9.png)
+
+切忌 `toString.call() `在ie下不可用
 
 ie下你装不起来
 
-还得老老实实的写*
-![](/content/images/2016/11/1426750607574-10.png)
+还得老老实实的写
+![](./images/1426750607574-10.png)
 当然还有很多高逼格的东西，我只是菜鸟如果后续用到的话一定会给大家做补充的！

@@ -6,13 +6,13 @@ date_updated:   2016-11-16T08:21:45.996Z
 tags: 經驗, js
 ---
 
-```
-var hiddenProperty = 'hidden' in document ? 'hidden' :    
-    'webkitHidden' in document ? 'webkitHidden' :    
-    'mozHidden' in document ? 'mozHidden' :    
-    null;
+```js
+var hiddenProperty = 'hidden' in document ? 'hidden'
+	: 'webkitHidden' in document ? 'webkitHidden'
+	: 'mozHidden' in document ? 'mozHidden'
+	: null;
 var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
-var onVisibilityChange = function(){
+var onVisibilityChange = function() {
     if (!document[hiddenProperty]) {    
         console.log('页面非激活');
     }else{

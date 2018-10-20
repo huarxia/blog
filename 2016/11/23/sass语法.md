@@ -8,7 +8,7 @@ tags: css
 
 #### 文件后缀名
 > sass有两种后缀名文件：一种后缀名为sass，不使用大括号和分号；另一种就是我们这里使用的scss文件，这种和我们平时写的css文件格式差不多，使用大括号和分号。這裡所说的所有sass文件都指后缀名为scss的文件。在此也建议使用后缀名为scss的文件，以避免sass后缀名的严格格式要求报错。
-```
+```scss
 //文件后缀名为sass的语法
 body
   background: #eee
@@ -31,7 +31,7 @@ p{
 > 所有的sass导入文件都可以忽略后缀名`.scss`。一般来说基础的文件命名方法以_开头，如`_mixin.scss`。这种文件在导入的时候可以不写下划线，可写成@import "mixin"。
 
 被导入sass文件a.scss：
-```
+```scss
 //a.scss
 //-------------------------------
 body {
@@ -39,7 +39,7 @@ body {
 }
 ```
 需要导入样式的sass文件b.scss：
-```
+```scss
 @import "reset.css";
 @import "a";
 p{
@@ -50,7 +50,7 @@ p{
 > sass有两种注释方式，一种是标准的css注释方式`/* */`，另一种则是`//`双斜杆形式的单行注释，不过这种单行注释不会被转译出来。
 
 标准的css注释:
-```
+```css
 /*
 *我是css的标准注释
 *设置body内距
@@ -61,7 +61,7 @@ body{
 ```
 #### 双斜杆单行注释
 > 单行注释跟JavaScript语言中的注释一样，使用又斜杠（//），但单行注释不会输入到CSS中。
-```
+```css
 //我是双斜杠表示的单行注释
 //设置body内距
 body{
@@ -72,7 +72,7 @@ body{
 > sass的变量必须是$开头，后面紧跟变量名，而变量值和变量名之间就需要使用冒号(:)分隔开（就像CSS属性设置一样），如果值后面加上`!default`则表示默认值。
 ##### 普通变量
 > 定义之后可以在全局范围内使用。
-```
+```scss
 //sass style
 //-------------------------------
 $fontSize: 12px;
@@ -88,7 +88,7 @@ body{
 ```
 ##### 默认变量
 > sass的默认变量仅需要在值后面加上!default即可。
-```
+```scss
 //sass style
 //-------------------------------
 $baseLineHeight: 1.5 !default;
@@ -103,7 +103,7 @@ body{
 }
 ```
 > sass的默认变量一般是用来设置默认值，然后根据需求来覆盖的，覆盖的方式也很简单，只需要在默认变量之前重新声明下变量即可
-```
+```scss
 //sass style
 //-------------------------------
 $baseLineHeight: 2;
@@ -121,7 +121,7 @@ body{
 > 可以看出现在编译后的line-height为2，而不是我们默认的1.5。默认变量的价值在进行组件化开发的时候会非常有用。
 ##### 特殊变量
 > 一般我们定义的变量都为属性值，可直接使用，但是如果变量作为属性或在某些特殊情况下等则必须要以#{$variables}形式使用。
-```
+```scss
 //sass style
 //-------------------------------
 $borderDirection: top !default; 
@@ -151,7 +151,7 @@ body {
 ###### list
 > list数据可通过空格，逗号或小括号分隔多个值，可用`nth($var,$index)`取值。关于list数据操作还有很多其他函数如`length($list)`，`join($list1,$list2,[$separator])`，`append($list,$value,[$separator])`等，具体可参考[sass Functions](http://sass-lang.com/documentation/Sass/Script/Functions.html)（搜索List Functions即可）
 ###### 定义
-```
+```scss
 //一维数据
 $px: 5px 10px 20px 30px;
 
@@ -160,7 +160,7 @@ $px: 5px 10px, 20px 30px;
 $px: (5px 10px) (20px 30px);
 ```
 ###### 使用
-```
+```scss
 //sass style
 //-------------------------------
 $linkColor: #08c #333!default;//第一个值为默认值，第二个鼠标滑过值
@@ -184,11 +184,11 @@ a:hover{
 ###### map
 > map数据以key和value成对出现，其中value又可以是list。格式为：`$map: (key1: value1, key2: value2, key3: value3)`。可通过`map-get($map,$key)`取值。关于map数据还有很多其他函数如`map-merge($map1,$map2)`，`map-keys($map)`，`map-values($map)`等，具体可参考[sass Functions](http://sass-lang.com/documentation/Sass/Script/Functions.html)（搜索Map Functions即可）
 ###### 定义
-```
+```scss
 $heading: (h1: 2em, h2: 1.5em, h3: 1.2em);
 ```
 ###### 使用
-```
+```scss
 //sass style
 //-------------------------------
 $headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
@@ -214,7 +214,7 @@ h3 {
 > 在变量值后面加上!global即为全局变量。
 ###### 目前变量机制
 > 在选择器中声明的变量会覆盖外面全局声明的变量。(这也就人们常说的sass没有局部变量)
-```
+```scss
 //sass style
 //-------------------------------
 $fontSize: 12px;
@@ -236,7 +236,7 @@ p{
 }
 ```
 ##### 启用global之后的机制
-```
+```scss
 //sass style
 //-------------------------------
 $fontSize: 12px;
@@ -269,7 +269,7 @@ p{
 ##### 选择器嵌套
 > 所谓选择器嵌套指的是在一个选择器中嵌套另一个选择器来实现继承，从而增强了sass文件的结构性和可读性。
 在选择器嵌套中，可以使用`&`表示父元素选择器
-```
+```scss
 //sass style
 //-------------------------------
 #top_nav{
@@ -311,7 +311,7 @@ p{
 ```
 ##### 属性嵌套
 > 所谓属性嵌套指的是有些属性拥有同一个开始单词，如border-width，border-color都是以border开头。拿个官网的实例看下：
-```
+```scss
 //sass style
 //-------------------------------
 .fakeshadow {
@@ -342,7 +342,7 @@ p{
 #### @at-root
 > sass3.3.0中新增的功能，用来跳出选择器嵌套的。默认所有的嵌套，继承所有上级选择器，但有了这个就可以跳出所有上级选择器。
 ##### 普通跳出嵌套
-```
+```scss
 //sass style
 //-------------------------------
 //没有跳出
@@ -402,7 +402,7 @@ p{
 ```
 ##### `@at-root (without: ...)`和`@at-root (with: ...)`
 > 默认`@at-root`只会跳出选择器嵌套，而不能跳出`@media`或`@support`，如果要跳出这两种，则需使用`@at-root (without: media)`，`@at-root (without: support)`。这个语法的关键词有四个：`all`（表示所有），`rule`（表示常规css），`media`（表示media），`support`（表示support，因为`@support`目前还无法广泛使用，所以在此不表）。我们默认的`@at-roo`t其实就是`@at-root (without:rule)`。
-```
+```scss
 // sass style
 // -------------------------------
 //跳出父级元素嵌套
@@ -471,7 +471,7 @@ p{
 }
 ```
 ##### `@at-root`与`&`配合使用
-```
+```scss
 // sass style
 // -------------------------------
 .child{
@@ -487,7 +487,7 @@ p{
 }
 ```
 ##### 应用于`@keyframe`
-```
+```scss
 // sass style
 // -------------------------------
 .demo {
@@ -514,7 +514,7 @@ p{
 #### 混合(mixin)
 > sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始，多个参数以逗号分开，也可以给参数设置默认值。声明的@mixin通过@include来调用。
 ##### 无参数mixin
-```
+```scss
 //sass style
 //-------------------------------
 @mixin center-block {
@@ -533,7 +533,7 @@ p{
 }
 ```
 ##### 有参数mixin
-```
+```scss
 //sass style
 //-------------------------------   
 @mixin opacity($opacity:50) {
@@ -552,7 +552,7 @@ p{
 ```
 ##### 多个参数mixin
 > 调用时可直接传入值，如@include传入参数的个数小于`@mixin`定义参数的个数，则按照顺序表示，后面不足的使用默认值，如不足的没有默认值则报错。除此之外还可以选择性的传入参数，使用参数名与值同时传入。
-```
+```scss
 //sass style
 //-------------------------------   
 @mixin horizontal-line($border:1px dashed #ccc, $padding:10px){
@@ -582,7 +582,7 @@ p{
 ```
 ##### 多组值参数mixin
 > 如果一个参数可以有多组值，如`box-shadow`、`transition`等，那么参数则需要在变量后加三个点表示，如$`variables...`。
-```
+```scss
 //sass style
 //-------------------------------   
 //box-shadow可以有多组值，所以在变量参数后面添加...
@@ -606,7 +606,7 @@ p{
 ```
 #### @content
 > `@content`在sass3.2.0中引入，可以用来解决css3的`@media`等带来的问题。它可以使`@mixin`接受一整块样式，接受的样式从`@content`开始。
-```
+```scss
  //sass style
 //-------------------------------                     
 @mixin max-screen($res){
@@ -629,7 +629,7 @@ p{
 PS：`@mixin`通过`@include`调用后解析出来的样式是以拷贝形式存在的，而下面的继承则是以联合声明的方式存在的，所以从3.2.0版本以后，建议传递参数的用`@mixin`，而非传递参数类的使用下面的继承。
 #### 继承
 > sass中，选择器继承可以让选择器继承另一个选择器的所有样式，并联合声明。使用选择器的继承，要使用关键词@extend，后面紧跟需要继承的选择器。
-```
+```scss
 //sass style
 //-------------------------------
 h1{
@@ -651,7 +651,7 @@ h1,.speaker{
 ```
 #### 占位选择器%
 > 从sass 3.2.0以后就可以定义占位选择器`%`。这种选择器的优势在于：如果不调用则不会有任何多余的css文件，避免了以前在一些基础的文件中预定义了很多基础的样式，然后实际应用中不管是否使用了`@extend`去继承相应的样式，都会解析出来所有的样式。占位选择器以`%`标识定义，通过`@extend`调用。
-```
+```scss
 //sass style
 //-------------------------------
 %ir{
@@ -702,7 +702,7 @@ h1,.speaker{
 ps：在`@media`中暂时不能`@extend` `@media`外的代码片段，以后将会可以。
 #### 函数
 > sass定义了很多函数可供使用，当然你也可以自己定义函数，以`@fuction`开始。sass的官方函数链接为：[sass fuction](http://sass-lang.com/documentation/Sass/Script/Functions.html)，实际项目中我们使用最多的应该是颜色函数，而颜色函数中又以`lighten`减淡和`darken`加深为最，其调用方法为`lighten($color,$amount)`和`darken($color,$amount)`，它们的第一个参数都是颜色值，第二个参数都是百分比。
-```
+```scss
 //sass style
 //-------------------------------                     
 $baseFontSize: 10px !default;
@@ -735,7 +735,7 @@ body{
 ```
 #### 运算
 > sass具有运算的特性，可以对数值型的Value(如：数字、颜色、变量等)进行加减乘除四则运算。请注意运算符前后请留一个空格，不然会出错。
-```
+```scss
 $baseFontSize:  14px !default;
 $baseLineHeight: 1.5 !default;
 $baseGap:$baseFontSize * $baseLineHeight !default;
@@ -752,7 +752,7 @@ $_gridsystem-width: $_columns * ($_column-width + $_gutter); //grid system width
 
 ##### @if判断
 > `@if`可一个条件单独使用，也可以和`@else`结合多条件使用
-```
+```scss
 //sass style
 //-------------------------------
 $lte7: true;
@@ -790,13 +790,13 @@ p {
 ```
 #### 三目判断
 > 语法为：`if($condition, $if_true, $if_false)` 。三个参数分别表示：条件，条件为真的值，条件为假的值。
-```
+```scss
 if(true, 1px, 2px) => 1px
 if(false, 1px, 2px) => 2px
 ```
 #### for循环
 > `for`循环有两种形式，分别为：`@for $var from <start> through <end>`和`@for $var from <start> to <end>`。$i表示变量，`start`表示起始值，`end`表示结束值，这两个的区别是关键字`through`表示包括`end`这个数，而`to`则不包括`end`这个数。
-```
+```scss
 //sass style
 //-------------------------------
 @for $i from 1 through 3 {
@@ -818,7 +818,7 @@ if(false, 1px, 2px) => 2px
 #### @each循环
 > 语法为：`@each $var in <list or map>`。其中`$var`表示变量，而`list`和`map`表示`list`类型数据和`map`类型数据。sass 3.3.0新加入了多字段循环和map数据循环。
 ##### 单个字段list数据循环
-```
+```scss
 //sass style
 //-------------------------------
 $animal-list: puma, sea-slug, egret, salamander;
@@ -842,9 +842,10 @@ $animal-list: puma, sea-slug, egret, salamander;
 .salamander-icon {
   background-image: url('/images/salamander.png'); 
 }
-````
+​````
 ##### 多个字段list数据循环
 ```
+```scss
 //sass style
 //-------------------------------
 $animal-data: (puma, black, default),(sea-slug, blue, pointer),(egret, white, move);
@@ -855,7 +856,11 @@ $animal-data: (puma, black, default),(sea-slug, blue, pointer),(egret, white, mo
     cursor: $cursor;
   }
 }
+```
 
+
+
+```scss
 //css style
 //-------------------------------
 .puma-icon {
@@ -874,8 +879,12 @@ $animal-data: (puma, black, default),(sea-slug, blue, pointer),(egret, white, mo
   cursor: move; 
 }
 ```
+
+
+
 ##### 多个字段map数据循环
-```
+
+```scss
 //sass style
 //-------------------------------
 $headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
@@ -884,7 +893,9 @@ $headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
     font-size: $size;
   }
 }
+```
 
+```css
 //css style
 //-------------------------------
 h1 {
@@ -897,4 +908,3 @@ h3 {
   font-size: 1.2em; 
 }
 ```
-

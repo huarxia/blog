@@ -7,7 +7,7 @@ tags: 經驗
 ---
 
 如题，问题如下：
-```
+```json
 Counting objects: 661, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (640/640), done.
@@ -20,7 +20,7 @@ Everything up-to-date
 ```
 这个问题主要是某次没有push上去导致后面文件累积越来越多，最后超过上限而无法再次push了，
 解决方法：
-```
+```shell
  git config http.postBuffer 524288000
 ```
 

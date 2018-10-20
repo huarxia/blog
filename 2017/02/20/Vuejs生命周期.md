@@ -6,7 +6,7 @@ date_updated:   2017-02-20T07:54:20.747Z
 tags: js
 ---
 
-![](/content/images/2017/02/vue.jpg)
+![](./images/vue.jpg)
 
 > 1.beforeCreate  --> Function
 
@@ -61,7 +61,7 @@ Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解
 如果把切换出去的组件保留在内存中，可以保留它的状态或避免重新渲染。为此可以添加一个`keep-alive`指令`<component :is='curremtView' keep-alive></component>`
 
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head lang="en">

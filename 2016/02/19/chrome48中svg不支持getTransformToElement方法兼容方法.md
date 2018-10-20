@@ -7,7 +7,7 @@ tags: 經驗
 ---
 
 解决方案来自：[joinjs](http://jointjs.com/blog/get-transform-to-element-polyfill.html)
-```
+```js
 /**
  * @file 解决chrome 48+ 中svg不支持getTransformToElement方法
  * @author 刘彪(liubiao@itoxs.com)

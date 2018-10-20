@@ -29,14 +29,14 @@ js中的数据类型分为两大类：`原始类型`和`对象类型`
 ### 二、克隆的概念
 
 1.浅度克隆：原始类型为值传递，对象类型仍为引用传递。
- 
+
 2.深度克隆：所有元素或属性均完全复制，与原对象完全脱离，也就是说所有对于新对象的修改都不会反映到原对象中。
 
 ### 三、浅克隆的表现
 
 #### 1.原始类型
 
-```
+```js
 // 数值克隆的表现
 var a = "1";
 var b = a;
@@ -46,7 +46,7 @@ console.log(b);// "2"
 
 ```
 
-```
+```js
 // 字符串克隆的表现
 var c = "1";
 var d = c;
@@ -56,7 +56,7 @@ console.log(d);// "2"
 
 ```
 
-```
+```js
 // 字符串克隆的表现
 var x = true;
 var y = x;
@@ -72,7 +72,7 @@ console.log(y);// false
 
 前面说过，函数是一等对象，当然也是对象类型，但是函数的克隆通过浅克隆即可实现
 
-```
+```js
 var m = function(){ alert(1); };
 var n = m;
 n = function(){ alert(2); };
@@ -83,10 +83,10 @@ console.log(n()); // 2
 ```
 
 大家能看到，我们直接通过普通赋值的方式，就实现了函数的克隆，并且不会影响之前的对象。原因就是函数的克隆会在内存单独开辟一块空间，互不影响。
- 
+
 好了，说了这个特殊的”关系户“以后，我们来说说普通的”选手“。为了方便后续的代码表现，我这里定义一个复杂的对象类型oPerson。下面看一下对象类型的浅复制有什么危害：
 
-```
+```js
 var oPerson = {
     oName:"rookiebob",
     oAge:"18",
@@ -120,7 +120,7 @@ console.log(oPerson.oAddress.province); //shanghai
 
 为了保证对象的所有属性都被复制到，我们必须知道如果for循环以后，得到的元素仍是Object或者Array，那么需要再次循环，直到元素是原始类型或者函数为止。为了得到元素的类型，我们定义一个通用函数，用来返回传入对象的类型。
 
-```
+```js
 // 返回传递给他的任意对象的类
 function isClass(o) {
     if(o === null) return "Null";
@@ -134,7 +134,7 @@ function isClass(o) {
 
 当然这里有两个疑问需要解释下：
 
-![](/content/images/2017/06/190908228163586.png)
+![](./images/190908228163586.png)
 
 （1）为什么不直接用toString方法？这是为了防止对象中的toString方法被重写，为了正确的调用toString()版本，必须间接的调用Function.call()方法
 
@@ -142,7 +142,7 @@ function isClass(o) {
 
 下面就是真正的深度克隆
 
-```
+```js
 //深度克隆
 function deepClone(obj) {
     var result,oClass = isClass(obj);
@@ -199,11 +199,11 @@ console.log(oNew.oAddress.province); // shanghai
 ```
 
 从上面的代码可以看到，深度克隆的对象可以完全脱离原对象，我们对新对象的任何修改都不会反映到原对象中，这样深度克隆就实现了。
- 
+
 这里要注意一点的就是：为什么deepClone这个函数中的result一定要判断类型？这里有一种情况，如果你的result直接是{}对象，我明明传进去的是一个数组，结果你复制完了以后，变成了一个对象了。
 
 
-```
+```js
 //深度克隆
 function deepClone(obj) {
     var result={},oClass = isClass(obj);

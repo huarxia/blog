@@ -24,7 +24,7 @@ tags: Python
 `append()` 方法是将参数作为一个元素增加到列表的末尾。
 `extend()` 方法则是将参数作为一个列表去扩展列表的末尾。
 
-![](/content/images/2017/01/776BC7F0-B702-457A-BB5A-53E555EA2508.png)
+![](./images/776BC7F0-B702-457A-BB5A-53E555EA2508.png)
 
 > 3.name.append(['花', '夏']) 和 name.extend(['花', '夏']) 实现的效果一样吗？
 
@@ -34,7 +34,7 @@ tags: Python
 
 `name.insert(0, '幹什麼')`
 
-![](/content/images/2017/01/BC8DC71F-652A-49A7-A200-AF236CD677CC.png)
+![](./images/BC8DC71F-652A-49A7-A200-AF236CD677CC.png)
 
 也看到了，`insert()`方法前面是有第幾個位置的參數的；
 
@@ -52,7 +52,7 @@ member = ['花夏', 88, '魚陽', 90, 'liubiao', 85, '2333', 90, '秋舞斜阳',
 
 方法一：
 
-```
+```python
 member.insert(1, 88)
 member.insert(3, 90)
 member.insert(5, 85)
@@ -63,13 +63,13 @@ member.append(88)
 
 方法二：
 
-```
+```python
 member = ['花夏', 88, '魚陽', 90, 'liubiao', 85, '2333', 90, '秋舞斜阳', 88]
 ```
 
 > 1.利用 `for` 循环打印上边 `member` 列表中的每个内容
 
-```
+```python
 # 利用 `for` 循环打印上边 列表中的每个内容
 # ['花夏', 88, '魚陽', 90, 'liubiao', 85, '2333', 90, '秋舞斜阳', 88]
 
@@ -80,15 +80,17 @@ for item in member:
 
 ```
 
-![](/content/images/2017/01/76089B13-D0F3-4705-91B6-34B7437185E8.png)
+![](./images/76089B13-D0F3-4705-91B6-34B7437185E8.png)
 
 > 2.上一题打印的样式不是很好，能不能修改一下代码打印成下图的样式呢？【请至少使用两种方法实现】
 
-![](/content/images/2017/01/247CCB21-8F86-4444-A039-841CB9E7FCF6.png)
+
+
+![](./images/247CCB21-8F86-4444-A039-841CB9E7FCF6.png)
 
 方法一：
 
-```
+```python
 # 利用 `for` 循环打印上边 列表中的每个内容
 # ['花夏', 88, '魚陽', 90, 'liubiao', 85, '2333', 90, '秋舞斜阳', 88]
 
@@ -105,7 +107,7 @@ while index < length:
 
 方法二：
 
-```
+```python
 # 利用 `for` 循环打印上边 列表中的每个内容
 # ['花夏', 88, '魚陽', 90, 'liubiao', 85, '2333', 90, '秋舞斜阳', 88]
 

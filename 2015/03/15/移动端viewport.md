@@ -6,6 +6,7 @@ date_updated:   2016-11-16T06:33:17.213Z
 tags: css
 ---
 
+```css
 width [pixel_value | device-width] width 直接去设置具体数值大部分的安卓手机不支持的 但是IOS支持
 user-scalable 是否允许缩放 （no||yes）
 initial-scale 初始比例
@@ -18,3 +19,5 @@ target-densitydpi
 — medium-dpi 中等像素密度
 — low-dpi 低像素密度
 — webkit内核已不准备再支持
+```
+

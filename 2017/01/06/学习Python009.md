@@ -10,7 +10,7 @@ tags: Python
 
 >  0.下面的循环会打印多少次"I Love Huaxia"？
 
-```
+```python
 for i in range(0, 10, 2):
     print('I Love Huaxia')
 ```
@@ -21,7 +21,7 @@ for i in range(0, 10, 2):
 
 > 1.下面的循环会打印多少次"I Love Huaxia"？
 
-```
+```python
 for i in 5:
     print('I Love Huaxia')
 ```
@@ -42,7 +42,7 @@ for i in 5:
 
 > 5.目测以下程序会打印什么？
 
-```
+```python
 while True:
     while True:
         break
@@ -72,7 +72,7 @@ while Ture:
 
 > 7.【学会提高代码的效率】你的觉得以下代码效率方面怎样？有没有办法可以大幅度改进(仍然使用while)？
 
-```
+```python
 i = 0
 string = 'I Love huar.love'
 while i < len(string)):
@@ -82,7 +82,7 @@ while i < len(string)):
 
 這段代碼降低效率的是在於每次都會計算 len();和javascript等等語言一樣，在外面計算好賦值一個變量，豈不是更好？
 
-```
+```python
 i = 0
 string = 'I Love huar.love'
 length = len(string))
@@ -96,7 +96,7 @@ while i < length:
 
 > 0.设计一个验证用户密码程序(密碼這裡使用`huar.love`)，用户只有三次机会输入错误，不过如果用户输入的内容中包含"*"则不计算在内。
 
-```
+```python
 # 设计一个验证用户密码程序(密碼這裡使用huar.love);
 # 用户只有三次机会输入错误;
 # 不过如果用户输入的内容中包含"*"则不计算在内。
@@ -121,13 +121,13 @@ while count:
 ```
 程序運行看下面截圖
 
-![](/content/images/2017/01/5DAA560D-5A7D-4715-81D9-6ED4C0D7EA15.png)
+![](./images/5DAA560D-5A7D-4715-81D9-6ED4C0D7EA15.png)
 
 > 1.编写一个程序，求 100~999 之间的所有水仙花数。
 
 如果一个 3 位数等于其各位数字的立方和，则称这个数为水仙花数。例如：153 = 1^3 + 5^3 + 3^3，因此 153 就是一个水仙花数
 
-```
+```python
 # 如果一个 3 位数等于其各位数字的立方和
 # 则称这个数为水仙花数
 # 例如：153 = 1^3 + 5^3 + 3^3
@@ -147,13 +147,13 @@ print('100~999之間的水仙花數有： ', daffodils)
 
 ```
 
-![](/content/images/2017/01/3B40F9F9-C6EA-411D-A338-5DAB7E3BC055.png)
+![](./images/3B40F9F9-C6EA-411D-A338-5DAB7E3BC055.png)
 
 > 2.三色球问题
 
 有红、黄、蓝三种颜色的求，其中红球 3 个，黄球 3 个，绿球 6 个。先将这 12 个球混合放在一个盒子中，从中任意摸出 8 个球，编程计算摸出球的各种颜色搭配。
 
-```
+```python
 # 有红、黄、蓝三种颜色的球
 # 其中红球 3 个，黄球 3 个，绿球 6 个
 # 先将这 12 个球混合放在一个盒子中，从中任意摸出 8 个球，编程计算摸出球的各种颜色搭配。
@@ -175,4 +175,4 @@ for green in range(2, 7):
 
 ```
 
-![](/content/images/2017/01/0997E58A-329E-40FD-BDA0-0DB52CAEE2FB.png)
+![](./images/0997E58A-329E-40FD-BDA0-0DB52CAEE2FB.png)

@@ -17,11 +17,11 @@ tags: 經驗
 问题描述：
   昨天使用vue做移动端的时候，由于公司使用了第三方视频服务，而第三方视频服务的js插件在我的vue框架下import进来时，由于代码写得很那啥~\~ 然后就报错了：
 
-![](/content/images/2017/05/QQ20170526-0.png)
+![](./images/QQ20170526-0.png)
 
 这个原因就是在`use strict`这样的严格模式下，`caller`, `callee`, `arguments`不允许访问的，
 
-![](/content/images/2017/05/eac4b74543a98226e1e6d08a8982b9014a90eb7c.jpg)
+![](./images/eac4b74543a98226e1e6d08a8982b9014a90eb7c.jpg)
 
 所以肯定是在某个地方加入了严格模式`use strict`；最终想了想就是框架层在`webpack`打包时候做的事情，一部一个不跟下去找到是`babel-loader`的问题，上网一查，还是有一些人遇到这些问题的，也给出了解决方案:
 
@@ -31,14 +31,14 @@ tags: 經驗
 
 对于Babel5有一种特殊的解决方案：
 
-```
+```json
 // 在.babelrc文件中加入这样一行配置：
 blacklist: ["useStrict"]
 ```
 
 但是在Babel6中这个方案不生效，构建时会报错：
 
-```
+```shell
 Module build failed: ReferenceError: 
 [BABEL] /Users/huaxia/icode/kkb/hybrid\app.js: Using removed Babel 5 option: 
 /Users/huaxia/icode/kkb/hybrid\.babelrc.blacklist - 
@@ -61,13 +61,13 @@ Put the specific transforms you want in the `plugins` option
 
 确认无误后，在package.json文件中的devDependencies中加入
 
-```
+```json
  "babel-plugin-transform-remove-strict-mode":"^0.0.2"
 ```
 
 然后在.babelrc文件中新增配置：
 
-```
+```json
 { 
   "presets": [
     "es2015"

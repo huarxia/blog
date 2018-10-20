@@ -14,7 +14,7 @@ tags: 工具
 
 >忌：置产 造船 开光 掘井 作灶 
 
-在[Github Pages 上搭建 Ghost 博客 - 教程与心得](/2016/10/30/zai-github-pages-shang-da-jian-ghost-bo-ke-jiao-cheng-yu-xin-de/)一篇中我們講到在github上搭建ghost平台博客，但是在本地寫好博客后，生成靜態頁面后，要將靜態頁面文件push到github對應倉庫的指定分支，這裡一般是 gh-pages 分支，原因是訪問username.github.io/xxx 指向的及時xxx倉庫的gh-pages 分支。
+在[Github Pages 上搭建 Ghost 博客 - 教程与心得](/2016/10/30/在Github-Pages上搭建Ghost博客-教程与解決方案.html)一篇中我們講到在github上搭建ghost平台博客，但是在本地寫好博客后，生成靜態頁面后，要將靜態頁面文件push到github對應倉庫的指定分支，這裡一般是 gh-pages 分支，原因是訪問username.github.io/xxx 指向的及時xxx倉庫的gh-pages 分支。
 
 > 1.那麼我們是不是要將靜態文件複製出來手動push呢？
 
@@ -36,5 +36,5 @@ tags: 工具
 
 裡面很多複雜的地方，不一一敘述了；使用了hexo的一些插件，雖然可以自己完全手寫，但是有點浪費時間，我的主要目的不是在這，就借用了；
 
-具體使用方法請移步github: [deploy-git](https://github.com/liubiao0810/deploy-git)
+具體使用方法請移步github: [deploy-git](https://github.com/huarxia/deploy-git)
 

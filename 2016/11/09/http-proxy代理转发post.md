@@ -53,7 +53,7 @@ tags: 工具
 
 所以哐哐哐代碼就給擼上了~~~~
 
-**[github地址](https://github.com/liubiao0810/curl-proxy)**
+**[github地址](https://github.com/huarxia/curl-proxy)**
 
 裡面有詳細的教程配置，如何使用......
 

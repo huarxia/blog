@@ -18,7 +18,7 @@ tags: css
 
 优点：代码简洁
 
-```
+```css
 .demo_line_01{
     padding: 0 20px 0;
     margin: 20px 0;
@@ -34,7 +34,7 @@ tags: css
 
 优点：代码简洁，可自适应宽度
 
-```
+```css
 .demo_line_02{
     height: 1px;
     border-top: 1px solid #ddd;
@@ -53,7 +53,7 @@ tags: css
 
 优点：文字可多行
 
-```
+```css
 .demo_line_03{
     width:600px;
 }
@@ -78,7 +78,7 @@ tags: css
 
 优点：NUN
 
-```
+```css
 .demo_line_04{
     width:600px;
 }
@@ -101,11 +101,11 @@ tags: css
 
 优点：代码简洁 以上简单介绍了分隔线的写法，也许还有其它比较合适的写法，看环境各取所需吧！
 
-```
+```html
 <div class="demo_line_05">———————————<span>小小分隔线 字符来实现</span>————————————</div>
 ```
 
-```
+```css
 .demo_line_05{
     letter-spacing: -1px;
     color: #ddd;
@@ -117,4 +117,4 @@ tags: css
 }
 
 ```
-[demo](//www.huar.love/demo/lines/index.html)
+[demo](/demo/lines/index.html)
