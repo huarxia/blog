@@ -11,11 +11,11 @@ date_updated:   2018-09-12T11:40:41.142Z
 
 #### 2. 🐒 现象展示
 
-![](./console.png)
+![](./images/console.png)
 
-![](./browser-console.png)
+![](./images/browser-console.png)
 
-![](./atom.png)
+![](./images/atom.png)
 
 #### 3. 🏁 开始寻求解决方案
 
@@ -31,7 +31,7 @@ date_updated:   2018-09-12T11:40:41.142Z
 
 but！😯！并没有  `res.end` 后再次  `res.write`  啊？为什么会酱紫？😯？一脸蒙圈~~
 
-![](./WX20180912-143114.png)
+![](./images/WX20180912-143114.png)
 
 ------
 

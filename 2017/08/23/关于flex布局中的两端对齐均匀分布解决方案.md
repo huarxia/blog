@@ -17,7 +17,7 @@ tags: css
 
 近来做一个需求，设计图效果要求的是这样：
 
-![](/content/images/2017/08/WX20170823-111201.png)
+![](./images/WX20170823-111201.png)
 
 场景是：不使用js动态计算他的！！！
 
@@ -29,7 +29,7 @@ tags: css
 
 最后想了想`flex`布局，查找资料使用一下代码设置父容器就可以解决
 
-```
+```css
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
@@ -51,17 +51,17 @@ justify-content: space-between;
 
 那咱们来看下word文档中的两端对齐
 
-![](/content/images/2017/08/WX20170823-112631-2x.png)
+![](./images/WX20170823-112631-2x.png)
 
-![](/content/images/2017/08/WX20170823-113524.png)
+![](./images/WX20170823-113524.png)
 
 看看最后一行，是不是和我们想象的不一样，但这又确实是两端对齐，自动分配间距啊。那么怎么解决最后一行不足列数时从左边排列，而且还自动空隙呢？
 
 想办法，查资料，还是没有完美解决方案，最后都想着换方案，或者用js来计算了，最后灵机一动，不就是在最后一行，差几个元素补上几个空白元素么。
 
-那么接下来就是怎么在自适应下知道差了几个，思虑再三css还真没办法知道最后一行差几个了，那么我无论差多少个，我都放上7，8ge够多了吧，每个高度设置为0，宽度设置为元素等宽；
+那么接下来就是怎么在自适应下知道差了几个，思虑再三css还真没办法知道最后一行差几个了，那么我无论差多少个，我都放上7，8个够多了吧，每个高度设置为0，宽度设置为元素等宽；
 
-```
+```html
 <div class="item clearfix-item"></div>
 <div class="item clearfix-item"></div>
 <div class="item clearfix-item"></div>
@@ -72,7 +72,7 @@ justify-content: space-between;
 <div class="item clearfix-item"></div>
 ```
 
-```
+```css
 .clearfix-item {
     width: 288px;
     height: 0px;
@@ -84,5 +84,5 @@ justify-content: space-between;
 
 原理就是：足够多的已经补上了最后一行缺失的元素，多下来的高度为0又看不见，那么就解决了嘛，唯一缺点就是手动放了一堆空元素。但至少是解决了。
 
-![](/content/images/2017/08/WX20170823-111201.png)
+![](./images/WX20170823-111201.png)
 

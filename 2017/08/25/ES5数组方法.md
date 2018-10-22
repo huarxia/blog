@@ -1,5 +1,5 @@
 ---
-title: ES6数组方法
+title: ES5数组方法
 slug: es6shu-zu-fang-fa
 date_published: 2017-08-25T02:37:54.519Z
 date_updated:   2017-08-25T03:06:30.092Z
@@ -22,7 +22,7 @@ tags: js
 
 `stringObject.indexOf(searchvalue,fromindex)`
 
-```
+```js
 var data = [2, 5, 7, 3, 5];
 console.log(data.indexOf(5, "x")); // 1 ("x"被忽略)
 console.log(data.indexOf(5, "3")); // 4 (从3号位开始搜索)
@@ -37,7 +37,7 @@ console.log(data.indexOf("5")); // -1 (未找到，因为5 !== "5")
 ##### forEach
 Array在ES5新增的方法中，参数都是function类型，默认有传参(遍历的数组内容,对应的数组索引,数组本身)
 
-```
+```js
 [].forEach(function(value, index, array) {
     // ...
 });
@@ -45,7 +45,7 @@ Array在ES5新增的方法中，参数都是function类型，默认有传参(遍
 
 forEach方法 遍历数组元素
 
-```
+```js
 var colors = ['red', 'green', 'blue'];
 colors.forEach(function(color) { 
     console.log(color);
@@ -64,7 +64,7 @@ colors.forEach(function(color) {
 
 但是callback需要有return值（如果没有，就像会返回undefined）
 
-```
+```js
 var a1 = ['a', 'b', 'c'];
 var a2 = a1.map(function(item) { 
     return item.toUpperCase(); 
@@ -79,7 +79,7 @@ console.log(a2); // logs A,B,C
 
 指数组filter后，返回过滤后的新数组。用法跟map相似
 
-```
+```js
 var a1 = ['a', 10, 'b', 20, 'c', 30];
 var a2 = a1.filter(function(item) { 
     return typeof item == 'number'; 
@@ -91,7 +91,7 @@ console.log(a2); // logs 10,20,30
 
 `every(callback[, thisObject])`当数组中每一个元素在callback上被返回true时就返回true。
 
-```
+```js
 function isNumber(value){ 
     return typeof value == 'number';
 }
@@ -104,7 +104,7 @@ console.log(a2.every(isNumber)); // logs false
 
 `some(callback[, thisObject])` 只要数组中有一项在callback上被返回true，就返回true。
 
-```
+```js
 function isNumber(value){ 
 return typeof value == 'number';
 }
@@ -121,7 +121,7 @@ console.log(a3.some(isNumber)); // logs false
 对数组中的所有元素调用指定的回调函数。
 该回调函数的返回值为累积结果，并且此返回值在下一次调用该回调函数时作为参数提供。
 
-```
+```js
 var a = [10, 20, 30];
 var total = a.reduce(function(first, second) { 
     return first + second; 
@@ -138,7 +138,7 @@ reduce的作用完全相同，唯一的不同是，reduceRight是从右至左遍
 `Array.isArray`直接写在了`Array`构造器上，而不是`prototype`对象上。
 `Array.isArray`会根据参数的[[Class]]内部属性是否是"Array"返回true或false.
 
-```
+```js
 Array.isArray("NO U")
 falseArray.isArray(["NO", "U"]) // true
 ```

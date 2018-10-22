@@ -44,7 +44,7 @@ tags: 經驗
 
 用一个`css`类去为`block`元素添加更细的`border`
 
-```
+```css
 .border-1px{
     position: relative;
     &:before, &:after{
@@ -66,7 +66,7 @@ tags: 經驗
 
 适应移动设备：
 
-```
+```css
 @media (-webkit-min-device-pixel-ratio:1.5), (min-device-pixel-ratio: 1.5){
     .border-1px{
         &::after, &::before{

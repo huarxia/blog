@@ -28,7 +28,7 @@ tags: js
 
 1.创建绑定函数
 
-```
+```js
 this.a = 1;
 var module = {
     a : 2,
@@ -53,7 +53,7 @@ getA2();
 
 使用`bind()`方法使函数拥有预设的初始参数，这些参数会排在最前面，传给绑定函数的参数会跟在它们后面
 
-```
+```js
 function list(){
     // 让类数组arguments拥有数组的方法slice，这个函数实现了简单把类数组转换成数组
     return Array.prototype.slice.call(arguments);
@@ -73,15 +73,15 @@ list1(1,2,3); // [4,1,2,3]
 
 正常情况下，调用`setTimeout`的时候`this`会指向全局对象，但是使用类的方法时我们需要指向类的实例，所以要把`this`，绑定要回调函数方便继续使用实例
 
-```
+```js
 function Fun1() { 
-  this.name = 1;
- }
+	this.name = 1;
+}
 Fun1.prototype.fun2 = function() {
-  window.setTimeout(this.fun3.bind(this), 1000);
- }
+	window.setTimeout(this.fun3.bind(this), 1000);
+}
 Fun1.prototype.fun3 = function(){
-    console.log('name:'+this.name);//name:1
+	console.log('name:'+this.name);//name:1
 }
 var fun = new Fun1();
 fun.fun2();
@@ -91,7 +91,7 @@ fun.fun2();
 
 第一种方法是使用`apply`方法
 
-```
+```js
 function fun1() {
      var slice = Array.prototype.slice;
      return slice.apply(arguments);
@@ -102,7 +102,7 @@ fun1(1,2,3); // [1,2,3]
 
 第二种方法是使用`call`方法和`bind`方法一起使用
 
-```
+```js
 function fun2() {
     var unboundSlice = Array.prototype.slice;
     // 把函数的call方法绑定在数组slice方法上，之后再给call方法传递参数

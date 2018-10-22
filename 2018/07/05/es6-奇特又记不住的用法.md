@@ -7,19 +7,19 @@ date_updated:   2018-07-05T12:27:41.142Z
 
 ### `Reflect.ownKeys` 返回所有类型的键名，包括常规键名和`Symbol`键名
 
-```
+```js
 let obj = {
   [Symbol('my_key')]: 1,
   enum: 2,
   nonEnum: 3
 };
 Reflect.ownKeys(obj)
-//  ["enum", "nonEnum", Symbol(my_key)]
+//  ['enum', 'nonEnum', Symbol(my_key)]
 ```
-![](/content/images/2018/07/4A4E4F30-C89C-4247-BC9A-010855ED0A4B.png)
+![](./images/4A4E4F30-C89C-4247-BC9A-010855ED0A4B.png)
 ### ES6 新增内置对象的Symbol.toStringTag属性值如下
 
-```
+```js
 JSON[Symbol.toStringTag]：'JSON'
 Math[Symbol.toStringTag]：'Math'
 Module 对象M[Symbol.toStringTag]：'Module'
@@ -44,7 +44,7 @@ ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都
 
 Set 本身是一个构造函数，用来生成 Set 数据结构。
 
-```
+```js
 const s = new Set();
 
 [2, 3, 5, 4, 5, 2, 2].forEach(x => s.add(x));
