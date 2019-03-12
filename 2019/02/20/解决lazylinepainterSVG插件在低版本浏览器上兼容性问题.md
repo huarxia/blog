@@ -1,6 +1,7 @@
 ---
 title: 解决lazylinepainterSVG插件在低版本浏览器上兼容性问题
 slug: jie-jue-lazylinepainterSVG-cha-jian-zai-di-ban-ben-liu-lan-qi-shang-jian-rong-xing-wen-ti
+tag: js
 date_published: 2019-02-20T10:25:40.345Z
 date_updated:   2019-02-20T10:25:42.345Z
 ---
