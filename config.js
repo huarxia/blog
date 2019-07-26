@@ -11,7 +11,7 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://www.huar.love/blog/',
+        url: 'https://huarxia.github.io/blog/',
         mail: {},
         database: {
             client: 'sqlite3',
