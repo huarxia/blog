@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>圖片上傳以及裁剪后校驗算法</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="圖片上傳以及裁剪后校驗算法">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="圖片上傳以及裁剪后校驗算法">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/01/17/tu-pian-shang-chuan-yi-ji-cai-jian-hou-xiao-yan-suan-fa/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="圖片上傳以及裁剪后校驗算法" />
+    <meta property="og:description" content="看到這樣的標題，是不是嚇了一跳？請不要被嚇到，這個其實並沒有那麼複雜，一步一步分析即可得出答案。最開始我也是很頭大這件事情。 最開始，也是從三月份接手了別人的項目，他們運用了php模板做前端開發的，最後再把對應的模板手動轉成java的velocity模板，看到這裡是不是想罵娘？臥槽，坑爹啊，還轉換一次，而且是手動的，裡面寫的各種組件也是一塌糊塗；然後這一版本在大概7 8月份的被我們這邊的FE團隊搞成了vue的模式開發了，這樣優化了前端的開發模式，好了不止5倍，提高的開發效率不止5倍，並且bug明顯收斂了很多很多，但是圖片裁剪的校驗，尤其是寬高比校驗還是存在小範圍的bug；到了10月份，有幸繼續優化這個組件，已經完全解決了這個bug;而後到了12月份，這個項目終於死掉了，歡呼 ~~ ，臥槽，是不是太那啥了，本來就是啊，每次都是倒排，RD和FE根本沒有發言權，PM說什麼時間就是什麼時間，直接對外發佈時間，去他個爺的，這樣的模式下，DuangDuangDuang~..." />
+    <meta property="og:url" content="http://localhost:2368/2017/01/17/tu-pian-shang-chuan-yi-ji-cai-jian-hou-xiao-yan-suan-fa/" />
+    <meta property="article:published_time" content="2017-01-17T05:52:56.525Z" />
+    <meta property="article:modified_time" content="2017-01-17T07:58:00.865Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="圖片上傳以及裁剪后校驗算法" />
+    <meta name="twitter:description" content="看到這樣的標題，是不是嚇了一跳？請不要被嚇到，這個其實並沒有那麼複雜，一步一步分析即可得出答案。最開始我也是很頭大這件事情。 最開始，也是從三月份接手了別人的項目，他們運用了php模板做前端開發的，最後再把對應的模板手動轉成java的velocity模板，看到這裡是不是想罵娘？臥槽，坑爹啊，還轉換一次，而且是手動的，裡面寫的各種組件也是一塌糊塗；然後這一版本在大概7 8月份的被我們這邊的FE團隊搞成了vue的模式開發了，這樣優化了前端的開發模式，好了不止5倍，提高的開發效率不止5倍，並且bug明顯收斂了很多很多，但是圖片裁剪的校驗，尤其是寬高比校驗還是存在小範圍的bug；到了10月份，有幸繼續優化這個組件，已經完全解決了這個bug;而後到了12月份，這個項目終於死掉了，歡呼 ~~ ，臥槽，是不是太那啥了，本來就是啊，每次都是倒排，RD和FE根本沒有發言權，PM說什麼時間就是什麼時間，直接對外發佈時間，去他個爺的，這樣的模式下，DuangDuangDuang~..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/01/17/tu-pian-shang-chuan-yi-ji-cai-jian-hou-xiao-yan-suan-fa/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "圖片上傳以及裁剪后校驗算法",
+    "url": "http://localhost:2368/2017/01/17/tu-pian-shang-chuan-yi-ji-cai-jian-hou-xiao-yan-suan-fa/",
+    "datePublished": "2017-01-17T05:52:56.525Z",
+    "dateModified": "2017-01-17T07:58:00.865Z",
+    "keywords": "js",
+    "description": "看到這樣的標題，是不是嚇了一跳？請不要被嚇到，這個其實並沒有那麼複雜，一步一步分析即可得出答案。最開始我也是很頭大這件事情。 最開始，也是從三月份接手了別人的項目，他們運用了php模板做前端開發的，最後再把對應的模板手動轉成java的velocity模板，看到這裡是不是想罵娘？臥槽，坑爹啊，還轉換一次，而且是手動的，裡面寫的各種組件也是一塌糊塗；然後這一版本在大概7 8月份的被我們這邊的FE團隊搞成了vue的模式開發了，這樣優化了前端的開發模式，好了不止5倍，提高的開發效率不止5倍，並且bug明顯收斂了很多很多，但是圖片裁剪的校驗，尤其是寬高比校驗還是存在小範圍的bug；到了10月份，有幸繼續優化這個組件，已經完全解決了這個bug;而後到了12月份，這個項目終於死掉了，歡呼 ~~ ，臥槽，是不是太那啥了，本來就是啊，每次都是倒排，RD和FE根本沒有發言權，PM說什麼時間就是什麼時間，直接對外發佈時間，去他個爺的，這樣的模式下，DuangDuangDuang~..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="17 1月 2017" class="post-meta__date date">17 1月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">圖片上傳以及裁剪后校驗算法</h1>
+    </header>
+
+    <section class="post tag-js">
+      <p>看到這樣的標題，是不是嚇了一跳？請不要被嚇到，這個其實並沒有那麼複雜，一步一步分析即可得出答案。最開始我也是很頭大這件事情。</p>
+
+<p>最開始，也是從三月份接手了別人的項目，他們運用了php模板做前端開發的，最後再把對應的模板手動轉成java的velocity模板，看到這裡是不是想罵娘？臥槽，坑爹啊，還轉換一次，而且是手動的，裡面寫的各種組件也是一塌糊塗；然後這一版本在大概7 8月份的被我們這邊的FE團隊搞成了vue的模式開發了，這樣優化了前端的開發模式，好了不止5倍，提高的開發效率不止5倍，並且bug明顯收斂了很多很多，但是圖片裁剪的校驗，尤其是寬高比校驗還是存在小範圍的bug；到了10月份，有幸繼續優化這個組件，已經完全解決了這個bug;而後到了12月份，這個項目終於死掉了，歡呼 ~~ ，臥槽，是不是太那啥了，本來就是啊，每次都是倒排，RD和FE根本沒有發言權，PM說什麼時間就是什麼時間，直接對外發佈時間，去他個爺的，這樣的模式下，DuangDuangDuang~~bug又開始擴散了，什麼亂七八糟的bug一起出現，兼容性，UI層的，總之是應有盡有。試問這樣的壓縮時間，為了完成基本功能，能不出這麼多亂七八糟的bug麼。怪我咯~~後面小夥伴們又做了一個圖片上傳的組件，就只是圖片上傳到現在kb數校驗等等都沒做，只做了是否有圖片校驗，有幸的是又是我來做的圖片裁剪以及校驗~~嗚啦啦啦</p>
+
+<p>這裡總結下圖片上傳以及裁剪校驗的經歷，看似簡單，實則複雜度精確度蠻高的，現在來說校驗寬高比還是處於精確度在95%之間。</p>
+
+<h4 id="3">3月份第一版：</h4>
+
+<p>使用的uploader上傳圖片，和jq的copper裁剪圖片倆大插件，其實用什麼插件并不影響，關鍵是開發的人能不能完美控制它，就好比用劍的人，不能控制好，一定會自傷的。</p>
+
+<p>其中未控制好的點：</p>
+
+<ol>
+<li><p>上傳完成圖片后直接塞到dom節點上，綁定各種數據到標籤上，進行後續處理，一旦大聲錯誤影響這張圖片的後續操作，比如說圖片未加載完成，Kb數寬高，URL。直接放在標籤上後續得到的就是錯的，一錯百錯；</p></li>
+<li><p>圖片上傳是異步的，當上傳完成后，針對一組圖片列表。進行裁剪，裁剪插件得到的圖片會發生串圖，但實際傳到後端的圖片url又是正常的，最後裁剪圖片必然出錯；</p></li>
+<li><p>回寫頁面中的圖片，無法進行再次裁剪，因為標籤上沒有綁定裁剪所需要的參數；</p></li>
+<li><p>裁剪、上傳過程中允許調換圖片順序，採用這樣的開發方式，又會使得圖片源數據無法得到良好的正確控制，導致bug必現，而且還難改。</p></li>
+</ol>
+
+<p>記得有一次改到深夜，實在是改不動了，還是老大（博士）一起看的，但是到了第二天可惡的bug又莫名其妙的回來了，這個簡直是我的噩夢！！！</p>
+
+<p>等等....</p>
+
+<p>造成這些的原因無外乎就是太依賴標籤上的參數，假如一個懂開發的小夥子手動改了，必然會出錯的。</p>
+
+<h4 id="7">7月份第二版：</h4>
+
+<p>這一版是波波大神做的，明顯良好的控制了功能性的bug復現，使得圖片上傳再也沒有出現過bug，裁剪也沒有，唯一出的是後端在裁剪png圖片時候會丟失B色調（藍色），導致圖片變紅，當然部署前端bug。還有就是後期10月份出現的當寬高比約等於2：1（比如說：655：326），這樣的比例時，會出現無論怎麼裁剪都會不滿足裁剪寬高比的。</p>
+
+<h4 id="10">10月份第三版：</h4>
+
+<p>上面說過這一bug了，出現這一bug的原因是：</p>
+
+<p>使用了除法產生了很多小數部分，比如：<code>655：326 == 2.0092024539877302 ≈ 2：1 == 2</code>嘛,這樣一來，小數部分乘以實際上百的px和上百的比655、326得到的誤差就會是好幾百的px數，所以這一bug必現。</p>
+
+<p>最後我把他換成了乘法和減法的算術完美解決了這一bug，</p>
+
+<p>看下簡單的實現方式：</p>
+
+<pre><code>/**
+ * compareTwomultiplication 利用乘法做图片宽高容差处理
+ *
+ * @param  {type} w           宽
+ * @param  {type} h           高
+ * @param  {type} aspectRatio 宽高比
+ * @param  {type} deviation   误差，这里默认10
+ *
+ * @return {Boolen} 返回是否符合要求,符合返回false,否则true
+ */
+compareTwomultiplication: function (w, h, aspectRatio, deviation) {  
+    if (!!deviation &amp;&amp; deviation !== 0) {
+        deviation = 10;
+    }
+    // 误差计算的分母
+    var denominator = Math.pow(10, this.getDecimalsFigures(aspectRatio));
+    // 误差计算后的分子
+    var numerator = denominator * aspectRatio;
+    // 需要/误差计算的分母，回歸到原始誤差
+    return (Math.abs(w * denominator - h * numerator) / denominator &gt; deviation);
+    }
+</code></pre>
+
+<h4 id="12">12月份新項目第一版</h4>
+
+<p>這次有幸的是裁剪組件完全有我自己控制，裡面相對於前面最優版本，其實還有大坑存在；</p>
+
+<p>隱性大坑：</p>
+
+<ol>
+<li><p>裁剪后傳入後端的寬高必然存在小數部分，而後端處理的方式既不是四捨五入法，又不是動態根據其中一個為基準通過寬高比計算另一個的值。</p></li>
+<li><p>當出現<code>655：326 == 2.0092024539877302 ≈ 2：1 == 2</code>這樣的比例時（出現這樣的比例完全是運營嚇配置，但是又是自己程序不嚴謹連這樣的都處理不好，所以還是的處理）又會出現誤差很大，大到交叉相乘后再相減到成百上千；同理根據經驗還是繼續使用上一版本的交叉乘減法；</p></li>
+<li><p>針對第一點，原本後端應該處理好的，應該是根據一個為基準結合寬高比得到正確的另一個整數PX數；既然後端偷懶做不了，那麼我大前端做好了傳給他，偷懶就偷懶吧，大前端就是牛！！！</p></li>
+</ol>
+
+<h3 id="10px">思路：(系統允許有10px的誤差，我也是這麼認為的)</h3>
+
+<p>1.乘減法比除法得到的寬高比更精確更易控制。計算機處理除法不是那麼好控制；</p>
+
+<p>以寬高比為<code>655：326</code>實際得到的圖片寬高為<code>640/330</code>，
+實際上剛好是<code>640/320</code>剛好滿足<code>2：1</code>的比例，存在10px的誤差；</p>
+
+<p>首先：</p>
+
+<p><code>655/326 = 2.0092024539877302</code></p>
+
+<p><code>640/330 = 1.9393939393939394</code></p>
+
+<p>他們之間已經算是符合要求了。</p>
+
+<p>2.不使用除法比進行比較，因為不好控制，而且小數部分人眼看覺得接近了，但是機器不知道，不好進行算術得到；請看下圖：</p>
+
+<p><img src="../../../../content/images/2017/01/--.jpg" alt="" /></p>
+
+<p>關於校驗問題解決了，其實現在已經解決問題了，為了完美，我們的看看後端沒有解決的問題，前端來做：</p>
+
+<p>當裁剪出來的比例有小數的時候（必然有小數）</p>
+
+<p>使用其中一個值為基準計算另一個值，</p>
+
+<p>1). 為基準的值，選用：誰的小數部分剛好為0（都為0時使用寬為基準）或者誰的小數大，當都存在小數時，以小數大的進行四捨五入法修正基準px量；</p>
+
+<p>2). 當選取基準整數PX值后根據給出的比例（例如<code>655：326</code>）進行計算另一個PX值，這個計算出來的值有可能（很大幾率是有小數的），那麼簡單起見，直接四捨五入法得到整數PX值（其實應該動態的使用<code>夾逼定理</code>圈定出剛好符合寬高比的整數值，但是配置的寬高比太奇葩，根本不可能得到整數值，並且剛開始在做校驗時已經做好了兼容，對於現在這麼一點點誤差是可以計算出來的），所以這樣已經很接近真實比例了；</p>
+
+<p>第二小點就不畫圖說明了，直接上代碼：</p>
+
+<pre><code>/**
+ * setIntWH 設置整數寬高
+ *
+ * @param {object} data 返回計算后的最近姐的整數寬高
+ */
+setIntWH: function (data) {  
+    var me = this;
+    var cropData = this.cropData;
+    // 去除自由裁剪則直接返回data;
+    var aspectRatio = cropData.checkedRatio;
+    if ( String(aspectRatio) === 'NaN' ||  !aspectRatio) {
+        return data;
+    }
+    var wRatio;
+    var hRatio;
+    if (!!aspectRatio) {
+        var temp = aspectRatio.split(':');
+        wRatio =  Number(temp[0]);
+        hRatio = Number(temp[1]);
+    }
+    // 寬的小數部分
+    var wFixed = util.getToFixed(data.w);
+    // 高的小數部分
+    var hFixed = util.getToFixed(data.h);
+
+    // 開始算術....
+
+    // 如果高為整數，那麼說明寬高都已經符合了
+    if (wFixed === 0 &amp;&amp; hFixed === 0) {
+        return data;
+    }
+    // 如果都不為0 誰大以誰為標準,提到前面手動設置為0;
+    // 不過為了更精準，需要採用四捨五入法
+    if (wFixed &gt;= hFixed &amp;&amp; hFixed !== 0) {
+        wFixed = 0;
+        data.w = Math.round(data.w);
+    }else if (wFixed &lt; hFixed &amp;&amp; wFixed !== 0) {
+        hFixed = 0;
+        data.h = Math.round(data.h);
+    }
+
+    // 開始以標準進行算術
+    if (wFixed === 0) {
+        // 如果寬的小數部分為0，則以寬為標準計算高的整數上下兼容
+        data.h = this.calculateInt(data.w, hRatio / wRatio);
+    }else if (hFixed === 0) {
+        // 如果高的小數部分為0，則以高為標準計算寬的整數上下兼容
+        data.w = this.calculateInt(data.h, wRatio / hRatio);
+    }
+    return data;
+
+}
+</code></pre>
+
+<pre><code>/**
+ * calculateInt 以某一整數以及比例為標磚計算另一邊的整數
+ *
+ * @param  {number} n     基准數字
+ * @param  {number} radio 比例尺
+ *
+ * @return {number}       計算的整數數字
+ */
+calculateInt: function (n, radio) {  
+    var results = n * radio;
+    // 為了更加精確，將整數部分 + 小數部分乘以比例，採用四捨五入法
+    // 這樣做是兼容，當比例極大時，小數部分是不可以截取的
+    // 截取2為小數是因為：比例一版還是不會超過 100:1 的
+    results = ~~results + Math.round(util.getToFixed(results, 2) * radio);
+    return results;
+}
+</code></pre>
+
+<p>util.js中的的<code>getTofixed</code>方法</p>
+
+<pre><code>/**
+ * getToFixed 獲取指定位數的小數部分
+ *
+ * @param  {number} n 傳入的數字
+ * @param  {number} digit 需要截取的小數位數
+ *
+ * @return {number}   返回截取的指定位數的小數部分
+ */
+getToFixed(n, digit = 4) {  
+     return Number((n - ~~n).toFixed(digit));
+}
+</code></pre>
+
+<p>到此，圖片的裁剪算法原理就算是說明白了，不清楚的請在<a href="https://github.com/huarxia">github</a>上聯繫我</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../18/express-zhong-jian-jian-yuan-li/index.html" title="link to express  中間件原理">express  中間件原理</a>
+      </h5>
+       <p class="excerpt" title="有時候面試，老是被問到一些自己使用過的技術，但是僅僅限於使用，這個是真沒深入研究過，鄙人能力有限的緣故吧。但是呢，每每被問倒之後下來又會想為什麼不在深入一點呢？(邪惡😈之笑)~~;完全可以再多了解一">有時候面試，老是被問到一些自己使用過的技術，但是僅僅限於使用，這個是真沒深入研究過，鄙人能力有限的緣故吧。但是呢，每每被問倒之後下來又會想為什麼不在深入一點呢？(邪惡😈之笑)~~;完全可以再多了解一&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="18 1月 2017" class="post-list__meta--date date">18 1月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/express/">express</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/01/18/express-zhong-jian-jian-yuan-li/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../15/xue-xi-python-012/index.html" title="link to 学习Python 012">学习Python 012</a></h5>
+       <p class="excerpt" title="測試題   0.注意，这道题跟上节课的那道题有点儿不同，回答完请上机实验或参考答案。 old = [1, 2, 3, 4, 5]   new = old   old = [6]   print(new">測試題   0.注意，这道题跟上节课的那道题有点儿不同，回答完请上机实验或参考答案。 old = [1, 2, 3, 4, 5]   new = old   old = [6]   print(new&hellip;</p>
+       <div class="post-list__meta"><time datetime="15 1月 2017" class="post-list__meta--date date">15 1月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/python/">Python</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/01/15/xue-xi-python-012/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

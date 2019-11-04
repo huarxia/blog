@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Mac之vim普通命令使用</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mac之vim普通命令使用">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Mac之vim普通命令使用">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/12/11/mac-ben-di-an-zhuang-discuz-403/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Mac之vim普通命令使用" />
+    <meta property="og:description" content="高级一些的编辑器，都会包含宏功能，vim当然不能缺少了，在vim中使用宏是非常方便的： :qx 开始记录宏，并将结果存入寄存器x q 退出记录模式  @x 播放记录在x寄存器中的宏命令 稍微解释一下，当在normal模式下输入:qx后，你对文本的所有编辑动作将会被记录下来，再次输入q即退出了记录模 式，然后输入@x对刚才记录下来的命令进行重复，此命令后可跟数字，表示要重复多少次，比如@x20，可以重复20次。这个在文本的批处理中是非常有用的。 同时编辑多个文件 在vim众多的插件中，有一个叫minibuffer的插件，就是下面所说的标签页功能了，可以支持同时编辑多个文件。 标签命令 :tabe fn 在一个新的标签页中编辑文件fn gt 切换到下一个标签页  gT 切换到上一个标签页  :tabr 切换到第一个标签页..." />
+    <meta property="og:url" content="http://localhost:2368/2015/12/11/mac-ben-di-an-zhuang-discuz-403/" />
+    <meta property="article:published_time" content="2015-12-11T08:07:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-16T08:09:25.927Z" />
+    <meta property="article:tag" content="工具" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Mac之vim普通命令使用" />
+    <meta name="twitter:description" content="高级一些的编辑器，都会包含宏功能，vim当然不能缺少了，在vim中使用宏是非常方便的： :qx 开始记录宏，并将结果存入寄存器x q 退出记录模式  @x 播放记录在x寄存器中的宏命令 稍微解释一下，当在normal模式下输入:qx后，你对文本的所有编辑动作将会被记录下来，再次输入q即退出了记录模 式，然后输入@x对刚才记录下来的命令进行重复，此命令后可跟数字，表示要重复多少次，比如@x20，可以重复20次。这个在文本的批处理中是非常有用的。 同时编辑多个文件 在vim众多的插件中，有一个叫minibuffer的插件，就是下面所说的标签页功能了，可以支持同时编辑多个文件。 标签命令 :tabe fn 在一个新的标签页中编辑文件fn gt 切换到下一个标签页  gT 切换到上一个标签页  :tabr 切换到第一个标签页..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/12/11/mac-ben-di-an-zhuang-discuz-403/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Mac之vim普通命令使用",
+    "url": "http://localhost:2368/2015/12/11/mac-ben-di-an-zhuang-discuz-403/",
+    "datePublished": "2015-12-11T08:07:00.000Z",
+    "dateModified": "2016-11-16T08:09:25.927Z",
+    "keywords": "工具",
+    "description": "高级一些的编辑器，都会包含宏功能，vim当然不能缺少了，在vim中使用宏是非常方便的： :qx 开始记录宏，并将结果存入寄存器x q 退出记录模式  @x 播放记录在x寄存器中的宏命令 稍微解释一下，当在normal模式下输入:qx后，你对文本的所有编辑动作将会被记录下来，再次输入q即退出了记录模 式，然后输入@x对刚才记录下来的命令进行重复，此命令后可跟数字，表示要重复多少次，比如@x20，可以重复20次。这个在文本的批处理中是非常有用的。 同时编辑多个文件 在vim众多的插件中，有一个叫minibuffer的插件，就是下面所说的标签页功能了，可以支持同时编辑多个文件。 标签命令 :tabe fn 在一个新的标签页中编辑文件fn gt 切换到下一个标签页  gT 切换到上一个标签页  :tabr 切换到第一个标签页..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-gong-ju">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="11 12月 2015" class="post-meta__date date">11 12月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/gong-ju/index.html">工具</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">Mac之vim普通命令使用</h1>
+    </header>
+
+    <section class="post tag-gong-ju">
+      <p>高级一些的编辑器，都会包含宏功能，vim当然不能缺少了，在vim中使用宏是非常方便的：</p>
+
+<p>:qx 开始记录宏，并将结果存入寄存器x
+q 退出记录模式 <br />
+@x 播放记录在x寄存器中的宏命令
+稍微解释一下，当在normal模式下输入:qx后，你对文本的所有编辑动作将会被记录下来，再次输入q即退出了记录模
+式，然后输入@x对刚才记录下来的命令进行重复，此命令后可跟数字，表示要重复多少次，比如@x20，可以重复20次。这个在文本的批处理中是非常有用的。
+同时编辑多个文件
+在vim众多的插件中，有一个叫minibuffer的插件，就是下面所说的标签页功能了，可以支持同时编辑多个文件。
+标签命令</p>
+
+<p>:tabe fn 在一个新的标签页中编辑文件fn
+gt 切换到下一个标签页 <br />
+gT 切换到上一个标签页 <br />
+:tabr 切换到第一个标签页
+:tabl 切换到最后一个标签页
+:tabm [N] 把当前tab移动到第N个tab之后
+对，正如你所想象的那样，跟eclipse, ue等的标签页是一个意思！
+窗口命令
+ctrl+w s 水平分割窗口 <br />
+ctrl+w w 切换窗口 <br />
+ctrl+w q 退出当前窗口(由于同时有多个文件，此命令不会影响其他窗口) <br />
+ctrl+w v 垂直分割窗口 <br />
+其他
+vim在保存之前不会对文件做实际的修改，只是加载到缓冲区中，对文件的编辑其实是对缓冲区的编辑，直到:w时才会存入物理文件。</p>
+
+<p>:e file 把file加载到新的缓冲区中
+:bn 跳转到下一个缓冲区
+:bd 删除缓冲区(关闭文件)
+:sp fn 分割窗口，并将fn加载到新的窗口中
+退出编辑器</p>
+
+<p>:w 将缓冲区写入文件，即保存修改
+:wq 保存修改并退出
+: x 保存修改并退出
+:q 退出，如果对缓冲区进行过修改，则会提示
+:q! 强制退出，放弃修改
+查找替换
+/pattern 向后搜索字符串pattern
+?pattern 向前搜索字符串pattern
+n 下一个匹配(如果是/搜索，则是向下的下一个，?搜索则是向上的下一个) <br />
+N 上一个匹配(同上) <br />
+:%s/old/new/g 搜索整个文件，将所有的old替换为new
+:%s/old/new/gc 搜索整个文件，将所有的old替换为new，每次都要你确认是否替换
+复制粘贴
+dd 删除光标所在行 <br />
+dw 删除一个字(word) <br />
+x 删除当前字符 <br />
+X 删除前一个字符 <br />
+D 删除到行末 <br />
+yy 复制一行，此命令前可跟数字，标识复制多行，如6yy，表示从当前行开始复制6行 <br />
+yw 复制一个字 <br />
+y$ 复制到行末 <br />
+p 粘贴粘贴板的内容到当前行的下面 <br />
+P 粘贴粘贴板的内容到当前行的上面 <br />
+]p 有缩进的粘贴，vim会自动调节代码的缩进
+“a 将内容放入/存入a寄存器，可以支持多粘贴板
+附：比如常用的一个寄存器就是系统寄存器，名称为+，所以从系统粘贴板粘贴到vim中的命令为”+p,注意此处的+不表示操作符，二十一个寄存器。
+移动光标
+在vim中移动光标跟其他的编辑器中有很大的区别，不过一旦学会了，就会飞速的在文本中移动了。</p>
+
+<p>h,j,k,l 左，下，上，右 <br />
+ctrl-f 上翻一页 <br />
+ctrl-b 下翻一页 <br />
+% 跳到与当前括号匹配的括号处，如当前在{，则跳转到与之匹配的}处
+w 跳到下一个字首，按标点或单词分割 <br />
+W 跳到下一个字首，长跳，如end-of-line被认为是一个字 <br />
+e 跳到下一个字尾 <br />
+E 跳到下一个字尾，长跳 <br />
+b 跳到上一个字 <br />
+B 跳到上一个字，长跳 <br />
+0 跳至行首，不管有无缩进，就是跳到第0个字符 <br />
+^ 跳至行首的第一个字符
+$ 跳至行尾
+gg 跳至文件的第一行 <br />
+gd 跳至当前光标所在的变量的声明处 <br />
+[N]G 跳到第N行，如0G，就等价于gg，100G就是第100行
+fx 在当前行中找x字符，找到了就跳转至 <br />
+; 重复上一个f命令，而不用重复的输入fx
+tx 与fx类似，但是只是跳转到x的前一个字符处 <br />
+Fx 跟fx的方向相反 <br />
+),( 跳转到上/下一个语句
+* 查找光标所在处的单词，向下查找</p>
+
+<h1 id="">查找光标所在处的单词，向上查找</h1>
+
+<p>`. 跳转至上次编辑位置
+在屏幕上移动</p>
+
+<p>H 移动光标到当前屏幕上最上边的一行 <br />
+M 移动光标到当前屏幕上中间的一行 <br />
+L 移动光标到当前屏幕上最下边的一行 <br />
+书签
+ma 把当前位置存成标签a <br />
+`a 跳转到标签a处
+编辑
+r 替换一个字符 <br />
+J 将下一行和当前行连接为一行 <br />
+cc 删除当前行并进入编辑模式 <br />
+cw 删除当前字，并进入编辑模式 <br />
+c$ 擦除从当前位置至行末的内容，并进入编辑模式 <br />
+s 删除当前字符并进入编辑模式 <br />
+S 删除光标所在行并进入编辑模式 <br />
+xp 交换当前字符和下一个字符 <br />
+u 撤销 <br />
+ctrl+r 重做 <br />
+. 重复上一个编辑命令
+~ 切换大小写，当前字符
+g~iw 切换当前字的大小写 <br />
+gUiw 将当前字变成大写 <br />
+guiw 将当前字变成小写 <br />
+&gt;&gt; 将当前行右移一个单位
+&lt;&lt; 将当前行左移一个单位(一个tab符)
+== 自动缩进当前行</p>
+
+<p>插入模式
+i 从当前光标处进入插入模式 <br />
+I 进入插入模式，并置光标于行首 <br />
+a 追加模式，置光标于当前光标之后 <br />
+A 追加模式，置光标于行末 <br />
+o 在当前行之下新加一行，并进入插入模式 <br />
+O 在当前行之上新加一行，并进入插入模式 <br />
+Esc 退出插入模式 <br />
+可视模式
+标记文本
+v 进入可视模式，单字符模式 <br />
+V 进入可视模式，行模式 <br />
+ctrl+v 进入可视模式，列模式，类似于UE的列模式 <br />
+o 跳转光标到选中块的另一个端点 <br />
+U 将选中块中的内容转成大写 <br />
+O 跳转光标到块的另一个端点 <br />
+aw 选中一个字 <br />
+ab 选中括号中的所有内容，包括括号本身 <br />
+aB 选中{}括号中的所有内容 <br />
+ib 选中括号中的内容，不含括号 <br />
+iB 选中{}中的内容，不含{}</p>
+
+<p>对标记进行动作
+&gt; 块右移
+&lt; 块左移
+y 复制块 <br />
+d 删除块 <br />
+~ 切换块中内容的大小写</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../28/mongodbchu-shi/index.html" title="link to mongodb初始">mongodb初始</a>
+      </h5>
+       <p class="excerpt" title="第一步： 下载文件：curl -O http://downloads.mongodb.org/osx/mongodb-osx-x86_64-3.2.0.tgz 第二步： 解压缩文件：tar -zxvf">第一步： 下载文件：curl -O http://downloads.mongodb.org/osx/mongodb-osx-x86_64-3.2.0.tgz 第二步： 解压缩文件：tar -zxvf&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="28 12月 2015" class="post-list__meta--date date">28 12月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/12/28/mongodbchu-shi/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../08/macxia-pei-zhi-apachexu-ni-zhu-ji-fang-wen-mu-lu-gai-zhi-zi-ji-de-fang-bian-fang-wen-de-mu-lu/index.html" title="link to mac下配置Apache虚拟主机，访问目录改至自己的方便访问的目录">mac下配置Apache虚拟主机，访问目录改至自己的方便访问的目录</a></h5>
+       <p class="excerpt" title="首先，apache2在/etc/apache2目录，然后，打开httpd.conf文件：/etc/apache2/httpd.conf 查找vhosts.conf字符，找到Include/privat">首先，apache2在/etc/apache2目录，然后，打开httpd.conf文件：/etc/apache2/httpd.conf 查找vhosts.conf字符，找到Include/privat&hellip;</p>
+       <div class="post-list__meta"><time datetime="08 12月 2015" class="post-list__meta--date date">08 12月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/12/08/macxia-pei-zhi-apachexu-ni-zhu-ji-fang-wen-mu-lu-gai-zhi-zi-ji-de-fang-bian-fang-wen-de-mu-lu/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

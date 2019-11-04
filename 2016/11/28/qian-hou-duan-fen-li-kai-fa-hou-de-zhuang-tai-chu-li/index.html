@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>前後端分離開發后的狀態處理</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="前後端分離開發后的狀態處理">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="前後端分離開發后的狀態處理">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2016/11/28/qian-hou-duan-fen-li-kai-fa-hou-de-zhuang-tai-chu-li/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="前後端分離開發后的狀態處理" />
+    <meta property="og:description" content="2016-11-28 星期一      十月廿九丙申年 【猴年】己亥月 甲寅日       宜 纳采 移徙 纳财 开市 交易      忌 开仓 造屋 造桥 祭祀 眾所周知，在如今，web開發已經沒有曾經那樣刀耕火種的了，效率也已經是提升了不是一星半點，可以說算是進入了「蒸汽時代」。 那麼，既然進入蒸汽時代了，是不是開發模式也有所改變了呢，答案是肯定的。現在很多都是前後端分離了。 要知道，在以前，也就是前後端沒有分離的時候，特別的耦合。出了問題，誰都不想解決，誰都不想去更改、修復，前端退給後端，後端推給前端，對了那時候還不叫前端，叫「..." />
+    <meta property="og:url" content="http://localhost:2368/2016/11/28/qian-hou-duan-fen-li-kai-fa-hou-de-zhuang-tai-chu-li/" />
+    <meta property="article:published_time" content="2016-11-28T10:10:08.721Z" />
+    <meta property="article:modified_time" content="2016-11-28T10:15:57.784Z" />
+    <meta property="article:tag" content="經驗" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="前後端分離開發后的狀態處理" />
+    <meta name="twitter:description" content="2016-11-28 星期一      十月廿九丙申年 【猴年】己亥月 甲寅日       宜 纳采 移徙 纳财 开市 交易      忌 开仓 造屋 造桥 祭祀 眾所周知，在如今，web開發已經沒有曾經那樣刀耕火種的了，效率也已經是提升了不是一星半點，可以說算是進入了「蒸汽時代」。 那麼，既然進入蒸汽時代了，是不是開發模式也有所改變了呢，答案是肯定的。現在很多都是前後端分離了。 要知道，在以前，也就是前後端沒有分離的時候，特別的耦合。出了問題，誰都不想解決，誰都不想去更改、修復，前端退給後端，後端推給前端，對了那時候還不叫前端，叫「..." />
+    <meta name="twitter:url" content="http://localhost:2368/2016/11/28/qian-hou-duan-fen-li-kai-fa-hou-de-zhuang-tai-chu-li/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "前後端分離開發后的狀態處理",
+    "url": "http://localhost:2368/2016/11/28/qian-hou-duan-fen-li-kai-fa-hou-de-zhuang-tai-chu-li/",
+    "datePublished": "2016-11-28T10:10:08.721Z",
+    "dateModified": "2016-11-28T10:15:57.784Z",
+    "keywords": "經驗",
+    "description": "2016-11-28 星期一      十月廿九丙申年 【猴年】己亥月 甲寅日       宜 纳采 移徙 纳财 开市 交易      忌 开仓 造屋 造桥 祭祀 眾所周知，在如今，web開發已經沒有曾經那樣刀耕火種的了，效率也已經是提升了不是一星半點，可以說算是進入了「蒸汽時代」。 那麼，既然進入蒸汽時代了，是不是開發模式也有所改變了呢，答案是肯定的。現在很多都是前後端分離了。 要知道，在以前，也就是前後端沒有分離的時候，特別的耦合。出了問題，誰都不想解決，誰都不想去更改、修復，前端退給後端，後端推給前端，對了那時候還不叫前端，叫「..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-jing-yan">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="28 11月 2016" class="post-meta__date date">28 11月 2016</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/jing-yan/index.html">經驗</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">前後端分離開發后的狀態處理</h1>
+    </header>
+
+    <section class="post tag-jing-yan">
+      <blockquote>
+  <p>2016-11-28 星期一</p>
+  
+  <p>十月廿九丙申年 【猴年】己亥月 甲寅日 </p>
+  
+  <p>宜 纳采 移徙 纳财 开市 交易</p>
+  
+  <p>忌 开仓 造屋 造桥 祭祀</p>
+</blockquote>
+
+<p>眾所周知，在如今，web開發已經沒有曾經那樣刀耕火種的了，效率也已經是提升了不是一星半點，可以說算是進入了「蒸汽時代」。</p>
+
+<p>那麼，既然進入蒸汽時代了，是不是開發模式也有所改變了呢，答案是肯定的。現在很多都是前後端分離了。</p>
+
+<p>要知道，在以前，也就是前後端沒有分離的時候，特別的耦合。出了問題，誰都不想解決，誰都不想去更改、修復，前端退給後端，後端推給前端，對了那時候還不叫前端，叫「切圖仔」，要做的就是切頁面，改交互效果，頂多有個什麼ajax請求什麼的，前端看不懂後端寫在velocity\jsp模板里的的後端邏輯，後端看不懂前端里的html標籤，甚至亂用標籤。這導致了開發效率極低，一旦出現問題那就開始扯皮<del>；而且我感受是100%出問題。</p>
+
+<p>那麼這和我今天要說的有什麼關聯呢？今天不是說在前后端分離的情況下開發麼？難道也有扯皮事件發生？</p>
+
+<p>對！當然有側披事件發生，不僅僅是前端和後端扯皮，還有前端和前端之間的扯皮</del></p>
+
+<p>先引入一個親身經歷吧，前景提示：是在前後端分離的情況下開發。</p>
+
+<p>有一次在開發一堆按鈕：上線、下線、提交、保存、編輯、刪除......這些按鈕都是通過實際的狀態碼來決定顯示與否，並且不是根據一個狀態碼，是根據幾個狀態碼的集合來顯示的。</p>
+
+<p>第一次，一個前端人員改了2次，最後QA測試出沒有完全覆蓋按鈕顯示規則；</p>
+
+<p>第二次，是我來修改的，當然最後QA也是測試出沒有完全覆蓋按鈕顯示規則；</p>
+
+<p>第三次，是另一個前端人員，改了第一次，還是被QA測試出沒有完全覆蓋顯示規則，是第二次更改時，他用注釋把所有的狀態集合列舉出來，才完成這一規則顯示的；</p>
+
+<p>從上看出，其實問題出在前後端分離后，像這樣的狀態碼，（1，2，3）到第二個人甚至某些天后的自己或許都分辨不出來代表什麼，這一節出現了脫節，並且是間斷時間性的脫節。這樣其實並不好，對項目來自自身都不好。</p>
+
+<p>經過一段時間的思考，其實也該總結總結應該怎麼解決，避免扯皮~<del></p>
+
+<p>這裡給出最完整最有效的方案：</p>
+
+<blockquote>
+  <p>1.對於很多狀態碼，使用枚舉用一個json變量儲存起來；</p>
+  
+  <p>2.要使用狀態碼來處理邏輯，只需要<code>&amp;&amp; ||</code>操作即可；</p>
+  
+  <p>3.起名的json變量以及裡面的key值也要有一定意義；</p>
+</blockquote>
+
+<p>為什麼使用有意義的json變量儲存而不是用注釋呢？</p>
+
+<blockquote>
+  <p>1.首先，注釋並不是有效程序的一部分，只是起到注釋作用，讓有意義的變量作為程序的一部分才是好的代碼，反正也得起變量名；</p>
+  
+  <p>2.只有在實在是說不清楚的時候才使用注釋加以更加準確的說明；</p>
+</blockquote>
+
+<p>在這樣的更改下再出問題的幾率就很小很小了，除非本身設計的邏輯就有問題；</p>
+
+<p>今天的記錄就結束了，算不上什麼高大上的建議，只是一點經驗而已</del>~</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../../12/15/cssshui-ping-ju-zhong-he-chui-zhi-ju-zhong-duo-chong-jie-jue-fang-an/index.html" title="link to CSS水平居中和垂直居中多种解决方案">CSS水平居中和垂直居中多种解决方案</a>
+      </h5>
+       <p class="excerpt" title="水平居中：   1）对于行内元素,设置其父元素的text-align为center即可。      2）对于块级元素,设置其本身的margin-left,margin-right为auto即可。简写：">水平居中：   1）对于行内元素,设置其父元素的text-align为center即可。      2）对于块级元素,设置其本身的margin-left,margin-right为auto即可。简写：&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="15 12月 2016" class="post-list__meta--date date">15 12月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/css/">css</a>, <a href="/tag/mian-shi/">面試</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/12/15/cssshui-ping-ju-zhong-he-chui-zhi-ju-zhong-duo-chong-jie-jue-fang-an/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../25/mock-server-chu-ding/index.html" title="link to mock server 初定">mock server 初定</a></h5>
+       <p class="excerpt" title="2016-11-25 星期五      十月廿六丙申年 【猴年】己亥月 辛亥日       宜 祭祀 沐浴 出行 余事勿取      忌 开市 动土 破土 行丧 安葬 記得是好幾個月前參照別人的">2016-11-25 星期五      十月廿六丙申年 【猴年】己亥月 辛亥日       宜 祭祀 沐浴 出行 余事勿取      忌 开市 动土 破土 行丧 安葬 記得是好幾個月前參照別人的&hellip;</p>
+       <div class="post-list__meta"><time datetime="25 11月 2016" class="post-list__meta--date date">25 11月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/11/25/mock-server-chu-ding/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

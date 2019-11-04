@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>学习Python 006</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="学习Python 006">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="学习Python 006">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/01/03/xue-xi-python-006/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="学习Python 006" />
+    <meta property="og:description" content="測試題：   0.Python 的 floor 除法现在使用 “ // ” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？ 會顯示1.0，在python2中 /除法運算符會得到整數部分，而Python3 /除法運算符是人類計算的正真除法，但是Python的小夥伴認為計算機計算還是需要只得到大多數語言一樣的除法效果，所以加入了//除法運算；   1.a &amp;lt; b &amp;lt; c 事实上是等于？ 實際上等價于：a &amp;lt; b and b &amp;lt; c   2.不使用 IDLE..." />
+    <meta property="og:url" content="http://localhost:2368/2017/01/03/xue-xi-python-006/" />
+    <meta property="article:published_time" content="2017-01-03T06:10:28.207Z" />
+    <meta property="article:modified_time" content="2017-01-04T08:10:36.907Z" />
+    <meta property="article:tag" content="Python" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="学习Python 006" />
+    <meta name="twitter:description" content="測試題：   0.Python 的 floor 除法现在使用 “ // ” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？ 會顯示1.0，在python2中 /除法運算符會得到整數部分，而Python3 /除法運算符是人類計算的正真除法，但是Python的小夥伴認為計算機計算還是需要只得到大多數語言一樣的除法效果，所以加入了//除法運算；   1.a &amp;lt; b &amp;lt; c 事实上是等于？ 實際上等價于：a &amp;lt; b and b &amp;lt; c   2.不使用 IDLE..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/01/03/xue-xi-python-006/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "学习Python 006",
+    "url": "http://localhost:2368/2017/01/03/xue-xi-python-006/",
+    "datePublished": "2017-01-03T06:10:28.207Z",
+    "dateModified": "2017-01-04T08:10:36.907Z",
+    "keywords": "Python",
+    "description": "測試題：   0.Python 的 floor 除法现在使用 “ // ” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？ 會顯示1.0，在python2中 /除法運算符會得到整數部分，而Python3 /除法運算符是人類計算的正真除法，但是Python的小夥伴認為計算機計算還是需要只得到大多數語言一樣的除法效果，所以加入了//除法運算；   1.a &amp;lt; b &amp;lt; c 事实上是等于？ 實際上等價于：a &amp;lt; b and b &amp;lt; c   2.不使用 IDLE..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-python">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="03 1月 2017" class="post-meta__date date">03 1月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/python/index.html">Python</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">学习Python 006</h1>
+    </header>
+
+    <section class="post tag-python">
+      <h3 id="">測試題：</h3>
+
+<blockquote>
+  <p>0.Python 的 floor 除法现在使用 “ // ” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？</p>
+</blockquote>
+
+<p>會顯示1.0，在python2中 <code>/</code>除法運算符會得到整數部分，而Python3 <code>/</code>除法運算符是人類計算的正真除法，但是Python的小夥伴認為計算機計算還是需要只得到大多數語言一樣的除法效果，所以加入了<code>//</code>除法運算；</p>
+
+<blockquote>
+  <p>1.a &lt; b &lt; c 事实上是等于？</p>
+</blockquote>
+
+<p>實際上等價于：<code>a &lt; b and b &lt; c</code></p>
+
+<blockquote>
+  <p>2.不使用 IDLE ，你可以轻松说出 5 ** -2 的值吗？ </p>
+</blockquote>
+
+<p>得到 0.04;</p>
+
+<p>幂运算操作符比其左侧的一元操作符优先级高，比其右侧的一元操作符优先级低。</p>
+
+<p>這裡給出運算符的表格：</p>
+
+<p>以下假设变量a为10，变量b为21：</p>
+
+<table>  
+<thead>  
+<tr>  
+<th id="运算符" style="text-align:left;">运算符</th>  
+<th id="描述" style="text-align:left;">描述</th>  
+<th id="實例" style="text-align:left;">實例</th>  
+</tr>  
+</thead>
+
+<tbody>  
+<tr>  
+<td style="text-align:left;"><p><code>+</code></p></td>  
+<td style="text-align:left;"><p>加 - 两个对象相加</p></td>  
+<td style="text-align:left;"><p><code>a + b</code> 输出结果 31</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>-</code></p></td>  
+<td style="text-align:left;"><p>减 - 得到负数或是一个数减去另一个数</p></td>  
+<td style="text-align:left;"><p><code>a - b</code> 输出结果 -11</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>*</code></p></td>  
+<td style="text-align:left;"><p>乘 - 两个数相乘或是返回一个被重复若干次的字符串</p></td>  
+<td style="text-align:left;"><p><code>a * b</code> 输出结果 210</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>/</code></p></td>  
+<td style="text-align:left;"><p>除 - x 除以 y</p></td>  
+<td style="text-align:left;"><p><code>b / a</code> 输出结果 2.1</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>%</code></p></td>  
+<td style="text-align:left;"><p>取模 - 返回除法的余数</p></td>  
+<td style="text-align:left;"><p><code>b % a</code> 输出结果 1</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>**</code></p></td>  
+<td style="text-align:left;"><p>幂 - 返回x的y次幂</p></td>  
+<td style="text-align:left;"><p><code>a**b</code> 为10的21次方</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>//</code></p></td>  
+<td style="text-align:left;"><p>取整除 - 返回商的整数部分</p></td>  
+<td style="text-align:left;"><p><code>9//2</code> 输出结果 4 , <code>9.0//2.0</code> 输出结果 4.0</p></td>  
+</tr>
+
+</tbody>  
+</table>  
+
+<blockquote>
+  <p>3.如何简单判断一个数是奇数还是偶数？</p>
+</blockquote>
+
+<p>使用求余可以简单得到答案：能被 2 整除为偶数，所以 <code>x % 2 == 0</code> ，否则为奇数。</p>
+
+<blockquote>
+  <p>4.请用最快速度说出答案： not 1 or 0 and 1 or 3 and 4 or 5 and 6 or 7 and 8 and 9</p>
+</blockquote>
+
+<p>答案是：4</p>
+
+<p><code>not or and</code> 的优先级是不同的： <code>not &gt; and &gt; or</code>
+我们按照优先级给它们加上括号： <code>(not 1) or (0 and 1) or (3 and 4) or (5 and 6) or (7 and 8 and 9)</code> <code>==</code> <code>0 or 0 or 4 or 6 or 9</code> <code>==</code> <code>4</code>
+为啥是 4 ？
+还记得004作业提到的“短路逻辑”吗？ <code>3 and 4 == 4</code> ，而 <code>3 or 4 == 3</code> 。
+所以答案是： 4</p>
+
+<p>這裡給出邏輯運算符表格：</p>
+
+<p>Python语言支持逻辑运算符，以下假设变量 a 为 10, b为 20:</p>
+
+<table>  
+<thead>  
+<tr>  
+<th id="运算符" style="text-align:left;">运算符</th>  
+<th id="逻辑表达式" style="text-align:left;">逻辑表达式</th>  
+<th id="描述" style="text-align:left;">描述</th>  
+<th id="实例" style="text-align:left;">实例</th>  
+</tr>  
+</thead>
+
+<tbody>  
+<tr>  
+<td style="text-align:left;"><p><code>and</code></p></td>  
+<td style="text-align:left;"><p><code>x and y</code></p></td>  
+<td style="text-align:left;"><p>布尔"与" - 如果 x 为 False，x and y 返回 False，否则它返回 y 的计算值。</p></td>  
+<td style="text-align:left;"><p><code>(a and b)</code> 返回 20。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>or</code></p></td>  
+<td style="text-align:left;"><p><code>x or y</code></p></td>  
+<td style="text-align:left;"><p>布尔"或" - 如果 x 是 True，它返回 True，否则它返回 y 的计算值。</p></td>  
+<td style="text-align:left;"><p><code>(a or b)</code> 返回 10。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>not</code></p></td>  
+<td style="text-align:left;"><p><code>not x</code></p></td>  
+<td style="text-align:left;"><p>布尔"非" - 如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。</p></td>  
+<td style="text-align:left;"><p><code>not(a and b)</code> 返回 False </p></td>  
+</tr>
+
+</tbody>  
+</table>  
+
+<h3 id="">動動手：</h3>
+
+<blockquote>
+  <p>0.请写一个程序打印出 0~100 所有的奇数。</p>
+</blockquote>
+
+<pre><code># 请写一个程序打印出 0~100 所有的奇数。
+i = 0  
+maxNum = 100  
+# 定義一個字符串保存所有的奇數
+oddStr = ''  
+while i &lt;= maxNum:  
+    if i % 2 != 0:
+        oddStr += str(i)
+        oddStr += ' '
+    i += 1
+print(oddStr)
+</code></pre>
+
+<p><img src="../../../../content/images/2017/01/649938C9-2E95-4786-8C00-4452EC8F5DBC.png" alt="" /></p>
+
+<blockquote>
+  <ol>
+  <li>我们说过现在的 Python 可以计算很大很大的数据， 是...... 真正的大数据,计算可是要靠刚刚的硬件滴，不妨写一个小代码，让你的计算机为之崩溃？</li>
+  </ol>
+</blockquote>
+
+<p>我們可以使用冪計算來實現，但是別隨便玩啊，電腦崩潰了別找我</p>
+
+<pre><code>print(2 ** 2 ** 32)  
+# 一般很多机子都会在一会儿之后： Memory Overflow ，内存不够用。
+# 设计到幂操作，结果都是惊人滴。
+</code></pre>
+
+<blockquote>
+  <p>2.爱因斯坦的难题</p>
+</blockquote>
+
+<p>爱因斯坦曾出过这样一道有趣的数学题：有一个长阶梯，若每步上2阶，最后剩1阶；若每步上3阶，最后剩2阶；若每步上5阶，最后剩4阶；若每步上6阶，最后剩5阶；只有每步上7阶，最后刚好一阶也不剩。</p>
+
+<p>题目：请编程求解该阶梯至少有多少阶？</p>
+
+<pre><code># 爱因斯坦的难题
+
+# 爱因斯坦曾出过这样一道有趣的数学题：
+# 有一个长阶梯;
+# 若每步上2阶，最后剩1阶；
+# 若每步上3阶，最后剩2阶；
+# 若每步上5阶，最后剩4阶；
+# 若每步上6阶，最后剩5阶；
+# 只有每步上7阶，最后刚好一阶也不剩。
+
+# 定義一個程序總數範圍
+total = input('請輸入一個限定的總階梯數(默認不輸入為200): ')  
+# 默認不輸入為100
+if total == '':  
+    total = '200'
+
+while not total.isdigit():  
+    total = input('您輸入的不是一個整數,請重新輸入: ')
+total = int(total)
+
+# 由於只有每步上7阶，最后刚好一阶也不剩。ladderNum移動式7的倍數；先定義一個ladderNum=7
+ladderNum = 7  
+# 定義i=0用作循環使用
+i = 0  
+# 定義 標誌位 flag = True;True表示計算成功，False表示計算失敗
+flag = False
+
+while not flag:  
+    # 初始定義為0，在進入while循環后先加1，省得每個if里都寫一遍，優化代碼
+    i += 1
+    if (ladderNum % 2 == 1 and ladderNum % 3 == 2
+        and ladderNum % 5 == 4 and ladderNum % 6 == 5
+        and ladderNum % 7 == 0):
+        flag = True
+    else:
+        ladderNum = 7 * i
+        flag = False
+        if ladderNum &gt; total:
+            # 在程序限定的total階梯內，未找到符合條件的答案&lt;del&gt;break跳出
+            break
+if flag:  
+    print('该阶梯至少有', ladderNum, '阶')
+else:  
+    print('在程序限定的', total, '階梯內,未找到符合條件的答案&lt;/del&gt;')
+</code></pre>
+
+<p><img src="../../../../content/images/2017/01/E729B548-BCB1-4F0F-A094-66DC994BC01C.png" alt="" /></p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../05/xue-xi-python-007/index.html" title="link to 学习Python 008">学习Python 008</a>
+      </h5>
+       <p class="excerpt" title="測試題：   0.if not (money &lt; 100): 上边这行代码相当于？ 相當於：if money &gt;= 100   1.assert 的作用是什么？ assert这个关键字我们">測試題：   0.if not (money &lt; 100): 上边这行代码相当于？ 相當於：if money &gt;= 100   1.assert 的作用是什么？ assert这个关键字我们&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="05 1月 2017" class="post-list__meta--date date">05 1月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/python/">Python</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/01/05/xue-xi-python-007/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../02/xue-xi-python-005/index.html" title="link to 学习Python 005">学习Python 005</a></h5>
+       <p class="excerpt" title="测试题：   0.在 Python 中， int 表示整型，那你还记得 bool 、 float和 str 分别表示   什么吗？ bool：表示布尔型 float: 表示浮点数（小数） str: 表">测试题：   0.在 Python 中， int 表示整型，那你还记得 bool 、 float和 str 分别表示   什么吗？ bool：表示布尔型 float: 表示浮点数（小数） str: 表&hellip;</p>
+       <div class="post-list__meta"><time datetime="02 1月 2017" class="post-list__meta--date date">02 1月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/python/">Python</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/01/02/xue-xi-python-005/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

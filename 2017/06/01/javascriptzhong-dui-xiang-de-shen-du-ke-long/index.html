@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>javascript中对象的深度克隆</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="javascript中对象的深度克隆">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="javascript中对象的深度克隆">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/06/01/javascriptzhong-dui-xiang-de-shen-du-ke-long/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="javascript中对象的深度克隆" />
+    <meta property="og:description" content="2017-06-01 星期四 丁酉年 五月初七      【鸡年】乙巳月 己未日      宜：进人口 牧养 置产 塞穴 结网      忌：诸事不宜 一、js中的对象 谈到对象的克隆，必定要说一下对象的概念。 js中的数据类型分为两大类：原始类型和对象类型 1）原始类型包括：数值、字符串、布尔值、null、undefined 2）对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象----函数（js中的一等对象）、数组（键值的有序集合）。 好了既然对象分为这两类，这两种类型在复制克隆的时候是有很大区别的。原始类型存储的是对象的实际数据，而对象类型存储的是对象的引用地址（对象的实际内容单独存放，..." />
+    <meta property="og:url" content="http://localhost:2368/2017/06/01/javascriptzhong-dui-xiang-de-shen-du-ke-long/" />
+    <meta property="article:published_time" content="2017-06-01T02:41:15.885Z" />
+    <meta property="article:modified_time" content="2017-06-06T02:15:54.613Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="javascript中对象的深度克隆" />
+    <meta name="twitter:description" content="2017-06-01 星期四 丁酉年 五月初七      【鸡年】乙巳月 己未日      宜：进人口 牧养 置产 塞穴 结网      忌：诸事不宜 一、js中的对象 谈到对象的克隆，必定要说一下对象的概念。 js中的数据类型分为两大类：原始类型和对象类型 1）原始类型包括：数值、字符串、布尔值、null、undefined 2）对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象----函数（js中的一等对象）、数组（键值的有序集合）。 好了既然对象分为这两类，这两种类型在复制克隆的时候是有很大区别的。原始类型存储的是对象的实际数据，而对象类型存储的是对象的引用地址（对象的实际内容单独存放，..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/06/01/javascriptzhong-dui-xiang-de-shen-du-ke-long/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "javascript中对象的深度克隆",
+    "url": "http://localhost:2368/2017/06/01/javascriptzhong-dui-xiang-de-shen-du-ke-long/",
+    "datePublished": "2017-06-01T02:41:15.885Z",
+    "dateModified": "2017-06-06T02:15:54.613Z",
+    "keywords": "js",
+    "description": "2017-06-01 星期四 丁酉年 五月初七      【鸡年】乙巳月 己未日      宜：进人口 牧养 置产 塞穴 结网      忌：诸事不宜 一、js中的对象 谈到对象的克隆，必定要说一下对象的概念。 js中的数据类型分为两大类：原始类型和对象类型 1）原始类型包括：数值、字符串、布尔值、null、undefined 2）对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象----函数（js中的一等对象）、数组（键值的有序集合）。 好了既然对象分为这两类，这两种类型在复制克隆的时候是有很大区别的。原始类型存储的是对象的实际数据，而对象类型存储的是对象的引用地址（对象的实际内容单独存放，..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="01 6月 2017" class="post-meta__date date">01 6月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">javascript中对象的深度克隆</h1>
+    </header>
+
+    <section class="post tag-js">
+      <blockquote>
+  <p>2017-06-01 星期四 丁酉年 五月初七</p>
+  
+  <p>【鸡年】乙巳月 己未日</p>
+  
+  <p>宜：进人口 牧养 置产 塞穴 结网</p>
+  
+  <p>忌：诸事不宜</p>
+</blockquote>
+
+<h3 id="js">一、js中的对象</h3>
+
+<p>谈到对象的克隆，必定要说一下对象的概念。</p>
+
+<p>js中的数据类型分为两大类：<code>原始类型</code>和<code>对象类型</code></p>
+
+<p>1）原始类型包括：<code>数值</code>、<code>字符串</code>、<code>布尔值</code>、<code>null</code>、<code>undefined</code></p>
+
+<p>2）对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象----函数（js中的一等对象）、数组（键值的有序集合）。</p>
+
+<p>好了既然对象分为这两类，这两种类型在复制克隆的时候是有很大区别的。原始类型存储的是对象的实际数据，而对象类型存储的是对象的引用地址（对象的实际内容单独存放，为了减少数据开销通常存放在内存中）。ps：说到这里，大家要知道，对象的原型也是引用对象，它把原型的方法和属性放在内存当中，通过原型链的方式来指向这个内存地址</p>
+
+<h3 id="">二、克隆的概念</h3>
+
+<p>1.浅度克隆：原始类型为值传递，对象类型仍为引用传递。</p>
+
+<p>2.深度克隆：所有元素或属性均完全复制，与原对象完全脱离，也就是说所有对于新对象的修改都不会反映到原对象中。</p>
+
+<h3 id="">三、浅克隆的表现</h3>
+
+<h4 id="1">1.原始类型</h4>
+
+<pre><code>// 数值克隆的表现
+var a = "1";  
+var b = a;  
+b = "2";  
+console.log(a);// "1"  
+console.log(b);// "2"
+</code></pre>
+
+<pre><code>// 字符串克隆的表现
+var c = "1";  
+var d = c;  
+d = "2";  
+console.log(c);// "1"  
+console.log(d);// "2"
+</code></pre>
+
+<pre><code>// 字符串克隆的表现
+var x = true;  
+var y = x;  
+y = false;  
+console.log(x);// true  
+console.log(y);// false
+</code></pre>
+
+<p>从上面的代码大家可以看出，原始类型即使我们采用普通的克隆方式仍能得到正确的结果，原因就是原始类型存储的是对象的实际数据。</p>
+
+<h4 id="2">2.对象类型</h4>
+
+<p>前面说过，函数是一等对象，当然也是对象类型，但是函数的克隆通过浅克隆即可实现</p>
+
+<pre><code>var m = function(){ alert(1); };  
+var n = m;  
+n = function(){ alert(2); };
+
+console.log(m()); // 1  
+console.log(n()); // 2
+</code></pre>
+
+<p>大家能看到，我们直接通过普通赋值的方式，就实现了函数的克隆，并且不会影响之前的对象。原因就是函数的克隆会在内存单独开辟一块空间，互不影响。</p>
+
+<p>好了，说了这个特殊的”关系户“以后，我们来说说普通的”选手“。为了方便后续的代码表现，我这里定义一个复杂的对象类型oPerson。下面看一下对象类型的浅复制有什么危害：</p>
+
+<pre><code>var oPerson = {  
+    oName:"rookiebob",
+    oAge:"18",
+    oAddress:{
+        province:"beijing"
+    },    
+    ofavorite:[
+        "swimming",
+        {reading:"history book"}
+    ],
+    skill:function(){
+        console.log("bob is coding");
+    }
+};
+function clone(obj) {  
+    var result={};
+    for(key in obj) {
+        result[key]=obj[key];
+    }
+    return result;
+}
+var oNew = clone(oPerson);  
+console.log(oPerson.oAddress.province); // beijing  
+oNew.oAddress.province = "shanghai";  
+console.log(oPerson.oAddress.province); //shanghai  
+</code></pre>
+
+<p>通过上面的代码，大家能看到，经过对象克隆以后，我修改oNew的地址，发现原对象oPerson也被修改了。这说明对象的克隆不够彻底，那也就是说深度克隆失败！</p>
+
+<h3 id="">四、深克隆的实现</h3>
+
+<p>为了保证对象的所有属性都被复制到，我们必须知道如果for循环以后，得到的元素仍是Object或者Array，那么需要再次循环，直到元素是原始类型或者函数为止。为了得到元素的类型，我们定义一个通用函数，用来返回传入对象的类型。</p>
+
+<pre><code>// 返回传递给他的任意对象的类
+function isClass(o) {  
+    if(o === null) return "Null";
+    if(o === undefined) return "Undefined";
+    return Object.prototype.toString.call(o).slice(8,-1);
+}
+</code></pre>
+
+<p><code>PS:Object.prototype.toString.call(o)</code>能直接返回对象的类属性，形如"[object class]"的字符串，我们通过截取class，并能知道传入的对象是什么类型。</p>
+
+<p>当然这里有两个疑问需要解释下：</p>
+
+<p><img src="../../../../content/images/2017/06/190908228163586.png" alt="" /></p>
+
+<p>（1）为什么不直接用toString方法？这是为了防止对象中的toString方法被重写，为了正确的调用toString()版本，必须间接的调用Function.call()方法</p>
+
+<p>（2）为什么不使用typeof来直接判断类型？因为对于Array而言，使用typeof（Array）返回的是object，所以不能得到正确的Array，这里对于后续的数组克隆将产生致命的问题。</p>
+
+<p>下面就是真正的深度克隆</p>
+
+<pre><code>//深度克隆
+function deepClone(obj) {  
+    var result,oClass = isClass(obj);
+    // 确定result的类型
+    if(oClass === "Object"){
+        result = {};
+    }else if(oClass === "Array"){
+        result = [];
+    }else{
+        return obj;
+    }
+    for(key in obj){
+        var copy = obj[key];
+        if(isClass(copy) === "Object"){
+            result[key] = arguments.callee(copy);//递归调用
+        }else if(isClass(copy) === "Array"){
+            result[key] = arguments.callee(copy);
+        }else{
+            result[key] = obj[key];
+        }
+    }
+    return result;
+}
+//返回传递给他的任意对象的类
+function isClass(o) {  
+    if(o === null) return "Null";
+    if(o === undefined) return "Undefined";
+    return Object.prototype.toString.call(o).slice(8,-1);
+}
+var oPerson = {  
+    oName:"rookiebob",
+    oAge:"18",
+    oAddress: {
+        province:"beijing"
+    },    
+    ofavorite: [
+        "swimming",
+        {reading: "history book"}
+    ],
+    skill:function() {
+        console.log("bob is coding");
+    }
+};
+/ /深度克隆一个对象
+var oNew = deepClone(oPerson);
+
+oNew.ofavorite[1].reading = "picture";  
+console.log(oNew.ofavorite[1].reading); // picture  
+console.log(oPerson.ofavorite[1].reading); // history book
+
+oNew.oAddress.province = "shanghai";  
+console.log(oPerson.oAddress.province); // beijing  
+console.log(oNew.oAddress.province); // shanghai  
+</code></pre>
+
+<p>从上面的代码可以看到，深度克隆的对象可以完全脱离原对象，我们对新对象的任何修改都不会反映到原对象中，这样深度克隆就实现了。</p>
+
+<p>这里要注意一点的就是：为什么deepClone这个函数中的result一定要判断类型？这里有一种情况，如果你的result直接是{}对象，我明明传进去的是一个数组，结果你复制完了以后，变成了一个对象了。</p>
+
+<pre><code>//深度克隆
+function deepClone(obj) {  
+    var result={},oClass = isClass(obj);
+    // if(oClass==="Object"){
+    //     result={};
+    // }else if(oClass==="Array"){
+    //     result=[];
+    // }else{
+    //     return obj;
+    // }
+    for(key in obj) {
+        var copy = obj[key];
+        if(isClass(copy) === "Object"){
+            result[key] = arguments.callee(copy);
+        }else if(isClass(copy) === "Array"){
+            result[key] = arguments.callee(copy);
+        }else{
+            result[key] = obj[key];
+        }
+    }
+    return result;
+}
+function isClass(o) {  
+    if(o === null) return "Null";
+    if(o === undefined) return "Undefined";
+    return Object.prototype.toString.call(o).slice(8,-1);
+}
+// 克隆一个数组
+var arr = ["a","b","c"];  
+var oNew = deepClone(arr);  
+console.log(oNew); // Object {0: "a", 1: "b", 2: "c"}  
+</code></pre>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../02/chang-jian-de-yuan-sheng-javascript-domcao-zuo/index.html" title="link to 常见的原生javascript DOM操作">常见的原生javascript DOM操作</a>
+      </h5>
+       <p class="excerpt" title="2017-06-02 星期五 丁酉年 五月初八      【鸡年】乙巳月 庚申日      宜：开光 出行 嫁娶      忌：会亲友 进人口 修造 动土 起基 1.创建元素 创建元素：docu">2017-06-02 星期五 丁酉年 五月初八      【鸡年】乙巳月 庚申日      宜：开光 出行 嫁娶      忌：会亲友 进人口 修造 动土 起基 1.创建元素 创建元素：docu&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="02 6月 2017" class="post-list__meta--date date">02 6月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/06/02/chang-jian-de-yuan-sheng-javascript-domcao-zuo/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../../05/27/javas/index.html" title="link to JavaScript组成">JavaScript组成</a></h5>
+       <p class="excerpt" title="2017-05-27 星期六 丁酉年 五月初二      【鸡年】乙巳月 甲寅日      宜：栽种 捕捉 畋猎 余事勿取      忌：开市 动土 祭祀 斋醮 安葬 JavaScript和EC">2017-05-27 星期六 丁酉年 五月初二      【鸡年】乙巳月 甲寅日      宜：栽种 捕捉 畋猎 余事勿取      忌：开市 动土 祭祀 斋醮 安葬 JavaScript和EC&hellip;</p>
+       <div class="post-list__meta"><time datetime="27 5月 2017" class="post-list__meta--date date">27 5月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/05/27/javas/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

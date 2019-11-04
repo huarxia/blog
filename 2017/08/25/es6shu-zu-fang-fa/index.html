@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>ES6数组方法</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ES6数组方法">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ES6数组方法">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/08/25/es6shu-zu-fang-fa/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="ES6数组方法" />
+    <meta property="og:description" content="2017-08-25 星期五 丁酉年 七月初四      【鸡年】戊申月 甲申日      宜：嫁娶 冠笄 祭祀 沐浴 普渡      忌：开市 动土 破土 安床 开仓 以下方法添加到了Array.prototype对象上（isArray除外） indexOf 类似字符串的indexOf()方法 stringObject.indexOf(searchvalue,fromindex) var data = [2, 5, 7, 3, 5];   console.log(data.indexOf(..." />
+    <meta property="og:url" content="http://localhost:2368/2017/08/25/es6shu-zu-fang-fa/" />
+    <meta property="article:published_time" content="2017-08-25T02:37:54.519Z" />
+    <meta property="article:modified_time" content="2017-08-25T03:06:30.092Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="ES6数组方法" />
+    <meta name="twitter:description" content="2017-08-25 星期五 丁酉年 七月初四      【鸡年】戊申月 甲申日      宜：嫁娶 冠笄 祭祀 沐浴 普渡      忌：开市 动土 破土 安床 开仓 以下方法添加到了Array.prototype对象上（isArray除外） indexOf 类似字符串的indexOf()方法 stringObject.indexOf(searchvalue,fromindex) var data = [2, 5, 7, 3, 5];   console.log(data.indexOf(..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/08/25/es6shu-zu-fang-fa/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "ES6数组方法",
+    "url": "http://localhost:2368/2017/08/25/es6shu-zu-fang-fa/",
+    "datePublished": "2017-08-25T02:37:54.519Z",
+    "dateModified": "2017-08-25T03:06:30.092Z",
+    "keywords": "js",
+    "description": "2017-08-25 星期五 丁酉年 七月初四      【鸡年】戊申月 甲申日      宜：嫁娶 冠笄 祭祀 沐浴 普渡      忌：开市 动土 破土 安床 开仓 以下方法添加到了Array.prototype对象上（isArray除外） indexOf 类似字符串的indexOf()方法 stringObject.indexOf(searchvalue,fromindex) var data = [2, 5, 7, 3, 5];   console.log(data.indexOf(..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="25 8月 2017" class="post-meta__date date">25 8月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">ES6数组方法</h1>
+    </header>
+
+    <section class="post tag-js">
+      <blockquote>
+  <p>2017-08-25 星期五 丁酉年 七月初四</p>
+  
+  <p>【鸡年】戊申月 甲申日</p>
+  
+  <p>宜：嫁娶 冠笄 祭祀 沐浴 普渡</p>
+  
+  <p>忌：开市 动土 破土 安床 开仓</p>
+</blockquote>
+
+<p>以下方法添加到了<code>Array.prototype</code>对象上（<code>isArray</code>除外）</p>
+
+<h5 id="indexof">indexOf</h5>
+
+<p>类似字符串的<code>indexOf()</code>方法</p>
+
+<p><code>stringObject.indexOf(searchvalue,fromindex)</code></p>
+
+<pre><code>var data = [2, 5, 7, 3, 5];  
+console.log(data.indexOf(5, "x")); // 1 ("x"被忽略)  
+console.log(data.indexOf(5, "3")); // 4 (从3号位开始搜索)  
+console.log(data.indexOf(4)); // -1 (未找到)  
+console.log(data.indexOf("5")); // -1 (未找到，因为5 !== "5")  
+</code></pre>
+
+<h5 id="lastindexof">lastIndexOf</h5>
+
+<p>类似<code>indexOf()</code>方法（顺序相反）</p>
+
+<h5 id="foreach">forEach</h5>
+
+<p>Array在ES5新增的方法中，参数都是function类型，默认有传参(遍历的数组内容,对应的数组索引,数组本身)</p>
+
+<pre><code>[].forEach(function(value, index, array) {
+    // ...
+});
+</code></pre>
+
+<p>forEach方法 遍历数组元素</p>
+
+<pre><code>var colors = ['red', 'green', 'blue'];  
+colors.forEach(function(color) {  
+    console.log(color);
+});
+</code></pre>
+
+<p><code>forEach</code>除了接受一个必须的回调函数参数，还可以接受一个可选的上下文参数（改变回调函数里面的<code>this</code>指向）（第2个参数）如果这第2个可选参数不指定，则使用全局对象代替（在浏览器是为window），严格模式下甚至是<code>undefined</code></p>
+
+<p><code>array.forEach(callback,[ thisObject])</code></p>
+
+<h5 id="map">map</h5>
+
+<p>映射（一一对应）。<code>[].map()</code>;基本用法跟<code>forEach</code>方法类似：</p>
+
+<p><code>array.map(callback,[ thisObject]);</code></p>
+
+<p>但是callback需要有return值（如果没有，就像会返回undefined）</p>
+
+<pre><code>var a1 = ['a', 'b', 'c'];  
+var a2 = a1.map(function(item) {  
+    return item.toUpperCase(); 
+});
+console.log(a2); // logs A,B,C  
+</code></pre>
+
+<h5 id="filter">filter</h5>
+
+<p>过滤筛选（callback在这里担任的是过滤器的角色，当元素符合条件，过滤器就返回true，而filter则会返回所有符合过滤条件的元素）。</p>
+
+<p><code>array.filter(callback,[ thisObject]);</code></p>
+
+<p>指数组filter后，返回过滤后的新数组。用法跟map相似</p>
+
+<pre><code>var a1 = ['a', 10, 'b', 20, 'c', 30];  
+var a2 = a1.filter(function(item) {  
+    return typeof item == 'number'; 
+});
+console.log(a2); // logs 10,20,30  
+</code></pre>
+
+<h5 id="every">every(且)</h5>
+
+<p><code>every(callback[, thisObject])</code>当数组中每一个元素在callback上被返回true时就返回true。</p>
+
+<pre><code>function isNumber(value){  
+    return typeof value == 'number';
+}
+var a1 = [1, 2, 3];  
+console.log(a1.every(isNumber)); // logs true  
+var a2 = [1, '2', 3];  
+console.log(a2.every(isNumber)); // logs false  
+</code></pre>
+
+<h5 id="some">some(或)</h5>
+
+<p><code>some(callback[, thisObject])</code> 只要数组中有一项在callback上被返回true，就返回true。</p>
+
+<pre><code>function isNumber(value){  
+return typeof value == 'number';  
+}
+var a1 = [1, 2, 3];  
+console.log(a1.some(isNumber)); // logs true  
+var a2 = [1, '2', 3];  
+console.log(a2.some(isNumber)); // logs true  
+var a3 = ['1', '2', '3'];  
+console.log(a3.some(isNumber)); // logs false  
+</code></pre>
+
+<h5 id="reduce">reduce(从左到右累加)</h5>
+
+<p>对数组中的所有元素调用指定的回调函数。
+该回调函数的返回值为累积结果，并且此返回值在下一次调用该回调函数时作为参数提供。</p>
+
+<pre><code>var a = [10, 20, 30];  
+var total = a.reduce(function(first, second) {  
+    return first + second; 
+}, 0);
+console.log(total) // Prints 60  
+</code></pre>
+
+<h5 id="reduceright">reduceRight(从右到左累加)</h5>
+
+<p>reduce的作用完全相同，唯一的不同是，reduceRight是从右至左遍历数组的元素。</p>
+
+<h5 id="arrayisarray">Array构造器上的isArray</h5>
+
+<p><code>Array.isArray</code>直接写在了<code>Array</code>构造器上，而不是<code>prototype</code>对象上。
+<code>Array.isArray</code>会根据参数的[[Class]]内部属性是否是"Array"返回true或false.</p>
+
+<pre><code>Array.isArray("NO U")  
+falseArray.isArray(["NO", "U"]) // true  
+</code></pre>
+
+<h5 id="arrayprototypeslicecall">Array.prototype.slice.call</h5>
+
+<p>真实数组具有<code>slice</code>方法，可以对数组进行浅复制（不影响原数组），返回的依然是数组。
+类似数组虽然有<code>length</code>属性，可以使用<code>for</code>循环遍历，却不能直接使用<code>slice</code>方法，会报错！但是通过<code>Array.prototype.slice.call</code>则不会报错，本身（类似数组）被从头到尾<code>slice</code>复制了一遍——变成了真实数组！</p>
+
+<p>将类似数组的对象(比如arguments)转换为真实的数组</p>
+
+<p><code>Array.prototype.slice.call(arguments)</code></p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../../10/19/javascriptfang-fa-bind/index.html" title="link to javascript方法--bind()">javascript方法--bind()</a>
+      </h5>
+       <p class="excerpt" title="2017-10-19 星期四 丁酉年 八月三十      【鸡年】庚戌月 己卯日      宜：嫁娶 纳采 订盟 祭祀 祈福      忌：开市 破土 掘井 合寿木 bind方法，顾名思义，就是">2017-10-19 星期四 丁酉年 八月三十      【鸡年】庚戌月 己卯日      宜：嫁娶 纳采 订盟 祭祀 祈福      忌：开市 破土 掘井 合寿木 bind方法，顾名思义，就是&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="19 10月 2017" class="post-list__meta--date date">19 10月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/10/19/javascriptfang-fa-bind/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../23/guan-yu-2/index.html" title="link to 关于flex布局中的两端对齐均匀分布解决方案">关于flex布局中的两端对齐均匀分布解决方案</a></h5>
+       <p class="excerpt" title="2017-08-23 星期三 丁酉年 七月初二      【鸡年】戊申月 壬午日      宜：嫁娶 订盟 纳采 祭祀 斋醮      忌：出火 入宅 造屋 安门 安葬 近来做一个需求，设计图效">2017-08-23 星期三 丁酉年 七月初二      【鸡年】戊申月 壬午日      宜：嫁娶 订盟 纳采 祭祀 斋醮      忌：出火 入宅 造屋 安门 安葬 近来做一个需求，设计图效&hellip;</p>
+       <div class="post-list__meta"><time datetime="23 8月 2017" class="post-list__meta--date date">23 8月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/css/">css</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/08/23/guan-yu-2/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

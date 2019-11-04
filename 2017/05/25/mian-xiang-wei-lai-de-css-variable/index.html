@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>面向未來的 CSS Variable</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="面向未來的 CSS Variable">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="面向未來的 CSS Variable">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/05/25/mian-xiang-wei-lai-de-css-variable/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="面向未來的 CSS Variable" />
+    <meta property="og:description" content="2017-05-25 星期四 丁酉年 四月三十      【鸡年】乙巳月 壬子日      宜：沐浴 扫舍 余事勿取      忌：斋醮 开市 嫁娶 作灶 CSS Variable 即CSS變量，聊CSS變量之前，我想先來說說Sass和Less,還有Stylus，它們都是目前使用較為普遍的三款CSS預處理框架，我們為什麼要使用它們呢，因為它們都可以讓你在CSS中方便的使用變量、簡單的程序邏輯、函數等在編程時使用的一些基本技巧，這些框架對於這種CSS預處理的技術已經非常成熟，可以讓你的CSS代碼變的更加簡潔、便於維護、在編寫的時候也無需考慮代碼的兼容性。 三大編譯語言的方法 首先他們不約而同的都將自己的名稱做為編譯文件的後綴名，分別是： 由於Sass和Less都使用的是標準的CSS語法，和Stylus有所不同，它們分別支持以下幾種語法： 它們的變量使用方法也有不太一樣的地方： 以上三種框架編譯後的寫法，都會得到以下相同的樣式：..." />
+    <meta property="og:url" content="http://localhost:2368/2017/05/25/mian-xiang-wei-lai-de-css-variable/" />
+    <meta property="article:published_time" content="2017-05-25T03:05:16.876Z" />
+    <meta property="article:modified_time" content="2017-05-25T03:18:42.415Z" />
+    <meta property="article:tag" content="工具" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="面向未來的 CSS Variable" />
+    <meta name="twitter:description" content="2017-05-25 星期四 丁酉年 四月三十      【鸡年】乙巳月 壬子日      宜：沐浴 扫舍 余事勿取      忌：斋醮 开市 嫁娶 作灶 CSS Variable 即CSS變量，聊CSS變量之前，我想先來說說Sass和Less,還有Stylus，它們都是目前使用較為普遍的三款CSS預處理框架，我們為什麼要使用它們呢，因為它們都可以讓你在CSS中方便的使用變量、簡單的程序邏輯、函數等在編程時使用的一些基本技巧，這些框架對於這種CSS預處理的技術已經非常成熟，可以讓你的CSS代碼變的更加簡潔、便於維護、在編寫的時候也無需考慮代碼的兼容性。 三大編譯語言的方法 首先他們不約而同的都將自己的名稱做為編譯文件的後綴名，分別是： 由於Sass和Less都使用的是標準的CSS語法，和Stylus有所不同，它們分別支持以下幾種語法： 它們的變量使用方法也有不太一樣的地方： 以上三種框架編譯後的寫法，都會得到以下相同的樣式：..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/05/25/mian-xiang-wei-lai-de-css-variable/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "面向未來的 CSS Variable",
+    "url": "http://localhost:2368/2017/05/25/mian-xiang-wei-lai-de-css-variable/",
+    "datePublished": "2017-05-25T03:05:16.876Z",
+    "dateModified": "2017-05-25T03:18:42.415Z",
+    "keywords": "工具",
+    "description": "2017-05-25 星期四 丁酉年 四月三十      【鸡年】乙巳月 壬子日      宜：沐浴 扫舍 余事勿取      忌：斋醮 开市 嫁娶 作灶 CSS Variable 即CSS變量，聊CSS變量之前，我想先來說說Sass和Less,還有Stylus，它們都是目前使用較為普遍的三款CSS預處理框架，我們為什麼要使用它們呢，因為它們都可以讓你在CSS中方便的使用變量、簡單的程序邏輯、函數等在編程時使用的一些基本技巧，這些框架對於這種CSS預處理的技術已經非常成熟，可以讓你的CSS代碼變的更加簡潔、便於維護、在編寫的時候也無需考慮代碼的兼容性。 三大編譯語言的方法 首先他們不約而同的都將自己的名稱做為編譯文件的後綴名，分別是： 由於Sass和Less都使用的是標準的CSS語法，和Stylus有所不同，它們分別支持以下幾種語法： 它們的變量使用方法也有不太一樣的地方： 以上三種框架編譯後的寫法，都會得到以下相同的樣式：..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-gong-ju">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="25 5月 2017" class="post-meta__date date">25 5月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/gong-ju/index.html">工具</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">面向未來的 CSS Variable</h1>
+    </header>
+
+    <section class="post tag-gong-ju">
+      <blockquote>
+  <p>2017-05-25 星期四 丁酉年 四月三十</p>
+  
+  <p>【鸡年】乙巳月 壬子日</p>
+  
+  <p>宜：沐浴 扫舍 余事勿取</p>
+  
+  <p>忌：斋醮 开市 嫁娶 作灶</p>
+</blockquote>
+
+<p>CSS Variable 即CSS變量，聊CSS變量之前，我想先來說說<code>Sass</code>和<code>Less</code>,還有<code>Stylus</code>，它們都是目前使用較為普遍的三款CSS預處理框架，我們為什麼要使用它們呢，因為它們都可以讓你在CSS中方便的使用變量、簡單的程序邏輯、函數等在編程時使用的一些基本技巧，這些框架對於這種CSS預處理的技術已經非常成熟，可以讓你的CSS代碼變的更加簡潔、便於維護、在編寫的時候也無需考慮代碼的兼容性。</p>
+
+<h3 id="">三大編譯語言的方法</h3>
+
+<p>首先他們不約而同的都將自己的名稱做為編譯文件的後綴名，分別是：</p>
+
+<p><img src="../../../../content/images/2017/05/033908-62569.png" alt="" /></p>
+
+<p>由於<code>Sass</code>和<code>Less</code>都使用的是標準的CSS語法，和<code>Stylus</code>有所不同，它們分別支持以下幾種語法：</p>
+
+<p><img src="../../../../content/images/2017/05/033909-76534.png" alt="" /></p>
+
+<p>它們的變量使用方法也有不太一樣的地方：</p>
+
+<p><img src="../../../../content/images/2017/05/033910-76518.png" alt="" /></p>
+
+<p>以上三種框架編譯後的寫法，都會得到以下相同的樣式：</p>
+
+<p><img src="../../../../content/images/2017/05/033912-73826.png" alt="" /></p>
+
+<p>其次就是嵌套方式，有時候我們的類名會引入非常多的父級元素，這樣冗餘的代碼，不僅沒有提升可讀性，而且增加代碼的體積：</p>
+
+<p><img src="../../../../content/images/2017/05/033913-2984.png" alt="" /></p>
+
+<p>如果使用CSS預處理，就可以少些重複的類名，代碼結構層次清晰，顯得會比較優雅：</p>
+
+<p><img src="../../../../content/images/2017/05/033912-83382.png" alt="" /></p>
+
+<h3 id="css">css變量的方法</h3>
+
+<p>那麼CSS變量這邊的情況又是如何？關於變量，其實不外乎定義和使用，我們可以通過這樣一個簡單的例子來了解，例如：</p>
+
+<p>css:</p>
+
+<p><img src="../../../../content/images/2017/05/033917-62584.png" alt="" /></p>
+
+<p>HTML：</p>
+
+<p><img src="../../../../content/images/2017/05/033903-73749.png" alt="" /></p>
+
+<p>這裡定義了三個變量，<code>title</code>、<code>link</code>、<code>text</code>，變量的應用範圍是整個<code>document</code>，實際效果如下：</p>
+
+<p><img src="../../../../content/images/2017/05/033903-88939.png" alt="" /></p>
+
+<p>當然CSS變量也是有應用範圍的，這就是說，你可以覆蓋它們，因為變量的聲明和使用遵循了CSS的層疊特性，類似於普通編程語言中的變量作用域：</p>
+
+<p>CSS：</p>
+
+<p><img src="../../../../content/images/2017/05/033914-12660.png" alt="" /></p>
+
+<p>這樣定義後，p就變成另外一種顏色（黑色）：</p>
+
+<p><img src="../../../../content/images/2017/05/033904-30491.png" alt="" /></p>
+
+<p>CSS變量還可以賦予任何值，例如，你可以把它們放到calc()計算表達式里。這樣可以在不同的情況下對CSS變量重新賦值，比如，在不同的media query里賦不同的值。下面是一些使用場景的例子：</p>
+
+<p>CSS：</p>
+
+<p><img src="../../../../content/images/2017/05/033916-62285.png" alt="" /></p>
+
+<p><img src="../../../../content/images/2017/05/033905-93494.png" alt="" /></p>
+
+<p>根據上面的CSS定義，當瀏覽器窗口小於等於640px時，media query就會發生作用，裡面的CSS變量值發生變化。</p>
+
+<h3 id="css">CSS變量的用途</h3>
+
+<p>在我們構建站點的時候，通常為了站點的可維護性，例如使用換膚，或者某一種配色方案，當中的文字顏色、字體大小、背景色等等會在頁面中多次出現，並被重複使用，當你需要修改的時候，不論是調整配色還是文字大小，都可以通過之前設置好的CSS變量來直接修改。</p>
+
+<h3 id="css">那麼為什麼我要使用CSS變量呢</h3>
+
+<p>相較於傳統的Sass、Less、Stylus等預處理變量，CSS變量有它的優勢：</p>
+
+<p>1.CSS變量直接修改，立即生效，而傳統與處理器變量編譯後無法直接更改</p>
+
+<p>2.CSS變量能夠像CSS本身一樣，能夠繼承，能夠組合使用，可以作用需要的地方即作用域</p>
+
+<p>3.配合上JS，可以方便的讀寫和控制</p>
+
+<p>4.語法上類似CSS和JS，方便快速上手開發，不需要像其它傳統預處理變量那樣，需要學習各種語法，開發和交接成本低</p>
+
+<p>5.CSS變量本身包換了語義的信息，在CSS文件中能夠被識別和理解。</p>
+
+<p>6.當多個媒介查詢的時候，重複定義的代碼量會成倍增加。因為CSS變量可以傳遞，當我們使用響應式的時候，我們只需要修改一個CSS屬性值即可。下圖中我們只需要修改--columns這一個變量即可。</p>
+
+<p><img src="../../../../content/images/2017/05/033907-22506.png" alt="" /></p>
+
+<h3 id="css">css變量支持的情況</h3>
+
+<p>下面是目前瀏覽器支持的情況，雖然IE依舊不能夠支持，但是如果是在移動端，還是可以來嘗試一下的，當然如果有興趣的可以關注一下：<a href="http://cssnext.io/">cssnext</a>，<a href="http://www.myth.io/">myth</a>這個兩個插件，可以讓我們提前使用CSS變量的一些方法：</p>
+
+<p><img src="../../../../content/images/2017/05/033906-12944.png" alt="" /></p>
+
+<h3 id="">總結</h3>
+
+<p>總的來說，CSS變量還是能夠針對性的解決一些項目中的實際問題：</p>
+
+<p>比如一個站點的配色，如果只是幾個常用的顏色被應用到多個地方，我們完全可以通過<code>CSS</code>變量來輕鬆修改，並不需要用到<code>Less</code>、<code>Sass</code>、<code>Stylus</code>這樣"複雜"的編譯系統。</p>
+
+<p>在響應式代碼中不需要重複聲明變量，在<code>Less</code>和<code>Sass</code>中也沒辦法做到像<code>CSS</code>變量那樣簡潔優雅的代碼。</p>
+
+<p>最後，寫這篇文章並不是想說CSS變量要取代誰和誰，而是，我們在開發過程中，應該思考自己需要通過工具解決某個實際存存在的問題！</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../26/babel6mo-ren-tian-jia-use-strictyin-fa-de-wen-ti-he-jie-jue-fang-an/index.html" title="link to babel6默认添加use strict引发的问题和解决方案">babel6默认添加use strict引发的问题和解决方案</a>
+      </h5>
+       <p class="excerpt" title="2017-05-26 星期五 丁酉年 五月初一      【鸡年】乙巳月 癸丑日      宜：开市 交易 立券 安机械 会亲友      忌：嫁娶 出火 移徙 入宅 问题描述：   昨天使用v">2017-05-26 星期五 丁酉年 五月初一      【鸡年】乙巳月 癸丑日      宜：开市 交易 立券 安机械 会亲友      忌：嫁娶 出火 移徙 入宅 问题描述：   昨天使用v&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="26 5月 2017" class="post-list__meta--date date">26 5月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/05/26/babel6mo-ren-tian-jia-use-strictyin-fa-de-wen-ti-he-jie-jue-fang-an/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../24/gulp-5-ge-jiben-fang-fa/index.html" title="link to Gulp 5个基本方法">Gulp 5个基本方法</a></h5>
+       <p class="excerpt" title="2017-05-24 星期三 丁酉年 四月廿九      【鸡年】乙巳月 辛亥日      宜：祭祀 沐浴 解除 破屋 坏垣      忌：行丧 安葬 Gulp有5个基本方法：src、dest、">2017-05-24 星期三 丁酉年 四月廿九      【鸡年】乙巳月 辛亥日      宜：祭祀 沐浴 解除 破屋 坏垣      忌：行丧 安葬 Gulp有5个基本方法：src、dest、&hellip;</p>
+       <div class="post-list__meta"><time datetime="24 5月 2017" class="post-list__meta--date date">24 5月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/05/24/gulp-5-ge-jiben-fang-fa/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>MongoDB基本命令用</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MongoDB基本命令用">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MongoDB基本命令用">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/12/28/mongodbji-ben-ming-ling-yong/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="MongoDB基本命令用" />
+    <meta property="og:description" content="1、基本操作 db.AddUser(username,password)  添加用户 db.auth(usrename,password) 设置数据库连接验证  db.cloneDataBase(fromhost) 从目标服务器克隆一个数据库  db.commandHelp(name) returns the help for the command  db.copyDatabase(fromdb,todb,fromhost)  复制数据库fromdb—源数据库名称，todb—目标数据库名称，fromhost—源数据库服务器地址 db.createCollection(name,{size:..." />
+    <meta property="og:url" content="http://localhost:2368/2015/12/28/mongodbji-ben-ming-ling-yong/" />
+    <meta property="article:published_time" content="2015-12-28T08:12:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-16T08:12:58.958Z" />
+    <meta property="article:tag" content="工具" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="MongoDB基本命令用" />
+    <meta name="twitter:description" content="1、基本操作 db.AddUser(username,password)  添加用户 db.auth(usrename,password) 设置数据库连接验证  db.cloneDataBase(fromhost) 从目标服务器克隆一个数据库  db.commandHelp(name) returns the help for the command  db.copyDatabase(fromdb,todb,fromhost)  复制数据库fromdb—源数据库名称，todb—目标数据库名称，fromhost—源数据库服务器地址 db.createCollection(name,{size:..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/12/28/mongodbji-ben-ming-ling-yong/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "MongoDB基本命令用",
+    "url": "http://localhost:2368/2015/12/28/mongodbji-ben-ming-ling-yong/",
+    "datePublished": "2015-12-28T08:12:00.000Z",
+    "dateModified": "2016-11-16T08:12:58.958Z",
+    "keywords": "工具",
+    "description": "1、基本操作 db.AddUser(username,password)  添加用户 db.auth(usrename,password) 设置数据库连接验证  db.cloneDataBase(fromhost) 从目标服务器克隆一个数据库  db.commandHelp(name) returns the help for the command  db.copyDatabase(fromdb,todb,fromhost)  复制数据库fromdb—源数据库名称，todb—目标数据库名称，fromhost—源数据库服务器地址 db.createCollection(name,{size:..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-gong-ju">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="28 12月 2015" class="post-meta__date date">28 12月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/gong-ju/index.html">工具</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">MongoDB基本命令用</h1>
+    </header>
+
+    <section class="post tag-gong-ju">
+      <blockquote>
+  <p>1、基本操作</p>
+</blockquote>
+
+<p>db.AddUser(username,password) <br />
+添加用户
+db.auth(usrename,password) 设置数据库连接验证 <br />
+db.cloneDataBase(fromhost) 从目标服务器克隆一个数据库 <br />
+db.commandHelp(name) returns the help for the command <br />
+db.copyDatabase(fromdb,todb,fromhost) <br />
+复制数据库fromdb—源数据库名称，todb—目标数据库名称，fromhost—源数据库服务器地址
+db.createCollection(name,{size:3333,capped:333,max:88888}) <br />
+创建一个数据集，相当于一个表
+db.currentOp() 取消当前库的当前操作 <br />
+db.dropDataBase() 删除当前数据库 <br />
+db.eval_r(func,args) run code server-side <br />
+db.getCollection(cname) 取得一个数据集合，同用法：db[‘cname’] or <br />
+db.getCollenctionNames() 取得所有数据集合的名称列表 <br />
+db.getLastError() 返回最后一个错误的提示消息 <br />
+db.getLastErrorObj() 返回最后一个错误的对象 <br />
+db.getMongo() 取得当前服务器的连接对象get the server <br />
+db.getMondo().setSlaveOk() allow this connection to read from then <br />
+nonmaster membr of a replica pair <br />
+db.getName() 返回当操作数据库的名称 <br />
+db.getPrevError() 返回上一个错误对象 <br />
+db.getProfilingLevel() <br />
+db.getReplicationInfo() 获得重复的数据 <br />
+db.getSisterDB(name) get the db at the same server as this <br />
+onew <br />
+db.killOp() 停止（杀死）在当前库的当前操作 <br />
+db.printCollectionStats() 返回当前库的数据集状态 <br />
+db.printReplicationInfo() <br />
+db.printSlaveReplicationInfo() <br />
+db.printShardingStatus() 返回当前数据库是否为共享数据库 <br />
+db.removeUser(username) 删除用户 <br />
+db.repairDatabase() 修复当前数据库 <br />
+db.resetError() <br />
+db.runCommand(cmdObj) run a database command. if cmdObj is a <br />
+string, turns it into {cmdObj:1} <br />
+db.setProfilingLevel(level) 0=off,1=slow,2=all <br />
+db.shutdownServer() 关闭当前服务程序 <br />
+db.version() 返回当前程序的版本信息</p>
+
+<blockquote>
+  <p>2、数据集(表)操作</p>
+</blockquote>
+
+<p>db.test.find({id:10}) 返回test数据集ID=10的数据集 <br />
+db.test.find({id:10}).count() 返回test数据集ID=10的数据总数 <br />
+db.test.find({id:10}).limit(2) 返回test数据集ID=10的数据集从第二条开始的数据集 <br />
+db.test.find({id:10}).skip(8) 返回test数据集ID=10的数据集从0到第八条的数据集 <br />
+db.test.find({id:10}).limit(2).skip(8) <br />
+返回test数据集ID=1=的数据集从第二条到第八条的数据
+db.test.find({id:10}).sort() 返回test数据集ID=10的排序数据集 <br />
+db.test.findOne([query]) 返回符合条件的一条数据 <br />
+db.test.getDB() 返回此数据集所属的数据库名称 <br />
+db.test.getIndexes() 返回些数据集的索引信息 <br />
+db.test.group({key:…,initial:…,reduce:…[,cond:…]}) <br />
+db.test.mapReduce(mayFunction,reduceFunction,<optional <br />
+params>) <br />
+db.test.remove(query) 在数据集中删除一条数据 <br />
+db.test.renameCollection(newName) 重命名些数据集名称 <br />
+db.test.save(obj) 往数据集中插入一条数据 <br />
+db.test.stats() 返回此数据集的状态 <br />
+db.test.storageSize() 返回此数据集的存储大小 <br />
+db.test.totalIndexSize() 返回此数据集的索引文件大小 <br />
+db.test.totalSize() 返回些数据集的总大小 <br />
+db.test.update(query,object[,upsert_bool]) 在此数据集中更新一条数据 <br />
+db.test.validate() 验证此数据集 <br />
+db.test.getShardVersion() 返回数据集共享版本号</p>
+
+<blockquote>
+  <p>3、MongoDB语法与现有关系型数据库SQL语法比较</p>
+</blockquote>
+
+<p>MongoDB语法 MySql语法 <br />
+db.test.find({‘name’:’foobar’}) &lt;<mark>> <br />
+select * from test where name=’foobar’ <br />
+db.test.find() &lt;</mark>> select * from <br />
+test <br />
+db.test.find({‘ID’:10}).count() &lt;<mark>> <br />
+select count(*) from test where ID=10 <br />
+db.test.find().skip(10).limit(20) <br />
+&lt;</mark>> select * from test limit <br />
+10,20 <br />
+db.test.find({‘ID’:{$in:[25,35,45]}}) <br />
+&lt;<mark>> select * from test where ID in <br />
+(25,35,45)
+db.test.find().sort({‘ID’:-1}) &lt;</mark>> <br />
+select * from test order by ID desc <br />
+db.test.distinct(‘name’,{‘ID’:{$lt:20}}) <br />
+&lt;<mark>> select distinct(name) from test <br />
+where ID&lt;20 <br />
+db.test.group({key:{‘name’:true},cond:{‘name’:’foo’},reduce:function(obj,prev){prev.msum+=obj.marks;},initial:{msum:0}}) <br />
+&lt;</mark>> select name,sum(marks) from test <br />
+group by name <br />
+db.test.find(‘this.ID&lt;20’,{name:1}) <br />
+&lt;<mark>> select name from test where <br />
+ID&lt;20 <br />
+db.test.insert({‘name’:’foobar’,’age’:25})&lt;</mark>>insert <br />
+into test (‘name’,’age’) values(‘foobar’,25) <br />
+db.test.remove({}) &lt;<mark>> delete * from <br />
+test <br />
+db.test.remove({‘age’:20}) &lt;</mark>> <br />
+delete test where age=20 <br />
+db.test.remove({‘age’:{$lt:20}}) &lt;<mark>> <br />
+elete test where age&lt;20 <br />
+db.test.remove({‘age’:{$lte:20}}) <br />
+&lt;</mark>> delete test where <br />
+age&lt;=20 <br />
+db.test.remove({‘age’:{$gt:20}}) &lt;<mark>> <br />
+delete test where age>20 <br />
+db.test.remove({‘age’:{$gte:20}}) <br />
+&lt;</mark>> delete test where <br />
+age>=20 <br />
+db.test.remove({‘age’:{$ne:20}}) &lt;<mark>> <br />
+delete test where age!=20 <br />
+db.test.update({‘name’:’foobar’},{$set:{‘age’:36}}) <br />
+&lt;</mark>> update test set age=36 where <br />
+name=’foobar’ <br />
+db.test.update({‘name’:’foobar’},{$inc:{‘age’:3}}) <br />
+&lt;==> update test set age=age+3 <br />
+where <br />
+name=’foobar’</p>
+
+<blockquote>
+  <p>4、MongoDB主从复制介绍
+  MongoDB的主从复制其实很简单，就是在运行 主的服务器 上开启mongod进程 时，加入参数–master即可，在运行从的服务 <br />
+  器上开启mongod进程时，加入–slave 和 –source 指定主即可，这样，在主数据 库更新时，数据被复制到从数据库
+  中</p>
+</blockquote>
+
+<p>(这里日志 文件 和访问 数据时授权用户暂时不考虑 )
+下面我在单台服务器上开启2 deamon来模拟2台服务器进行主从复制：
+$ mkdir m<em>master m</em>slave
+$mongodb/bin/mongod  –port 
+28018 –dbpath ~/m<em>master <br />
+–master  &amp;
+$mongodb/bin/mongod  –port 
+28019 –dbpath ~/m</em>slave <br />
+–slave 
+–source <br />
+localhost:28018  &amp; <br />
+这样主从服务器都已经启动了，可以利用 netstat -an -t 查看28018、28019端口
+是否开放</p>
+
+<p>登录主服务器：
+$ mongodb/bin/mongo –port 28018
+MongoDB shell version: 1.2.4- <br />
+url: test <br />
+connecting to: 127.0.0.1:28018/test <br />
+type “help” for help  </p>
+
+<blockquote>
+  <p>show dbs
+  admin <br />
+  local <br />
+  test <br />
+  use test
+  switched to db test <br />
+  show collections
+  这里主上的test数据什么表都没有，为空，查看从服 务器同样也是这样
+  $ mongodb/bin/mongo –port 28019
+  MongoDB shell version: 1.2.4- <br />
+  url: test <br />
+  connecting to: 127.0.0.1:28019/test <br />
+  type “help” for help <br />
+  show dbs
+  admin <br />
+  local <br />
+  test <br />
+  use test
+  switched to db test <br />
+  show collections
+  那么现在我们来验证主从数据是否会像想象的那样同步 呢？</p>
+</blockquote>
+
+<p>我们在主上新建表user</p>
+
+<blockquote>
+  <p>db <br />
+  test <br />
+  db.createCollection(“user”);
+  show
+  collections           </p>
+</blockquote>
+
+<p>system.indexes <br />
+user <br />
+>
+表 user已经存在了，而且test库中还多了一个system.indexes用来存放索引的表</p>
+
+<p>到从服务器上查看test库：</p>
+
+<blockquote>
+  <p>db <br />
+  test <br />
+  show
+  collections           </p>
+</blockquote>
+
+<p>system.indexes <br />
+User  </p>
+
+<blockquote>
+  <p>db.user.find();</p>
+  
+  <p>从 服务器的test库中user表已经存在，同时我还查了一下user表为空
+  现在我们再来测试一下，向主服务器test库的user表中插入一条数据
+  show
+  collections           </p>
+</blockquote>
+
+<p>system.indexes <br />
+user <br />
+>
+db.user.insert({uid:1,name:”Falcon.C”,age:25}); <br />
+>
+db.user.find();                               </p>
+
+<p>{ “_id” : ObjectId(“4b8226a997521a578b7aea38“), “uid” : 1, “name” :
+“Falcon.C”, “age” : 25 }
+>
+这 时我们查看从服务器的test库user表时会多出一条记录来：</p>
+
+<blockquote>
+  <p>db.user.find();
+  { “_id” : ObjectId(“4b8226a997521a578b7aea38“), “uid” : 1, “name” :
+  “Falcon.C”, “age” : 25 }</p>
+  
+  <p>MongoDB 还有 Replica Pairs 和 Master – Master <br />
+  参考地址：<a href="http://www.mongodb.org/display/DOCS/Master+Slave">http://www.mongodb.org/display/DOCS/Master+Slave</a></p>
+</blockquote>
+
+<p>MongoDB一般情况下都可以支持主主复制，但是在大部分情况下官方不推荐使用 <br />
+运行 的master – master的准备工作是：
+新建存放数据 库文件 的路径
+$mkdir mongodata/mm<em>28050 mongodata/mm</em>28051
+运行mongodb数据库 ，一个端口 为：28050，一个为：28051
+$ mongodb/bin/mongod –port 28050 –dbpath ~/mongodata/mm<em>28050
+–master –slave –source localhost:28051 >
+/dev/null &amp;
+$ mongodb/bin/mongod –port 28051 –dbpath ~mongodata/mm</em>28051
+–master –slave –source localhost:28050 >
+/dev/null &amp;
+可以通过ps -ef|grep mongod 或 netstat -an -t来检查是否运行功能</p>
+
+<p>测试master – master模式 ：
+$ mongodb/bin/mongo –port 28050
+MongoDB shell version: 1.2.4- <br />
+url: test <br />
+connecting to: 127.0.0.1:28050/test <br />
+type “help” for help  </p>
+
+<blockquote>
+  <p>show dbs
+  admin <br />
+  local <br />
+  db
+  test  </p>
+  
+  <p>db.user.insert({<em>id:1,username:”Falcon.C”,age:25,sex:”M”}); <br />
+  db.user.find();
+  { “</em>id” : 1, “username” : “Falcon.C”, “age” : 25, “sex” : “M”
+  }
+  db.user.find(); 
+  //在28051端口插入数据后，再来查询，看数据是否同步
+  { “<em>id” : 1, “username” : “Falcon.C”, “age” : 25, “sex” : “M”
+  }
+  { “</em>id” : 2, “username” : “NetOne”, “age” : 24, “sex” : “F” }</p>
+  
+  <p>$ mongodb/bin/mongo –port 28051
+  MongoDB shell version: 1.2.4- <br />
+  url: test <br />
+  connecting to: 127.0.0.1:28051/test <br />
+  type “help” for help <br />
+  db
+  test <br />
+  show
+  collections <br />
+  端口28050已经新建了一个user表并插入了一条数据，这里多出2表
+  system.indexes <br />
+  user  </p>
+  
+  <p>db.user.find(); <br />
+  //查询表user发现数据已经同步
+  { “_id” : 1, “username” : “Falcon.C”, “age” : 25, “sex” : “M”
+  }</p>
+  
+  <p>db.user.insert({_id:2,username:”NetOne”,age:24,sex:”F”});在此插入数据看数据是否双向同步</p>
+</blockquote>
+
+<p>>
+db.user.find(); <br />
+{ “<em>id” : 1, “username” : “Falcon.C”, “age” : 25, “sex” : “M”
+}
+{ “</em>id” : 2, “username” : “NetOne”, “age” : 24, “sex” : “F” }
+>
+通
+过以上开启两终端分别连接到28050、28051端口，分别插入测试数据发现，一切正常，正如我们所想的那样实现数据的双向同步</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../30/2015nian-nozong-jie/index.html" title="link to 2015年の总结">2015年の总结</a>
+      </h5>
+       <p class="excerpt" title="本身喜欢在每年年底写写一年的总结吧，或是过去做了哪些事，自己不记录哪知道干了哪些好事，干了哪些坏事呢？所以自己要记录一下，就当是自我回味回味。 记得去年是在农历年快结束的时候写的，那时候还是在五道口的">本身喜欢在每年年底写写一年的总结吧，或是过去做了哪些事，自己不记录哪知道干了哪些好事，干了哪些坏事呢？所以自己要记录一下，就当是自我回味回味。 记得去年是在农历年快结束的时候写的，那时候还是在五道口的&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="30 12月 2015" class="post-list__meta--date date">30 12月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/wen-zhang/">文章</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/12/30/2015nian-nozong-jie/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../mongodban-zhuang-hou-qi-dong-shi-bai-jie-jue-fang-fa/index.html" title="link to mongodb安装后启动失败解决方法">mongodb安装后启动失败解决方法</a></h5>
+       <p class="excerpt" title="按照官网步骤安装后可能会出现错误，出现的错误导致原因，可能是以前安装过，目录发生了变化； mongod服务启动失败；  客户端无法连接到mongo服务。 问题一：mongod启动失败 安装完成后，运行">按照官网步骤安装后可能会出现错误，出现的错误导致原因，可能是以前安装过，目录发生了变化； mongod服务启动失败；  客户端无法连接到mongo服务。 问题一：mongod启动失败 安装完成后，运行&hellip;</p>
+       <div class="post-list__meta"><time datetime="28 12月 2015" class="post-list__meta--date date">28 12月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/12/28/mongodban-zhuang-hou-qi-dong-shi-bai-jie-jue-fang-fa/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

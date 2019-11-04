@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>解决lazylinepainterSVG插件在低版本浏览器上兼容性问题</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="解决lazylinepainterSVG插件在低版本浏览器上兼容性问题">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="解决lazylinepainterSVG插件在低版本浏览器上兼容性问题">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2019/07/26/jie-jue-lazylinepaintersvgcha-jian-zai-di-ban-ben-liu-lan-qi-shang-jian-rong-xing-wen-ti/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="解决lazylinepainterSVG插件在低版本浏览器上兼容性问题" />
+    <meta property="og:description" content="💋 前情提要 在Android4.4.4版本的机器上做需求？且是用vue然后使用客户端同学集成的webview加载进去，所有和的复杂的逻辑都给了js操作(一万句草泥马奔腾而过)。各种TTS、video、audio、xxx、xxx(不能暴露的xxx)兼容，客户端还不管！这又不是前端改解决的，结果人家来句，你们加个东西也可以解决啊？切好啊，hack就hack了，你开心就好。所以出以下兼容性问题，这个问题理应前端解决的，没毛病的。但是用前端做这一套，确定交互体验会好，还是视频课程等等复杂交互哦。那么来看看什么问题呢？ 🐶 界面上要画一些圈、线、箭头来做指示用 不能使用图片   能随意变换大小、长度、颜色等   兼容这个版本的安卓 so !  css3不能用，图片不能用，canvas不能用，..." />
+    <meta property="og:url" content="http://localhost:2368/2019/07/26/jie-jue-lazylinepaintersvgcha-jian-zai-di-ban-ben-liu-lan-qi-shang-jian-rong-xing-wen-ti/" />
+    <meta property="article:published_time" content="2019-07-26T06:12:14.905Z" />
+    <meta property="article:modified_time" content="2019-07-26T06:12:14.899Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="解决lazylinepainterSVG插件在低版本浏览器上兼容性问题" />
+    <meta name="twitter:description" content="💋 前情提要 在Android4.4.4版本的机器上做需求？且是用vue然后使用客户端同学集成的webview加载进去，所有和的复杂的逻辑都给了js操作(一万句草泥马奔腾而过)。各种TTS、video、audio、xxx、xxx(不能暴露的xxx)兼容，客户端还不管！这又不是前端改解决的，结果人家来句，你们加个东西也可以解决啊？切好啊，hack就hack了，你开心就好。所以出以下兼容性问题，这个问题理应前端解决的，没毛病的。但是用前端做这一套，确定交互体验会好，还是视频课程等等复杂交互哦。那么来看看什么问题呢？ 🐶 界面上要画一些圈、线、箭头来做指示用 不能使用图片   能随意变换大小、长度、颜色等   兼容这个版本的安卓 so !  css3不能用，图片不能用，canvas不能用，..." />
+    <meta name="twitter:url" content="http://localhost:2368/2019/07/26/jie-jue-lazylinepaintersvgcha-jian-zai-di-ban-ben-liu-lan-qi-shang-jian-rong-xing-wen-ti/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "解决lazylinepainterSVG插件在低版本浏览器上兼容性问题",
+    "url": "http://localhost:2368/2019/07/26/jie-jue-lazylinepaintersvgcha-jian-zai-di-ban-ben-liu-lan-qi-shang-jian-rong-xing-wen-ti/",
+    "datePublished": "2019-07-26T06:12:14.905Z",
+    "dateModified": "2019-07-26T06:12:14.899Z",
+    "description": "💋 前情提要 在Android4.4.4版本的机器上做需求？且是用vue然后使用客户端同学集成的webview加载进去，所有和的复杂的逻辑都给了js操作(一万句草泥马奔腾而过)。各种TTS、video、audio、xxx、xxx(不能暴露的xxx)兼容，客户端还不管！这又不是前端改解决的，结果人家来句，你们加个东西也可以解决啊？切好啊，hack就hack了，你开心就好。所以出以下兼容性问题，这个问题理应前端解决的，没毛病的。但是用前端做这一套，确定交互体验会好，还是视频课程等等复杂交互哦。那么来看看什么问题呢？ 🐶 界面上要画一些圈、线、箭头来做指示用 不能使用图片   能随意变换大小、长度、颜色等   兼容这个版本的安卓 so !  css3不能用，图片不能用，canvas不能用，..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="26 7月 2019" class="post-meta__date date">26 7月 2019</time> &#8226; <span class="post-meta__tags tags"></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">解决lazylinepainterSVG插件在低版本浏览器上兼容性问题</h1>
+    </header>
+
+    <section class="post">
+      <p>💋 前情提要</p>
+
+<p>在Android4.4.4版本的机器上做需求？且是用vue然后使用客户端同学集成的webview加载进去，所有和的复杂的逻辑都给了js操作(一万句草泥马奔腾而过)。各种TTS、video、audio、xxx、xxx(不能暴露的xxx)兼容，客户端还不管！这又不是前端改解决的，结果人家来句，你们加个东西也可以解决啊？切<del>好啊，hack就hack了，你开心就好。所以出以下兼容性问题，这个问题理应前端解决的，没毛病的。但是用前端做这一套，确定交互体验会好，还是视频课程等等复杂交互哦。那么来看看什么问题呢？</p>
+
+<p>🐶 界面上要画一些圈、线、箭头来做指示用</p>
+
+<ol>
+<li>不能使用图片  </li>
+<li>能随意变换大小、长度、颜色等  </li>
+<li>兼容这个版本的安卓</li>
+</ol>
+
+<p>so !  css3不能用，图片不能用，canvas不能用，只能前端做在webview层，不能客户端做了调用，那么我来试试svg吧。</p>
+
+<p>🐰 先来看看效果吧
+<img src="../../../../content/images/2019/07/1.gif" alt="" />
+对没有，还要求做成动画，对于不熟悉svg的我来说，看上去有点复杂，怎么办，一步一步查资料解决呗</p>
+
+<p>经过各种折腾终于把没有动画的做出来了，接下来就是把动画加上</p>
+
+<p>🤓 找到一个插件，看上去还可以</p>
+
+<p><a href="https://github.com/camoconnell/lazy-line-painter">lazy-line-painter</a>
+<img src="../../../../content/images/2019/07/4.png" alt="" />
+接下来就是撸起袖子怼上去，期间还解决了和vue的配合使用问题，问题不大，最后还是解决了，不过有点使用不是很合理</p>
+
+<p>👽 还没有完呢，你以为解决问题，万事大吉了？</p>
+
+<p>哇擦，出现兼容问题了</p>
+
+<p>🐛 <code>ele.dataset</code>  在低版本浏览器找不到
+先是报了一个错误:  <code>this.el.dataset.llpComposed</code> undefined，也就是截图一行报错
+<img src="../../../../content/images/2019/07/image-20190220105558652.png" alt="" />
+开始以为是 llpComposed报错，后来想想，不对应该是连dataset都没有，所以查了下，果然是低版本浏览器不支持这个，所以瞬间想到使用 ele.attributes 代替，干活，拉取原作者仓库，开动，搞定 ——> github </p>
+
+<h3 id="lazylinepainter196js711b1045uncaughttypeerrorelgetpointatlengthisnotafunction">🐛lazy-line-painter-1.9.6.js?711b:1045Uncaught TypeError: el.getPointAtLength is not a function</h3>
+
+<p>what? 低版本又不兼容？ <br />
+<img src="../../../../content/images/2019/07/image-20190220110805943.png" alt="" />
+查了下原因，<code>getPointAtLength</code>该方法只支持对path操作，不支持<code>svg</code>的基本图形 <code>rect circle line polyline</code> </p>
+
+<p>哪能怎么办转换呗，举个栗子🌰
+<img src="../../../../content/images/2019/07/image-20190220111119177.png" alt="" />
+👶 到此lazylinepainterSVG插件的低版本浏览器兼容问题已解决</p>
+
+<p>接下来就是将兼容版本集成到项目里，咔嚓
+<img src="../../../../content/images/2019/07/image-20190220111310399.png" alt="" />
+这是什么鬼？原来是<code>lazylinepainter</code> 中<code>webpack  build</code> 中 <code>module.exports</code> 不能和 <code>import</code>混用导致的？但是我都是按照他的写法写的啊，一点毛病没有，我也不会到为什么，最后改他的webpack配置: libraryTarget: 'umd' 才解决，改成一种，然后又改回来重新buidl就解决了，我也不知道为嘛？！！
+<img src="../../../../content/images/2019/07/image-20190220111528939.png" alt="" />
+到此，所有问题才算真正解决了，可以动态svg了，真的是让前端在安卓上做复杂交互的应用就是个坑啊，我说的复杂不是一般的复杂交互，是特别特别复杂那种，视频里的操作，音频操作，流程控制等等，还压缩时间</del>~😨😨😨</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../../11/04/77qi-chuang-da-pei-xun-zong-jie/index.html" title="link to 77期创大培训感悟">77期创大培训感悟</a>
+      </h5>
+       <p class="excerpt" title="2019-11-04 星期一 十月初八      己亥年【猪年】甲戌月 乙巳日      宜：订盟 纳采 会亲友 安机械 纳财      忌：祈福 安葬      地点: 茂业中心-c座 关于一">2019-11-04 星期一 十月初八      己亥年【猪年】甲戌月 乙巳日      宜：订盟 纳采 会亲友 安机械 纳财      忌：祈福 安葬      地点: 茂业中心-c座 关于一&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="04 11月 2019" class="post-list__meta--date date">04 11月 2019</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags"></span> -->
+        <!-- <a class="btn-border-small" href=/2019/11/04/77qi-chuang-da-pei-xun-zong-jie/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../tu-pian-shang-chuan-qian-xuan-zhuan-ya-suo-chu-li/index.html" title="link to 图片上传前旋转压缩处理">图片上传前旋转压缩处理</a></h5>
+       <p class="excerpt" title="🎬 前情提要 😭 某天在本地开发vue项目时，使用了vue的某个上传图片组件vue-core-image-upload, 偶然发现ios设备拍照上传时，图片莫名其妙被逆时针旋转了90° 😂 w">🎬 前情提要 😭 某天在本地开发vue项目时，使用了vue的某个上传图片组件vue-core-image-upload, 偶然发现ios设备拍照上传时，图片莫名其妙被逆时针旋转了90° 😂 w&hellip;</p>
+       <div class="post-list__meta"><time datetime="26 7月 2019" class="post-list__meta--date date">26 7月 2019</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags"></span> -->
+        <!-- <a class="btn-border-small" href=/2019/07/26/tu-pian-shang-chuan-qian-xuan-zhuan-ya-suo-chu-li/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

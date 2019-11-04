@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>mac下配置Apache虚拟主机，访问目录改至自己的方便访问的目录</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="mac下配置Apache虚拟主机，访问目录改至自己的方便访问的目录">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="mac下配置Apache虚拟主机，访问目录改至自己的方便访问的目录">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/12/08/macxia-pei-zhi-apachexu-ni-zhu-ji-fang-wen-mu-lu-gai-zhi-zi-ji-de-fang-bian-fang-wen-de-mu-lu/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="mac下配置Apache虚拟主机，访问目录改至自己的方便访问的目录" />
+    <meta property="og:description" content="首先，apache2在/etc/apache2目录，然后，打开httpd.conf文件：/etc/apache2/httpd.conf 查找vhosts.conf字符，找到Include/private/etc/apache2/extra/httpd-vhosts.conf这行，如果前面有#，把#删除； 然后执行sudo apachectl -t，这个命令是用来检查apache的一些配置文件的语法是否正确的，如果访问服务时在浏览器里显示连接不上服务器，就有必要用这个命令来检查一下是不是哪个文件有问题了。 httpd-vhosts.conf这个文件是用来设置虚拟目录的，所以下面要在这个文件里设置自己指定的工作目录。  执行sudo /etc/apache2/extra/httpd-vhosts.conf,把文件中已有的两个配置注释掉 #&amp;lt;..." />
+    <meta property="og:url" content="http://localhost:2368/2015/12/08/macxia-pei-zhi-apachexu-ni-zhu-ji-fang-wen-mu-lu-gai-zhi-zi-ji-de-fang-bian-fang-wen-de-mu-lu/" />
+    <meta property="article:published_time" content="2015-12-08T08:06:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-16T08:07:37.149Z" />
+    <meta property="article:tag" content="經驗" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="mac下配置Apache虚拟主机，访问目录改至自己的方便访问的目录" />
+    <meta name="twitter:description" content="首先，apache2在/etc/apache2目录，然后，打开httpd.conf文件：/etc/apache2/httpd.conf 查找vhosts.conf字符，找到Include/private/etc/apache2/extra/httpd-vhosts.conf这行，如果前面有#，把#删除； 然后执行sudo apachectl -t，这个命令是用来检查apache的一些配置文件的语法是否正确的，如果访问服务时在浏览器里显示连接不上服务器，就有必要用这个命令来检查一下是不是哪个文件有问题了。 httpd-vhosts.conf这个文件是用来设置虚拟目录的，所以下面要在这个文件里设置自己指定的工作目录。  执行sudo /etc/apache2/extra/httpd-vhosts.conf,把文件中已有的两个配置注释掉 #&amp;lt;..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/12/08/macxia-pei-zhi-apachexu-ni-zhu-ji-fang-wen-mu-lu-gai-zhi-zi-ji-de-fang-bian-fang-wen-de-mu-lu/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "mac下配置Apache虚拟主机，访问目录改至自己的方便访问的目录",
+    "url": "http://localhost:2368/2015/12/08/macxia-pei-zhi-apachexu-ni-zhu-ji-fang-wen-mu-lu-gai-zhi-zi-ji-de-fang-bian-fang-wen-de-mu-lu/",
+    "datePublished": "2015-12-08T08:06:00.000Z",
+    "dateModified": "2016-11-16T08:07:37.149Z",
+    "keywords": "經驗",
+    "description": "首先，apache2在/etc/apache2目录，然后，打开httpd.conf文件：/etc/apache2/httpd.conf 查找vhosts.conf字符，找到Include/private/etc/apache2/extra/httpd-vhosts.conf这行，如果前面有#，把#删除； 然后执行sudo apachectl -t，这个命令是用来检查apache的一些配置文件的语法是否正确的，如果访问服务时在浏览器里显示连接不上服务器，就有必要用这个命令来检查一下是不是哪个文件有问题了。 httpd-vhosts.conf这个文件是用来设置虚拟目录的，所以下面要在这个文件里设置自己指定的工作目录。  执行sudo /etc/apache2/extra/httpd-vhosts.conf,把文件中已有的两个配置注释掉 #&amp;lt;..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-jing-yan">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="08 12月 2015" class="post-meta__date date">08 12月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/jing-yan/index.html">經驗</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">mac下配置Apache虚拟主机，访问目录改至自己的方便访问的目录</h1>
+    </header>
+
+    <section class="post tag-jing-yan">
+      <p>首先，apache2在/etc/apache2目录，然后，打开httpd.conf文件：/etc/apache2/httpd.conf
+查找vhosts.conf字符，找到Include/private/etc/apache2/extra/httpd-vhosts.conf这行，如果前面有#，把#删除；
+然后执行sudo apachectl -t，这个命令是用来检查apache的一些配置文件的语法是否正确的，如果访问服务时在浏览器里显示连接不上服务器，就有必要用这个命令来检查一下是不是哪个文件有问题了。
+httpd-vhosts.conf这个文件是用来设置虚拟目录的，所以下面要在这个文件里设置自己指定的工作目录。 <br />
+执行sudo /etc/apache2/extra/httpd-vhosts.conf,把文件中已有的两个配置注释掉</p>
+
+<pre><code>#&lt;VirtualHost *:80&gt;
+
+#    ServerAdmin webmaster@dummy-host.example.com
+
+#    DocumentRoot “/usr/docs/dummy-host.example.com”
+
+#    ServerName dummy-host.example.com
+
+#    ServerAlias www.dummy-host.example.com
+
+#    ErrorLog “/private/var/log/apache2/dummy-host.example.com-error_log”
+
+#    CustomLog “/private/var/log/apache2/dummy-host.example.com-access_log” com$
+
+#&lt;/VirtualHost&gt;
+
+#&lt;VirtualHost *:80&gt;
+
+#    ServerAdmin webmaster@dummy-host2.example.com
+
+#    DocumentRoot “/usr/docs/dummy-host2.example.com”
+
+#    ServerName dummy-host2.example.com
+
+#    ErrorLog “/private/var/log/apache2/dummy-host2.example.com-error_log”
+
+#    CustomLog “/private/var/log/apache2/dummy-host2.example.com-access_log” co$
+
+#&lt;/VirtualHost&gt;
+</code></pre>
+
+<p>这两个虚拟主机并没有用，只是用来示例的，实际mac中也不存在，大胆注释掉。</p>
+
+<p>然后添加自己的配置</p>
+
+<pre><code>&lt;VirtualHost *:80&gt;
+
+    DocumentRoot “/Users/用户名/projects”
+
+    ServerName www.sites.com
+
+    ErrorLog “/private/var/log/apache2/sites-error_log”
+
+    CustomLog “/private/var/log/apache2/sites-access_log” common
+
+    &lt;Directory “/Users/用户名/projects“&gt;
+
+        Options FollowSymLinks Indexes
+
+        AllowOverride None
+
+        Order allow,deny
+
+        Allow from all
+
+    &lt;/Directory&gt;
+
+&lt;/VirtualHost&gt;  
+</code></pre>
+
+<p>这些是什么意思我也不多说了，总的来说就是指定虚拟目录、访问地址、虚拟目录访问权限。</p>
+
+<p>然后保存并检查语法是否误。</p>
+
+<p>最后，sudo /etc/hosts，在最后一行添加 127.0.0.1 www.sites.com</p>
+
+<p>并保存。</p>
+
+<p>最最后，sudo apachectl restart，重启apache服务，在浏览器里访问www.sites.com，你会看到自己工作目录下的文件和文件夹列表，恭喜，你成功了。</p>
+
+<p>别太着急高兴，mac的某些版本可能还是会失败。由于mac的权限策略有所改变：</p>
+
+<p>打开/etc/apache2/httpd.conf：</p>
+
+<p>找到166行的：LoadModule userdir<em>module libexec/apache2/mod</em>userdir.so，如果前面有#注释请把#删掉，打开注释</p>
+
+<p>找到169行的：LoadModule php5_module libexec/apache2/libphp5.so  如果前面有#注释请把#删掉，打开注释</p>
+
+<p>找到493行：#Include /private/etc/apache2/extra/httpd-userdir.conf   如果前面有#注释请把#删掉，打开注释</p>
+
+<p>其次，修改文件/etc/apache2/extra/httpd-userdir.conf</p>
+
+<p>找到16行：#Include /private/etc/apache2/users/*.conf   如果前面有#注释请把#删掉，打开注释</p>
+
+<p>最后，重启一下Apache服务器，可在terminal终端运行命令：</p>
+
+<p><code>sudo apachectl restart</code></p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../11/mac-ben-di-an-zhuang-discuz-403/index.html" title="link to Mac之vim普通命令使用">Mac之vim普通命令使用</a>
+      </h5>
+       <p class="excerpt" title="高级一些的编辑器，都会包含宏功能，vim当然不能缺少了，在vim中使用宏是非常方便的： :qx 开始记录宏，并将结果存入寄存器x q 退出记录模式  @x 播放记录在x寄存器中的宏命令 稍微解释一下，">高级一些的编辑器，都会包含宏功能，vim当然不能缺少了，在vim中使用宏是非常方便的： :qx 开始记录宏，并将结果存入寄存器x q 退出记录模式  @x 播放记录在x寄存器中的宏命令 稍微解释一下，&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="11 12月 2015" class="post-list__meta--date date">11 12月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/12/11/mac-ben-di-an-zhuang-discuz-403/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../../11/26/charlesdai-li-bu-liao/index.html" title="link to charles代理不了">charles代理不了</a></h5>
+       <p class="excerpt" title="由于项目需求，会用到代理转发到本地代码，在这一过程中遇到很多坑，而且做一次很久后又会遇到，还会遗忘。所以写一篇文章记录下，方便以后查找； 先上图： 出现的问题： 1.代理始终转发不到本地； 2.还未发">由于项目需求，会用到代理转发到本地代码，在这一过程中遇到很多坑，而且做一次很久后又会遇到，还会遗忘。所以写一篇文章记录下，方便以后查找； 先上图： 出现的问题： 1.代理始终转发不到本地； 2.还未发&hellip;</p>
+       <div class="post-list__meta"><time datetime="26 11月 2015" class="post-list__meta--date date">26 11月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/11/26/charlesdai-li-bu-liao/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

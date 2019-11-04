@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>兼容性及经验汇总</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="兼容性及经验汇总">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="兼容性及经验汇总">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/07/15/jian-rong-xing-ji-jing-yan-hui-zong/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="兼容性及经验汇总" />
+    <meta property="og:description" content="浮动时，父级元素无法撑开+ .clearfix:after{     content:&quot;.&quot;;     display:block;     height:0;     clear:both;     visibility:hidden; } .clearfix{     zoom:1 } IE6 div浮动时，margin双倍边距bug+  IE6及早期版本 无法直接定义较小高度的容器+  IE6 span a等行内元素空格或者回车出现3像素空隙+ IE7及以下版本 两个以上li浮动，li之间出现空白间隙bug+  解决方案：li{vertical-align:top;} IE6 li内，定义display:block的内联元素底部产生空白+  解决方案： 给li内的内联元素，加上zoom:1 IE6..." />
+    <meta property="og:url" content="http://localhost:2368/2015/07/15/jian-rong-xing-ji-jing-yan-hui-zong/" />
+    <meta property="article:published_time" content="2015-07-15T06:48:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-21T06:32:35.496Z" />
+    <meta property="article:tag" content="經驗" />
+    <meta property="article:tag" content="面試" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="兼容性及经验汇总" />
+    <meta name="twitter:description" content="浮动时，父级元素无法撑开+ .clearfix:after{     content:&quot;.&quot;;     display:block;     height:0;     clear:both;     visibility:hidden; } .clearfix{     zoom:1 } IE6 div浮动时，margin双倍边距bug+  IE6及早期版本 无法直接定义较小高度的容器+  IE6 span a等行内元素空格或者回车出现3像素空隙+ IE7及以下版本 两个以上li浮动，li之间出现空白间隙bug+  解决方案：li{vertical-align:top;} IE6 li内，定义display:block的内联元素底部产生空白+  解决方案： 给li内的内联元素，加上zoom:1 IE6..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/07/15/jian-rong-xing-ji-jing-yan-hui-zong/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "兼容性及经验汇总",
+    "url": "http://localhost:2368/2015/07/15/jian-rong-xing-ji-jing-yan-hui-zong/",
+    "datePublished": "2015-07-15T06:48:00.000Z",
+    "dateModified": "2016-11-21T06:32:35.496Z",
+    "keywords": "經驗, 面試",
+    "description": "浮动时，父级元素无法撑开+ .clearfix:after{     content:&quot;.&quot;;     display:block;     height:0;     clear:both;     visibility:hidden; } .clearfix{     zoom:1 } IE6 div浮动时，margin双倍边距bug+  IE6及早期版本 无法直接定义较小高度的容器+  IE6 span a等行内元素空格或者回车出现3像素空隙+ IE7及以下版本 两个以上li浮动，li之间出现空白间隙bug+  解决方案：li{vertical-align:top;} IE6 li内，定义display:block的内联元素底部产生空白+  解决方案： 给li内的内联元素，加上zoom:1 IE6..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-jing-yan tag-mian-shi">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="15 7月 2015" class="post-meta__date date">15 7月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/jing-yan/index.html">經驗</a>, <a href="../../../../tag/mian-shi/index.html">面試</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">兼容性及经验汇总</h1>
+    </header>
+
+    <section class="post tag-jing-yan tag-mian-shi">
+      <p>浮动时，父级元素无法撑开+</p>
+
+<pre><code>.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.clearfix{
+    zoom:1
+}
+</code></pre>
+
+<p>IE6 div浮动时，margin双倍边距bug+ <br />
+IE6及早期版本 无法直接定义较小高度的容器+ <br />
+IE6 span a等行内元素空格或者回车出现3像素空隙+</p>
+
+<p>IE7及以下版本 两个以上li浮动，li之间出现空白间隙bug+ <br />
+解决方案：li{vertical-align:top;}</p>
+
+<p>IE6 li内，定义display:block的内联元素底部产生空白+ <br />
+解决方案： 给li内的内联元素，加上zoom:1</p>
+
+<p>IE6 模拟min-height效果+ <br />
+解决方案：min-height:100px;_height:100px;</p>
+
+<p>IE6 文本溢出，多出一个文字BUG+ <br />
+原因：浮动，注释，宽高定义
+解决方案：删除出现bug的元素之间的注释</p>
+
+<p>使用滤镜PNG图片透明后，容器内链接失效+
+原因：浮动，注释，宽高定义
+解决方案：为容器里面的a加个_position:relative样式</p>
+
+<p>IE6 无法识别伪对象:first-letter/:first-line+ <br />
+解决方案： 选择符与“{”之间增加空格，或者换行。</p>
+
+<p>IE6 忽略同一条样式体内的!important规则+ <br />
+解决方案： 将该样式拆分为2条，!important单独书写</p>
+
+<p>IE7及以下版本 元素设置了position:relative;相对定位，父级元素overflow:auto|hidden失效+ <br />
+解决方案： 给父级元素增加position:relative</p>
+
+<p>img图片下方出现几个像素间隙+ <br />
+解决方案： img{display:block;}或者img{vertical-align:top;} 在或者 img{font-size:0}</p>
+
+<p>如何让文本垂直对齐文本输入框？+
+解决方案： input{vertical-align:middle;}</p>
+
+<p>如何让单行文本在容器内垂直居中？+
+解决方案： 设置文本的行高等于容器的高度。举例：height:25px;line-height:25px;</p>
+
+<p>IE下 如何设置滚动条的颜色+ <br />
+解决方案：定义html标签</p>
+
+<pre><code>html{
+
+    scrollbar-3dlight-color:#999;
+
+    scrollbar-darkshadow-color:#999;
+
+    scrollbar-highlight-color:#fff;
+
+    scrollbar-shadow-color:#eee;
+
+    scrollbar-arrow-color:#000;
+
+    scrollbar-face-color:#ddd;
+
+    scrollbar-track-color:#eee;
+
+    scrollbar-base-color:#ddd;
+
+}
+</code></pre>
+
+<p>强制文本溢出一行显示+</p>
+
+<p>解决方案： 设置容器的宽度和white-space:nowrap</p>
+
+<p>如何使文本溢出边界显示为省略号+</p>
+
+<p>解决方案： 设置容器宽度，设置文本一行显示，溢出截断并显示省略号。例子：</p>
+
+<pre><code>.test {
+    width:150px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+</code></pre>
+
+<p>IE下 iframe背景透明+</p>
+
+<p>解决方案： 设置iframe元素的标签属性allowtransparency="allowtransparency"然后设置iframe内部页面的body背景色为transparent。引发的问题：设置透明后的iframe将不能遮住select
+各个浏览器 opacity透明问题+</p>
+
+<pre><code>.test {
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+}
+</code></pre>
+
+<p>IE6下 png背景透明+</p>
+
+<p>解决方案： 调用DD<em>belatedPNG</em>0.0.8a-min.js插件</p>
+
+<p>让连续的长字符串自动换行+</p>
+
+<p>解决方案： word-wrap:break-word;</p>
+
+<p>去掉超链接的虚线框+
+解决方案：</p>
+
+<pre><code>a {  
+    outline:none;
+    blr:expression(this.onFocus=this.blur());
+}
+</code></pre>
+
+<p>网页水平居中+</p>
+
+<p>解决方案：</p>
+
+<pre><code>body {  
+    text-align:center;
+}
+.wp{
+    width:980px;
+    margin:0 auto;
+    text-align:left;
+}
+</code></pre>
+
+<p>如何让table边框1个像素细+</p>
+
+<p>解决方案：</p>
+
+<pre><code>table{  
+    border-collapse:collapse;
+}
+
+table th,table td{  
+    border:1px solid #ddd;
+}
+</code></pre>
+
+<p>网页去色，让网站显示灰色+</p>
+
+<p>解决方案：</p>
+
+<pre><code>*{
+    filter:gray;
+    color:gray;
+}
+
+html {     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);  
+}
+</code></pre>
+
+<p>两个相邻块级元素，都设置了margin，间距只有最大一个，间距不会相加。+</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../../08/01/chang-yong-pai-xu-suan-fa-javascriptshi-xian-yi/index.html" title="link to 常用排序算法javascript实现(一)">常用排序算法javascript实现(一)</a>
+      </h5>
+       <p class="excerpt" title="分享一下几个常用的排序算法，用javascript语言实现！ 今天先分享两个：一个是冒泡排序，另一个是选择排序！      冒泡排序：   核心想法：每次比较相邻的两个值，若后面的值比前面的值小，则交">分享一下几个常用的排序算法，用javascript语言实现！ 今天先分享两个：一个是冒泡排序，另一个是选择排序！      冒泡排序：   核心想法：每次比较相邻的两个值，若后面的值比前面的值小，则交&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="01 8月 2015" class="post-list__meta--date date">01 8月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a>, <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/08/01/chang-yong-pai-xu-suan-fa-javascriptshi-xian-yi/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../../04/02/wang-zhan-ye-mian-zhi-zuo-de-yi-xie-gui-fan-zong-jie/index.html" title="link to 网站页面制作的一些规范总结">网站页面制作的一些规范总结</a></h5>
+       <p class="excerpt" title="1.文件命名规范 　　1) 文件目录、文件名称统一用小写的英文字母、数字、下划线组合，文件名要与表现的内容相近，不到万不得已不要以拼音作为名称，如 登录页面：login.html(不要用 den">1.文件命名规范 　　1) 文件目录、文件名称统一用小写的英文字母、数字、下划线组合，文件名要与表现的内容相近，不到万不得已不要以拼音作为名称，如 登录页面：login.html(不要用 den&hellip;</p>
+       <div class="post-list__meta"><time datetime="02 4月 2015" class="post-list__meta--date date">02 4月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/04/02/wang-zhan-ye-mian-zhi-zuo-de-yi-xie-gui-fan-zong-jie/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

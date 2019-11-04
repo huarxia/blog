@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>浏览器工作原理篇</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="浏览器工作原理篇">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="浏览器工作原理篇">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/06/13/liu-lan-qi-gong-zuo-yuan-li-pian/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="浏览器工作原理篇" />
+    <meta property="og:description" content="2017-06-13 星期二 丁酉年 五月十九      【鸡年】丙午月 辛未日      宜：嫁娶 祭祀 祈福 求嗣 开光      忌：安葬 开生坟 合寿木 行丧 浏览器到底干了啥？chrome为例 用户接口：包括地址栏，前进后退，书签菜单等窗口上除了网页显示区域以外的部分。 浏览器引擎：查询与操作渲染引擎的接口。 渲染引擎：解析HTML和CSS并将结果显示到窗口。 网络：用于网络请求。 UI后端：绘制基础元件，如组合框与窗口。 JavaScript解释器：解释执行js。 数据存储：把需要的数据写到硬盘，持久层。H5规定了web 。database..." />
+    <meta property="og:url" content="http://localhost:2368/2017/06/13/liu-lan-qi-gong-zuo-yuan-li-pian/" />
+    <meta property="article:published_time" content="2017-06-13T08:56:57.043Z" />
+    <meta property="article:modified_time" content="2017-06-13T09:03:04.866Z" />
+    <meta property="article:tag" content="工具" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="浏览器工作原理篇" />
+    <meta name="twitter:description" content="2017-06-13 星期二 丁酉年 五月十九      【鸡年】丙午月 辛未日      宜：嫁娶 祭祀 祈福 求嗣 开光      忌：安葬 开生坟 合寿木 行丧 浏览器到底干了啥？chrome为例 用户接口：包括地址栏，前进后退，书签菜单等窗口上除了网页显示区域以外的部分。 浏览器引擎：查询与操作渲染引擎的接口。 渲染引擎：解析HTML和CSS并将结果显示到窗口。 网络：用于网络请求。 UI后端：绘制基础元件，如组合框与窗口。 JavaScript解释器：解释执行js。 数据存储：把需要的数据写到硬盘，持久层。H5规定了web 。database..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/06/13/liu-lan-qi-gong-zuo-yuan-li-pian/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "浏览器工作原理篇",
+    "url": "http://localhost:2368/2017/06/13/liu-lan-qi-gong-zuo-yuan-li-pian/",
+    "datePublished": "2017-06-13T08:56:57.043Z",
+    "dateModified": "2017-06-13T09:03:04.866Z",
+    "keywords": "工具",
+    "description": "2017-06-13 星期二 丁酉年 五月十九      【鸡年】丙午月 辛未日      宜：嫁娶 祭祀 祈福 求嗣 开光      忌：安葬 开生坟 合寿木 行丧 浏览器到底干了啥？chrome为例 用户接口：包括地址栏，前进后退，书签菜单等窗口上除了网页显示区域以外的部分。 浏览器引擎：查询与操作渲染引擎的接口。 渲染引擎：解析HTML和CSS并将结果显示到窗口。 网络：用于网络请求。 UI后端：绘制基础元件，如组合框与窗口。 JavaScript解释器：解释执行js。 数据存储：把需要的数据写到硬盘，持久层。H5规定了web 。database..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-gong-ju">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="13 6月 2017" class="post-meta__date date">13 6月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/gong-ju/index.html">工具</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">浏览器工作原理篇</h1>
+    </header>
+
+    <section class="post tag-gong-ju">
+      <blockquote>
+  <p>2017-06-13 星期二 丁酉年 五月十九</p>
+  
+  <p>【鸡年】丙午月 辛未日</p>
+  
+  <p>宜：嫁娶 祭祀 祈福 求嗣 开光</p>
+  
+  <p>忌：安葬 开生坟 合寿木 行丧</p>
+</blockquote>
+
+<p>浏览器到底干了啥？chrome为例</p>
+
+<p><img src="../../../../content/images/2017/06/20170516149492235386286.png" alt="" /></p>
+
+<pre><code>用户接口：包括地址栏，前进后退，书签菜单等窗口上除了网页显示区域以外的部分。
+浏览器引擎：查询与操作渲染引擎的接口。
+渲染引擎：解析HTML和CSS并将结果显示到窗口。
+网络：用于网络请求。
+UI后端：绘制基础元件，如组合框与窗口。
+JavaScript解释器：解释执行js。
+数据存储：把需要的数据写到硬盘，持久层。H5规定了web 。database
+
+chrome使用多个渲染引擎实例，每个Tab一个，每个Tab都是一个独立进程。
+</code></pre>
+
+<h3 id="">渲染机制</h3>
+
+<p>主要:</p>
+
+<p><img src="../../../../content/images/2017/06/2017050914943061296311.png" alt="" /></p>
+
+<p>构建<code>DOM</code>和<code>CSSOM</code>：<code>（Bytes → characters → tokens → nodes → object model）</code></p>
+
+<p>构建<code>render tree</code>：（非可视化和<code>display:none</code>的<code>DOM</code>元素不会出现在渲染树中）</p>
+
+<p><code>render tree</code>布局</p>
+
+<p><code>render tree</code>绘制</p>
+
+<p><code>Reflow</code>:重新计算样式和渲染树</p>
+
+<p><code>Repaint</code>:采用新样式绘制元素</p>
+
+<p>webkit为例:</p>
+
+<p><img src="../../../../content/images/2017/06/20170509149430985825443.png" alt="" /></p>
+
+<p>详细过程:</p>
+
+<p>1.Create/Update DOM And request css/image/js</p>
+
+<pre><code>浏览器请求到HTML后，开始解析HTML，生成DOM，同时会并行发起对资源文件的请求（可能存在某种匹配机制）
+</code></pre>
+
+<p>2.Create/Update Render CSSOM</p>
+
+<pre><code>CSS文件下载完后开始构建CSSOM
+</code></pre>
+
+<p>3.Create/Update Render Tree</p>
+
+<pre><code>CSSOM生成以后与DOM一起生成Render Tree
+</code></pre>
+
+<p><img src="../../../../content/images/2017/06/20170516149492397934919.png" alt="" /></p>
+
+<p>4.Layout/Reflow</p>
+
+<pre><code>根据渲染树计算各个节点的位置，完成布局
+</code></pre>
+
+<p>5.Painting/Repaint</p>
+
+<pre><code>按照布局完成页面绘制
+</code></pre>
+
+<p>tips</p>
+
+<pre><code>DomContentLoad和load事件触发时间不同，前者是DOM构建完毕，后者在所有资源下载完以后触发。
+</code></pre>
+
+<p>Q&amp;A</p>
+
+<pre><code>Q: 页面渲染出来了指的是什么？
+A: 无图片首屏，有图片首屏，完整加载。
+Q: script标签对首屏影响？
+A: 如果script不在首屏范围内，不影响首屏时间，但有可能截断首屏的内容。
+Q: script放body底部以及async、defer属性的好处？
+A: 放底部可以防止首屏内容被截断；浏览器并行下载资源有限制，为减少tcp占用，使用async或defer。defer是在页面加载完后执行这部分js，async则是异步执行，不阻塞页面任务。
+</code></pre>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../wang-luo-ji-chu-pian-httpqian-shi-jin-sheng/index.html" title="link to 网络基础篇 + HTTP前世今生">网络基础篇 + HTTP前世今生</a>
+      </h5>
+       <p class="excerpt" title="2017-06-13 星期二 丁酉年 五月十九      【鸡年】丙午月 辛未日      宜：嫁娶 祭祀 祈福 求嗣 开光      忌：安葬 开生坟 合寿木 行丧 网络层级 七层、四层、五层">2017-06-13 星期二 丁酉年 五月十九      【鸡年】丙午月 辛未日      宜：嫁娶 祭祀 祈福 求嗣 开光      忌：安葬 开生坟 合寿木 行丧 网络层级 七层、四层、五层&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="13 6月 2017" class="post-list__meta--date date">13 6月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/06/13/wang-luo-ji-chu-pian-httpqian-shi-jin-sheng/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../09/yi-dong-duan-1px-borderde-shi-xian/index.html" title="link to 移动端1px border的实现">移动端1px border的实现</a></h5>
+       <p class="excerpt" title="2017-06-09 星期五 丁酉年 五月十五      【鸡年】丙午月 丁卯日      宜：祭祀 结网 余事勿取      忌：入宅 出行 掘井 安葬 请记住，每个尽责的设计师都是处女座…">2017-06-09 星期五 丁酉年 五月十五      【鸡年】丙午月 丁卯日      宜：祭祀 结网 余事勿取      忌：入宅 出行 掘井 安葬 请记住，每个尽责的设计师都是处女座…&hellip;</p>
+       <div class="post-list__meta"><time datetime="09 6月 2017" class="post-list__meta--date date">09 6月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/06/09/yi-dong-duan-1px-borderde-shi-xian/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

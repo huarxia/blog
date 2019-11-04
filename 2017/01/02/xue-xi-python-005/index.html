@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>学习Python 005</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="学习Python 005">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="学习Python 005">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/01/02/xue-xi-python-005/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="学习Python 005" />
+    <meta property="og:description" content="测试题：   0.在 Python 中， int 表示整型，那你还记得 bool 、 float和 str 分别表示   什么吗？ bool：表示布尔型 float: 表示浮点数（小数） str: 表示字符串   1.你知道为什么布尔类型 (bool) 的 True 和 False 分别用 1 和 0 来代替   吗？ 在計算機語言中，計算機能看懂的只有 1 和 0倆種值，同時也代表了倆種狀態，1代表聯通狀態，..." />
+    <meta property="og:url" content="http://localhost:2368/2017/01/02/xue-xi-python-005/" />
+    <meta property="article:published_time" content="2017-01-02T10:22:39.644Z" />
+    <meta property="article:modified_time" content="2017-01-08T12:25:14.046Z" />
+    <meta property="article:tag" content="Python" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="学习Python 005" />
+    <meta name="twitter:description" content="测试题：   0.在 Python 中， int 表示整型，那你还记得 bool 、 float和 str 分别表示   什么吗？ bool：表示布尔型 float: 表示浮点数（小数） str: 表示字符串   1.你知道为什么布尔类型 (bool) 的 True 和 False 分别用 1 和 0 来代替   吗？ 在計算機語言中，計算機能看懂的只有 1 和 0倆種值，同時也代表了倆種狀態，1代表聯通狀態，..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/01/02/xue-xi-python-005/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "学习Python 005",
+    "url": "http://localhost:2368/2017/01/02/xue-xi-python-005/",
+    "datePublished": "2017-01-02T10:22:39.644Z",
+    "dateModified": "2017-01-08T12:25:14.046Z",
+    "keywords": "Python",
+    "description": "测试题：   0.在 Python 中， int 表示整型，那你还记得 bool 、 float和 str 分别表示   什么吗？ bool：表示布尔型 float: 表示浮点数（小数） str: 表示字符串   1.你知道为什么布尔类型 (bool) 的 True 和 False 分别用 1 和 0 来代替   吗？ 在計算機語言中，計算機能看懂的只有 1 和 0倆種值，同時也代表了倆種狀態，1代表聯通狀態，..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-python">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="02 1月 2017" class="post-meta__date date">02 1月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/python/index.html">Python</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">学习Python 005</h1>
+    </header>
+
+    <section class="post tag-python">
+      <h3 id="">测试题：</h3>
+
+<blockquote>
+  <p>0.在 Python 中， int 表示整型，那你还记得 <code>bool</code> 、 <code>float</code>和 <code>str</code> 分别表示
+  什么吗？</p>
+</blockquote>
+
+<p><code>bool</code>：表示布尔型</p>
+
+<p><code>float</code>: 表示浮点数（小数）</p>
+
+<p><code>str</code>: 表示字符串</p>
+
+<blockquote>
+  <p>1.你知道为什么布尔类型 (<code>bool</code>) 的 <code>True</code> 和 <code>False</code> 分别用 1 和 0 来代替
+  吗？</p>
+</blockquote>
+
+<p>在計算機語言中，計算機能看懂的只有 1 和 0倆種值，同時也代表了倆種狀態，1代表聯通狀態，0代表斷開狀態；</p>
+
+<blockquote>
+  <p>2.使用 <code>int()</code> 将小数转换为整数，结果是向上取整还是向下取整呢？</p>
+</blockquote>
+
+<p>既不是向上取整，也不是向下取整，是斷尾法，意思是說截斷小數點部分，保留整數部分；</p>
+
+<blockquote>
+  <p>3.我们人类思维是习惯于“四舍五入”法， 你有什么办法使得 <code>int()</code> 按照“四
+  舍五入”的方式取整吗？</p>
+</blockquote>
+
+<p><code>int()</code> 固然没那么“聪明”，但机器是死的，人是活的！</p>
+
+<pre><code># 5.4 “四舍五入”结果为： 5， 
+int(5.4+0.5) == 5  
+# 5.6 “四舍五入”结果为： 6， 
+int(5.6+0.5) == 6
+</code></pre>
+
+<blockquote>
+  <p>4.取得一个变量的类型， 教程中介绍可以使用 type() 和 isinstance() ， 你更
+  倾向于使用哪个？</p>
+</blockquote>
+
+<p>當然是<code>isinstance</code>咯，但是也不是必須這樣；</p>
+
+<p>建议使用 <code>isinstance()</code> ，因为它的返回结果比较直接，另外 <code>type()</code> 其实并没
+有你想象的那么简单，我们后边会讲到。</p>
+
+<pre><code># isinstance()用法
+# eg: isinstance(5, int),檢查5是不是int型，
+&gt;&gt;&gt; True
+
+# type()用法
+# eg: type(5)
+&gt;&gt;&gt; &lt;class 'int'&gt;
+</code></pre>
+
+<blockquote>
+  <p>5.Python3 可以给变量命名中文名，知道为什么吗？</p>
+</blockquote>
+
+<p>Pyhton3 源码文件默认使用 utf-8 编码（支持中文） ， 这就使得以下代码是合法 <br />
+的：</p>
+
+<pre><code>&gt;&gt;&gt; 花夏 = '花開半春入了夏'
+&gt;&gt;&gt; '花開半春入了夏'
+&gt;&gt;&gt; print(花夏)
+&gt;&gt;&gt; 花開半春入了夏
+</code></pre>
+
+<h3 id="0">0. 针对輸入錯誤的類型，再次改进我们的小游戏：当用户输入错误</h3>
+
+<p>类型的时候，及时提醒用户重新输入，防止程序崩溃。</p>
+
+<pre><code>import random  
+times = 3  
+secret = random.randint(1, 10)  
+print('------------------我爱python------------------')  
+# 这里先给guess赋值（赋一个绝对不等于secret的值）
+guess = 0  
+# print()默认是打印完字符串会自动添加一个换行符，end=" "参数告诉print()用空格代替换行
+# 嗯，觉得富有创意的你应该会尝试用 end="🐍"？
+# print("不妨猜一下我現在现在心里想的是哪个数字🐍 : ", end = " ")
+while (guess != secret) and (times &gt; 0):  
+    temp = input("不妨猜一下我現在现在心里想的是哪个数字🐍 : ")
+    # 這裡不能使用if; 試想下，用if再次輸入事是不是還需要繼續判斷呢？
+    while not temp.isdigit():
+        temp = input('不好意思，您輸入的不是一個整數，請重新輸入: ')
+    guess = int(temp)
+    times = times - 1 # 用户每输入一次，可用机会就-1
+    if guess == secret:
+        print("我草，你是我心里的蛔虫吗？！")
+        print("哼，猜中了也没有奖励！")
+    else:
+        if guess &gt; secret:
+            print("哥，大了大了~&lt;del&gt;")
+        else:
+            print("嘿，小了，小了&lt;/del&gt;~")
+        if times &gt; 0:
+            print("再试一次吧：", end=" ")
+        else:
+            print("机会用光咯T_T")
+print("游戏结束，不玩啦^_^")
+</code></pre>
+
+<p><img src="../../../../content/images/2017/01/56F9D3BB-D786-493C-A0A0-93423CCD52D1.png" alt="" /></p>
+
+<p><code>isdigit()</code> BIF</p>
+
+<p>参数：无。</p>
+
+<p>isdigit() 方法检测字符串是否只由数字组成。</p>
+
+<p>返回值：如果字符串只包含数字则返回 True 否则返回 False。</p>
+
+<p>实例</p>
+
+<p>以下实例展示了isdigit()方法的实例：</p>
+
+<pre><code>#!/usr/bin/python
+
+str = "123456";  # Only digit in this string  
+print(str.isdigit())
+
+str = "this is string example....wow!!!";  
+print(str.isdigit())
+</code></pre>
+
+<p>輸出結果：</p>
+
+<pre><code>True  
+False
+</code></pre>
+
+<p>s为字符串 <br />
+<code>s.isalnum()</code>  所有字符都是数字或者字母，为真返回 <code>Ture</code>，否则返回 <code>False</code>。</p>
+
+<p><code>s.isalpha()</code>   所有字符都是字母，为真返回 <code>Ture</code>，否则返回 <code>False</code>。</p>
+
+<p><code>s.isdigit()</code>     所有字符都是数字，为真返回 <code>Ture</code>，否则返回 <code>False</code>。</p>
+
+<p><code>s.islower()</code>    所有字符都是小写，为真返回 <code>Ture</code>，否则返回 <code>False</code>。</p>
+
+<p><code>s.isupper()</code>   所有字符都是大写，为真返回 <code>Ture</code>，否则返回 <code>False</code>。</p>
+
+<p><code>s.istitle()</code>      所有单词都是首字母大写，为真返回 <code>Ture</code>，否则返回 <code>False</code>。</p>
+
+<p><code>s.isspace()</code>   所有字符都是空白字符，为真返回 <code>Ture</code>，否则返回 <code>False</code>。</p>
+
+<blockquote>
+  <p>1.写一个程序，判断给定年份是否为闰年。</p>
+</blockquote>
+
+<pre><code># 公元年数可被4整除（但不可被100整除）为闰年,但是正百的年数必须是可以被400整除的才是闰年。其他都是平年 
+
+year = input('請輸入一個公元年數: ')  
+isLeapYear = False
+
+while not year.isdigit():  
+    year = input('您輸入不是一個公元年數,請重新輸入: ')
+# 轉換為int類型
+year = int(year)  
+if (year % 100 == 0 and year % 400 == 0):  
+    isLeapYear = True
+elif (year % 4 == 0 and year % 100 != 0):  
+    isLeapYear = True
+else:  
+    isLeapYear = False
+# 轉換為str
+year = str(year)  
+if isLeapYear:  
+    print(year + '年,是閏年&lt;del&gt;')
+else:  
+    print(year + '年,不是閏年&lt;/del&gt;')
+</code></pre>
+
+<p><img src="../../../../content/images/2017/01/9AEAFD32-FB59-4E67-81B4-2DFE7898A82D.png" alt="" /></p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../03/xue-xi-python-006/index.html" title="link to 学习Python 006">学习Python 006</a>
+      </h5>
+       <p class="excerpt" title="測試題：   0.Python 的 floor 除法现在使用 “ // ” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？ 會顯示1.0，在python2中 /除法運算符會得到整數部分，而P">測試題：   0.Python 的 floor 除法现在使用 “ // ” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？ 會顯示1.0，在python2中 /除法運算符會得到整數部分，而P&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="03 1月 2017" class="post-list__meta--date date">03 1月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/python/">Python</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/01/03/xue-xi-python-006/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../01/xue-xi-python-004/index.html" title="link to 学习Python 004">学习Python 004</a></h5>
+       <p class="excerpt" title="測試題：   0.请问以下代码会打印多少次“I love you！” while 'C':       print('I love you！') 會一直打印，以為 'C'是一直成立的，程序進入死循環">測試題：   0.请问以下代码会打印多少次“I love you！” while 'C':       print('I love you！') 會一直打印，以為 'C'是一直成立的，程序進入死循環&hellip;</p>
+       <div class="post-list__meta"><time datetime="01 1月 2017" class="post-list__meta--date date">01 1月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/python/">Python</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/01/01/xue-xi-python-004/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

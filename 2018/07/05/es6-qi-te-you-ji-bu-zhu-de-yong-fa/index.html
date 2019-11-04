@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>es6 奇特又记不住的用法</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="es6 奇特又记不住的用法">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="es6 奇特又记不住的用法">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2018/07/05/es6-qi-te-you-ji-bu-zhu-de-yong-fa/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="es6 奇特又记不住的用法" />
+    <meta property="og:description" content="Reflect.ownKeys 返回所有类型的键名，包括常规键名和Symbol键名 let obj = {     [Symbol(&#x27;my_key&#x27;)]: 1,   enum: 2,   nonEnum: 3 }; Reflect.ownKeys(obj)   //  [&quot;enum&quot;, &quot;nonEnum&quot;, Symbol(my_key)] ES6 新增内置对象的Symbol.toStringTag属性值如下 JSON[Symbol.toStringTag]：&#x27;JSON&#x27;   Math[Symbol.toStringTag]：&#x27;Math&#x27;   Module 对象M[Symbol.toStringTag]：&#x27;Module&#x27;   ArrayBuffer.prototype[..." />
+    <meta property="og:url" content="http://localhost:2368/2018/07/05/es6-qi-te-you-ji-bu-zhu-de-yong-fa/" />
+    <meta property="og:image" content="http://localhost:2368/content/images/2018/07/image-1.png" />
+    <meta property="article:published_time" content="2018-07-05T08:52:40.345Z" />
+    <meta property="article:modified_time" content="2018-07-05T12:27:41.142Z" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="es6 奇特又记不住的用法" />
+    <meta name="twitter:description" content="Reflect.ownKeys 返回所有类型的键名，包括常规键名和Symbol键名 let obj = {     [Symbol(&#x27;my_key&#x27;)]: 1,   enum: 2,   nonEnum: 3 }; Reflect.ownKeys(obj)   //  [&quot;enum&quot;, &quot;nonEnum&quot;, Symbol(my_key)] ES6 新增内置对象的Symbol.toStringTag属性值如下 JSON[Symbol.toStringTag]：&#x27;JSON&#x27;   Math[Symbol.toStringTag]：&#x27;Math&#x27;   Module 对象M[Symbol.toStringTag]：&#x27;Module&#x27;   ArrayBuffer.prototype[..." />
+    <meta name="twitter:url" content="http://localhost:2368/2018/07/05/es6-qi-te-you-ji-bu-zhu-de-yong-fa/" />
+    <meta name="twitter:image:src" content="http://localhost:2368/content/images/2018/07/image-1.png" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "es6 奇特又记不住的用法",
+    "url": "http://localhost:2368/2018/07/05/es6-qi-te-you-ji-bu-zhu-de-yong-fa/",
+    "datePublished": "2018-07-05T08:52:40.345Z",
+    "dateModified": "2018-07-05T12:27:41.142Z",
+    "image": "http://localhost:2368/content/images/2018/07/image-1.png",
+    "description": "Reflect.ownKeys 返回所有类型的键名，包括常规键名和Symbol键名 let obj = {     [Symbol(&#x27;my_key&#x27;)]: 1,   enum: 2,   nonEnum: 3 }; Reflect.ownKeys(obj)   //  [&quot;enum&quot;, &quot;nonEnum&quot;, Symbol(my_key)] ES6 新增内置对象的Symbol.toStringTag属性值如下 JSON[Symbol.toStringTag]：&#x27;JSON&#x27;   Math[Symbol.toStringTag]：&#x27;Math&#x27;   Module 对象M[Symbol.toStringTag]：&#x27;Module&#x27;   ArrayBuffer.prototype[..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="05 7月 2018" class="post-meta__date date">05 7月 2018</time> &#8226; <span class="post-meta__tags tags"></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">es6 奇特又记不住的用法</h1>
+    </header>
+
+    <section class="post">
+      <h3 id="reflectownkeyssymbol"><code>Reflect.ownKeys</code> 返回所有类型的键名，包括常规键名和<code>Symbol</code>键名</h3>
+
+<pre><code>let obj = {  
+  [Symbol('my_key')]: 1,
+  enum: 2,
+  nonEnum: 3
+};
+Reflect.ownKeys(obj)  
+//  ["enum", "nonEnum", Symbol(my_key)]
+</code></pre>
+
+<p><img src="../../../../content/images/2018/07/4A4E4F30-C89C-4247-BC9A-010855ED0A4B.png" alt="" /></p>
+
+<h3 id="es6symboltostringtag">ES6 新增内置对象的Symbol.toStringTag属性值如下</h3>
+
+<pre><code>JSON[Symbol.toStringTag]：'JSON'  
+Math[Symbol.toStringTag]：'Math'  
+Module 对象M[Symbol.toStringTag]：'Module'  
+ArrayBuffer.prototype[Symbol.toStringTag]：'ArrayBuffer'  
+DataView.prototype[Symbol.toStringTag]：'DataView'  
+Map.prototype[Symbol.toStringTag]：'Map'  
+Promise.prototype[Symbol.toStringTag]：'Promise'  
+Set.prototype[Symbol.toStringTag]：'Set'  
+%TypedArray%.prototype[Symbol.toStringTag]：'Uint8Array'等
+WeakMap.prototype[Symbol.toStringTag]：'WeakMap'  
+WeakSet.prototype[Symbol.toStringTag]：'WeakSet'  
+%MapIteratorPrototype%[Symbol.toStringTag]：'Map Iterator'
+%SetIteratorPrototype%[Symbol.toStringTag]：'Set Iterator'
+%StringIteratorPrototype%[Symbol.toStringTag]：'String Iterator'
+Symbol.prototype[Symbol.toStringTag]：'Symbol'  
+Generator.prototype[Symbol.toStringTag]：'Generator'  
+GeneratorFunction.prototype[Symbol.toStringTag]：'GeneratorFunction'  
+</code></pre>
+
+<h3 id="set">Set</h3>
+
+<p>ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+
+<p>Set 本身是一个构造函数，用来生成 Set 数据结构。</p>
+
+<pre><code>const s = new Set();
+
+[2, 3, 5, 4, 5, 2, 2].forEach(x =&gt; s.add(x));
+
+for (let i of s) {  
+  console.log(i);
+}
+// 2 3 5 4
+</code></pre>
+
+<p>所以这个可以用来简单去重，也不失为一种好的方法 
+<code>// 去除数组的重复成员[...new Set(array)]</code></p>
+
+<p>Set 实例的方法分为两大类：操作方法（用于操作数据）和遍历方法（用于遍历成员）。下面先介绍四个操作方法。</p>
+
+<p><code>add(value)</code>：添加某个值，返回 Set 结构本身。
+<code>delete(value)</code>：删除某个值，返回一个布尔值，表示删除是否成功。
+<code>has(value)</code>：返回一个布尔值，表示该值是否为Set的成员。
+<code>clear()</code>：清除所有成员，没有返回值。</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../../../2019/07/26/jie-jue-nodejszhong-express-postqing-qiu-404/index.html" title="link to 解决nodejs中express-POST请求404">解决nodejs中express-POST请求404</a>
+      </h5>
+       <p class="excerpt" title="🎬 前情提要 😭 某天在本地开发vue项目时需要本地mock,一直使用get获取数据，未出现任何毛病，结果在做提交数据POST请求时就一直404断掉nodejs服务器 🐒 现象展示  🏁 开">🎬 前情提要 😭 某天在本地开发vue项目时需要本地mock,一直使用get获取数据，未出现任何毛病，结果在做提交数据POST请求时就一直404断掉nodejs服务器 🐒 现象展示  🏁 开&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="26 7月 2019" class="post-list__meta--date date">26 7月 2019</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags"></span> -->
+        <!-- <a class="btn-border-small" href=/2019/07/26/jie-jue-nodejszhong-express-postqing-qiu-404/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../../../2017/12/26/2017nian-nozong-jie/index.html" title="link to 2017年の总结">2017年の总结</a></h5>
+       <p class="excerpt" title="2017-12-26 星期二 十一月初九      【鸡年】壬子月 丁亥日      宜：纳采 订盟 祭祀 沐浴 冠笄      忌：嫁娶 祈福 开光 掘井 安葬      地点: 中关村768">2017-12-26 星期二 十一月初九      【鸡年】壬子月 丁亥日      宜：纳采 订盟 祭祀 沐浴 冠笄      忌：嫁娶 祈福 开光 掘井 安葬      地点: 中关村768&hellip;</p>
+       <div class="post-list__meta"><time datetime="26 12月 2017" class="post-list__meta--date date">26 12月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/wen-zhang/">文章</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/12/26/2017nian-nozong-jie/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

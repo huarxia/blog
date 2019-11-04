@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>OOP高级</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="OOP高级">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="OOP高级">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/02/28/oopgao-ji/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="OOP高级" />
+    <meta property="og:description" content="hasOwnproperty :看是不是对象自身下的属性  constructor :查看对象的构造函数  编写原型链的时候有两种方法   1. Test.prototype.name = &quot;maxchar&quot;;   Test.prototype.age = 24;     2. Test.prototype = {       constructor:Test,     name:&quot;maxchar&quot;,     age:24 } 如果使用第二种一定记得加上constructor:Test，因为第二种属于对整个原型链赋值的方法会覆盖constructor导致自己的constructor被覆盖而指向了Object的constructor instanceof ：对象与构造函数字在原型链上是否有关系//是否在同一原型链上  toString() : 系统对象下都是再带的，自己创建的对象都是Object原型链上的,把对象转成字符串  三中判断是不是数组：var arr = []; 1.arr.constructor==Array..." />
+    <meta property="og:url" content="http://localhost:2368/2015/02/28/oopgao-ji/" />
+    <meta property="article:published_time" content="2015-02-28T06:07:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-16T06:09:16.061Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="OOP高级" />
+    <meta name="twitter:description" content="hasOwnproperty :看是不是对象自身下的属性  constructor :查看对象的构造函数  编写原型链的时候有两种方法   1. Test.prototype.name = &quot;maxchar&quot;;   Test.prototype.age = 24;     2. Test.prototype = {       constructor:Test,     name:&quot;maxchar&quot;,     age:24 } 如果使用第二种一定记得加上constructor:Test，因为第二种属于对整个原型链赋值的方法会覆盖constructor导致自己的constructor被覆盖而指向了Object的constructor instanceof ：对象与构造函数字在原型链上是否有关系//是否在同一原型链上  toString() : 系统对象下都是再带的，自己创建的对象都是Object原型链上的,把对象转成字符串  三中判断是不是数组：var arr = []; 1.arr.constructor==Array..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/02/28/oopgao-ji/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "OOP高级",
+    "url": "http://localhost:2368/2015/02/28/oopgao-ji/",
+    "datePublished": "2015-02-28T06:07:00.000Z",
+    "dateModified": "2016-11-16T06:09:16.061Z",
+    "keywords": "js",
+    "description": "hasOwnproperty :看是不是对象自身下的属性  constructor :查看对象的构造函数  编写原型链的时候有两种方法   1. Test.prototype.name = &quot;maxchar&quot;;   Test.prototype.age = 24;     2. Test.prototype = {       constructor:Test,     name:&quot;maxchar&quot;,     age:24 } 如果使用第二种一定记得加上constructor:Test，因为第二种属于对整个原型链赋值的方法会覆盖constructor导致自己的constructor被覆盖而指向了Object的constructor instanceof ：对象与构造函数字在原型链上是否有关系//是否在同一原型链上  toString() : 系统对象下都是再带的，自己创建的对象都是Object原型链上的,把对象转成字符串  三中判断是不是数组：var arr = []; 1.arr.constructor==Array..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="28 2月 2015" class="post-meta__date date">28 2月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">OOP高级</h1>
+    </header>
+
+    <section class="post tag-js">
+      <p>hasOwnproperty :看是不是对象自身下的属性 <br />
+constructor :查看对象的构造函数 <br />
+编写原型链的时候有两种方法</p>
+
+<blockquote>
+  <p>1.</p>
+</blockquote>
+
+<pre><code>Test.prototype.name = "maxchar";  
+Test.prototype.age = 24;  
+</code></pre>
+
+<blockquote>
+  <p>2.</p>
+</blockquote>
+
+<pre><code>Test.prototype = {  
+    constructor:Test,
+    name:"maxchar",
+    age:24
+}
+</code></pre>
+
+<p>如果使用第二种一定记得加上constructor:Test，因为第二种属于对整个原型链赋值的方法会覆盖constructor导致自己的constructor被覆盖而指向了Object的constructor</p>
+
+<p>instanceof ：对象与构造函数字在原型链上是否有关系//是否在同一原型链上 <br />
+toString() : 系统对象下都是再带的，自己创建的对象都是Object原型链上的,把对象转成字符串 <br />
+三中判断是不是数组：var arr = [];</p>
+
+<pre><code>1.arr.constructor==Array  
+2.arr instanceof Array  
+3.Object.prototype.toString.call(arr) == Array  
+</code></pre>
+
+<p>其中第三种才是真正能没有bug判断正确的，因为前两种都有特殊情况判断失误</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../../03/01/jsmian-xiang-dui-xiang-de-lei-ji-cheng/index.html" title="link to JS面向对象的类继承">JS面向对象的类继承</a>
+      </h5>
+       <p class="excerpt" title="function Fu(){       this.name = "小明"; } Fu.prototype.showName = function(){       alert(this.name);">function Fu(){       this.name = "小明"; } Fu.prototype.showName = function(){       alert(this.name);&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="01 3月 2015" class="post-list__meta--date date">01 3月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/03/01/jsmian-xiang-dui-xiang-de-lei-ji-cheng/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../gruntchu-tan/index.html" title="link to Grunt初探">Grunt初探</a></h5>
+       <p class="excerpt" title="今天学习构建工具Grunt :www.gruntjs.org 构建工具拿来干嘛呢？常见可以这样的： 比如一个大的项目有许多开发者，最后要发布到线上了，相关的JS最好合并为一个JS文件，并且压缩最好了">今天学习构建工具Grunt :www.gruntjs.org 构建工具拿来干嘛呢？常见可以这样的： 比如一个大的项目有许多开发者，最后要发布到线上了，相关的JS最好合并为一个JS文件，并且压缩最好了&hellip;</p>
+       <div class="post-list__meta"><time datetime="28 2月 2015" class="post-list__meta--date date">28 2月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/02/28/gruntchu-tan/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

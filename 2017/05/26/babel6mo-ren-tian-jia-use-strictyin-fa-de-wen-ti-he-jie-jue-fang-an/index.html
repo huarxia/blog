@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>babel6默认添加use strict引发的问题和解决方案</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="babel6默认添加use strict引发的问题和解决方案">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="babel6默认添加use strict引发的问题和解决方案">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/05/26/babel6mo-ren-tian-jia-use-strictyin-fa-de-wen-ti-he-jie-jue-fang-an/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="babel6默认添加use strict引发的问题和解决方案" />
+    <meta property="og:description" content="2017-05-26 星期五 丁酉年 五月初一      【鸡年】乙巳月 癸丑日      宜：开市 交易 立券 安机械 会亲友      忌：嫁娶 出火 移徙 入宅 问题描述：   昨天使用vue做移动端的时候，由于公司使用了第三方视频服务，而第三方视频服务的js插件在我的vue框架下import进来时，由于代码写得很那啥~~ 然后就报错了： 这个原因就是在use strict这样的严格模式下，caller, callee, arguments不允许访问的， 所以肯定是在某个地方加入了严格模式use strict；最终想了想就是框架层在webpack打包时候做的事情，一部一个不跟下去找到是babel-loader的问题，上网一查，还是有一些人遇到这些问题的，也给出了解决方案: 问题的原因是babel的es2015预设中默认使用了babel-plugin-transform-strict-mode，为所有模块自动加上use strict， 所以才有了上面的问题。..." />
+    <meta property="og:url" content="http://localhost:2368/2017/05/26/babel6mo-ren-tian-jia-use-strictyin-fa-de-wen-ti-he-jie-jue-fang-an/" />
+    <meta property="article:published_time" content="2017-05-26T02:18:28.124Z" />
+    <meta property="article:modified_time" content="2017-05-26T02:39:47.157Z" />
+    <meta property="article:tag" content="經驗" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="babel6默认添加use strict引发的问题和解决方案" />
+    <meta name="twitter:description" content="2017-05-26 星期五 丁酉年 五月初一      【鸡年】乙巳月 癸丑日      宜：开市 交易 立券 安机械 会亲友      忌：嫁娶 出火 移徙 入宅 问题描述：   昨天使用vue做移动端的时候，由于公司使用了第三方视频服务，而第三方视频服务的js插件在我的vue框架下import进来时，由于代码写得很那啥~~ 然后就报错了： 这个原因就是在use strict这样的严格模式下，caller, callee, arguments不允许访问的， 所以肯定是在某个地方加入了严格模式use strict；最终想了想就是框架层在webpack打包时候做的事情，一部一个不跟下去找到是babel-loader的问题，上网一查，还是有一些人遇到这些问题的，也给出了解决方案: 问题的原因是babel的es2015预设中默认使用了babel-plugin-transform-strict-mode，为所有模块自动加上use strict， 所以才有了上面的问题。..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/05/26/babel6mo-ren-tian-jia-use-strictyin-fa-de-wen-ti-he-jie-jue-fang-an/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "babel6默认添加use strict引发的问题和解决方案",
+    "url": "http://localhost:2368/2017/05/26/babel6mo-ren-tian-jia-use-strictyin-fa-de-wen-ti-he-jie-jue-fang-an/",
+    "datePublished": "2017-05-26T02:18:28.124Z",
+    "dateModified": "2017-05-26T02:39:47.157Z",
+    "keywords": "經驗",
+    "description": "2017-05-26 星期五 丁酉年 五月初一      【鸡年】乙巳月 癸丑日      宜：开市 交易 立券 安机械 会亲友      忌：嫁娶 出火 移徙 入宅 问题描述：   昨天使用vue做移动端的时候，由于公司使用了第三方视频服务，而第三方视频服务的js插件在我的vue框架下import进来时，由于代码写得很那啥~~ 然后就报错了： 这个原因就是在use strict这样的严格模式下，caller, callee, arguments不允许访问的， 所以肯定是在某个地方加入了严格模式use strict；最终想了想就是框架层在webpack打包时候做的事情，一部一个不跟下去找到是babel-loader的问题，上网一查，还是有一些人遇到这些问题的，也给出了解决方案: 问题的原因是babel的es2015预设中默认使用了babel-plugin-transform-strict-mode，为所有模块自动加上use strict， 所以才有了上面的问题。..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-jing-yan">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="26 5月 2017" class="post-meta__date date">26 5月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/jing-yan/index.html">經驗</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">babel6默认添加use strict引发的问题和解决方案</h1>
+    </header>
+
+    <section class="post tag-jing-yan">
+      <blockquote>
+  <p>2017-05-26 星期五 丁酉年 五月初一</p>
+  
+  <p>【鸡年】乙巳月 癸丑日</p>
+  
+  <p>宜：开市 交易 立券 安机械 会亲友</p>
+  
+  <p>忌：嫁娶 出火 移徙 入宅</p>
+</blockquote>
+
+<p>问题描述：
+  昨天使用vue做移动端的时候，由于公司使用了第三方视频服务，而第三方视频服务的js插件在我的vue框架下import进来时，由于代码写得很那啥~~ 然后就报错了：</p>
+
+<p><img src="../../../../content/images/2017/05/QQ20170526-0.png" alt="" /></p>
+
+<p>这个原因就是在<code>use strict</code>这样的严格模式下，<code>caller</code>, <code>callee</code>, <code>arguments</code>不允许访问的，</p>
+
+<p><img src="../../../../content/images/2017/05/eac4b74543a98226e1e6d08a8982b9014a90eb7c.jpg" alt="" /></p>
+
+<p>所以肯定是在某个地方加入了严格模式<code>use strict</code>；最终想了想就是框架层在<code>webpack</code>打包时候做的事情，一部一个不跟下去找到是<code>babel-loader</code>的问题，上网一查，还是有一些人遇到这些问题的，也给出了解决方案:</p>
+
+<p>问题的原因是babel的es2015预设中默认使用了<a href="https://babeljs.io/docs/plugins/transform-strict-mode/">babel-plugin-transform-strict-mode</a>，为所有模块自动加上<code>use strict</code>， 所以才有了上面的问题。</p>
+
+<p>解决方案当然也呼之欲出：</p>
+
+<p>对于Babel5有一种特殊的解决方案：</p>
+
+<pre><code>// 在.babelrc文件中加入这样一行配置：
+blacklist: ["useStrict"]  
+</code></pre>
+
+<p>但是在Babel6中这个方案不生效，构建时会报错：</p>
+
+<pre><code>Module build failed: ReferenceError:  
+[BABEL] /Users/huaxia/icode/kkb/hybrid\app.js: Using removed Babel 5 option: 
+/Users/huaxia/icode/kkb/hybrid\.babelrc.blacklist - 
+Put the specific transforms you want in the `plugins` option  
+</code></pre>
+
+<p>问题很明显，Babel6已经不支持blacklist这个option了，所以问题的答主给了一个babel6的解决方案：</p>
+
+<p>因为babel给所有模块自动加'use strict'是通过<a href="https://babeljs.io/docs/plugins/transform-strict-mode/">babel-plugin-transform-strict-mode</a>这个插件加的，因此在配置babel的时候不要使用es2015 的preset，自己手动指定plugins列表，把这个plugin排除在外不引进来就可以了。</p>
+
+<p>查阅ES2015的preset发现压根没有这个plugins，在工程里的node_modules下搜索了一下，发现这个plugin是从<a href="http://babeljs.io/docs/plugins/transform-es2015-modules-commonjs/">transform-es2015-modules-commonjs</a>这个插件里引入的。</p>
+
+<p>至此终于定位到问题的根源了。</p>
+
+<p>由于无法限制ES2015模块依赖ES5的模块，所以理论上来说，只要是在ES2015模块里加了use strict，都会存在潜在的风险。所以最好的方式是去掉这个插件，或者再用一个插件移除掉所有的use strict，这样保证所有代码都在非严格模式下执行即可。</p>
+
+<p>第一个方案显然是不靠谱了，除非不写import，否则必须要引入<a href="http://babeljs.io/docs/plugins/transform-es2015-modules-commonjs/">transform-es2015-modules-commonjs</a>插件来做ES2015 -> commonJS Module 的转换，而引入了这个插件，就必须要引入<a href="https://babeljs.io/docs/plugins/transform-strict-mode/">babel-plugin-transform-strict-mode</a>插件，这个很难在配置层面做到限制。</p>
+
+<p>所以只能转向第二个方案：再写一个babel插件把所有的<code>use strict</code>干掉就可以了。习惯性地上github上搜索了一下，居然还真搜到了一个包：<a href="https://github.com/genify/babel-plugin-transform-remove-strict-mode">babel-plugin-transform-remove-strict-mode</a>。果真是万能的Github！！！</p>
+
+<p>确认无误后，在package.json文件中的devDependencies中加入</p>
+
+<pre><code> "babel-plugin-transform-remove-strict-mode":"^0.0.2"
+</code></pre>
+
+<p>然后在.babelrc文件中新增配置：</p>
+
+<pre><code>{ 
+  "presets": [
+    "es2015"
+  ] ,
+  "plugins":[
+    "transform-runtime",
+    // 下面这行
+    "transform-remove-strict-mode"
+  ]
+}
+</code></pre>
+
+<p>就这样问题解决了<del></p>
+
+<p>然鹅</del>可能你还会遇到其他问题，遇到其他问题那就不是babel的事情了，就该解决其他问题了，我遇到的是第三方视频插件（还必须用它！！！）由于最新版不兼容，所以直接使用的上一个版本才解决了...</p>
+
+<p>万幸~~~</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../27/javas/index.html" title="link to JavaScript组成">JavaScript组成</a>
+      </h5>
+       <p class="excerpt" title="2017-05-27 星期六 丁酉年 五月初二      【鸡年】乙巳月 甲寅日      宜：栽种 捕捉 畋猎 余事勿取      忌：开市 动土 祭祀 斋醮 安葬 JavaScript和EC">2017-05-27 星期六 丁酉年 五月初二      【鸡年】乙巳月 甲寅日      宜：栽种 捕捉 畋猎 余事勿取      忌：开市 动土 祭祀 斋醮 安葬 JavaScript和EC&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="27 5月 2017" class="post-list__meta--date date">27 5月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/05/27/javas/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../25/mian-xiang-wei-lai-de-css-variable/index.html" title="link to 面向未來的 CSS Variable">面向未來的 CSS Variable</a></h5>
+       <p class="excerpt" title="2017-05-25 星期四 丁酉年 四月三十      【鸡年】乙巳月 壬子日      宜：沐浴 扫舍 余事勿取      忌：斋醮 开市 嫁娶 作灶 CSS Variable 即CSS變量">2017-05-25 星期四 丁酉年 四月三十      【鸡年】乙巳月 壬子日      宜：沐浴 扫舍 余事勿取      忌：斋醮 开市 嫁娶 作灶 CSS Variable 即CSS變量&hellip;</p>
+       <div class="post-list__meta"><time datetime="25 5月 2017" class="post-list__meta--date date">25 5月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/05/25/mian-xiang-wei-lai-de-css-variable/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>正则表达式</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="正则表达式">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="正则表达式">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/02/06/zheng-ze-biao-da-shi/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="正则表达式" />
+    <meta property="og:description" content="字符串操作： •search 查找 •substring 获取子字符串 •charAt 获取某个字符 •split 分割字符串，获得数组 RegExp对象 •JS风格——new RegExp(“a”, “i”) •perl风格——/a/i search •字符串搜索 –返回出现的位置 –忽略大小写：i——ignore –判断浏览器类型 match •获取匹配的项目 –量词：+ –量词变化：\d、\d\d和\d+ –全局匹配：g——global –例子：找出所有数字 replace..." />
+    <meta property="og:url" content="http://localhost:2368/2015/02/06/zheng-ze-biao-da-shi/" />
+    <meta property="article:published_time" content="2015-02-06T09:06:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-15T09:06:41.270Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="正则表达式" />
+    <meta name="twitter:description" content="字符串操作： •search 查找 •substring 获取子字符串 •charAt 获取某个字符 •split 分割字符串，获得数组 RegExp对象 •JS风格——new RegExp(“a”, “i”) •perl风格——/a/i search •字符串搜索 –返回出现的位置 –忽略大小写：i——ignore –判断浏览器类型 match •获取匹配的项目 –量词：+ –量词变化：\d、\d\d和\d+ –全局匹配：g——global –例子：找出所有数字 replace..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/02/06/zheng-ze-biao-da-shi/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "正则表达式",
+    "url": "http://localhost:2368/2015/02/06/zheng-ze-biao-da-shi/",
+    "datePublished": "2015-02-06T09:06:00.000Z",
+    "dateModified": "2016-11-15T09:06:41.270Z",
+    "keywords": "js",
+    "description": "字符串操作： •search 查找 •substring 获取子字符串 •charAt 获取某个字符 •split 分割字符串，获得数组 RegExp对象 •JS风格——new RegExp(“a”, “i”) •perl风格——/a/i search •字符串搜索 –返回出现的位置 –忽略大小写：i——ignore –判断浏览器类型 match •获取匹配的项目 –量词：+ –量词变化：\\d、\\d\\d和\\d+ –全局匹配：g——global –例子：找出所有数字 replace..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="06 2月 2015" class="post-meta__date date">06 2月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">正则表达式</h1>
+    </header>
+
+    <section class="post tag-js">
+      <p>字符串操作：</p>
+
+<p>•search 查找</p>
+
+<p>•substring 获取子字符串</p>
+
+<p>•charAt 获取某个字符</p>
+
+<p>•split 分割字符串，获得数组</p>
+
+<p>RegExp对象</p>
+
+<p>•JS风格——new RegExp(“a”, “i”)</p>
+
+<p>•perl风格——/a/i</p>
+
+<p>search</p>
+
+<p>•字符串搜索</p>
+
+<p>–返回出现的位置</p>
+
+<p>–忽略大小写：i——ignore</p>
+
+<p>–判断浏览器类型</p>
+
+<p>match</p>
+
+<p>•获取匹配的项目</p>
+
+<p>–量词：+ –量词变化：\d、\d\d和\d+</p>
+
+<p>–全局匹配：g——global –例子：找出所有数字</p>
+
+<p>replace</p>
+
+<p>•替换所有匹配</p>
+
+<p>–返回替换后的字符串 –例子：敏感词过滤</p>
+
+<p>任意字符 •[abc] –例子：o[usb]t——obt、ost、out</p>
+
+<p>范围 •[a-z]、[0-9] –例子：id[0-9]——id0、id5</p>
+
+<p>排除 •[^a] –例子：o[^0-9]t——oat、o?t、o t</p>
+
+<p>组合 •[a-z0-9A-Z]</p>
+
+<p>实例：偷小说 •过滤HTML标签 –自定义innerText方法</p>
+
+<p>转义字符 •.（点）——任意字符 •\d、\w、\s •\D、\W、\S</p>
+
+<p>\d 数字</p>
+
+<p>\w 相当于 [a-z0-9_] –> world</p>
+
+<p>\s pace 空白</p>
+
+<p>\D 非数字</p>
+
+<p>\W 除了[a-z0-9_]以外的东西</p>
+
+<p>\S 除了pace空白以外的东西</p>
+
+<p>什么是量词</p>
+
+<p>•出现的次数</p>
+
+<p>•{n,m}，至少出现n次，最多m次 •例子：查找QQ号</p>
+
+<p>常用量词 •{n,} 至少n次</p>
+
+<p>• * 任意次 {0,}</p>
+
+<p>• ？ 零次或一次 {0,1}</p>
+
+<p>• + 一次或任意次{1,}</p>
+
+<p>• {n} 正好n次</p>
+
+<p>高级表单校验</p>
+
+<p>•校验邮箱 –行首行尾 /^$/;</p>
+
+<p>–去除空格：^\s+|\s+$</p>
+
+<p>•匹配中文：[\u4e00-\u9fa5]</p>
+
+<p>•完美版getByClass 单词边界：\b</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../yong-zheng-ze-biao-da-shi-xie-de-getbyclass/index.html" title="link to 用正则表达式写的getByClass">用正则表达式写的getByClass</a>
+      </h5>
+       <p class="excerpt" title="最开始我们使用笨笨的方法解决通过class选取元素见：class获取DOM 这里我们再次使用正则表达式来优化 ;function getByClass(obj,sclass){     var all">最开始我们使用笨笨的方法解决通过class选取元素见：class获取DOM 这里我们再次使用正则表达式来优化 ;function getByClass(obj,sclass){     var all&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="06 2月 2015" class="post-list__meta--date date">06 2月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/02/06/yong-zheng-ze-biao-da-shi-xie-de-getbyclass/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../05/zhao-pian-qiang-te-xiao/index.html" title="link to 照片墙特效">照片墙特效</a></h5>
+       <p class="excerpt" title="window.onload = function() {           var oUl= document.getElementById("ul1");         var aLi = oU">window.onload = function() {           var oUl= document.getElementById("ul1");         var aLi = oU&hellip;</p>
+       <div class="post-list__meta"><time datetime="05 2月 2015" class="post-list__meta--date date">05 2月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/02/05/zhao-pian-qiang-te-xiao/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

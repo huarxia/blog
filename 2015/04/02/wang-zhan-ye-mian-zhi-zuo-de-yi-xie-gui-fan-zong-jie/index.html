@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>网站页面制作的一些规范总结</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="网站页面制作的一些规范总结">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="网站页面制作的一些规范总结">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/04/02/wang-zhan-ye-mian-zhi-zuo-de-yi-xie-gui-fan-zong-jie/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="网站页面制作的一些规范总结" />
+    <meta property="og:description" content="1.文件命名规范 　　1) 文件目录、文件名称统一用小写的英文字母、数字、下划线组合，文件名要与表现的内容相近，不到万不得已不要以拼音作为名称，如 登录页面：login.html(不要用 denglu.html)。 　　2) 目录结构规范：清晰的站点目录结构方便文件的维护和整理，同时对增加搜索引擎的友好度和移植也有着重要的影响。   2.图片制作规范 　　1) 如果图片作为内容放在html代码里，则必须定义它的宽度和高度。 　　2) 如果图片不包含任何信息，仅是作为装饰使用，请将该图片从html中分离出来。 　　3) 检查是否有可能在不损失画质的基础上压缩图片，或者采用不同的文件格式来获得最大程度的压缩。 　　4) 利用css sprite 将一些小图片合成一张大图片，用 background-position 来定位图片。 　　5)..." />
+    <meta property="og:url" content="http://localhost:2368/2015/04/02/wang-zhan-ye-mian-zhi-zuo-de-yi-xie-gui-fan-zong-jie/" />
+    <meta property="article:published_time" content="2015-04-02T06:43:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-16T06:47:36.282Z" />
+    <meta property="article:tag" content="經驗" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="网站页面制作的一些规范总结" />
+    <meta name="twitter:description" content="1.文件命名规范 　　1) 文件目录、文件名称统一用小写的英文字母、数字、下划线组合，文件名要与表现的内容相近，不到万不得已不要以拼音作为名称，如 登录页面：login.html(不要用 denglu.html)。 　　2) 目录结构规范：清晰的站点目录结构方便文件的维护和整理，同时对增加搜索引擎的友好度和移植也有着重要的影响。   2.图片制作规范 　　1) 如果图片作为内容放在html代码里，则必须定义它的宽度和高度。 　　2) 如果图片不包含任何信息，仅是作为装饰使用，请将该图片从html中分离出来。 　　3) 检查是否有可能在不损失画质的基础上压缩图片，或者采用不同的文件格式来获得最大程度的压缩。 　　4) 利用css sprite 将一些小图片合成一张大图片，用 background-position 来定位图片。 　　5)..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/04/02/wang-zhan-ye-mian-zhi-zuo-de-yi-xie-gui-fan-zong-jie/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "网站页面制作的一些规范总结",
+    "url": "http://localhost:2368/2015/04/02/wang-zhan-ye-mian-zhi-zuo-de-yi-xie-gui-fan-zong-jie/",
+    "datePublished": "2015-04-02T06:43:00.000Z",
+    "dateModified": "2016-11-16T06:47:36.282Z",
+    "keywords": "經驗",
+    "description": "1.文件命名规范 　　1) 文件目录、文件名称统一用小写的英文字母、数字、下划线组合，文件名要与表现的内容相近，不到万不得已不要以拼音作为名称，如 登录页面：login.html(不要用 denglu.html)。 　　2) 目录结构规范：清晰的站点目录结构方便文件的维护和整理，同时对增加搜索引擎的友好度和移植也有着重要的影响。   2.图片制作规范 　　1) 如果图片作为内容放在html代码里，则必须定义它的宽度和高度。 　　2) 如果图片不包含任何信息，仅是作为装饰使用，请将该图片从html中分离出来。 　　3) 检查是否有可能在不损失画质的基础上压缩图片，或者采用不同的文件格式来获得最大程度的压缩。 　　4) 利用css sprite 将一些小图片合成一张大图片，用 background-position 来定位图片。 　　5)..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-jing-yan">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="02 4月 2015" class="post-meta__date date">02 4月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/jing-yan/index.html">經驗</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">网站页面制作的一些规范总结</h1>
+    </header>
+
+    <section class="post tag-jing-yan">
+      <blockquote>
+  <p>1.文件命名规范</p>
+</blockquote>
+
+<p>　　1) 文件目录、文件名称统一用小写的英文字母、数字、下划线组合，文件名要与表现的内容相近，不到万不得已不要以拼音作为名称，如 登录页面：login.html(不要用 denglu.html)。</p>
+
+<p>　　2) 目录结构规范：清晰的站点目录结构方便文件的维护和整理，同时对增加搜索引擎的友好度和移植也有着重要的影响。</p>
+
+<blockquote>
+  <p>2.图片制作规范</p>
+</blockquote>
+
+<p>　　1) 如果图片作为内容放在html代码里，则必须定义它的宽度和高度。</p>
+
+<p>　　2) 如果图片不包含任何信息，仅是作为装饰使用，请将该图片从html中分离出来。</p>
+
+<p>　　3) 检查是否有可能在不损失画质的基础上压缩图片，或者采用不同的文件格式来获得最大程度的压缩。</p>
+
+<p>　　4) 利用css sprite 将一些小图片合成一张大图片，用 background-position 来定位图片。</p>
+
+<p>　　5) 如果有用到透明，则用 gif/png 格式图片，确保各个主流浏览器的兼容。</p>
+
+<p>　　6) 为网站制作favicon.ico，不管有没有favicon.ico，浏览器总是会去请求它。因此，我们需要为网站制作一个小图标，并将其缓存到用户的电脑中去。</p>
+
+<blockquote>
+  <p>3.Html代码规范</p>
+</blockquote>
+
+<p>　　1) 要建立一个符合标准的页面，doctype声明是必不可少的。</p>
+
+<p>　　2) 每个页面最好有标题、描述、关键字。</p>
+
+<p>　　3) 大部分javascript的调用应写在最下面，即的后面。</p>
+
+<p>　　4) html代码要求所有的标签必须小写。</p>
+
+<p>　　5) 禁止使用frame框架。</p>
+
+<p>　　6) 属性值必须使用双引号，以免引发不必要的页面问题。</p>
+
+<p>　　7) 所有标签必须有闭合标签，如 <code>&lt;input /&gt;</code>，</p>
+
+<p>如果使用 img 或者 br、hr、input 这样的单体标签，那么必须使用空格加斜线为闭合标签，如网站页面制作的一些规范总结</p>
+
+<p>　　8) 必须设置 img 的 alt 属性，如没替换文本则留空。</p>
+
+<p>　　9) 必须给 a 标签加上 title 属性，如没有则留空。</p>
+
+<p>　　10) 如果无特殊说明，所有链接必须新开窗口。</p>
+
+<p>　　11) 所有的特殊符号编码化。</p>
+
+<p>　　12) 可以在主要的区域加上注释，但要尽量减少注释的内容。</p>
+
+<p>　　13) html 标签必须合理嵌套，如是不合理的</p>
+
+<pre><code>     &lt;dl&gt;
+       &lt;li&gt;&lt;/li&gt;
+     &lt;/dl&gt;
+</code></pre>
+
+<p>　　14) 保持页面的整洁，尽量减少 html 的层次，用最少的代码写出符合标准的页面。</p>
+
+<p>　　15) 正确使用 html 标签定义页面内容，每一个标签都有自己的语义。</p>
+
+<p>　　如，文字用 span 段落用 p 标题用 title 布局用 div 等。</p>
+
+<p>　　16) 每个页面都要有一个logo 里面的内容为PSD的logo</p>
+
+<p>　　17) 相同域名下的链接用相对路径。</p>
+
+<p>　　18) 注册类页面，注册按钮必须先锁住，等html加载完成后解锁。</p>
+
+<p>　　19) 禁止在页面中使用表现级标签，如font、bgcolor等。</p>
+
+<blockquote>
+  <p>4.Css编写规范</p>
+</blockquote>
+
+<p>　　1、Css代码规范</p>
+
+<p>　　1) 尽量少用或避免使用id来定义css。</p>
+
+<p>　　2) css命名可以用横线来连接，如 xx-info。</p>
+
+<p>　　3) 属性值书写顺序应当按照“上右下左”书写。</p>
+
+<p>　　4) 当用css定义链接的多个状态时，应当遵循正确的书写顺序，即“LVHA”。</p>
+
+<p>　　5) css代码书写应当写在一行里。</p>
+
+<p>　　6) 在定义css时，一定要注意默认值这个问题，通常我们会重置css。</p>
+
+<p>　　7) 删除废弃的CSS，要做到所有声明的类或ID都能用到。</p>
+
+<p>　　8) 避免使用滤镜，它的兼容性和效率同样不是很好。</p>
+
+<p>　　2、Css 缩写规则</p>
+
+<p>　　1) 属性值为0时，省略单位。</p>
+
+<p>　　2) 颜色缩写：#000000 缩写为 #000 或者 black(推荐)。</p>
+
+<p>　　3) 字体缩写：font-size:12px;font-family:”宋体”;line-height:20px;font-weight:bold; 缩写为 font:bold 12px/20px “宋体”;</p>
+
+<p>　　注意：字体缩写时，至少要定义font-size和font-family两个值。</p>
+
+<p>　　4) 边距缩写：如</p>
+
+<p>　　margin-top:10px; margin-right:10px; margin-bottom:10px; margin-left:10px;</p>
+
+<p>　　缩写成 margin:10px;</p>
+
+<p>　　margin-top:10px; margin-right:12px; margin-bottom:10px; margin-left:12px;</p>
+
+<p>　　缩写成 margin:10px 12px;</p>
+
+<p>　　margin-top:10px; margin-right:12px; margin-bottom:15px; margin-left:12px;</p>
+
+<p>　　缩写成 margin:10px 12px 15px;</p>
+
+<p>　　margin-top:10px; margin-right:11px; margin-bottom:12px; margin-left:13px;</p>
+
+<p>　　缩写成 margin:10px 11px 12px 13px;</p>
+
+<p>　　5) 边框缩写：</p>
+
+<p>　　border：border-width | border-style | color，如 border:1px solid red;</p>
+
+<p>　　6) 背景缩写：</p>
+
+<p>　　background：background-color | background-image | background-repeat |</p>
+
+<p>　　background-attachment | background-position，如 background:#000</p>
+
+<p>　　url(images/bg.jpg) no-repeat 30% 20px;</p>
+
+<p>　　7) 列表缩写：</p>
+
+<p>　　list-style：list-style-type | list-style-position | list-style-image，如</p>
+
+<p>　　list-style:disc outside none;</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../../07/15/jian-rong-xing-ji-jing-yan-hui-zong/index.html" title="link to 兼容性及经验汇总">兼容性及经验汇总</a>
+      </h5>
+       <p class="excerpt" title="浮动时，父级元素无法撑开+ .clearfix:after{     content:".";     display:block;     height:0;     clear:both;">浮动时，父级元素无法撑开+ .clearfix:after{     content:".";     display:block;     height:0;     clear:both;&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="15 7月 2015" class="post-list__meta--date date">15 7月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/jing-yan/">經驗</a>, <a href="/tag/mian-shi/">面試</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/07/15/jian-rong-xing-ji-jing-yan-hui-zong/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../cssyin-cang-chao-chu-qu-yu-wen-ben-bing-xian-shi-sheng-lue-hao-de-dai-ma/index.html" title="link to css隐藏超出区域文本并显示省略号的代码">css隐藏超出区域文本并显示省略号的代码</a></h5>
+       <p class="excerpt" title="*{  margin:0;   padding:0;   }  body{   padding:10px;   font-family:Arial;   }  #test {  position:re">*{  margin:0;   padding:0;   }  body{   padding:10px;   font-family:Arial;   }  #test {  position:re&hellip;</p>
+       <div class="post-list__meta"><time datetime="02 4月 2015" class="post-list__meta--date date">02 4月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/css/">css</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/04/02/cssyin-cang-chao-chu-qu-yu-wen-ben-bing-xian-shi-sheng-lue-hao-de-dai-ma/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

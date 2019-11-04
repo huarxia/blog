@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>web圖像的常見應用策略與技巧</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="web圖像的常見應用策略與技巧">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="web圖像的常見應用策略與技巧">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/06/05/webtu-xiang-de-chang-jian-ying-yong-ce-lue-yu-ji-qiao/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="web圖像的常見應用策略與技巧" />
+    <meta property="og:description" content="2017-06-05 星期一 丁酉年 五月十一      【鸡年】丙午月 癸亥日      宜：畋猎 捕捉 结网 取渔 祭祀      忌：嫁娶 开市 安葬 启攒 行丧 響應式圖像，SVG的換色技巧，雪碧圖的百分比定位 本文介紹一些關於響應式圖像的適配應用策略，回退原理，SVG的換色技巧，雪碧圖的百分比定位計算公式等相關的一些小知識點，目的在於幫助一部分同學快速的理清圖像應用思路，以及一些web圖像的應用技巧。 1.響應式圖像的應用與回退 特點：應用簡單，上手容易，性能表現良好 難點：lazyload實現 根據不同設備，不同分辨率，不同像素比使用的響應式圖像，常用的有兩種場景：..." />
+    <meta property="og:url" content="http://localhost:2368/2017/06/05/webtu-xiang-de-chang-jian-ying-yong-ce-lue-yu-ji-qiao/" />
+    <meta property="article:published_time" content="2017-06-05T02:18:21.674Z" />
+    <meta property="article:modified_time" content="2017-06-05T02:38:45.904Z" />
+    <meta property="article:tag" content="文章" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="web圖像的常見應用策略與技巧" />
+    <meta name="twitter:description" content="2017-06-05 星期一 丁酉年 五月十一      【鸡年】丙午月 癸亥日      宜：畋猎 捕捉 结网 取渔 祭祀      忌：嫁娶 开市 安葬 启攒 行丧 響應式圖像，SVG的換色技巧，雪碧圖的百分比定位 本文介紹一些關於響應式圖像的適配應用策略，回退原理，SVG的換色技巧，雪碧圖的百分比定位計算公式等相關的一些小知識點，目的在於幫助一部分同學快速的理清圖像應用思路，以及一些web圖像的應用技巧。 1.響應式圖像的應用與回退 特點：應用簡單，上手容易，性能表現良好 難點：lazyload實現 根據不同設備，不同分辨率，不同像素比使用的響應式圖像，常用的有兩種場景：..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/06/05/webtu-xiang-de-chang-jian-ying-yong-ce-lue-yu-ji-qiao/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "web圖像的常見應用策略與技巧",
+    "url": "http://localhost:2368/2017/06/05/webtu-xiang-de-chang-jian-ying-yong-ce-lue-yu-ji-qiao/",
+    "datePublished": "2017-06-05T02:18:21.674Z",
+    "dateModified": "2017-06-05T02:38:45.904Z",
+    "keywords": "文章",
+    "description": "2017-06-05 星期一 丁酉年 五月十一      【鸡年】丙午月 癸亥日      宜：畋猎 捕捉 结网 取渔 祭祀      忌：嫁娶 开市 安葬 启攒 行丧 響應式圖像，SVG的換色技巧，雪碧圖的百分比定位 本文介紹一些關於響應式圖像的適配應用策略，回退原理，SVG的換色技巧，雪碧圖的百分比定位計算公式等相關的一些小知識點，目的在於幫助一部分同學快速的理清圖像應用思路，以及一些web圖像的應用技巧。 1.響應式圖像的應用與回退 特點：應用簡單，上手容易，性能表現良好 難點：lazyload實現 根據不同設備，不同分辨率，不同像素比使用的響應式圖像，常用的有兩種場景：..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-wen-zhang">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="05 6月 2017" class="post-meta__date date">05 6月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/wen-zhang/index.html">文章</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">web圖像的常見應用策略與技巧</h1>
+    </header>
+
+    <section class="post tag-wen-zhang">
+      <blockquote>
+  <p>2017-06-05 星期一 丁酉年 五月十一</p>
+  
+  <p>【鸡年】丙午月 癸亥日</p>
+  
+  <p>宜：畋猎 捕捉 结网 取渔 祭祀</p>
+  
+  <p>忌：嫁娶 开市 安葬 启攒 行丧</p>
+</blockquote>
+
+<p>響應式圖像，SVG的換色技巧，雪碧圖的百分比定位</p>
+
+<p>本文介紹一些關於響應式圖像的適配應用策略，回退原理，<code>SVG</code>的換色技巧，雪碧圖的百分比定位計算公式等相關的一些小知識點，目的在於幫助一部分同學快速的理清圖像應用思路，以及一些web圖像的應用技巧。</p>
+
+<h3 id="1">1.響應式圖像的應用與回退</h3>
+
+<p>特點：應用簡單，上手容易，性能表現良好
+難點：lazyload實現</p>
+
+<p>根據不同設備，不同分辨率，不同像素比使用的響應式圖像，常用的有兩種場景：</p>
+
+<h4 id="11">1.1固定尺寸圖像</h4>
+
+<p>基於設備像素比選擇，很多網站logo就是固定寬度圖像的一個例子，不管viewport的寬度如何，始終保持相同的寬度。</p>
+
+<p>在dom里圖像與在css里的圖像寫法如下面的例子</p>
+
+<pre><code>&lt;img srcset="test.jpg 1.5x, test2.jpg 2x" src="test.jpg" alt="" /&gt;  
+</code></pre>
+
+<pre><code>background-image: image-set(url(test.jpg) 1x,url(test2.jpg) 2x);  
+</code></pre>
+
+<h4 id="12">1.2不固定尺寸圖像</h4>
+
+<p>與內容相關的圖片，在需要響應式的時候，它們的大小往往並不是不變的，會隨viewport改變，對於這類圖像，也有兩種常用的處理方式</p>
+
+<h5 id="121srcsetwsizes">1.2.1 我們使用srcset搭配w描述符以及sizes屬性 。</h5>
+
+<p><code>w</code>描述符告訴瀏覽器列表中的每個圖象的質量。<code>sizes</code>屬性是一個包含兩個值的，由逗號分隔的列表。根據最新規範，如果<code>srcset</code>中任何圖像使用了w描述符，那麼必須要設置<code>sizes</code>屬性。</p>
+
+<p><code>sizes</code>屬性有兩個值：第一個是媒體條件；第二個是源圖尺寸值，在特定媒體條件下，此值決定了圖片的寬度。</p>
+
+<p>比如：</p>
+
+<pre><code>&lt;img srcset="360.jpg 360w,  
+             768.jpg 768w,
+             1200.jpg 1200w,
+             1920.jpg 1920w"
+     sizes="
+         (max-width: 360px) 100vw,
+         (max-width: 768px) 90vw,
+         (max-width: 1980px) 80vw,
+         768px"
+    src="360.jpg" alt=""&gt;
+</code></pre>
+
+<p>我們來逐條讀這一個img標籤的信息</p>
+
+<p>srcset，我們給瀏覽器準備了四個質量的圖像，分別為360 768 1200 1920 <br />
+sizes，我們來告訴瀏覽器，在不同的環境下圖像的寬度 <br />
+當視口不大於360的時候，圖像顯示寬度為100vw，當視口不大於768的時候，圖像顯示寬度為90vw，以此類推。
+最後一個src作為默認圖像url引入，並且是天然的回退方案，當瀏覽器不認識以上屬性的時候，直接讀取src渲染。</p>
+
+<p>這樣說不夠直觀，我們看個demo</p>
+
+<p><img src="../../../../content/images/2017/06/081848-31168.png" alt="" /></p>
+
+<p>在iphone4（320）下，圖像寬度和我們設置的100vw一致，但是為什麼瀏覽器選擇了768的圖像而沒有選擇360的?因為4的dpr是2呀^_^，瀏覽器很智能的選擇了質量最合適的768.</p>
+
+<p>再看一下6p（414），很聽話的按照我們的設置，顯示了90vw。因為他的dpr更高，瀏覽器聰明的選擇了1200質量的圖像。</p>
+
+<p><img src="../../../../content/images/2017/06/082032-68210.png" alt="" /></p>
+
+<p>這裡我們可以欺騙一下瀏覽器：</p>
+
+<pre><code>360.jpg 1200w,  
+1200.jpg 9999w  
+</code></pre>
+
+<p>我們把360的圖像，騙瀏覽器說這是1200的，然後把原本1200的扔天上去</p>
+
+<p><img src="../../../../content/images/2017/06/082112-4465.png" alt="" /></p>
+
+<p>瀏覽器果然上當了，他把360的圖當成1200的來用了。這裡可能有些疑問，圖像的寬度為什麼不是90vw了哪？因為瀏覽器被騙了但是自己卻不知道，他依然按照1200的圖像，去適配dpr。414<em>90%</em>（360/1200）約等於111.7。這種方式很智能，瀏覽器去根據你的sizes，從w列表裡選擇最適合的圖像來調用顯示。正因為他太智能了，在實際操作中可控性較差，有些我們想精確控制的圖像顯示，有時候並不能如意。而且在做lazyload的時候要處理的東西也比較複雜。</p>
+
+<p>這個時候可以考慮另外一種方式。</p>
+
+<h5 id="122picture">1.2.2.picture元素，可精確把控</h5>
+
+<p>picture元素就像是圖像和其源的容器。瀏覽器仍然需要img元素，用來表明需要加載圖片，如果沒有img，那麼什麼都不會渲染。source為瀏覽器提供了要顯示圖像的供選版本。</p>
+
+<p>適用場景為：在一個精確特定的轉效點（breakpoint）需要顯示一個特定的圖像時。使用picture元素選擇圖像，不會有歧義，理解起來也更直觀。</p>
+
+<pre><code>&lt;picture&gt;  
+    &lt;source media="(min-width: 960px)" srcset=960.jpg"&gt;
+    &lt;source media="(min-width: 768px)" srcset="768.jpg"&gt;
+    &lt;img src="360.jpg" alt=""&gt;
+&lt;/picture&gt;  
+</code></pre>
+
+<p>在本例中，當viewport大於960像素時，會加載圖像960的圖像。當viewport寬度大於768像素時，瀏覽器會加載768的。而當寬度小於768像素時，加載默認圖像360。</p>
+
+<p>而且這個寫法的懶加載非常好處理，只需要在傳統的<code>lazyload</code>策略上稍加改進</p>
+
+<p><code>data-src</code>
+<code>data-srcset</code>
+在加載到的時候更換為
+<code>src</code>
+<code>srcset</code></p>
+
+<p>就輕鬆解決了。</p>
+
+<p>他也不需要去特意做回退處理，當瀏覽器不支持的時候就直接讀取img標籤。對於懶加載的回退......我選擇判斷IE 7-8...直接塞url給他.....。</p>
+
+<h3 id="2">2.特殊格式的圖像應用與回退</h3>
+
+<p>特點：體積優化效果顯著
+難點：兼容性掌控</p>
+
+<p>上面picture元素還可以提供 基於圖片格式選擇。</p>
+
+<p>有一些圖像格式在較小的文件大小情況下保證了較好的圖片質量。聽起來還不錯，但殘酷的事實是沒有一個新格式被所有瀏覽器支持。谷歌的WebP表現不錯，但只有Chrome和Opera原聲支持。JPEG-XR，最初被稱為高清照片，是微軟發布的一個專有圖像格式，僅Internet Explorer支持</p>
+
+<pre><code>&lt;picture&gt;  
+    &lt;source type="image/vnd.ms-photo" src="test.jxr"&gt;
+    &lt;source type="image/jp2" src="test.jp2"&gt;
+    &lt;source type="image/webp" src="test.webp"&gt;
+    &lt;img src="test.png" alt="test"&gt;
+&lt;/picture&gt;  
+</code></pre>
+
+<p>source的type屬性用來指定每個圖像的MIME類型，瀏覽器會選擇第一個含有其支持的MIME類型的源。源的順序是至關重要的，如果瀏覽器無法識別所有的圖象類型，它會回退至原來的img元素。</p>
+
+<p>但是目前這些格式的支持多數不會直接這麼做，因為代碼會有些冗餘難看，有判斷瀏覽器ua輸出不同dom或者樣式的，也有服務端直接輸出的。服務端直接輸出，或者CDN做特殊處理，進行無感知格式切換，同時預留url和拒絕的接口，處理起來更靈活，省時省力，例如我們的：</p>
+
+<p><img src="../../../../content/images/2017/06/082337-20321.png" alt="" /></p>
+
+<p>服務端根據瀏覽器的請求頭，返回不同的圖像格式，對於X5內核還可以支持sharpP。</p>
+
+<h3 id="3svg">3.SVG應用</h3>
+
+<p>難點：變色方案，響應式定位計算</p>
+
+<p>上面這個source的type屬性還支持另一種我們更常用的圖像格式，SVG。</p>
+
+<p>說起SVG，這是個出現頻率比webp更高的圖像格式了，他有着比iconfont更多的優點，所以現在web上正在大量的應用。</p>
+
+<p>優點：</p>
+
+<p>1.SVG提供的功能集涵蓋了嵌套轉換、裁剪路徑、Alpha通道、濾鏡效果等能力，它還具備了傳統圖片沒有的矢量功能，可適配任何高清屏。</p>
+
+<p>2.可讀性好，有利於SEO與無障礙</p>
+
+<p>與iconfont對比</p>
+
+<p>1.渲染方式不同</p>
+
+<p>無論黑白渲染，灰度渲染，次像素渲染，還是DirectWrite 或 GDI 渲染，既然iconfont他是一個字體，就難逃出現鋸齒的命運，特別是在一倍屏幕下的渲染。</p>
+
+<p><img src="../../../../content/images/2017/06/082530-41002.png" alt="" /></p>
+
+<p>2.icon font只能支持單色</p>
+
+<p>icon font做為字體無法支持多色圖形，這就對設計造成了許多限制，因此這也成為了icon font的一個瓶頸。</p>
+
+<p>3.icon font可讀性不好</p>
+
+<p>icon font主要在頁面用Unicode符號調用對應的圖標，這種方式不管是瀏覽器，搜索引擎和對無障礙方面的能力都沒有SVG好</p>
+
+<p>在對比完之前，可能有同學就會問，SVG和iconfont對比有個致命的缺點，就是換色.</p>
+
+<p>比如hover換色，iconfont只要寫個顏色就好了，SVG是不是需要做兩個顏色的圖？這也是SVG圖像應用我們解決的一個難點之一</p>
+
+<h4 id="svg">SVG換色，最初我試過三個方案</h4>
+
+<p>一是mask-image屬性，他的優點是簡單粗暴，直接用css來mask這個svg圖形來進行換色，缺點很明顯就是兼容性了，除去兼容性，還是很好用的。</p>
+
+<p>demo：</p>
+
+<pre><code>background: #ff6600;  
+-webkit-mask:center no-repeat;
+-webkit-mask-image: url(qq-logo.svg);
+</code></pre>
+
+<p>二是通過SVG濾鏡來實現，優點是效果更好，缺點除了兼容性，還需要額外的腳本配合。關於濾鏡換色的詳細說明在我上一篇文章里有詳細介紹以及demo</p>
+
+<p>三是我們最終選擇的底層無感知換色的方案，把修改顏色的腳本集成到了我們的工作流里，我們在寫css的時候，遇到svg需要換色的地方，只需要</p>
+
+<pre><code>background-image: url(test.svg?fill=#ffffff)  
+</code></pre>
+
+<p>加一句換色參數，工作流在底層會自動生成你所需要的svg圖片併合併到雪碧圖裡。</p>
+
+<p>SVG應用的另一個難點，就是作為背景圖響應式渲染，雪碧圖的background-position和background-size 的計算，這個其實也是其他圖像都會存在的一個難點。</p>
+
+<p>我的導師 wenju 之前發過這個計算公式相關的文章：</p>
+
+<p>百分比值（）是背景圖相對於背景定位區（background positioning area）的百分比，可以控制在容器元素內僅顯示Sprites圖的部分內容。比如下圖中，Sprites圖是由四張圖像拼成的，要想在容器內僅顯示第一張圖像，background-size的值應該多少呢？</p>
+
+<p><img src="../../../../content/images/2017/06/085031-99943.jpg" alt="" /></p>
+
+<p>我們僅需要Sprites圖的1/4顯示在容器內，那麼Sprites圖與容器的比例應該是4:1，計算公式為： <code>background-size : ( Sprites width / image width) (Sprites height / image height)</code></p>
+
+<p><img src="../../../../content/images/2017/06/085101-84232.jpg" alt="" /></p>
+
+<p>如何計算<code>background-position</code></p>
+
+<p>我們已知的信息如下：</p>
+
+<p>容器元素的尺寸：<code>elW * elH</code>
+單張圖片的尺寸：<code>imgW * imgH</code>
+Sprites圖片的尺寸：<code>spritesW * spritesH</code> <br />
+單張圖片在Sprites圖上的位置：<code>imgPosX</code>, <code>imgPosY</code></p>
+
+<p>我們假設：</p>
+
+<p>點的位置為 <code>(x, y)</code>
+容器上的<code>(x, y)</code>點與容器左上角的距離為 <code>cX</code>, <code>cY</code>
+<code>Sprites</code>圖上的<code>(x, y)</code>點與本張圖片左上角的距離為 <code>sX</code>, <code>sY</code></p>
+
+<p>如果要把某張圖片完全顯示在容器元素內，我們可以推導出：</p>
+
+<p><code>elW = imgW</code>, <code>elH = imgH</code>
+<code>cX = sX</code>, <code>cY = sY</code></p>
+
+<p>根據上面的信息，我就可以計算出具體的<code>(x, y)</code>值了，下面以 <code>x%</code> 為例：</p>
+
+<p><code>cX = elW * x</code>
+<code>sX = spritesW * x - imgPosX</code>
+<code>elW * x = spritesW * x - imgPosX</code></p>
+
+<p>解方程後就得到計算公式了：</p>
+
+<p><code>x = imgPosX / (spritesW - elW) = imgPosX / (spritesW - imgW)</code></p>
+
+<p><code>y = imgPosY / (spritesH - elH) = imgPosY / (spritesH - imgH)</code></p>
+
+<p>如果你每次都手動計算的話會被累死吧？所以這一步我們還是集成到了工作流里，在所有合併雪碧圖的地方用這個公式自動計算出位置。</p>
+
+<p><img src="../../../../content/images/2017/06/085204-914.png" alt="" /></p>
+
+<p>而關於SVG的回退方案，已經是老生常談</p>
+
+<p>比如</p>
+
+<pre><code>&lt;svg width="200" height="200"&gt;  
+    &lt;image xlink:href="svg.svg" src="svg.png" width="200" height="200" /&gt;
+&lt;/svg&gt;  
+</code></pre>
+
+<p>svg標籤方式，缺點必須指定寬高，沒有圖片的保持款高比例特性，優點兼容性好,兼容所有主流瀏覽器</p>
+
+<p>或者</p>
+
+<pre><code>&lt;picture&gt;  
+    &lt;source type="image/svg+xml" srcset="svg.svg"&gt;
+    &lt;img src="svg.png" alt=""&gt;
+&lt;/picture&gt;  
+</code></pre>
+
+<p>在支持的瀏覽器里使用<code>SVG</code>，在不支持的瀏覽器里顯示<code>PNG</code>，優點是<code>type</code>靈活，可用於<code>SVG,WEBP</code>等，而且保持了<code>img</code>標籤的特性，方便做布局操作。缺點兼容性要求高，<code>ios9+</code>，<code>安卓5+</code>，<code>微軟Edge+</code>
+當然這個兼容性說的是<code>source type</code>的兼容，並不是<code>SVG</code>本身的兼容。</p>
+
+<p>對於<code>css</code>里的<code>SVG</code> 的應用與回退策略，比較簡單，也已經成熟，一般情況下都是這種用法</p>
+
+<pre><code>background-image: url(fallback.png);  
+background-image: url(image.svg), none;  
+</code></pre>
+
+<p>利用的技術是CSS3多背景，瀏覽器只要支持了多背景，幾乎無一例外支持SVG</p>
+
+<p>再或者</p>
+
+<pre><code>background-image: url(fallback.png);  
+background-image: image-set( "test.png" 1x, "test-2x.png" 2x, "test-print.png" 600dpi );  
+</code></pre>
+
+<p>通過<code>image-set</code>來篩選和回退</p>
+
+<p>原文转载至<code>腾讯isux</code></p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../09/yi-dong-duan-1px-borderde-shi-xian/index.html" title="link to 移动端1px border的实现">移动端1px border的实现</a>
+      </h5>
+       <p class="excerpt" title="2017-06-09 星期五 丁酉年 五月十五      【鸡年】丙午月 丁卯日      宜：祭祀 结网 余事勿取      忌：入宅 出行 掘井 安葬 请记住，每个尽责的设计师都是处女座…">2017-06-09 星期五 丁酉年 五月十五      【鸡年】丙午月 丁卯日      宜：祭祀 结网 余事勿取      忌：入宅 出行 掘井 安葬 请记住，每个尽责的设计师都是处女座…&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="09 6月 2017" class="post-list__meta--date date">09 6月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/06/09/yi-dong-duan-1px-borderde-shi-xian/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../02/chang-jian-de-yuan-sheng-javascript-domcao-zuo/index.html" title="link to 常见的原生javascript DOM操作">常见的原生javascript DOM操作</a></h5>
+       <p class="excerpt" title="2017-06-02 星期五 丁酉年 五月初八      【鸡年】乙巳月 庚申日      宜：开光 出行 嫁娶      忌：会亲友 进人口 修造 动土 起基 1.创建元素 创建元素：docu">2017-06-02 星期五 丁酉年 五月初八      【鸡年】乙巳月 庚申日      宜：开光 出行 嫁娶      忌：会亲友 进人口 修造 动土 起基 1.创建元素 创建元素：docu&hellip;</p>
+       <div class="post-list__meta"><time datetime="02 6月 2017" class="post-list__meta--date date">02 6月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/06/02/chang-jian-de-yuan-sheng-javascript-domcao-zuo/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

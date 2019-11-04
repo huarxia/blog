@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>express  中間件原理</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="express  中間件原理">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="express  中間件原理">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/01/18/express-zhong-jian-jian-yuan-li/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="express  中間件原理" />
+    <meta property="og:description" content="有時候面試，老是被問到一些自己使用過的技術，但是僅僅限於使用，這個是真沒深入研究過，鄙人能力有限的緣故吧。但是呢，每每被問倒之後下來又會想為什麼不在深入一點呢？(邪惡😈之笑)~~;完全可以再多了解一點嘛。 不過怎麼說呢，面試官需要的是一類人才，他也會問到旁系不相干或者在深層次的問題，這點我就覺得有點奇怪了，甲方需要的能力滿足，關於其他的不會反而會減分，難道不應該是，不會不要緊，有時間多學習學習就好了嗎。非要搞得難倒面試者才甘心。既然這樣的面試官很多，所以能多學點是一點，高標準要求自己。 那天是阿里的面試官電話面試的，也僅限于溝通，額~~，被阿里電話面試了好多次，都沒結果，我想說的是遲早我都會進來，浪費大家時間幹嘛。  前幾個問題還好，都是回答自己擅長的問題，還算OK。我的站點有一個是花夏集。他是看到這個聯繫到我的。一上來就問我是不是 花夏集 搞得有點一頭霧水。然後就解釋是怎麼看到我的，找到我的。..." />
+    <meta property="og:url" content="http://localhost:2368/2017/01/18/express-zhong-jian-jian-yuan-li/" />
+    <meta property="article:published_time" content="2017-01-18T08:26:15.909Z" />
+    <meta property="article:modified_time" content="2017-01-19T09:27:56.549Z" />
+    <meta property="article:tag" content="express" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="express  中間件原理" />
+    <meta name="twitter:description" content="有時候面試，老是被問到一些自己使用過的技術，但是僅僅限於使用，這個是真沒深入研究過，鄙人能力有限的緣故吧。但是呢，每每被問倒之後下來又會想為什麼不在深入一點呢？(邪惡😈之笑)~~;完全可以再多了解一點嘛。 不過怎麼說呢，面試官需要的是一類人才，他也會問到旁系不相干或者在深層次的問題，這點我就覺得有點奇怪了，甲方需要的能力滿足，關於其他的不會反而會減分，難道不應該是，不會不要緊，有時間多學習學習就好了嗎。非要搞得難倒面試者才甘心。既然這樣的面試官很多，所以能多學點是一點，高標準要求自己。 那天是阿里的面試官電話面試的，也僅限于溝通，額~~，被阿里電話面試了好多次，都沒結果，我想說的是遲早我都會進來，浪費大家時間幹嘛。  前幾個問題還好，都是回答自己擅長的問題，還算OK。我的站點有一個是花夏集。他是看到這個聯繫到我的。一上來就問我是不是 花夏集 搞得有點一頭霧水。然後就解釋是怎麼看到我的，找到我的。..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/01/18/express-zhong-jian-jian-yuan-li/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "express  中間件原理",
+    "url": "http://localhost:2368/2017/01/18/express-zhong-jian-jian-yuan-li/",
+    "datePublished": "2017-01-18T08:26:15.909Z",
+    "dateModified": "2017-01-19T09:27:56.549Z",
+    "keywords": "express",
+    "description": "有時候面試，老是被問到一些自己使用過的技術，但是僅僅限於使用，這個是真沒深入研究過，鄙人能力有限的緣故吧。但是呢，每每被問倒之後下來又會想為什麼不在深入一點呢？(邪惡😈之笑)~~;完全可以再多了解一點嘛。 不過怎麼說呢，面試官需要的是一類人才，他也會問到旁系不相干或者在深層次的問題，這點我就覺得有點奇怪了，甲方需要的能力滿足，關於其他的不會反而會減分，難道不應該是，不會不要緊，有時間多學習學習就好了嗎。非要搞得難倒面試者才甘心。既然這樣的面試官很多，所以能多學點是一點，高標準要求自己。 那天是阿里的面試官電話面試的，也僅限于溝通，額~~，被阿里電話面試了好多次，都沒結果，我想說的是遲早我都會進來，浪費大家時間幹嘛。  前幾個問題還好，都是回答自己擅長的問題，還算OK。我的站點有一個是花夏集。他是看到這個聯繫到我的。一上來就問我是不是 花夏集 搞得有點一頭霧水。然後就解釋是怎麼看到我的，找到我的。..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-express">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="18 1月 2017" class="post-meta__date date">18 1月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/express/index.html">express</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">express  中間件原理</h1>
+    </header>
+
+    <section class="post tag-express">
+      <p>有時候面試，老是被問到一些自己使用過的技術，但是僅僅限於使用，這個是真沒深入研究過，鄙人能力有限的緣故吧。但是呢，每每被問倒之後下來又會想為什麼不在深入一點呢？(邪惡😈之笑)~~;完全可以再多了解一點嘛。</p>
+
+<p>不過怎麼說呢，面試官需要的是一類人才，他也會問到旁系不相干或者在深層次的問題，這點我就覺得有點奇怪了，甲方需要的能力滿足，關於其他的不會反而會減分，難道不應該是，不會不要緊，有時間多學習學習就好了嗎。非要搞得難倒面試者才甘心。既然這樣的面試官很多，所以能多學點是一點，高標準要求自己。</p>
+
+<p>那天是阿里的面試官電話面試的，也僅限于溝通，額~~，被阿里電話面試了好多次，都沒結果，我想說的是遲早我都會進來，浪費大家時間幹嘛。 </p>
+
+<p>前幾個問題還好，都是回答自己擅長的問題，還算OK。我的站點有一個是<a href="http://www.huar.love/hua">花夏集</a>。他是看到這個聯繫到我的。一上來就問我是不是 <code>花夏集</code> 搞得有點一頭霧水。然後就解釋是怎麼看到我的，找到我的。瞬間很奇怪加驚動。對！就是驚動。居然有人因為看到一個技術人員的詩集站點從而打電話進行面試的。可能是由於這個站點時<code>nodejs+express+mongodb</code>做的吧。事實證明確實是因為這樣，他們剛好需要<code>nodejs</code>方面的工程師。</p>
+
+<p>巴拉巴拉...聊了一些，最後聊到koa中間件，這個我不會，<code>koa</code>沒用過，用過express.僅限於參照文檔做的，然後就開始了......對於express深入的確實不了解，聞到中間件事一問三不知，只知道怎麼用，簡單的自己實現原理都不清楚，所以現在才開始寫一篇文章來說明下。也是看了網上的文章解釋，有了進一步的了解。</p>
+
+<p>廢話了這麼多，進入正題：<code>express</code>中間件原理簡單剖析</p>
+
+<p>學<code>express</code>首先得會點<code>nodejs</code>吧，先來一段<code>nodejs</code>最基礎的<code>hello world</code></p>
+
+<pre><code>var http = require('http');  
+http.createServer(function (req, res) {  
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');
+</code></pre>
+
+<p>上面这段代码来自<code>nodejs</code>的官网，非常简单，就是来一个请求，就用传给<code>createServer</code>的匿名函数来处理请求。</p>
+
+<p>繼續看看<code>Express</code>的代码</p>
+
+<pre><code>var app = express();  
+//...中间忽略
+http.createServer(app).listen(app.get('port'), function(){  
+    console.log('Express server listening on port ' + app.get('port'));
+});
+</code></pre>
+
+<p>对比可以看出，执行express()后，会返回一个函数，赋值给app，app應該是：</p>
+
+<pre><code>function(req,res){//...}  
+</code></pre>
+
+<p>然后请求都会被app这个函数处理（因为这个app是执行express后的结果）</p>
+
+<p>可以认为，在<code>express</code>内部，有一个函数的数组，暂时叫这个数组tasks，每来一个请求<code>express</code>内部会依次执行这个数组中的函数（这里说依次并不严谨，每个函数必须满足一定条件才行，这个后面说），应该可以想到，在这个函数数组里，每个函数的签名应该像下面那样實際上這個就是中間件的精髓所在...噓！</p>
+
+<pre><code>function(req, res){//...}  
+</code></pre>
+
+<p>實際上應該是：</p>
+
+<pre><code>function(req, res, next){//...}  
+</code></pre>
+
+<p>这里的<code>next</code>，是指下一个函数。后面我们会写一些试验来体验一下这个<code>next</code>.</p>
+
+<blockquote>
+  <p>1.导入相关模块</p>
+  
+  <p>2.执行过 <code>var app = express()</code> 后，使用<code>app.set</code> 设置<code>express</code>内部的一些参数（options）使用<code>app.use</code> 来注册函数，可以简单的认为是向那个<code>tasks</code>的数组进行<code>push</code>操作</p>
+  
+  <p>3.通过<code>http.createServer</code> 用app来处理请求</p>
+</blockquote>
+
+<h4 id="1express">试验1. 向express中注册自定义函数</h4>
+
+<p>注册进express中的函数:</p>
+
+<blockquote>
+  <ol>
+  <li>长成下面这个样子</li>
+  </ol>
+</blockquote>
+
+<pre><code>function(req, res, next){  
+    //...我们自己的逻辑
+    next();
+}
+</code></pre>
+
+<p>或者：</p>
+
+<pre><code>app.use(function(err,req,res,next){  
+    if(err){
+        //自己的处理错误的逻辑
+        console.log(err.message);
+        console.log(err.stack);
+        res.end('404')  
+    }
+});
+</code></pre>
+
+<blockquote>
+  <ol>
+  <li><code>app.use(customerFunc)</code> 要写在下面两句的前面</li>
+  </ol>
+</blockquote>
+
+<pre><code>app.use(app.router);  
+app.use(express.static(path.join(__dirname, 'public')));
+</code></pre>
+
+<p>一般情況下是這麼使用的，但是對於通用<code>error</code>處理可以放到最後，<code>http.createServer</code>之前</p>
+
+<pre><code>app.use(express.static(path.join(__dirname, '/web/dist')));  
+// catch 404 and forwarding to error handler
+app.use(function(req, res, next) {  
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+// 启动及端口
+http.createServer(app).listen(app.get('port'), function(req, res){  
+    console.log('启动成功，端口为' + app.get('port'));
+    console.log('主页地址：http://localhost:' + app.get('port'));
+});
+</code></pre>
+
+<p>关于第2点，是因为路由后或请求静态资源后，一次请求响应的生命周期实质上已经结束，加在这后面进行请求处理，没有任何意义。</p>
+
+<p>关于第1点，写点代码繼續進行試驗：</p>
+
+<pre><code>app.use(function(req,res,next){  
+    console.log("111");
+    next();
+});
+</code></pre>
+
+<p>如果不写<code>next()</code>,那么后面注册的函数就不会执行(一個大臉疑問)，运行測試下不就知道了</p>
+
+<pre><code>app.use(function(req,res,next){  
+    console.log('111');
+    next();
+    console.log('222');
+});
+
+app.use(function(req,res,next){  
+    console.log("333");
+    next();
+});
+</code></pre>
+
+<p>那么控制台的输出的顺序是：<code>111 333 222</code></p>
+
+<h4 id="next">试验二 next()的工作原理</h4>
+
+<p>整个处理请求的模型还是比較简单的，在理解的上面的过程后，能不能不借助<code>express</code>，自己实现上面的过程呢，主要是怎么处理<code>next()</code>那一块</p>
+
+<pre><code>var http = require('http');  
+function express(){  
+    var funcs = [];
+
+    var expr = function(req,res){
+        var i = 0;
+        function next(){            
+            var task = funcs[i++];
+            if(!task) return;
+            task(req,res,next);
+        }
+        next();
+    }
+    expr.use=function(f){
+        funcs.push(f);
+    }
+    return expr;
+}
+var app = express();
+
+app.use(function(req,res,next){  
+    console.log('haha');
+    next();
+});
+app.use(function(req,res,next){  
+    console.log('hehe');
+    next();
+});
+app.use(function(req,res){  
+    res.end("there is nothing happened");
+});
+
+http.createServer(app).listen('3000', function(){  
+  console.log('Express server listening on port 3000');
+});
+</code></pre>
+
+<p>启动服务后，每来一个请求，控制台会依次输出<code>haha hehe</code>，然后浏览器是<code>there is nothing happened</code></p>
+
+<p>当然如果要更深一步了解到，可以去看源代码，实际上这一部分的主要代码是在<code>connect</code>中的，在<code>connect/lib/proto.js</code> 这个源文件中，主要是<code>app.use</code>,和<code>app.handle</code> 两个函数中</p>
+
+<p>後續會再次研究<code>express</code>的<code>app.use</code>原理。</p>
+
+<p>參考原文來自 <a href="http://www.html-js.com">前端亂燉</a></p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../19/bian-xie-zhong-jian-jian-yi-yong-yu-express-ying-yong-cheng-xu/index.html" title="link to 编写中间件以用于 Express 应用程序">编写中间件以用于 Express 应用程序</a>
+      </h5>
+       <p class="excerpt" title="概述 中间件函数能够访问请求对象 req、响应对象res 以及应用程序的请求/响应循环中的下一个中间件函数。下一个中间件函数通常由名为 next 的变量来表示。 中间件函数可以执行以下任务： 执行任何">概述 中间件函数能够访问请求对象 req、响应对象res 以及应用程序的请求/响应循环中的下一个中间件函数。下一个中间件函数通常由名为 next 的变量来表示。 中间件函数可以执行以下任务： 执行任何&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="19 1月 2017" class="post-list__meta--date date">19 1月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/express/">express</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/01/19/bian-xie-zhong-jian-jian-yi-yong-yu-express-ying-yong-cheng-xu/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../17/tu-pian-shang-chuan-yi-ji-cai-jian-hou-xiao-yan-suan-fa/index.html" title="link to 圖片上傳以及裁剪后校驗算法">圖片上傳以及裁剪后校驗算法</a></h5>
+       <p class="excerpt" title="看到這樣的標題，是不是嚇了一跳？請不要被嚇到，這個其實並沒有那麼複雜，一步一步分析即可得出答案。最開始我也是很頭大這件事情。 最開始，也是從三月份接手了別人的項目，他們運用了php模板做前端開發的，最">看到這樣的標題，是不是嚇了一跳？請不要被嚇到，這個其實並沒有那麼複雜，一步一步分析即可得出答案。最開始我也是很頭大這件事情。 最開始，也是從三月份接手了別人的項目，他們運用了php模板做前端開發的，最&hellip;</p>
+       <div class="post-list__meta"><time datetime="17 1月 2017" class="post-list__meta--date date">17 1月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/01/17/tu-pian-shang-chuan-yi-ji-cai-jian-hou-xiao-yan-suan-fa/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

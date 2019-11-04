@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>关于flex布局中的两端对齐均匀分布解决方案</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="关于flex布局中的两端对齐均匀分布解决方案">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="关于flex布局中的两端对齐均匀分布解决方案">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/08/23/guan-yu-2/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="关于flex布局中的两端对齐均匀分布解决方案" />
+    <meta property="og:description" content="2017-08-23 星期三 丁酉年 七月初二      【鸡年】戊申月 壬午日      宜：嫁娶 订盟 纳采 祭祀 斋醮      忌：出火 入宅 造屋 安门 安葬 近来做一个需求，设计图效果要求的是这样： 场景是：不使用js动态计算他的！！！ 首先想到的是display: inline-block + margin-left: **px,但是首先这个屏宽不固定，那么怎么解决每行首列的margin-left: 0;这个问题，nth-of-type(**) **里是写不出自适应下选择器的 所以这个方法失败！！！ 那么float也同理失败，是不能用的咯。 最后想了想flex布局，查找资料使用一下代码设置父容器就可以解决 display: flex;..." />
+    <meta property="og:url" content="http://localhost:2368/2017/08/23/guan-yu-2/" />
+    <meta property="article:published_time" content="2017-08-23T03:44:38.230Z" />
+    <meta property="article:modified_time" content="2017-08-23T04:23:05.574Z" />
+    <meta property="article:tag" content="css" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="关于flex布局中的两端对齐均匀分布解决方案" />
+    <meta name="twitter:description" content="2017-08-23 星期三 丁酉年 七月初二      【鸡年】戊申月 壬午日      宜：嫁娶 订盟 纳采 祭祀 斋醮      忌：出火 入宅 造屋 安门 安葬 近来做一个需求，设计图效果要求的是这样： 场景是：不使用js动态计算他的！！！ 首先想到的是display: inline-block + margin-left: **px,但是首先这个屏宽不固定，那么怎么解决每行首列的margin-left: 0;这个问题，nth-of-type(**) **里是写不出自适应下选择器的 所以这个方法失败！！！ 那么float也同理失败，是不能用的咯。 最后想了想flex布局，查找资料使用一下代码设置父容器就可以解决 display: flex;..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/08/23/guan-yu-2/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "关于flex布局中的两端对齐均匀分布解决方案",
+    "url": "http://localhost:2368/2017/08/23/guan-yu-2/",
+    "datePublished": "2017-08-23T03:44:38.230Z",
+    "dateModified": "2017-08-23T04:23:05.574Z",
+    "keywords": "css",
+    "description": "2017-08-23 星期三 丁酉年 七月初二      【鸡年】戊申月 壬午日      宜：嫁娶 订盟 纳采 祭祀 斋醮      忌：出火 入宅 造屋 安门 安葬 近来做一个需求，设计图效果要求的是这样： 场景是：不使用js动态计算他的！！！ 首先想到的是display: inline-block + margin-left: **px,但是首先这个屏宽不固定，那么怎么解决每行首列的margin-left: 0;这个问题，nth-of-type(**) **里是写不出自适应下选择器的 所以这个方法失败！！！ 那么float也同理失败，是不能用的咯。 最后想了想flex布局，查找资料使用一下代码设置父容器就可以解决 display: flex;..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-css">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="23 8月 2017" class="post-meta__date date">23 8月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/css/index.html">css</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">关于flex布局中的两端对齐均匀分布解决方案</h1>
+    </header>
+
+    <section class="post tag-css">
+      <blockquote>
+  <p>2017-08-23 星期三 丁酉年 七月初二</p>
+  
+  <p>【鸡年】戊申月 壬午日</p>
+  
+  <p>宜：嫁娶 订盟 纳采 祭祀 斋醮</p>
+  
+  <p>忌：出火 入宅 造屋 安门 安葬</p>
+</blockquote>
+
+<p>近来做一个需求，设计图效果要求的是这样：</p>
+
+<p><img src="../../../../content/images/2017/08/WX20170823-111201.png" alt="" /></p>
+
+<p>场景是：不使用js动态计算他的！！！</p>
+
+<p>首先想到的是<code>display: inline-block</code> + <code>margin-left: **px</code>,但是首先这个屏宽不固定，那么怎么解决每行首列的<code>margin-left: 0;</code>这个问题，<code>nth-of-type(**)</code> **里是写不出自适应下选择器的</p>
+
+<p>所以这个方法失败！！！</p>
+
+<p>那么<code>float</code>也同理失败，是不能用的咯。</p>
+
+<p>最后想了想<code>flex</code>布局，查找资料使用一下代码设置父容器就可以解决</p>
+
+<pre><code>display: flex;  
+flex-wrap: wrap;  
+justify-content: space-between;  
+</code></pre>
+
+<p><code>display: flex</code>: 使用flex布局，意为"弹性布局"</p>
+
+<p><code>flex-wrap: wrap</code>: 默认情况下，项目都排在一条线（又称"轴线"）上。<code>flex-wrap</code>属性定义，如果一条轴线排不下，如何换行。他可以取三个值.</p>
+
+<blockquote>
+  <ol>
+  <li><p><code>nowrap</code>: 默认不换行</p></li>
+  <li><p><code>wrap</code>: 换行，第一行在上方</p></li>
+  <li><p><code>wrap-reverse</code>: 换行，第一行在下方</p></li>
+  </ol>
+</blockquote>
+
+<p><code>justify-content: space-between</code>: 两端对齐均匀分布，自动分配中间间距</p>
+
+<p>好了，大家是不是觉得可以嗨皮的玩耍了，解决问题了？貌似确实是的啊。</p>
+
+<p>那咱们来看下word文档中的两端对齐</p>
+
+<p><img src="../../../../content/images/2017/08/WX20170823-112631-2x.png" alt="" /></p>
+
+<p><img src="../../../../content/images/2017/08/WX20170823-113524.png" alt="" /></p>
+
+<p>看看最后一行，是不是和我们想象的不一样，但这又确实是两端对齐，自动分配间距啊。那么怎么解决最后一行不足列数时从左边排列，而且还自动空隙呢？</p>
+
+<p>想办法，查资料，还是没有完美解决方案，最后都想着换方案，或者用js来计算了，最后灵机一动，不就是在最后一行，差几个元素补上几个空白元素么。</p>
+
+<p>那么接下来就是怎么在自适应下知道差了几个，思虑再三css还真没办法知道最后一行差几个了，那么我无论差多少个，我都放上7，8ge够多了吧，每个高度设置为0，宽度设置为元素等宽；</p>
+
+<pre><code>&lt;div class="item clearfix-item"&gt;&lt;/div&gt;  
+&lt;div class="item clearfix-item"&gt;&lt;/div&gt;  
+&lt;div class="item clearfix-item"&gt;&lt;/div&gt;  
+&lt;div class="item clearfix-item"&gt;&lt;/div&gt;  
+&lt;div class="item clearfix-item"&gt;&lt;/div&gt;  
+&lt;div class="item clearfix-item"&gt;&lt;/div&gt;  
+&lt;div class="item clearfix-item"&gt;&lt;/div&gt;  
+&lt;div class="item clearfix-item"&gt;&lt;/div&gt;  
+</code></pre>
+
+<pre><code>.clearfix-item {
+    width: 288px;
+    height: 0px;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+}
+</code></pre>
+
+<p>原理就是：足够多的已经补上了最后一行缺失的元素，多下来的高度为0又看不见，那么就解决了嘛，唯一缺点就是手动放了一堆空元素。但至少是解决了。</p>
+
+<p><img src="../../../../content/images/2017/08/WX20170823-111201.png" alt="" /></p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../25/es6shu-zu-fang-fa/index.html" title="link to ES6数组方法">ES6数组方法</a>
+      </h5>
+       <p class="excerpt" title="2017-08-25 星期五 丁酉年 七月初四      【鸡年】戊申月 甲申日      宜：嫁娶 冠笄 祭祀 沐浴 普渡      忌：开市 动土 破土 安床 开仓 以下方法添加到了Arra">2017-08-25 星期五 丁酉年 七月初四      【鸡年】戊申月 甲申日      宜：嫁娶 冠笄 祭祀 沐浴 普渡      忌：开市 动土 破土 安床 开仓 以下方法添加到了Arra&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="25 8月 2017" class="post-list__meta--date date">25 8月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/08/25/es6shu-zu-fang-fa/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../15/guan-yu/index.html" title="link to 关于写 cli 有一些很好用的库">关于写 cli 有一些很好用的库</a></h5>
+       <p class="excerpt" title="2017-08-15 星期二 丁酉年 闰六月廿四      【鸡年】戊申月 甲戌日      宜：沐浴 理发 会亲友 塑绘 开光      忌：开市 入宅 动土 破土 安葬      1.con">2017-08-15 星期二 丁酉年 闰六月廿四      【鸡年】戊申月 甲戌日      宜：沐浴 理发 会亲友 塑绘 开光      忌：开市 入宅 动土 破土 安葬      1.con&hellip;</p>
+       <div class="post-list__meta"><time datetime="15 8月 2017" class="post-list__meta--date date">15 8月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/08/15/guan-yu/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

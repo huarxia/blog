@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>GitHub使用攻略（一）</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="GitHub使用攻略（一）">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="GitHub使用攻略（一）">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/08/13/githubshi-yong-gong-lue-yi/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="GitHub使用攻略（一）" />
+    <meta property="og:description" content="以下是常用命令与步骤总结： 　　建立一个库 　　drag 　　git clone [url] 　　eg : git clone http://www.github.com/80669256 　　设置贡献者 　　name 　　email 　　git config –global user.name “XXXXX” 　　git config –global user.email “XXXXX” 　　eg:查看配置用户 git config –global user.name 　　git config –list 　　查看所有配置项..." />
+    <meta property="og:url" content="http://localhost:2368/2015/08/13/githubshi-yong-gong-lue-yi/" />
+    <meta property="article:published_time" content="2015-08-13T07:13:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-16T07:13:32.336Z" />
+    <meta property="article:tag" content="工具" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="GitHub使用攻略（一）" />
+    <meta name="twitter:description" content="以下是常用命令与步骤总结： 　　建立一个库 　　drag 　　git clone [url] 　　eg : git clone http://www.github.com/80669256 　　设置贡献者 　　name 　　email 　　git config –global user.name “XXXXX” 　　git config –global user.email “XXXXX” 　　eg:查看配置用户 git config –global user.name 　　git config –list 　　查看所有配置项..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/08/13/githubshi-yong-gong-lue-yi/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "GitHub使用攻略（一）",
+    "url": "http://localhost:2368/2015/08/13/githubshi-yong-gong-lue-yi/",
+    "datePublished": "2015-08-13T07:13:00.000Z",
+    "dateModified": "2016-11-16T07:13:32.336Z",
+    "keywords": "工具",
+    "description": "以下是常用命令与步骤总结： 　　建立一个库 　　drag 　　git clone [url] 　　eg : git clone http://www.github.com/80669256 　　设置贡献者 　　name 　　email 　　git config –global user.name “XXXXX” 　　git config –global user.email “XXXXX” 　　eg:查看配置用户 git config –global user.name 　　git config –list 　　查看所有配置项..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-gong-ju">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="13 8月 2015" class="post-meta__date date">13 8月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/gong-ju/index.html">工具</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">GitHub使用攻略（一）</h1>
+    </header>
+
+    <section class="post tag-gong-ju">
+      <p>以下是常用命令与步骤总结：</p>
+
+<p>　　建立一个库</p>
+
+<p>　　drag</p>
+
+<p>　　git clone [url]</p>
+
+<p>　　eg : git clone <a href="http://www.github.com/80669256">http://www.github.com/80669256</a></p>
+
+<p>　　设置贡献者</p>
+
+<p>　　name</p>
+
+<p>　　email</p>
+
+<p>　　git config –global user.name “XXXXX”</p>
+
+<p>　　git config –global user.email “XXXXX”</p>
+
+<p>　　eg:查看配置用户 git config –global user.name</p>
+
+<p>　　git config –list</p>
+
+<p>　　查看所有配置项</p>
+
+<p>　　git的三个区</p>
+
+<p>　　工作区 暂存区 版本区（库）</p>
+
+<p>　　作为过渡层 避免误操作 保护工作区和版本区</p>
+
+<p>　　分支处理</p>
+
+<p>　　Git命令</p>
+
+<p>　　git status 查看暂存区文件</p>
+
+<p>　　提交</p>
+
+<p>　　git add name ——–> 添加当前文件至暂存区</p>
+
+<p>　　git add . ——–> 添加所有修改过的文件到暂存区</p>
+
+<p>　　git commit ————->放在版本区</p>
+
+<p>　　git commit -m ———–>添加注释</p>
+
+<p>　　git commit -a -m ——–>先把工作区文件添加至暂存区然后再到版本区</p>
+
+<p>　　git log —–>查看提交历史 版本多的时候只显示一部分 按回车 继续查看 退出 q</p>
+
+<p>　　对比</p>
+
+<p>　　git diff ———->暂存区和工作区的差异对比</p>
+
+<p>　　git diff –cached(–staged) ———–>暂存区 和 版本去 比较</p>
+
+<p>　　git diff master ———–>工作区和版本库代码比较</p>
+
+<p>　　撤销</p>
+
+<p>　　git reset HEAD——–>暂存区的数据撤销至工作区</p>
+
+<p>　　git checkout ——->版本区数据撤销</p>
+
+<p>　　git commit –amend ——->撤销本次提交过程</p>
+
+<p>　　eg: git commit -m “xxx.xx 的 ….什么” –amend</p>
+
+<p>　　删除</p>
+
+<p>　　git rm————->删除暂存区的数据</p>
+
+<p>　　git rm -f—–>工作区 暂存区同时清除</p>
+
+<p>　　git rm –cached—–>删除暂存区 保留工作区</p>
+
+<p>　　恢复</p>
+
+<p>　　git checkout commit<em>id恢复工作区的数据 commit</em>id 用git log 查看版本 可以用部分字符串—-对文件内容恢复</p>
+
+<p>　　git reset –hard commit_id —-恢复某个版本的数据 恢复已删除的文件等等—–对版本恢复</p>
+
+<p>　　git reset –hard HEAD^ ——>指针 往回回一个</p>
+
+<p>　　HEAD~——->往回回几个 即制定的log 条数</p>
+
+<p>　　git reflog —–>查看每次恢复的记录 方便回到某一版本</p>
+
+<p>　　向GitHub提交</p>
+
+<p>　　git remote //显示默认仓库名称 （origin）</p>
+
+<p>　　git remote -v //显示当前项目在git上的绝对路径</p>
+
+<p>　　git push origin master // 向git提交版本</p>
+
+<p>　　ps：如果是多人协作是 先同步</p>
+
+<p>　　git pull</p>
+
+<p>　　git fetch</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../23/wo-shou-zhi-de-san-chong-san-lan-wang-ye-kuan-du-zi-gua-ying-bu-ju-fang-fa-mian-shi-chang-chang-wen-dao/index.html" title="link to 我熟知的三种三栏网页宽度自适应布局方法(面试常常问到)">我熟知的三种三栏网页宽度自适应布局方法(面试常常问到)</a>
+      </h5>
+       <p class="excerpt" title="一、前言 在如今各个分辨率显示器N足鼎立的时期，页面采用流动性布局（亦可称自适应布局）不失为一个好选择。当然，具体实现不是那么容易，需要一定的css功力和 实践经验。本文不讲细节，只讲外部的自适应架构">一、前言 在如今各个分辨率显示器N足鼎立的时期，页面采用流动性布局（亦可称自适应布局）不失为一个好选择。当然，具体实现不是那么容易，需要一定的css功力和 实践经验。本文不讲细节，只讲外部的自适应架构&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="23 8月 2015" class="post-list__meta--date date">23 8月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a>, <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/08/23/wo-shou-zhi-de-san-chong-san-lan-wang-ye-kuan-du-zi-gua-ying-bu-ju-fang-fa-mian-shi-chang-chang-wen-dao/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../01/chang-yong-pai-xu-suan-fa-javascriptshi-xian-yi/index.html" title="link to 常用排序算法javascript实现(一)">常用排序算法javascript实现(一)</a></h5>
+       <p class="excerpt" title="分享一下几个常用的排序算法，用javascript语言实现！ 今天先分享两个：一个是冒泡排序，另一个是选择排序！      冒泡排序：   核心想法：每次比较相邻的两个值，若后面的值比前面的值小，则交">分享一下几个常用的排序算法，用javascript语言实现！ 今天先分享两个：一个是冒泡排序，另一个是选择排序！      冒泡排序：   核心想法：每次比较相邻的两个值，若后面的值比前面的值小，则交&hellip;</p>
+       <div class="post-list__meta"><time datetime="01 8月 2015" class="post-list__meta--date date">01 8月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a>, <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/08/01/chang-yong-pai-xu-suan-fa-javascriptshi-xian-yi/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

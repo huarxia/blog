@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>常用正则表达式</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="常用正则表达式">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="常用正则表达式">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2016/08/03/chang-yong-zheng-ze-biao-da-shi/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="常用正则表达式" />
+    <meta property="og:description" content="// 时间 var reg = /(((([0-1][0-9])|(2[0-3]))(:|：)?[0-5][0-9])|(24(:|：)?00))/;   // 验证24：00 // 时间 var reg = /^([01][0-9]|2[0-3])(:|：)([0-5][0-9])$/;   // 不验证24：00 // 校验url地址  var reg = /^((ht|f)tps?):\/\/[\w\-]+(\.[\w\-]+)+([\w\-\.,@?^=%&amp;amp;:\/~\+#]*[\w\-\@?^=%&amp;amp;..." />
+    <meta property="og:url" content="http://localhost:2368/2016/08/03/chang-yong-zheng-ze-biao-da-shi/" />
+    <meta property="article:published_time" content="2016-08-03T08:22:00.000Z" />
+    <meta property="article:modified_time" content="2017-05-23T02:42:49.725Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="常用正则表达式" />
+    <meta name="twitter:description" content="// 时间 var reg = /(((([0-1][0-9])|(2[0-3]))(:|：)?[0-5][0-9])|(24(:|：)?00))/;   // 验证24：00 // 时间 var reg = /^([01][0-9]|2[0-3])(:|：)([0-5][0-9])$/;   // 不验证24：00 // 校验url地址  var reg = /^((ht|f)tps?):\/\/[\w\-]+(\.[\w\-]+)+([\w\-\.,@?^=%&amp;amp;:\/~\+#]*[\w\-\@?^=%&amp;amp;..." />
+    <meta name="twitter:url" content="http://localhost:2368/2016/08/03/chang-yong-zheng-ze-biao-da-shi/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "常用正则表达式",
+    "url": "http://localhost:2368/2016/08/03/chang-yong-zheng-ze-biao-da-shi/",
+    "datePublished": "2016-08-03T08:22:00.000Z",
+    "dateModified": "2017-05-23T02:42:49.725Z",
+    "keywords": "js",
+    "description": "// 时间 var reg = /(((([0-1][0-9])|(2[0-3]))(:|：)?[0-5][0-9])|(24(:|：)?00))/;   // 验证24：00 // 时间 var reg = /^([01][0-9]|2[0-3])(:|：)([0-5][0-9])$/;   // 不验证24：00 // 校验url地址  var reg = /^((ht|f)tps?):\\/\\/[\\w\\-]+(\\.[\\w\\-]+)+([\\w\\-\\.,@?^=%&amp;amp;:\\/~\\+#]*[\\w\\-\\@?^=%&amp;amp;..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="03 8月 2016" class="post-meta__date date">03 8月 2016</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">常用正则表达式</h1>
+    </header>
+
+    <section class="post tag-js">
+      <pre><code>// 时间
+var reg = /(((([0-1][0-9])|(2[0-3]))(:|：)?[0-5][0-9])|(24(:|：)?00))/;  
+// 验证24：00
+
+// 时间
+var reg = /^([01][0-9]|2[0-3])(:|：)([0-5][0-9])$/;  
+// 不验证24：00
+
+// 校验url地址 
+var reg = /^((ht|f)tps?):\/\/[\w\-]+(\.[\w\-]+)+([\w\-\.,@?^=%&amp;:\/~\+#]*[\w\-\@?^=%&amp;\/~\+#])?$/;
+
+// 去除首尾空格
+replace(/^\s+|\s+$/g,"")  
+</code></pre>
+
+<blockquote>
+  <p>1.用户名正则</p>
+</blockquote>
+
+<pre><code>// 用户名正则，4到16位（字母，数字，下划线，减号）
+var uPattern = /^[a-zA-Z0-9_-]{4,16}$/;  
+// 输出 true
+console.log(uPattern.test("iFat3"));
+</code></pre>
+
+<blockquote>
+  <p>2.密码强度正则</p>
+</blockquote>
+
+<pre><code>// 密码强度正则，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符
+var pPattern = /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&amp;*? ]).*$/;  
+// 输出 true
+console.log("=="+pPattern.test("iFat3#"));  
+</code></pre>
+
+<blockquote>
+  <ol>
+  <li>整数正则</li>
+  </ol>
+</blockquote>
+
+<pre><code>// 正整数正则
+var posPattern = /^\d+$/;  
+// 负整数正则
+var negPattern = /^-\d+$/;  
+// 整数正则
+var intPattern = /^-?\d+$/;  
+// 输出 true
+console.log(posPattern.test("42"));  
+// 输出 true
+console.log(negPattern.test("-42"));  
+// 输出 true
+console.log(intPattern.test("-42"));  
+</code></pre>
+
+<blockquote>
+  <p>4.数字正则</p>
+</blockquote>
+
+<pre><code>// 正数正则
+var posPattern = /^\d*\.?\d+$/;  
+// 负数正则
+var negPattern = /^-\d*\.?\d+$/;  
+// 数字正则
+var numPattern = /^-?\d*\.?\d+$/;  
+console.log(posPattern.test("42.2"));  
+console.log(negPattern.test("-42.2"));  
+console.log(numPattern.test("-42.2"));  
+</code></pre>
+
+<blockquote>
+  <p>5.Email正则</p>
+</blockquote>
+
+<pre><code>// Email正则
+var ePattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;  
+// 输出 true
+console.log(ePattern.test("65974040@qq.com"));  
+</code></pre>
+
+<blockquote>
+  <p>6.手机号码正则</p>
+</blockquote>
+
+<pre><code>// 手机号正则
+var mPattern = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/;  
+// 输出 true
+console.log(mPattern.test("18600000000"));  
+</code></pre>
+
+<blockquote>
+  <p>7.身份证号正则</p>
+</blockquote>
+
+<pre><code>// 身份证号（18位）正则
+var cP = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/;  
+// 输出 true
+console.log(cP.test("11010519880605371X"));  
+</code></pre>
+
+<blockquote>
+  <p>8.URL正则</p>
+</blockquote>
+
+<pre><code>// URL正则
+var urlP= /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;  
+// 输出 true
+console.log(urlP.test("http://42du.cn"));  
+</code></pre>
+
+<blockquote>
+  <p>9.IPv4地址正则</p>
+</blockquote>
+
+<pre><code>// ipv4地址正则
+var ipP = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;  
+// 输出 true
+console.log(ipP.test("115.28.47.26"));  
+</code></pre>
+
+<blockquote>
+  <p>10.十六进制颜色正则</p>
+</blockquote>
+
+<pre><code>// RGB Hex颜色正则
+var cPattern = /^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/;  
+// 输出 true
+console.log(cPattern.test("#b8b8b8"));  
+</code></pre>
+
+<blockquote>
+  <p>11.日期正则</p>
+</blockquote>
+
+<pre><code>// 日期正则，简单判定,未做月份及日期的判定
+var dP1 = /^\d{4}(\-)\d{1,2}\1\d{1,2}$/;  
+// 输出 true
+console.log(dP1.test("2017-05-11"));  
+// 输出 true
+console.log(dP1.test("2017-15-11"));  
+// 日期正则，复杂判定
+var dP2 = /^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$/;  
+// 输出 true
+console.log(dP2.test("2017-02-11"));  
+// 输出 false
+console.log(dP2.test("2017-15-11"));  
+// 输出 false
+console.log(dP2.test("2017-02-29"));  
+</code></pre>
+
+<blockquote>
+  <p>12.QQ号码正则</p>
+</blockquote>
+
+<pre><code>// QQ号正则，5至11位
+var qqPattern = /^[1-9][0-9]{4,10}$/;  
+// 输出 true
+console.log(qqPattern.test("65974040"));  
+</code></pre>
+
+<blockquote>
+  <p>13.微信号正则</p>
+</blockquote>
+
+<pre><code>// 微信号正则，6至20位，以字母开头，字母，数字，减号，下划线
+var wxPattern = /^[a-zA-Z]([-_a-zA-Z0-9]{5,19})+$/;  
+// 输出 true
+console.log(wxPattern.test("RuilongMao"));  
+</code></pre>
+
+<blockquote>
+  <p>14.车牌号正则</p>
+</blockquote>
+
+<pre><code>// 车牌号正则
+var cPattern = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/;  
+// 输出 true
+console.log(cPattern.test("京K39006"));  
+</code></pre>
+
+<blockquote>
+  <p>15.包含中文正则</p>
+</blockquote>
+
+<pre><code>// 包含中文正则
+var cnPattern = /[\u4E00-\u9FA5]/;  
+// 输出 true
+console.log(cnPattern.test("42度"));  
+</code></pre>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../22/guan-yu-gitbao-cuo-pushbu-liao-wen-ti-jie-jue/index.html" title="link to 关于git报错push不了问题解决">关于git报错push不了问题解决</a>
+      </h5>
+       <p class="excerpt" title="如题，问题如下： Counting objects: 661, done.   Delta compression using up to 4 threads.   Compressing objec">如题，问题如下： Counting objects: 661, done.   Delta compression using up to 4 threads.   Compressing objec&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="22 8月 2016" class="post-list__meta--date date">22 8月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/08/22/guan-yu-gitbao-cuo-pushbu-liao-wen-ti-jie-jue/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../../07/07/jsshi-xian-liu-lan-qi-xia-biao-qian-ye-jian-qie-huan-hong-fa-de-shi-jian/index.html" title="link to js实现浏览器下标签页间切换触发的事件">js实现浏览器下标签页间切换触发的事件</a></h5>
+       <p class="excerpt" title="var hiddenProperty = 'hidden' in document ? 'hidden' :       'webkitHidden' in document ? 'webkitHid">var hiddenProperty = 'hidden' in document ? 'hidden' :       'webkitHidden' in document ? 'webkitHid&hellip;</p>
+       <div class="post-list__meta"><time datetime="07 7月 2016" class="post-list__meta--date date">07 7月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/jing-yan/">經驗</a>, <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/07/07/jsshi-xian-liu-lan-qi-xia-biao-qian-ye-jian-qie-huan-hong-fa-de-shi-jian/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

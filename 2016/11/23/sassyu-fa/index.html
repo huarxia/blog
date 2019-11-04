@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>sass语法</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="sass语法">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="sass语法">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2016/11/23/sassyu-fa/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="sass语法" />
+    <meta property="og:description" content="文件后缀名   sass有两种后缀名文件：一种后缀名为sass，不使用大括号和分号；另一种就是我们这里使用的scss文件，这种和我们平时写的css文件格式差不多，使用大括号和分号。這裡所说的所有sass文件都指后缀名为scss的文件。在此也建议使用后缀名为scss的文件，以避免sass后缀名的严格格式要求报错。 //文件后缀名为sass的语法 body     background: #eee   font-size:12px p     background: #0982c1 //文件后缀名为scss的语法   body {     background: #eee;   font-size:12px; } p{     background: #0982c1; }  导入   sass的导入(@import)规则和CSS的有所不同，编译时会将@import的scss文件合并进来只生成一个CSS文件。但是如果你在sass文件中导入css文件如@import &#x27;reset.css&#x27;，那效果跟普通CSS导入样式文件一样，导入的css文件不会合并到编译后的文件中，..." />
+    <meta property="og:url" content="http://localhost:2368/2016/11/23/sassyu-fa/" />
+    <meta property="article:published_time" content="2016-11-23T08:30:56.976Z" />
+    <meta property="article:modified_time" content="2016-11-23T09:44:03.378Z" />
+    <meta property="article:tag" content="css" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="sass语法" />
+    <meta name="twitter:description" content="文件后缀名   sass有两种后缀名文件：一种后缀名为sass，不使用大括号和分号；另一种就是我们这里使用的scss文件，这种和我们平时写的css文件格式差不多，使用大括号和分号。這裡所说的所有sass文件都指后缀名为scss的文件。在此也建议使用后缀名为scss的文件，以避免sass后缀名的严格格式要求报错。 //文件后缀名为sass的语法 body     background: #eee   font-size:12px p     background: #0982c1 //文件后缀名为scss的语法   body {     background: #eee;   font-size:12px; } p{     background: #0982c1; }  导入   sass的导入(@import)规则和CSS的有所不同，编译时会将@import的scss文件合并进来只生成一个CSS文件。但是如果你在sass文件中导入css文件如@import &#x27;reset.css&#x27;，那效果跟普通CSS导入样式文件一样，导入的css文件不会合并到编译后的文件中，..." />
+    <meta name="twitter:url" content="http://localhost:2368/2016/11/23/sassyu-fa/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "sass语法",
+    "url": "http://localhost:2368/2016/11/23/sassyu-fa/",
+    "datePublished": "2016-11-23T08:30:56.976Z",
+    "dateModified": "2016-11-23T09:44:03.378Z",
+    "keywords": "css",
+    "description": "文件后缀名   sass有两种后缀名文件：一种后缀名为sass，不使用大括号和分号；另一种就是我们这里使用的scss文件，这种和我们平时写的css文件格式差不多，使用大括号和分号。這裡所说的所有sass文件都指后缀名为scss的文件。在此也建议使用后缀名为scss的文件，以避免sass后缀名的严格格式要求报错。 //文件后缀名为sass的语法 body     background: #eee   font-size:12px p     background: #0982c1 //文件后缀名为scss的语法   body {     background: #eee;   font-size:12px; } p{     background: #0982c1; }  导入   sass的导入(@import)规则和CSS的有所不同，编译时会将@import的scss文件合并进来只生成一个CSS文件。但是如果你在sass文件中导入css文件如@import &#x27;reset.css&#x27;，那效果跟普通CSS导入样式文件一样，导入的css文件不会合并到编译后的文件中，..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-css">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="23 11月 2016" class="post-meta__date date">23 11月 2016</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/css/index.html">css</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">sass语法</h1>
+    </header>
+
+    <section class="post tag-css">
+      <h4 id="">文件后缀名</h4>
+
+<blockquote>
+  <p>sass有两种后缀名文件：一种后缀名为sass，不使用大括号和分号；另一种就是我们这里使用的scss文件，这种和我们平时写的css文件格式差不多，使用大括号和分号。這裡所说的所有sass文件都指后缀名为scss的文件。在此也建议使用后缀名为scss的文件，以避免sass后缀名的严格格式要求报错。</p>
+</blockquote>
+
+<pre><code>//文件后缀名为sass的语法
+body  
+  background: #eee
+  font-size:12px
+p  
+  background: #0982c1
+
+//文件后缀名为scss的语法  
+body {  
+  background: #eee;
+  font-size:12px;
+}
+p{  
+  background: #0982c1;
+} 
+</code></pre>
+
+<h4 id="">导入</h4>
+
+<blockquote>
+  <p>sass的导入(<code>@import</code>)规则和CSS的有所不同，编译时会将<code>@import</code>的scss文件合并进来只生成一个CSS文件。但是如果你在sass文件中导入css文件如<code>@import 'reset.css'</code>，那效果跟普通CSS导入样式文件一样，导入的css文件不会合并到编译后的文件中，而是以@import方式存在。</p>
+  
+  <p>所有的sass导入文件都可以忽略后缀名<code>.scss</code>。一般来说基础的文件命名方法以_开头，如<code>_mixin.scss</code>。这种文件在导入的时候可以不写下划线，可写成@import "mixin"。</p>
+</blockquote>
+
+<p>被导入sass文件a.scss：</p>
+
+<pre><code>//a.scss
+//-------------------------------
+body {  
+  background: #eee;
+}
+</code></pre>
+
+<p>需要导入样式的sass文件b.scss：</p>
+
+<pre><code>@import "reset.css";
+@import "a";
+p{  
+  background: #0982c1;
+} 
+</code></pre>
+
+<h4 id="">注释</h4>
+
+<blockquote>
+  <p>sass有两种注释方式，一种是标准的css注释方式<code>/* */</code>，另一种则是<code>//</code>双斜杆形式的单行注释，不过这种单行注释不会被转译出来。</p>
+</blockquote>
+
+<p>标准的css注释:</p>
+
+<pre><code>/*
+*我是css的标准注释
+*设置body内距
+*/
+body{  
+  padding:5px;
+} 
+</code></pre>
+
+<h4 id="">双斜杆单行注释</h4>
+
+<blockquote>
+  <p>单行注释跟JavaScript语言中的注释一样，使用又斜杠（//），但单行注释不会输入到CSS中。</p>
+</blockquote>
+
+<pre><code>//我是双斜杠表示的单行注释
+//设置body内距
+body{  
+  padding:5px; //5px
+} 
+</code></pre>
+
+<h4 id="">变量</h4>
+
+<blockquote>
+  <p>sass的变量必须是$开头，后面紧跟变量名，而变量值和变量名之间就需要使用冒号(:)分隔开（就像CSS属性设置一样），如果值后面加上<code>!default</code>则表示默认值。</p>
+</blockquote>
+
+<h5 id="">普通变量</h5>
+
+<blockquote>
+  <p>定义之后可以在全局范围内使用。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------
+$fontSize: 12px;
+body{  
+    font-size:$fontSize;
+}
+
+//css style
+//-------------------------------
+body{  
+    font-size:12px;
+}
+</code></pre>
+
+<h5 id="">默认变量</h5>
+
+<blockquote>
+  <p>sass的默认变量仅需要在值后面加上!default即可。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------
+$baseLineHeight: 1.5 !default;
+body{  
+    line-height: $baseLineHeight; 
+}
+
+//css style
+//-------------------------------
+body{  
+    line-height: 1.5;
+}
+</code></pre>
+
+<blockquote>
+  <p>sass的默认变量一般是用来设置默认值，然后根据需求来覆盖的，覆盖的方式也很简单，只需要在默认变量之前重新声明下变量即可</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------
+$baseLineHeight: 2;
+$baseLineHeight: 1.5 !default;
+body{  
+    line-height: $baseLineHeight; 
+}
+
+//css style
+//-------------------------------
+body{  
+    line-height: 2;
+}
+</code></pre>
+
+<blockquote>
+  <p>可以看出现在编译后的line-height为2，而不是我们默认的1.5。默认变量的价值在进行组件化开发的时候会非常有用。</p>
+</blockquote>
+
+<h5 id="">特殊变量</h5>
+
+<blockquote>
+  <p>一般我们定义的变量都为属性值，可直接使用，但是如果变量作为属性或在某些特殊情况下等则必须要以#{$variables}形式使用。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------
+$borderDirection: top !default; 
+$baseFontSize: 12px !default;
+$baseLineHeight: 1.5 !default;
+
+//应用于class和属性
+.border-#{$borderDirection} {
+  border-#{$borderDirection}: 1px solid #ccc;
+}
+//应用于复杂的属性值
+body{  
+    font:#{$baseFontSize} / #{$baseLineHeight};
+}
+
+//css style
+//-------------------------------
+.border-top{
+  border-top: 1px solid #ccc;
+}
+body {  
+  font: 12px / 1.5;
+}
+</code></pre>
+
+<h5 id="">多值变量</h5>
+
+<blockquote>
+  <p>多值变量分为list类型和map类型，简单来说list类型有点像js中的数组，而map类型有点像js中的对象。</p>
+</blockquote>
+
+<h6 id="list">list</h6>
+
+<blockquote>
+  <p>list数据可通过空格，逗号或小括号分隔多个值，可用<code>nth($var,$index)</code>取值。关于list数据操作还有很多其他函数如<code>length($list)</code>，<code>join($list1,$list2,[$separator])</code>，<code>append($list,$value,[$separator])</code>等，具体可参考<a href="http://sass-lang.com/documentation/Sass/Script/Functions.html">sass Functions</a>（搜索List Functions即可）</p>
+</blockquote>
+
+<h6 id="">定义</h6>
+
+<pre><code>//一维数据
+$px: 5px 10px 20px 30px;
+
+//二维数据，相当于js中的二维数组
+$px: 5px 10px, 20px 30px;
+$px: (5px 10px) (20px 30px);
+</code></pre>
+
+<h6 id="">使用</h6>
+
+<pre><code>//sass style
+//-------------------------------
+$linkColor: #08c #333!default;//第一个值为默认值，第二个鼠标滑过值
+a{  
+  color:nth($linkColor,1);
+
+  &amp;:hover{
+    color:nth($linkColor,2);
+  }
+}
+
+//css style
+//-------------------------------
+a{  
+  color:#08c;
+}
+a:hover{  
+  color:#333;
+}
+</code></pre>
+
+<h6 id="map">map</h6>
+
+<blockquote>
+  <p>map数据以key和value成对出现，其中value又可以是list。格式为：<code>$map: (key1: value1, key2: value2, key3: value3)</code>。可通过<code>map-get($map,$key)</code>取值。关于map数据还有很多其他函数如<code>map-merge($map1,$map2)</code>，<code>map-keys($map)</code>，<code>map-values($map)</code>等，具体可参考<a href="http://sass-lang.com/documentation/Sass/Script/Functions.html">sass Functions</a>（搜索Map Functions即可）</p>
+</blockquote>
+
+<h6 id="">定义</h6>
+
+<pre><code>$heading: (h1: 2em, h2: 1.5em, h3: 1.2em);
+</code></pre>
+
+<h6 id="">使用</h6>
+
+<pre><code>//sass style
+//-------------------------------
+$headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
+@each $header, $size in $headings {
+  #{$header} {
+    font-size: $size;
+  }
+}
+
+//css style
+//-------------------------------
+h1 {  
+  font-size: 2em; 
+}
+h2 {  
+  font-size: 1.5em; 
+}
+h3 {  
+  font-size: 1.2em; 
+}
+</code></pre>
+
+<h5 id="">全局变量</h5>
+
+<blockquote>
+  <p>在变量值后面加上!global即为全局变量。</p>
+</blockquote>
+
+<h6 id="">目前变量机制</h6>
+
+<blockquote>
+  <p>在选择器中声明的变量会覆盖外面全局声明的变量。(这也就人们常说的sass没有局部变量)</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------
+$fontSize: 12px;
+body{  
+    $fontSize: 14px;        
+    font-size:$fontSize;
+}
+p{  
+    font-size: $fontSize;
+}
+
+//css style
+//-------------------------------
+body{  
+    font-size:14px;
+}
+p{  
+    font-size:14px;
+}
+</code></pre>
+
+<h5 id="global">启用global之后的机制</h5>
+
+<pre><code>//sass style
+//-------------------------------
+$fontSize: 12px;
+$color: #333;
+body{  
+    $fontSize: 14px;        
+    $color： #fff!global;
+    font-size: $fontSize;
+    color: $color;
+}
+p{  
+    font-size: $fontSize;
+    color: $color;
+}
+
+//css style
+//-------------------------------
+body{  
+    font-size: 14px;
+    color: #fff;
+}
+p{  
+    font-size: 12px;
+    color: #fff;
+}
+</code></pre>
+
+<blockquote>
+  <p>这里设置了两个变量，然后在body里面重新设置了下，有点不同的是对于<code>$color</code>变量，我们设置了<code>!global</code>。通过编译后的css可以看到font-size取值不同，而color取值相同。与上面的机制对比就会发现默认在选择器里面的变量为局部变量，而只有设置了<code>!global</code>之后才会成为全局变量。</p>
+</blockquote>
+
+<h4 id="nesting">嵌套(Nesting)</h4>
+
+<blockquote>
+  <p>sass的嵌套包括两种：一种是选择器的嵌套；另一种是属性的嵌套。我们一般说起或用到的都是选择器的嵌套。</p>
+</blockquote>
+
+<h5 id="">选择器嵌套</h5>
+
+<blockquote>
+  <p>所谓选择器嵌套指的是在一个选择器中嵌套另一个选择器来实现继承，从而增强了sass文件的结构性和可读性。
+  在选择器嵌套中，可以使用<code>&amp;</code>表示父元素选择器</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------
+#top_nav{
+  line-height: 40px;
+  text-transform: capitalize;
+  background-color:#333;
+  li{
+    float:left;
+  }
+  a{
+    display: block;
+    padding: 0 10px;
+    color: #fff;
+
+    &amp;:hover{
+      color:#ddd;
+    }
+  }
+}
+
+//css style
+//-------------------------------
+#top_nav{
+  line-height: 40px;
+  text-transform: capitalize;
+  background-color:#333;
+}  
+#top_nav li{
+  float:left;
+}
+#top_nav a{
+  display: block;
+  padding: 0 10px;
+  color: #fff;
+}
+#top_nav a:hover{
+  color:#ddd;
+}
+</code></pre>
+
+<h5 id="">属性嵌套</h5>
+
+<blockquote>
+  <p>所谓属性嵌套指的是有些属性拥有同一个开始单词，如border-width，border-color都是以border开头。拿个官网的实例看下：</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------
+.fakeshadow {
+  border: {
+    style: solid;
+    left: {
+      width: 4px;
+      color: #888;
+    }
+    right: {
+      width: 2px;
+      color: #ccc;
+    }
+  }
+}
+
+//css style
+//-------------------------------
+.fakeshadow {
+  border-style: solid;
+  border-left-width: 4px;
+  border-left-color: #888;
+  border-right-width: 2px;
+  border-right-color: #ccc; 
+}
+</code></pre>
+
+<p>当然这只是个属性嵌套的例子，如果实际这样使用，那估计得疯掉。</p>
+
+<h4 id="atroot">@at-root</h4>
+
+<blockquote>
+  <p>sass3.3.0中新增的功能，用来跳出选择器嵌套的。默认所有的嵌套，继承所有上级选择器，但有了这个就可以跳出所有上级选择器。</p>
+</blockquote>
+
+<h5 id="">普通跳出嵌套</h5>
+
+<pre><code>//sass style
+//-------------------------------
+//没有跳出
+.parent-1 {
+  color:#f00;
+  .child {
+    width:100px;
+  }
+}
+
+//单个选择器跳出
+.parent-2 {
+  color:#f00;
+  @at-root .child {
+    width:200px;
+  }
+}
+
+//多个选择器跳出
+.parent-3 {
+  background:#f00;
+  @at-root {
+    .child1 {
+      width:300px;
+    }
+    .child2 {
+      width:400px;
+    }
+  }
+}
+
+// css style
+// -------------------------------
+.parent-1 {
+  color: #f00;
+}
+.parent-1 .child {
+  width: 100px;
+}
+
+.parent-2 {
+  color: #f00;
+}
+.child {
+  width: 200px;
+}
+
+.parent-3 {
+  background: #f00;
+}
+.child1 {
+  width: 300px;
+}
+.child2 {
+  width: 400px;
+}
+</code></pre>
+
+<h5 id="atrootwithoutatrootwith"><code>@at-root (without: ...)</code>和<code>@at-root (with: ...)</code></h5>
+
+<blockquote>
+  <p>默认<code>@at-root</code>只会跳出选择器嵌套，而不能跳出<code>@media</code>或<code>@support</code>，如果要跳出这两种，则需使用<code>@at-root (without: media)</code>，<code>@at-root (without: support)</code>。这个语法的关键词有四个：<code>all</code>（表示所有），<code>rule</code>（表示常规css），<code>media</code>（表示media），<code>support</code>（表示support，因为<code>@support</code>目前还无法广泛使用，所以在此不表）。我们默认的<code>@at-roo</code>t其实就是<code>@at-root (without:rule)</code>。</p>
+</blockquote>
+
+<pre><code>// sass style
+// -------------------------------
+//跳出父级元素嵌套
+@media print {
+    .parent1{
+      color:#f00;
+      @at-root .child1 {
+        width:200px;
+      }
+    }
+}
+
+// 跳出media嵌套，父级有效
+@media print {
+  .parent2{
+    color:#f00;
+
+    @at-root (without: media) {
+      .child2 {
+        width:200px;
+      } 
+    }
+  }
+}
+
+// 跳出media和父级
+@media print {
+  .parent3{
+    color:#f00;
+
+    @at-root (without: all) {
+      .child3 {
+        width:200px;
+      } 
+    }
+  }
+}
+
+// sass style
+// -------------------------------
+@media print {
+  .parent1 {
+    color: #f00;
+  }
+  .child1 {
+    width: 200px;
+  }
+}
+
+@media print {
+  .parent2 {
+    color: #f00;
+  }
+}
+.parent2 .child2 {
+  width: 200px;
+}
+
+@media print {
+  .parent3 {
+    color: #f00;
+  }
+}
+.child3 {
+  width: 200px;
+}
+</code></pre>
+
+<h5 id="atroot"><code>@at-root</code>与<code>&amp;</code>配合使用</h5>
+
+<pre><code>// sass style
+// -------------------------------
+.child{
+    @at-root .parent &amp;{
+        color:#f00;
+    }
+}
+
+// css style
+// -------------------------------
+.parent .child {
+  color: #f00;
+}
+</code></pre>
+
+<h5 id="keyframe">应用于<code>@keyframe</code></h5>
+
+<pre><code>// sass style
+// -------------------------------
+.demo {
+    ...
+    animation: motion 3s infinite;
+
+    @at-root {
+        @keyframes motion {
+          ...
+        }
+    }
+}
+
+// css style
+// -------------------------------   
+.demo {
+    ...   
+    animation: motion 3s infinite;
+}
+@keyframes motion {
+    ...
+}
+</code></pre>
+
+<h4 id="mixin">混合(mixin)</h4>
+
+<blockquote>
+  <p>sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始，多个参数以逗号分开，也可以给参数设置默认值。声明的@mixin通过@include来调用。</p>
+</blockquote>
+
+<h5 id="mixin">无参数mixin</h5>
+
+<pre><code>//sass style
+//-------------------------------
+@mixin center-block {
+    margin-left:auto;
+    margin-right:auto;
+}
+.demo{
+    @include center-block;
+}
+
+//css style
+//-------------------------------
+.demo{
+    margin-left:auto;
+    margin-right:auto;
+}
+</code></pre>
+
+<h5 id="mixin">有参数mixin</h5>
+
+<pre><code>//sass style
+//-------------------------------   
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+
+//css style
+//-------------------------------
+.opacity{
+  @include opacity; //参数使用默认值
+}
+.opacity-80{
+  @include opacity(80); //传递参数
+}
+</code></pre>
+
+<h5 id="mixin">多个参数mixin</h5>
+
+<blockquote>
+  <p>调用时可直接传入值，如@include传入参数的个数小于<code>@mixin</code>定义参数的个数，则按照顺序表示，后面不足的使用默认值，如不足的没有默认值则报错。除此之外还可以选择性的传入参数，使用参数名与值同时传入。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------   
+@mixin horizontal-line($border:1px dashed #ccc, $padding:10px){
+    border-bottom:$border;
+    padding-top:$padding;
+    padding-bottom:$padding;  
+}
+.imgtext-h li{
+    @include horizontal-line(1px solid #ccc);
+}
+.imgtext-h--product li{
+    @include horizontal-line($padding:15px);
+}
+
+//css style
+//-------------------------------
+.imgtext-h li {
+    border-bottom: 1px solid #cccccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.imgtext-h--product li {
+    border-bottom: 1px dashed #cccccc;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+</code></pre>
+
+<h5 id="mixin">多组值参数mixin</h5>
+
+<blockquote>
+  <p>如果一个参数可以有多组值，如<code>box-shadow</code>、<code>transition</code>等，那么参数则需要在变量后加三个点表示，如$<code>variables...</code>。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------   
+//box-shadow可以有多组值，所以在变量参数后面添加...
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow:$shadow;
+  box-shadow:$shadow;
+}
+.box{
+  border:1px solid #ccc;
+  @include box-shadow(0 2px 2px rgba(0,0,0,.3),0 3px 3px rgba(0,0,0,.3),0 4px 4px rgba(0,0,0,.3));
+}
+
+//css style
+//-------------------------------
+.box{
+  border:1px solid #ccc;
+  -webkit-box-shadow:0 2px 2px rgba(0,0,0,.3),0 3px 3px rgba(0,0,0,.3),0 4px 4px rgba(0,0,0,.3);
+  box-shadow:0 2px 2px rgba(0,0,0,.3),0 3px 3px rgba(0,0,0,.3),0 4px 4px rgba(0,0,0,.3);
+}
+</code></pre>
+
+<h4 id="content">@content</h4>
+
+<blockquote>
+  <p><code>@content</code>在sass3.2.0中引入，可以用来解决css3的<code>@media</code>等带来的问题。它可以使<code>@mixin</code>接受一整块样式，接受的样式从<code>@content</code>开始。</p>
+</blockquote>
+
+<pre><code> //sass style
+//-------------------------------                     
+@mixin max-screen($res){
+  @media only screen and ( max-width: $res )
+  {
+    @content;
+  }
+}
+
+@include max-screen(480px) {
+  body { color: red }
+}
+
+//css style
+//-------------------------------
+@media only screen and (max-width: 480px) {
+  body { color: red }
+}
+</code></pre>
+
+<p>PS：<code>@mixin</code>通过<code>@include</code>调用后解析出来的样式是以拷贝形式存在的，而下面的继承则是以联合声明的方式存在的，所以从3.2.0版本以后，建议传递参数的用<code>@mixin</code>，而非传递参数类的使用下面的继承。  </p>
+
+<h4 id="">继承</h4>
+
+<blockquote>
+  <p>sass中，选择器继承可以让选择器继承另一个选择器的所有样式，并联合声明。使用选择器的继承，要使用关键词@extend，后面紧跟需要继承的选择器。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------
+h1{  
+  border: 4px solid #ff9aa9;
+}
+.speaker{
+  @extend h1;
+  border-width: 2px;
+}
+
+//css style
+//-------------------------------
+h1,.speaker{  
+  border: 4px solid #ff9aa9;
+}
+.speaker{
+  border-width: 2px;
+}
+</code></pre>
+
+<h4 id="">占位选择器%</h4>
+
+<blockquote>
+  <p>从sass 3.2.0以后就可以定义占位选择器<code>%</code>。这种选择器的优势在于：如果不调用则不会有任何多余的css文件，避免了以前在一些基础的文件中预定义了很多基础的样式，然后实际应用中不管是否使用了<code>@extend</code>去继承相应的样式，都会解析出来所有的样式。占位选择器以<code>%</code>标识定义，通过<code>@extend</code>调用。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------
+%ir{
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+%clearfix{
+  @if $lte7 {
+    *zoom: 1;
+  }
+  &amp;:before,
+  &amp;:after {
+    content: "";
+    display: table;
+    font: 0/0 a;
+  }
+  &amp;:after {
+    clear: both;
+  }
+}
+#header{
+  h1{
+    @extend %ir;
+    width:300px;
+  }
+}
+.ir{
+  @extend %ir;
+}
+
+//css style
+//-------------------------------
+#header h1,
+.ir{
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+#header h1{
+  width:300px;
+}
+</code></pre>
+
+<p>如上代码，定义了两个占位选择器<code>%ir</code>和<code>%clearfix</code>，其中<code>%clearfix</code>这个没有调用，所以解析出来的css样式也就没有<code>clearfix</code>部分。占位选择器的出现，使css文件更加简练可控，没有多余。所以可以用其定义一些基础的样式文件，然后根据需要调用产生相应的css。</p>
+
+<p>ps：在<code>@media</code>中暂时不能<code>@extend</code> <code>@media</code>外的代码片段，以后将会可以。  </p>
+
+<h4 id="">函数</h4>
+
+<blockquote>
+  <p>sass定义了很多函数可供使用，当然你也可以自己定义函数，以<code>@fuction</code>开始。sass的官方函数链接为：<a href="http://sass-lang.com/documentation/Sass/Script/Functions.html">sass fuction</a>，实际项目中我们使用最多的应该是颜色函数，而颜色函数中又以<code>lighten</code>减淡和<code>darken</code>加深为最，其调用方法为<code>lighten($color,$amount)</code>和<code>darken($color,$amount)</code>，它们的第一个参数都是颜色值，第二个参数都是百分比。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------                     
+$baseFontSize: 10px !default;
+$gray: #ccc !defualt;        
+
+// pixels to rems 
+@function pxToRem($px) {
+  @return $px / $baseFontSize * 1rem;
+}
+
+body{  
+  font-size:$baseFontSize;
+  color:lighten($gray,10%);
+}
+.test{
+  font-size:pxToRem(16px);
+  color:darken($gray,10%);
+}
+
+//css style
+//-------------------------------
+body{  
+  font-size:10px;
+  color:#E6E6E6;
+}
+.test{
+  font-size:1.6rem;
+  color:#B3B3B3;
+}
+</code></pre>
+
+<h4 id="">运算</h4>
+
+<blockquote>
+  <p>sass具有运算的特性，可以对数值型的Value(如：数字、颜色、变量等)进行加减乘除四则运算。请注意运算符前后请留一个空格，不然会出错。</p>
+</blockquote>
+
+<pre><code>$baseFontSize:  14px !default;
+$baseLineHeight: 1.5 !default;
+$baseGap:$baseFontSize * $baseLineHeight !default;
+$halfBaseGap: $baseGap / 2  !default;
+$samllFontSize: $baseFontSize - 2px  !default;
+
+//grid 
+$_columns:12 !default;  // Total number of columns
+$_column-width: 60px !default; // Width of a single column
+$_gutter: 20px !default; // Width of the gutter
+$_gridsystem-width: $_columns * ($_column-width + $_gutter); //grid system width
+</code></pre>
+
+<h4 id="">条件判断及循环</h4>
+
+<h5 id="if">@if判断</h5>
+
+<blockquote>
+  <p><code>@if</code>可一个条件单独使用，也可以和<code>@else</code>结合多条件使用</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------
+$lte7: true;
+$type: monster;
+.ib{
+    display:inline-block;
+    @if $lte7 {
+        *display:inline;
+        *zoom:1;
+    }
+}
+p {  
+  @if $type == ocean {
+    color: blue;
+  } @else if $type == matador {
+    color: red;
+  } @else if $type == monster {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+
+//css style
+//-------------------------------
+.ib{
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+}
+p {  
+  color: green; 
+}
+</code></pre>
+
+<h4 id="">三目判断</h4>
+
+<blockquote>
+  <p>语法为：<code>if($condition, $if_true, $if_false)</code> 。三个参数分别表示：条件，条件为真的值，条件为假的值。</p>
+</blockquote>
+
+<pre><code>if(true, 1px, 2px) =&gt; 1px  
+if(false, 1px, 2px) =&gt; 2px  
+</code></pre>
+
+<h4 id="for">for循环</h4>
+
+<blockquote>
+  <p><code>for</code>循环有两种形式，分别为：<code>@for $var from &lt;start&gt; through &lt;end&gt;</code>和<code>@for $var from &lt;start&gt; to &lt;end&gt;</code>。$i表示变量，<code>start</code>表示起始值，<code>end</code>表示结束值，这两个的区别是关键字<code>through</code>表示包括<code>end</code>这个数，而<code>to</code>则不包括<code>end</code>这个数。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-------------------------------
+@for $i from 1 through 3 {
+  .item-#{$i} { width: 2em * $i; }
+}
+
+//css style
+//-------------------------------
+.item-1 {
+  width: 2em; 
+}
+.item-2 {
+  width: 4em; 
+}
+.item-3 {
+  width: 6em; 
+}
+</code></pre>
+
+<h4 id="each">@each循环</h4>
+
+<blockquote>
+  <p>语法为：<code>@each $var in &lt;list or map&gt;</code>。其中<code>$var</code>表示变量，而<code>list</code>和<code>map</code>表示<code>list</code>类型数据和<code>map</code>类型数据。sass 3.3.0新加入了多字段循环和map数据循环。</p>
+</blockquote>
+
+<h5 id="list">单个字段list数据循环</h5>
+
+<pre><code>//sass style
+//-------------------------------
+$animal-list: puma, sea-slug, egret, salamander;
+@each $animal in $animal-list {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+  }
+}
+
+//css style
+//-------------------------------
+.puma-icon {
+  background-image: url('/images/puma.png'); 
+}
+.sea-slug-icon {
+  background-image: url('/images/sea-slug.png'); 
+}
+.egret-icon {
+  background-image: url('/images/egret.png'); 
+}
+.salamander-icon {
+  background-image: url('/images/salamander.png'); 
+}
+</code></pre>
+
+<p>`</p>
+
+<h5 id="list">多个字段list数据循环</h5>
+
+<pre><code>//sass style
+//-------------------------------
+$animal-data: (puma, black, default),(sea-slug, blue, pointer),(egret, white, move);
+@each $animal, $color, $cursor in $animal-data {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+    border: 2px solid $color;
+    cursor: $cursor;
+  }
+}
+
+//css style
+//-------------------------------
+.puma-icon {
+  background-image: url('/images/puma.png');
+  border: 2px solid black;
+  cursor: default; 
+}
+.sea-slug-icon {
+  background-image: url('/images/sea-slug.png');
+  border: 2px solid blue;
+  cursor: pointer; 
+}
+.egret-icon {
+  background-image: url('/images/egret.png');
+  border: 2px solid white;
+  cursor: move; 
+}
+</code></pre>
+
+<h5 id="map">多个字段map数据循环</h5>
+
+<pre><code>//sass style
+//-------------------------------
+$headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
+@each $header, $size in $headings {
+  #{$header} {
+    font-size: $size;
+  }
+}
+
+//css style
+//-------------------------------
+h1 {  
+  font-size: 2em; 
+}
+h2 {  
+  font-size: 1.5em; 
+}
+h3 {  
+  font-size: 1.2em; 
+}
+</code></pre>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../24/yue-ding-su-cheng-de-zhu-shi/index.html" title="link to 約定俗成的注釋">約定俗成的注釋</a>
+      </h5>
+       <p class="excerpt" title="2016-11-24 星期四       丙申年 【猴年】己亥月 庚戌日      宜 祭祀 理发 置产 塞穴 除服      忌 嫁娶 入宅 安床 掘井 开光 有這麼一種情況，在程序開發中難免">2016-11-24 星期四       丙申年 【猴年】己亥月 庚戌日      宜 祭祀 理发 置产 塞穴 除服      忌 嫁娶 入宅 安床 掘井 开光 有這麼一種情況，在程序開發中難免&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="24 11月 2016" class="post-list__meta--date date">24 11月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/11/24/yue-ding-su-cheng-de-zhu-shi/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../sassshi-fen-zhong-ru-men/index.html" title="link to sass十分钟入门">sass十分钟入门</a></h5>
+       <p class="excerpt" title="变量   sass中可以定义变量，方便统一修改和维护。 //sass style //----------------------------------- $fontStack:    Helvet">变量   sass中可以定义变量，方便统一修改和维护。 //sass style //----------------------------------- $fontStack:    Helvet&hellip;</p>
+       <div class="post-list__meta"><time datetime="23 11月 2016" class="post-list__meta--date date">23 11月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/css/">css</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/11/23/sassshi-fen-zhong-ru-men/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

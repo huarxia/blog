@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>常见的原生javascript DOM操作</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="常见的原生javascript DOM操作">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="常见的原生javascript DOM操作">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/06/02/chang-jian-de-yuan-sheng-javascript-domcao-zuo/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="常见的原生javascript DOM操作" />
+    <meta property="og:description" content="2017-06-02 星期五 丁酉年 五月初八      【鸡年】乙巳月 庚申日      宜：开光 出行 嫁娶      忌：会亲友 进人口 修造 动土 起基 1.创建元素 创建元素：document.createElement() 使用document.createElement()可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名。这个标签名在HTML文档中不区分大小写，在XHTML中区分大小写。 var div = document.createElement(&quot;div&quot;);   使用createElement()方法创建新元素的同时，也为新元素设置了ownerDocument属性，可以操作元素的特性。 div.id..." />
+    <meta property="og:url" content="http://localhost:2368/2017/06/02/chang-jian-de-yuan-sheng-javascript-domcao-zuo/" />
+    <meta property="article:published_time" content="2017-06-02T03:02:44.607Z" />
+    <meta property="article:modified_time" content="2017-06-08T02:09:44.622Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="常见的原生javascript DOM操作" />
+    <meta name="twitter:description" content="2017-06-02 星期五 丁酉年 五月初八      【鸡年】乙巳月 庚申日      宜：开光 出行 嫁娶      忌：会亲友 进人口 修造 动土 起基 1.创建元素 创建元素：document.createElement() 使用document.createElement()可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名。这个标签名在HTML文档中不区分大小写，在XHTML中区分大小写。 var div = document.createElement(&quot;div&quot;);   使用createElement()方法创建新元素的同时，也为新元素设置了ownerDocument属性，可以操作元素的特性。 div.id..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/06/02/chang-jian-de-yuan-sheng-javascript-domcao-zuo/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "常见的原生javascript DOM操作",
+    "url": "http://localhost:2368/2017/06/02/chang-jian-de-yuan-sheng-javascript-domcao-zuo/",
+    "datePublished": "2017-06-02T03:02:44.607Z",
+    "dateModified": "2017-06-08T02:09:44.622Z",
+    "keywords": "js",
+    "description": "2017-06-02 星期五 丁酉年 五月初八      【鸡年】乙巳月 庚申日      宜：开光 出行 嫁娶      忌：会亲友 进人口 修造 动土 起基 1.创建元素 创建元素：document.createElement() 使用document.createElement()可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名。这个标签名在HTML文档中不区分大小写，在XHTML中区分大小写。 var div = document.createElement(&quot;div&quot;);   使用createElement()方法创建新元素的同时，也为新元素设置了ownerDocument属性，可以操作元素的特性。 div.id..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="02 6月 2017" class="post-meta__date date">02 6月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">常见的原生javascript DOM操作</h1>
+    </header>
+
+    <section class="post tag-js">
+      <blockquote>
+  <p>2017-06-02 星期五 丁酉年 五月初八</p>
+  
+  <p>【鸡年】乙巳月 庚申日</p>
+  
+  <p>宜：开光 出行 嫁娶</p>
+  
+  <p>忌：会亲友 进人口 修造 动土 起基</p>
+</blockquote>
+
+<h3 id="1">1.创建元素</h3>
+
+<pre><code>创建元素：document.createElement()
+</code></pre>
+
+<p>使用<code>document.createElement()</code>可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名。这个标签名在<code>HTML</code>文档中不区分大小写，在<code>XHTML</code>中区分大小写。</p>
+
+<pre><code>var div = document.createElement("div");  
+</code></pre>
+
+<p>使用<code>createElement()</code>方法创建新元素的同时，也为新元素设置了<code>ownerDocument</code>属性，可以操作元素的特性。</p>
+
+<pre><code>div.id = "myDiv";  
+div.className = "div1";  
+</code></pre>
+
+<p>此时，新元素尚未被添加到文档树中，因此设置各种特性均不会影响浏览器的显示。要添加到文档树，可用<code>appendChild()</code>、<code>insertBefore()</code>、<code>replaceChild()</code>。（稍后讲到）</p>
+
+<pre><code>document.body.appendChild(div);  
+</code></pre>
+
+<p>当把元素添加到文档树中后，这个元素做的任何修改都会实时地反应到浏览器中。</p>
+
+<p>在IE中可以为<code>createElement()</code>方法传入完整的元素标签和属性。(只在IE中兼容)</p>
+
+<pre><code>var div = document.createElement("&lt;div id=\"mydiv\" class=\"div1\"&gt;&lt;/div&gt;");  
+// 不能再标签里加其他元素节点或者文本节点，如下的方式和上面的得出的节点一样
+var div = document.createElement("&lt;div id=\"mydiv\" class=\"div1\"&gt;12212&lt;/div&gt;");  
+</code></pre>
+
+<p><img src="../../../../content/images/2017/06/bVrdKB.png" alt="" /></p>
+
+<pre><code>创建文本节点 ：document.createTextNode
+</code></pre>
+
+<p>使用<code>document.createTextNode()</code>来创建文本节点，这个方法接受一个参数：要插入节点的文本。与设置已有文本节点的值一样，作为参数的文本将按照HTML或XML的格式进行编码。</p>
+
+<pre><code>document.createTextNode("121212");  
+</code></pre>
+
+<p>可以添加多个文本节点。假如两个文本节点时相邻的同胞节点，那么两个文本节点会连起来，中间不会有空格。</p>
+
+<h3 id="2">2.节点关系</h3>
+
+<p>（<code>IE9</code>以前不将换行和空格看做文本节点，其他浏览器会）</p>
+
+<p>文本关系如下：</p>
+
+<pre><code>&lt;div id="div1"&gt;  
+    &lt;div id="div2"&gt;2&lt;/div&gt;
+    &lt;div id="div3"&gt;3&lt;/div&gt;
+    &lt;div id="div4"&gt;4&lt;/div&gt;
+&lt;/div&gt;  
+</code></pre>
+
+<pre><code>父节点：parentNode
+</code></pre>
+
+<p><code>parentNode</code>是指定节点的父节点.一个元素节点的父节点可能是一个元素(<code>Element</code>)节点,也可能是一个文档(<code>Document</code>)节点,或者是个文档碎片(<code>DocumentFragment</code>)节点.
+每一个节点都有一个<code>parentNode</code>属性。</p>
+
+<p>对于下面的节点类型: <code>Attr</code>, <code>Document</code>, <code>DocumentFragment</code>, <code>Entity</code>, <code>Notation</code>,其<code>parentNode</code>属性返回<code>null</code>。如果当前节点刚刚被建立,还没有被插入到<code>DOM</code>树中,则该节点的<code>parentNode</code>属性也返回<code>null</code>。</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;  
+    var child2 = document.getElementById("div2");
+    var parent = child2.parentNode;
+&lt;/script&gt;  
+</code></pre>
+
+<pre><code>子节点：childNodes
+</code></pre>
+
+<p><code>childNodes</code> 返回包含指定节点的子节点的集合，该集合为即时更新的集合（<code>live collection</code>）。
+即时更新就是对节点元素的任意修改都会立即反映到结果里。</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;  
+    var child2 = document.getElementById("div2");
+    var parent = child2.parentNode;
+    var allChilds = parent.childNodes;
+    console.log(allChilds.length) // IE下是3，其他浏览器是7
+
+    var nodeAdd = document.createElement("div");
+    var textAdd = document.createTextNode("这是添加的文本节点");
+    nodeAdd.appendChild(textAdd);
+    parent.appendChild(nodeAdd);
+    console.log(allChilds.length);// IE下是4，其他浏览器是8
+&lt;/script&gt;  
+</code></pre>
+
+<pre><code>兄弟节点：nextSibling，previousSibling
+</code></pre>
+
+<p><code>nextSibling</code>返回某节点的下一个兄弟节点，<code>previousSibling</code>返回某节点的上一个兄弟节点，没有的话返回<code>null</code>。
+注意：可能因为元素换行的原因返回的是<code>text</code>节点。</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;  
+    var child3 = document.getElementById("div3");
+    var next = child3.nextSibling;
+    var previous = child3.previousSibling;
+    console.log(next); // IE下返回div4，其他返回text
+    console.log(previous)  // IE下返回div2，其他返回text
+&lt;/script&gt;
+</code></pre>
+
+<pre><code>第一个或最后一个子节点：firstChild、lastChild
+</code></pre>
+
+<p><code>firstChild</code>返回<code>node</code>的子节点中的第一个节点的引用，没有返回<code>null</code>
+<code>lastChild</code>返回<code>node</code>的子节点中的最后一个节点的引用，没有返回<code>null</code></p>
+
+<pre><code>&lt;script type="text/javascript"&gt;  
+    var child3 = document.getElementById("div3");
+    var parent = child3.parentNode;
+    var first = parent.firstChild; // IE是div2，其他是text
+    var last = parent.lastChild; // IE是div4，其他是text
+&lt;/script&gt;  
+</code></pre>
+
+<h3 id="3">3.节点元素关系</h3>
+
+<p>只算元素，不算文本节点。</p>
+
+<p>以下三个方法用法和节点关系完全一样，只是这三个方法只看元素节点，不管因为空格、换行造成的文本节点或者手动加上去的文本节点。
+children： 返回所有元素子节点（<code>IE5+</code>、<code>ff3.5</code>、<code>opera3</code>、<code>chrome</code>，但在<code>IE8</code>及以下会将注释节点看成一个元素节点）</p>
+
+<p>以下两个<code>IE9+</code>才支持
+<code>nextElementSibling</code>：返回元素的下一个兄弟元素节点
+<code>reviousElementSibling</code>: 返回元素的上一个兄弟元素节点</p>
+
+<h3 id="4">4.节点操作</h3>
+
+<pre><code>appendChild()  
+</code></pre>
+
+<p><code>appendChild()</code>用于向<code>childNodes</code>列表的末尾添加一个节点，并且返回这个新增的节点。
+如果传入到<code>appendChild()</code>里的节点已经是文档的一部分了，那结果就是将节点从原来的位置转移到新位置，任何一个节点不能同时出现在文档中的多个位置。</p>
+
+<pre><code>var returnNode = someNode.appendChild(someNode.firstChild); // 返回第一个节点  
+console.log(returnNode === someNode.firstChild); // false  
+console.log(returnNode === someNode.lastChild); // true  
+</code></pre>
+
+<pre><code>insetBefore()  
+</code></pre>
+
+<p><code>insetBefore()</code>可以将节点插入到某个特定的位置。这个方法接受两个参数：要插入的节点和作为参照的节点。
+插入节点后，被插入的节点变成参照节点的前一个同胞节点，同时被方法返回。 如果参照节点是<code>null</code>，则与<code>appendChild()</code>执行相同的操作。</p>
+
+<pre><code>// 插入后成为最后一个子节点
+var returnNode = someNode.insetBefore(newNode, null);  
+console.log(returnNode === someNode.lastChild); // true
+
+// 插入后成为第一个子节点
+var returnNode = someNode.insetBefore(newNode, someNode.firstChild);  
+console.log(returnNode === newNode); // true  
+console.log(returnNode === someNode.firstChild); // true
+
+// 插入到最后一个子节点的前面
+var returnNode = someNode.insetBefore(newNode, someNode.lastChild);  
+console.log(returnNode === someNode.childNodes[someNode.childnodes.length - 2]) // true  
+</code></pre>
+
+<pre><code>替换节点： replaceChild()
+</code></pre>
+
+<p><code>replaceChild()</code>接受两个参数：要插入的节点和要被替换的节点。被替换的节点将由这个方法返回并从文档中被移除，同时由要插入的节点占据其位置。</p>
+
+<pre><code>// 替换第一个子节点
+var returnNode = someNode.replaceChild(newNode, someNode.firstChild);  
+</code></pre>
+
+<p>使用<code>replaceChild()</code>后，被替换的节点的所有关系指针都会被复制到插入的节点上面。</p>
+
+<pre><code>删除节点：removeChild()
+</code></pre>
+
+<p>该方法移除节点，接受一个参数，即要移除的节点，同时该方法返回被移除的节点。只能是一个节点，不能是一组节点。</p>
+
+<pre><code>// 移除第一个子节点
+var returnNode = someNode.removeChild(someNode.firstChild);  
+</code></pre>
+
+<pre><code>克隆节点：cloneNode(true/false)
+</code></pre>
+
+<p>返回调用该方法的节点的一个副本。参数表示是否采用深度克隆,如果为<code>true</code>,则该节点的所有后代节点也都会被克隆,如果为<code>false</code>,则只克隆该节点本身，文本或者换行、空格这些不会复制，因为他们都是一个<code>textNode</code>。</p>
+
+<p>注意: 在<code>DOM4</code>规范中(实现于<code>Gecko 13.0(Firefox 13.0 / Thunderbird 13.0 / SeaMonkey 2.10</code>) , 查看 bug 698391),<code>deep</code>是一个可选参数. 如果省略的话, <code>deep</code>参数的默认值为<code>true</code>,也就是说,深度克隆是默认的.如果想使用浅克隆, 你需要将该参数指定为<code>false</code>。</p>
+
+<p>在旧版本的浏览器中, 你始终需要指定<code>deep</code>参数。</p>
+
+<p>克隆一个元素节点会拷贝它所有的属性以及属性值,当然也就包括了属性上绑定的事件(比如<code>onclick="alert(1)"</code>),但不会拷贝那些使用<code>addEventListener()</code>方法或者<code>node.onclick = fn</code>这种用<code>JavaScript</code>动态绑定的事件。</p>
+
+<p>注意:为了防止一个文档中出现两个<code>ID</code>重复的元素,使用<code>cloneNode()</code>方法克隆的节点在需要时应该指定另外一个与原<code>ID</code>值不同的<code>ID</code></p>
+
+<pre><code>var div1 = document.getElementById("div1");  
+var cloneHtml = div1.cloneNode(true);  
+document.body.appendChild(cloneHtml);  
+</code></pre>
+
+<h3 id="5">5.元素选择</h3>
+
+<p>HTML代码示例：</p>
+
+<pre><code>&lt;div id="div1"&gt;  
+    &lt;p id="div2" class="one" name="nameone"&gt;2&lt;/p&gt;
+    &lt;div id="div3"&gt;3&lt;/div&gt;
+    &lt;div id="div4" name="div2"&gt;4&lt;/div&gt;
+&lt;/div&gt;  
+</code></pre>
+
+<p><code>querySelector</code>、<code>querySelectorAll</code>(IE8及以上)</p>
+
+<p><code>Selectors API</code>通过匹配一组选择器的方式来为从<code>DOM</code>中检索<code>Element</code>节点提供一些简单快捷的方法，这比过去必须要在<code>javascript</code>代码中用循环来查找某个你想要的特定元素更快一些。
+该规范对于使用<code>Document</code>,<code>DocumentFragment</code>和<code>Element</code>接口的对象都增了两种新方法：</p>
+
+<p><code>querySelector</code></p>
+
+<p>返回节点子树内与之相匹配的第一个<code>Element</code>节点。如果没有匹配的节点，则返回<code>null</code>。</p>
+
+<p><code>querySelectorAll</code></p>
+
+<p>返回一个包含节点子树内所有与之相匹配的<code>Element</code>节点列表，如果没有相匹配的，则返回一个空节点列表。
+注意：由 <code>querySelector()</code>、<code>uerySelectorAll()</code>返回的节点列表不是动态实时的（非<code>live Collection</code>）。这和其他DOM查询方法返回动态实时节点列表不一样。</p>
+
+<p>选择器方法接受一个或多个用逗号分隔的选择器来确定需要被返回的元素。例如，要选择文档中所有CSS的类(class)是<code>warning</code>或者<code>note</code>的段落(p)元素,可以这样写：</p>
+
+<pre><code>var special = document.querySelectorAll( "p.warning, p.note" );  
+</code></pre>
+
+<p>也可以通过ID来查询，例如：</p>
+
+<pre><code>var el = document.querySelector( "#main, #basic, #exclamation" );  
+</code></pre>
+
+<p>执行上面的代码后，<code>el</code>就包含了文档中元素的ID是<code>main</code>，<code>basic</code>或<code>exclamation</code>的所有元素中的第一个元素。</p>
+
+<p><code>querySelector()</code> and <code>querySelectorAll()</code> 里可以使用任何CSS选择器，他们都不是<code>live Collection</code>：</p>
+
+<pre><code>var notLive = document.querySelectorAll("p");  
+console.log(notLive);  
+document.getElementById("div1").removeChild(document.getElementById("div2"));  
+console.log(notLive);  
+// 上面两个输出都是输出 `p#div2.one`的引用，没有因为删除了`p`标签而使`notLive`的结果发生变化。
+</code></pre>
+
+<p><code>getElementById()</code></p>
+
+<p>返回一个匹配特定 <code>ID</code>的元素。id是大小写敏感的字符串，代表了所要查找的元素的唯一ID，如果没有则返回<code>null</code>。
+如果新建一个元素，还没有插入到文档中，则不能通过该方法获取到。</p>
+
+<pre><code>var notLive = document.getElementById("div2");  
+console.log(notLive.innerHTML);  
+document.getElementById("div1").removeChild(document.getElementById("div2"));  
+console.log(notLive.innerHTML);  
+// 上面输出都是2，说明getElementById()也是**非**live collection
+</code></pre>
+
+<p><code>getElementsByTagName()</code></p>
+
+<p><code>document.getElementsByTagName()</code> 方法返回一个实时的包含具有给出标签名的元素们的<code>HTMLCollection</code>。指定的元素的子树会被搜索，包括元素自己。返回的 <code>list</code> 是实时的（<code>live collection</code>），意味着它会随着DOM树的变化自动更新。因此，如果对同一个元素，使用相同的参数，是不需要多次调用<code>document.getElementsByTagName()</code> 的。</p>
+
+<p><code>Element.getElementsByTagName()</code>的搜索被限制为指定元素的后代而不是<code>document</code></p>
+
+<pre><code>var live = document.getElementsByTagName("p");  
+console.log(live[0].innerHTML);  
+document.getElementById("div1").removeChild(document.getElementById("div2"));  
+console.log(live[0].innerHTML);  
+// 第一个输出2，第二个报错，因为无法引用到p标签
+</code></pre>
+
+<p><code>getElementsByName()</code></p>
+
+<p>该方法返回一个实时的<code>nodelist collection</code>，包含文档中所有name属性匹配的标签。这是一个<code>**live collection**</code>。</p>
+
+<p>注意：在<code>IE</code>和<code>opera</code>下，如果某个元素1的name和另一个元素2的id重合，且元素2在元素1的前面，则<code>getElementsByName()</code>会取到元素2。</p>
+
+<pre><code>var live = document.getElementsByName("div2");  
+console.log(live[0].innerHTML);  
+document.getElementById("div1").removeChild(document.getElementById("div2"));  
+console.log(live[0].innerHTML);  
+// chrome下：全部输出4
+// IE下： 第一个输出2，第二个报错。
+</code></pre>
+
+<p><code>getElementsByClassName()</code></p>
+
+<p>该方法返回一个即时更新的（live） HTMLCollection，包含了所有拥有指定 class 的子元素。当在 <code>document</code> 对象上调用此方法时，会检索整个文档，包括根元素。(IE9以下不支持)</p>
+
+<p>要匹配多个<code>class</code>，则<code>className</code>用空格分开。</p>
+
+<p><code>getElementsByClassName("class1 class2");</code></p>
+
+<pre><code>var live = document.getElementsByClassName("one");  
+console.log(live[0].innerHTML);  
+document.getElementById("div1").removeChild(document.getElementById("div2"));  
+console.log(live[0].innerHTML);  
+// 第一个返回2，第二个报错
+</code></pre>
+
+<h3 id="6">6.属性操作</h3>
+
+<p><code>setAttribute()</code></p>
+
+<p>添加一个新属性（<code>attribute</code>）到元素上，或改变元素上已经存在的属性的值。</p>
+
+<p>当在 <code>HTML</code> 文档中的 <code>HTM</code>L 元素上调用 <code>setAttribute()</code> 方法时，该方法会将其属性名称（<code>attribute name</code>）参数小写化。</p>
+
+<p>如果指定的属性已经存在，则其值变为传递的值。如果不存在，则创建指定的属性。也可指定为<code>null</code>。如果设置为<code>null</code>，最好使用<code>removeAttribute()</code>。</p>
+
+<pre><code>var div2 = document.getElementById("div2");  
+div2.setAttribute("class", "new_class");  
+div2.setAttribute("id", "new_id");  
+</code></pre>
+
+<p>注意：在<code>IE7</code>下，修改了元素的<code>class</code>，如果已有<code>clas</code>s，则会出现两个<code>class</code>，通过<code>setAttribute()</code>添加的不生效；如果没有<code>class</code>，则添加上<code>class</code>，但这个添加上去的<code>class</code>的样式不会生效。</p>
+
+<p><img src="../../../../content/images/2017/06/bVreC2.png" alt="" /></p>
+
+<p><code>removeAttribute()</code></p>
+
+<p>该方法用于移除元素的属性。</p>
+
+<pre><code>var div2 = document.getElementById("div2");  
+div2.removeAttribute("class");  
+</code></pre>
+
+<p>注意：<code>IE7</code>下无法移除 <code>class</code> 属性</p>
+
+<p><code>getAttribute()</code></p>
+
+<p>该方法返回元素上指定属性（<code>attribute</code>）的值。如果指定的属性不存在，则返回 <code>null</code> 或 "" （空字符串）（<code>IE5+</code>都返回null）。</p>
+
+<pre><code>var div2 = document.getElementById("div2");  
+var attr = div2.getAttribute("class");  
+console.log(attr);  
+</code></pre>
+
+<p>注意：<code>IE7</code>下不能正确返回<code>class</code>，返回的是<code>null</code>，其他正常。</p>
+
+<p><code>hasAttribute()</code></p>
+
+<p><code>hasAttribute()</code> 返回一个布尔值，指示该元素是否包含有指定的属性（<code>attribute</code>）。</p>
+
+<p>注意：IE7不支持该方法。</p>
+
+<p><code>自定义属性data-*</code></p>
+
+<p><code>html5</code>里有一个<code>data-*</code>去设置获取元素的自定义属性值。</p>
+
+<pre><code>&lt;div id="div1" data-aa="11"&gt;  
+</code></pre>
+
+<p>利用<code>div1.dataset</code>可以获得一个<code>DOMStringMap</code>，包含了元素的所有<code>data-*</code>。
+使用<code>div1.dataset.aa</code>就可以获取11的值。
+同样，通过设置<code>div1.dataset.bb = "22"</code>就可以设置一个自定义属性值。
+在不兼容的浏览器里，就使用<code>getAttribute</code>和<code>setAttribute</code></p>
+
+<pre><code>var div1 = document.getElementById("div1");  
+var a = null;  
+if (div1.dataset) {  
+    a = div1.dataset.aa;
+    div1.dataset.bb = "222";
+} else {
+    a = div1.getAttribute("data-aa");
+    div1.setAttribute("data-bb", "2222");
+}
+console.log(a);  
+</code></pre>
+
+<h3 id="7">7.事件</h3>
+
+<p><code>addEventListener()</code></p>
+
+<p><code>addEventListener()</code>将指定的事件监听器注册到目标对象上，当目标对象触发制定的事件时，指定的回调函数就会触发。目标对象可以是 <code>文档上的元素</code>、 <code>document</code>、 <code>window</code> 或者<code>XMLHttpRequest</code>(比如<code>onreadystatechange</code>事件)。</p>
+
+<p><code>IE8</code>及以下不支持此方法且只有事件冒泡没有事件捕获。<code>IE9</code>开始支持此方法，也就有了事件捕获。</p>
+
+<pre><code>var div1 = document.getElementById("div1");  
+div1.addEventListener("click", listener, false);  
+function listener() {  
+    console.log('test');
+}
+
+var cloneHtml = div1.cloneNode(true);  
+document.body.appendChild(cloneHtml);  
+</code></pre>
+
+<p>第一个参数是事件名，第二个是回调函数，第三个参数为<code>true</code>表示捕获，<code>false</code>表示冒泡。</p>
+
+<pre><code>var div1 = document.getElementById("div1");  
+div1.addEventListener("click", listener1, true/fasle);  
+function listener1() {  
+    console.log('test1');
+}
+
+var div2 = document.getElementById("div2");  
+div2.addEventListener("click", listener2, true/fasle);  
+function listener2() {  
+    console.log('test2');
+}
+</code></pre>
+
+<p>有一点要注意的是，当对某一个<code>元素1</code>既绑定了捕获事件，又绑定了冒泡事件时：
+当这个<code>元素1</code>并不是触发事件的那个元素2时，则触发顺序会按照先 捕获 后 冒泡 的顺序触发；
+当这个<code>元素1</code>就是最底层的触发事件的元素时，则这个元素没有捕获和冒泡的区别，谁先绑定就先触发谁。</p>
+
+<pre><code>var div2 = document.getElementById("div2");
+
+div2.addEventListener("click", listener2, true);  
+function listener2() {  
+    console.log('test2');
+}
+
+div2.addEventListener("click", listener1, false);  
+function listener1() {  
+    console.log('test1');
+}
+// 按绑定顺序执行，两个`addEventLister()`颠倒过来则执行顺序也变化
+// 如果再对`div1`绑定一个捕获、一个冒泡，则会先触发捕获 再 触发冒泡，与绑定顺序无关
+</code></pre>
+
+<p><code>removeEventListener()</code></p>
+
+<p>与<code>addEventListener()</code>绑定事件对应的就是移除已绑定的事件。第三个参数的布尔值代表解绑的是捕获事件还是冒泡事件。两个事件互不相关。</p>
+
+<pre><code>var div2 = document.getElementById("div2");  
+div2.addEventListener("click", listener2, true);  
+function listener2() {  
+    console.log('test2');
+}
+div2.removeEventListener("click", listener2, true);  
+</code></pre>
+
+<p>注意：只能通过<code>removeEventListener()</code>解绑有名字的函数，对于绑定的匿名函数无法解除绑定。</p>
+
+<pre><code>div2.addEventListener("click", function(){  
+    console.log('test');
+    console.log(this);
+}, true);
+
+div2.removeEventListener("click", function() {  
+    console.log("test");
+}, true);
+div2.onclick = null;  
+// 点击div2依然打印出test
+</code></pre>
+
+<p>注意：这里<code>this</code>指向触发事件的元素自身。</p>
+
+<p><code>attachEvent()、detachEvent()</code></p>
+
+<p><code>IE8</code>及以下使用这两个方法绑定和解绑事件，当然，<code>IE9+</code>也支持这个事件。但这个方法绑定的事件默认为冒泡也只有冒泡。</p>
+
+<pre><code>// 这里需要在事件前加 on
+div2.attachEvent("onclick", listener1);  
+function listener1() {  
+    console.log('test');
+    console.log(this);
+}
+div2.detachEvent("onclick", listener1);  
+</code></pre>
+
+<p>和<code>addEventListener()</code>一样，也不能解绑匿名函数。
+注意：这里<code>this</code>指向 <code>window</code>。</p>
+
+<p>阻止默认事件和冒泡</p>
+
+<p>标准事件和IE事件中的阻止默认事件和冒泡事件也有很大区别。</p>
+
+<pre><code>var div2 = document.getElementById("div2");  
+if (div2.addEventListener) {  
+    div2.addEventListener("click", function(e) {
+        e.preventDefault(); // 阻止默认事件
+        e.stopPropagation(); // 阻止冒泡
+        console.log(e.target.innerHTML);
+    }, false);
+} else {
+    div2.attachEvent("onclick", function() {
+        var e = window.event;
+        e.returnValue = false; // 阻止默认事件
+        e.cancelBubble = true; // 阻止冒泡
+        console.log(e.srcElement.innerHTML);
+    });
+}
+</code></pre>
+
+<p><code>IE8</code>及以下的<code>event</code>是绑定在<code>window</code>上的。（我的<code>IE11</code>里，仿真到<code>IE7</code>、<code>IE8</code>也可以取到标准事件里的 e 对象，估计是升级到IE11的原因）。</p>
+
+<p><code>自定义事件：createEvent()</code></p>
+
+<p><code>createEvent()</code>用于创建一个新的 <code>event</code> ，而后这个 <code>event</code> 必须调用它的 <code>init()</code> 方法进行初始化。最后就可以在目标元素上使用<code>dispatchEvent()</code>调用新创建的event事件了。</p>
+
+<p><code>createEvent()</code>的参数一般有：<code>UIEvents</code>、<code>MouseEvents</code>、<code>MutationEvents</code>、<code>HTMLEvents</code>、<code>Event(s)</code>等等，分别有对应的<code>init()</code>方法。<code>HTMLEvents</code>、<code>Event(s)</code>对应的都是<code>initEvent()</code>方法。</p>
+
+<p><code>initEvent(type, bubbles, cancelable)</code></p>
+
+<p><code>type</code>表示自定义的事件类型，<code>bubbles</code>表示是否冒泡，<code>cancelable</code>表示是否阻止默认事件。</p>
+
+<p><code>target.dispatchEvent(ev)</code></p>
+
+<p><code>target</code>就是要触发自定义事件的<code>DOM</code>元素</p>
+
+<pre><code>var div1 = document.getElementById("div1");  
+div1.addEventListener("message", function(){  
+    console.log('test');
+}, false);
+
+var div2 = document.getElementById("div2");  
+div2.addEventListener("message", function(e){  
+    console.log(this);
+    console.log(e);
+}, false);
+var ev = document.createEvent("Event");  
+ev.initEvent("message", false, true); // 起泡参数变为true，div1的事件就会触发  
+</code></pre>
+
+<h3 id="8">8.获取元素相关计算后的值</h3>
+
+<p><code>getComputedStyle()、currentStyle()</code></p>
+
+<p>当我们想获取元素计算后实际呈现在页面上的各个值，就用这两个方法。<code>IE8</code>及以下用<code>currentStyle()</code>,<code>IE9+</code>及其他标准浏览器用<code>getComputedStyle()</code>。</p>
+
+<pre><code>var div2 = document.getElementById("div2");  
+var result = "";  
+if (window.getComputedStyle) {  
+    result = (window || document.defaultView).getComputedStyle(div2, null)['cssFloat'];
+} else {
+    result = div2.currentStyle["styleFloat"];
+}
+console.log(result);  
+// document.defaultView返回document对象所关联的window
+</code></pre>
+
+<p>这两个方法在不同的浏览器里差距也很大。
+比如<code>float</code>属性：
+<code>getComputedStyle</code>： <code>IE9</code>以上需要用<code>cssFloat</code>，其他标准的用<code>float</code>
+<code>currentStyle</code>： <code>IE</code>8及以下可用<code>styleFloat</code>或者<code>float</code>。</p>
+
+<p>比如<code>height</code>属性：
+假如未设置<code>height</code>值，标准浏览器里能计算出高度值，而currentStyle<code>计算出来是</code>auto`。</p>
+
+<p>上面的例子<code>getComputedStyle</code>是用键值去访问的，也可用<code>getPropertyValue()</code>去访问。（<code>IE8、IE7</code>不支持）</p>
+
+<p><code>null</code></p>
+
+<p><code>getBoundingClientRect()、getClientRects()</code></p>
+
+<p><code>getBoundingClientRect()</code>该方法获得页面中某个元素的上、右、下、左分别相对浏览器视窗的位置。<code>getBoundingClientRect</code>是<code>DOM</code>元素到浏览器可视范围的距离（到浏览器顶部而不是文档顶部）。该函数返回一个<code>Object</code>对象，该对象有6个属性：<code>top</code>,<code>lef</code>,<code>right</code>,<code>bottom</code>,<code>width</code>,<code>height</code>；这里的<code>top</code>、<code>left</code>和<code>css</code>中的理解很相似，<code>width</code>、<code>height</code>是元素自身的宽高，但是<code>right</code>，<code>bottom</code>和<code>css</code>中的理解有点不一样。<code>right</code>是指元素右边界距窗口最左边的距离，<code>bottom</code>是指元素下边界距窗口最上面的距离。</p>
+
+<p><code>getClientRects()</code>是返回一个<code>ClientRectList</code>集合。</p>
+
+<pre><code>var div1 = document.getElementById("div1");  
+var rects1 = div1.getClientRects();  
+var rects2 = div1.getBoundingClientRect();  
+console.log(rects1[0].top);  
+console.log(rects2.top);  
+</code></pre>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../05/webtu-xiang-de-chang-jian-ying-yong-ce-lue-yu-ji-qiao/index.html" title="link to web圖像的常見應用策略與技巧">web圖像的常見應用策略與技巧</a>
+      </h5>
+       <p class="excerpt" title="2017-06-05 星期一 丁酉年 五月十一      【鸡年】丙午月 癸亥日      宜：畋猎 捕捉 结网 取渔 祭祀      忌：嫁娶 开市 安葬 启攒 行丧 響應式圖像，SVG的換色">2017-06-05 星期一 丁酉年 五月十一      【鸡年】丙午月 癸亥日      宜：畋猎 捕捉 结网 取渔 祭祀      忌：嫁娶 开市 安葬 启攒 行丧 響應式圖像，SVG的換色&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="05 6月 2017" class="post-list__meta--date date">05 6月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/wen-zhang/">文章</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/06/05/webtu-xiang-de-chang-jian-ying-yong-ce-lue-yu-ji-qiao/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../01/javascriptzhong-dui-xiang-de-shen-du-ke-long/index.html" title="link to javascript中对象的深度克隆">javascript中对象的深度克隆</a></h5>
+       <p class="excerpt" title="2017-06-01 星期四 丁酉年 五月初七      【鸡年】乙巳月 己未日      宜：进人口 牧养 置产 塞穴 结网      忌：诸事不宜 一、js中的对象 谈到对象的克隆，必定要说">2017-06-01 星期四 丁酉年 五月初七      【鸡年】乙巳月 己未日      宜：进人口 牧养 置产 塞穴 结网      忌：诸事不宜 一、js中的对象 谈到对象的克隆，必定要说&hellip;</p>
+       <div class="post-list__meta"><time datetime="01 6月 2017" class="post-list__meta--date date">01 6月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/06/01/javascriptzhong-dui-xiang-de-shen-du-ke-long/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

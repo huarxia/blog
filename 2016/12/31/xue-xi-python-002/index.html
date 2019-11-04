@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>学习Python 002</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="学习Python 002">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="学习Python 002">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2016/12/31/xue-xi-python-002/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="学习Python 002" />
+    <meta property="og:description" content="测试题：   0.什么是BIF？ BIF 就是 Built-in Functions，内置函数。为了方便程序员快速编写脚本程序（脚本就是要编程速度快快快！！！），Python 提供了非常丰富的内置函数，我们只需要直接调用即可，例如 print() 的功能是“打印到屏幕”，input() 的作用是接收用户输入（注：Python3 用 input() 取代了 Python2 的 raw_input()   1.用Python3 提供了多少个 BIF？ dir(__builtins__)   [&#x27;ArithmeticError&#x27;, &#x27;AssertionError&#x27;, &#x27;AttributeError&#x27;, &#x27;BaseException&#x27;, &#x27;BlockingIOError&#x27;, &#x27;BrokenPipeError&#x27;,..." />
+    <meta property="og:url" content="http://localhost:2368/2016/12/31/xue-xi-python-002/" />
+    <meta property="article:published_time" content="2016-12-31T07:11:44.342Z" />
+    <meta property="article:modified_time" content="2017-01-10T12:10:28.491Z" />
+    <meta property="article:tag" content="Python" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="学习Python 002" />
+    <meta name="twitter:description" content="测试题：   0.什么是BIF？ BIF 就是 Built-in Functions，内置函数。为了方便程序员快速编写脚本程序（脚本就是要编程速度快快快！！！），Python 提供了非常丰富的内置函数，我们只需要直接调用即可，例如 print() 的功能是“打印到屏幕”，input() 的作用是接收用户输入（注：Python3 用 input() 取代了 Python2 的 raw_input()   1.用Python3 提供了多少个 BIF？ dir(__builtins__)   [&#x27;ArithmeticError&#x27;, &#x27;AssertionError&#x27;, &#x27;AttributeError&#x27;, &#x27;BaseException&#x27;, &#x27;BlockingIOError&#x27;, &#x27;BrokenPipeError&#x27;,..." />
+    <meta name="twitter:url" content="http://localhost:2368/2016/12/31/xue-xi-python-002/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "学习Python 002",
+    "url": "http://localhost:2368/2016/12/31/xue-xi-python-002/",
+    "datePublished": "2016-12-31T07:11:44.342Z",
+    "dateModified": "2017-01-10T12:10:28.491Z",
+    "keywords": "Python",
+    "description": "测试题：   0.什么是BIF？ BIF 就是 Built-in Functions，内置函数。为了方便程序员快速编写脚本程序（脚本就是要编程速度快快快！！！），Python 提供了非常丰富的内置函数，我们只需要直接调用即可，例如 print() 的功能是“打印到屏幕”，input() 的作用是接收用户输入（注：Python3 用 input() 取代了 Python2 的 raw_input()   1.用Python3 提供了多少个 BIF？ dir(__builtins__)   [&#x27;ArithmeticError&#x27;, &#x27;AssertionError&#x27;, &#x27;AttributeError&#x27;, &#x27;BaseException&#x27;, &#x27;BlockingIOError&#x27;, &#x27;BrokenPipeError&#x27;,..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-python">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="31 12月 2016" class="post-meta__date date">31 12月 2016</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/python/index.html">Python</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">学习Python 002</h1>
+    </header>
+
+    <section class="post tag-python">
+      <h3 id="">测试题：</h3>
+
+<blockquote>
+  <p>0.什么是BIF？</p>
+</blockquote>
+
+<p>BIF 就是 Built-in Functions，内置函数。为了方便程序员快速编写脚本程序（脚本就是要编程速度快快快！！！），Python 提供了非常丰富的内置函数，我们只需要直接调用即可，例如 <code>print()</code> 的功能是“打印到屏幕”，<code>input()</code> 的作用是接收用户输入（注：Python3 用 <code>input()</code> 取代了 Python2 的 <code>raw_input()</code></p>
+
+<blockquote>
+  <p>1.用Python3 提供了多少个 BIF？</p>
+</blockquote>
+
+<pre><code>dir(__builtins__)  
+</code></pre>
+
+<p>['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'ZeroDivisionError', '<strong>build_class</strong>', '<strong>debug</strong>', '<strong>doc</strong>', '<strong>import</strong>', '<strong>loader</strong>', '<strong>name</strong>', '<strong>package</strong>', '<strong>spec</strong>', 'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']</p>
+
+<p><img src="../../../../content/images/2016/12/4CE66FBD-6359-4B55-899D-7D82E2417B09.png" alt="" /></p>
+
+<blockquote>
+  <p>2.在 Python 看来：'huar' 和 'HuaR' 一样吗？</p>
+</blockquote>
+
+<p>不一样，因为 Python 是一个“敏感的小女孩”，所以不要试图欺骗她，对 Python 来说，huar 和 HuaR 是完全不同的两个名字，所以编程的时候一定要当心。不过 Python 会帮助解决可能因此出现的问题，例如只有当标识符已经赋值后（Python 的变量是不用先声明的）才能在代码中使用，未赋值的标识符直接使用会导致运行时错误，所以你很快就可以根据经验发现此问题。</p>
+
+<blockquote>
+  <p>3.Python 中什么是最重要的？你赞同吗？</p>
+</blockquote>
+
+<p>缩进！缩进是 Python 的灵魂，缩进的严格要求使得 Python 的代码显得非常精简并且有层次。</p>
+
+<blockquote>
+  <p>4.<code>=</code>和<code>==</code>，他们表示不同的含义，你在编程的过程中会不小心把<code>==</code>误写成<code>=</code>吗？有没有好的办法可以解决这个问题呢？</p>
+</blockquote>
+
+<p>C语言的话，如果 if( c == 1 ) 写成 if( c = 1 )，程序就完全不按程序员原本的目的去执行，但在 Python 这里，不好意思，行不通，语法错误！</p>
+
+<blockquote>
+  <p>5.你听说过“拼接”这个词吗？</p>
+</blockquote>
+
+<p>在一些编程语言，我们可以将两个字符串“相加”在一起，如：'I' + 'Love' + 'Huar' 会得到 'ILoveHuar'，在 Python 里，这种做法叫做拼接字符串。像javascript也是這樣的哦，作者是搞前端的~~~</p>
+
+<h3 id="">動動手</h3>
+
+<blockquote>
+  <p>0.编写程序：hello.py，要求用户输入姓名并打印“你好，姓名！”</p>
+</blockquote>
+
+<pre><code>name = input('請輸入您的姓名：')  
+print('hello ' + name)
+</code></pre>
+
+<p><img src="../../../../content/images/2016/12/191CDC01-D47C-48CE-9783-EFE9B45A1CE8.png" alt="" /></p>
+
+<blockquote>
+  <p>1.编写程序：calc.py 要求用户输入1到100之间数字并判断，输入符合要求打印“你妹好漂亮”，不符合要求则打印“你大爷真丑”</p>
+</blockquote>
+
+<pre><code>num = input('输入1到100之间数字:')  
+num = int(num)  
+if num &gt;= 1 and num &lt;= 100:  
+    print('你妹好漂亮啊！')
+else:  
+    print('你大爺真醜！')
+</code></pre>
+
+<p><img src="../../../../content/images/2016/12/902D21AB-4C41-4AFA-B8AB-3CAF13BD5B1B.png" alt="" /></p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../xue-xi-python-003/index.html" title="link to 学习Python 003">学习Python 003</a>
+      </h5>
+       <p class="excerpt" title="测试题：   0.以下哪个变量的命名不正确？为什么？  (A) MM_520  (B) _MM520_  (C) 520_MM  (D) _520_MM (c)命名錯誤，Python中只能以字母、下劃">测试题：   0.以下哪个变量的命名不正确？为什么？  (A) MM_520  (B) _MM520_  (C) 520_MM  (D) _520_MM (c)命名錯誤，Python中只能以字母、下劃&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="31 12月 2016" class="post-list__meta--date date">31 12月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/python/">Python</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/12/31/xue-xi-python-003/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../30/xue-xi-python-001/index.html" title="link to 学习Python 001">学习Python 001</a></h5>
+       <p class="excerpt" title="测试题：   0.Python 是什么类型的语言？ Python是一种面向对象、解释型、动态类型计算机程序设计语言  解释型：程序无需编译成二进制代码，而是在执行时对语句一条一条编译 动态类型：在程序">测试题：   0.Python 是什么类型的语言？ Python是一种面向对象、解释型、动态类型计算机程序设计语言  解释型：程序无需编译成二进制代码，而是在执行时对语句一条一条编译 动态类型：在程序&hellip;</p>
+       <div class="post-list__meta"><time datetime="30 12月 2016" class="post-list__meta--date date">30 12月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/python/">Python</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/12/30/xue-xi-python-001/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

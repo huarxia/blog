@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Html5获取地理位置应用–webApp定位当前城市接口</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Html5获取地理位置应用–webApp定位当前城市接口">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Html5获取地理位置应用–webApp定位当前城市接口">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/08/13/html5huo-qu-di-li-wei-zhi-ying-yong-webappding-wei-dang-qian-cheng-shi-jie-kou/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Html5获取地理位置应用–webApp定位当前城市接口" />
+    <meta property="og:description" content="在做移动端开发中,难免会使用使用地理位置这一项功能，然而在原生的Html5中的navigator.geolocation，只能获取经纬度。 用法： navigator.geolocation 兼容高版本浏览器 .getCurrentPosition(fnSucc,fnFail) 必须要用于允许 成功： 坐标： ev.coords 坐标对象  经度：ev.coords.longitude 纬度：ev.coords.latitude //116.45178,39.903348 ev.coords:  accuracy: 精度82  altitude：海拔高度  altitudeAccuracy：海拔高度精确度  heading:朝向..." />
+    <meta property="og:url" content="http://localhost:2368/2015/08/13/html5huo-qu-di-li-wei-zhi-ying-yong-webappding-wei-dang-qian-cheng-shi-jie-kou/" />
+    <meta property="article:published_time" content="2015-08-13T07:13:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-16T07:14:55.364Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Html5获取地理位置应用–webApp定位当前城市接口" />
+    <meta name="twitter:description" content="在做移动端开发中,难免会使用使用地理位置这一项功能，然而在原生的Html5中的navigator.geolocation，只能获取经纬度。 用法： navigator.geolocation 兼容高版本浏览器 .getCurrentPosition(fnSucc,fnFail) 必须要用于允许 成功： 坐标： ev.coords 坐标对象  经度：ev.coords.longitude 纬度：ev.coords.latitude //116.45178,39.903348 ev.coords:  accuracy: 精度82  altitude：海拔高度  altitudeAccuracy：海拔高度精确度  heading:朝向..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/08/13/html5huo-qu-di-li-wei-zhi-ying-yong-webappding-wei-dang-qian-cheng-shi-jie-kou/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Html5获取地理位置应用–webApp定位当前城市接口",
+    "url": "http://localhost:2368/2015/08/13/html5huo-qu-di-li-wei-zhi-ying-yong-webappding-wei-dang-qian-cheng-shi-jie-kou/",
+    "datePublished": "2015-08-13T07:13:00.000Z",
+    "dateModified": "2016-11-16T07:14:55.364Z",
+    "keywords": "js",
+    "description": "在做移动端开发中,难免会使用使用地理位置这一项功能，然而在原生的Html5中的navigator.geolocation，只能获取经纬度。 用法： navigator.geolocation 兼容高版本浏览器 .getCurrentPosition(fnSucc,fnFail) 必须要用于允许 成功： 坐标： ev.coords 坐标对象  经度：ev.coords.longitude 纬度：ev.coords.latitude //116.45178,39.903348 ev.coords:  accuracy: 精度82  altitude：海拔高度  altitudeAccuracy：海拔高度精确度  heading:朝向..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="13 8月 2015" class="post-meta__date date">13 8月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">Html5获取地理位置应用–webApp定位当前城市接口</h1>
+    </header>
+
+    <section class="post tag-js">
+      <p>在做移动端开发中,难免会使用使用地理位置这一项功能，然而在原生的Html5中的navigator.geolocation，只能获取经纬度。</p>
+
+<p>用法：
+navigator.geolocation 兼容高版本浏览器</p>
+
+<p>.getCurrentPosition(fnSucc,fnFail)
+必须要用于允许
+成功：
+坐标：
+ev.coords 坐标对象 <br />
+经度：ev.coords.longitude
+纬度：ev.coords.latitude</p>
+
+<p>//116.45178,39.903348</p>
+
+<p>ev.coords: <br />
+accuracy: 精度82 <br />
+altitude：海拔高度 <br />
+altitudeAccuracy：海拔高度精确度 <br />
+heading:朝向 <br />
+speed：速度 <br />
+失败：
+fnFail(err) <br />
+err.code <br />
+0 未知错误 <br />
+1 用户拒绝 <br />
+2 获取失败 <br />
+3 网络超时</p>
+
+<p>如果需要定位当前城市就比较麻烦了，为此我特意从百度的接口中找到这一项功能，提供给大家。具体代码如下：</p>
+
+<pre><code>&lt;!DOCTYPE HTML&gt;  
+&lt;html&gt;  
+&lt;head&gt;  
+&lt;meta charset="utf-8"&gt;  
+&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"&gt;  
+&lt;title&gt;tobie.cn___演示：HTML5获取地理位置定位信息&lt;/title&gt;  
+&lt;script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"&gt;&lt;/script&gt;  
+&lt;style type="text/css"&gt;  
+.demo{width:560px; margin:60px auto 10px auto}
+.geo{margin-top:20px}s
+.demo p{line-height:32px; font-size:16px}
+.demo p span,#baidu_geo,#google_geo{font-weight:bold}
+&lt;/style&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+&lt;div id="main"&gt;  
+    &lt;div class="demo"&gt;
+        &lt;p&gt;地理坐标：&lt;span id="latlon"&gt;&lt;/span&gt;&lt;/p&gt;
+        &lt;div class="geo"&gt;
+            &lt;p&gt;百度地图定位位置：&lt;/p&gt;
+            &lt;p id="baidu_geo"&gt;&lt;/p&gt;
+        &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;  
+function getLocation(){  
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition,showError);
+    }else{
+        alert("浏览器不支持地理定位。");
+    }
+}
+
+function showPosition(position){  
+    $("#latlon").html("纬度:"+position.coords.latitude +'，经度:'+ position.coords.longitude);
+    var latlon = position.coords.latitude+','+position.coords.longitude;
+    //百度地图接口
+    var url = "http://api.map.baidu.com/geocoder/v2/?ak=C93b5178d7a8ebdb830b9b557abce78b&amp;callback=renderReverse&amp;location="+latlon+"&amp;output=json&amp;pois=0";
+    $.ajax({ 
+        type: "GET", 
+        dataType: "jsonp", 
+        url: url,
+        beforeSend: function(){
+            $("#baidu_geo").html('正在定位...');
+        },
+        success: function (json) { 
+            if(json.status==0){
+                //1.详细地址
+                //$("#baidu_geo").html(json.result.formatted_address);
+
+                //2.定位当前城市
+                $("#baidu_geo").html(json.result.addressComponent.city.replace(/市/,""));//北京
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) { 
+            $("#baidu_geo").html(latlon+"地址位置获取失败"); 
+        }
+    });
+}
+function showError(error){  
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            alert("定位失败,用户拒绝请求地理定位");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("定位失败,位置信息是不可用");
+            break;
+        case error.TIMEOUT:
+            alert("定位失败,请求获取用户位置超时");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("定位失败,定位系统失效");
+            break;
+    }
+}
+getLocation();  
+&lt;/script&gt;  
+&lt;/body&gt;  
+&lt;/html&gt;  
+</code></pre>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../23/wo-shou-zhi-de-san-chong-san-lan-wang-ye-kuan-du-zi-gua-ying-bu-ju-fang-fa-mian-shi-chang-chang-wen-dao/index.html" title="link to 我熟知的三种三栏网页宽度自适应布局方法(面试常常问到)">我熟知的三种三栏网页宽度自适应布局方法(面试常常问到)</a>
+      </h5>
+       <p class="excerpt" title="一、前言 在如今各个分辨率显示器N足鼎立的时期，页面采用流动性布局（亦可称自适应布局）不失为一个好选择。当然，具体实现不是那么容易，需要一定的css功力和 实践经验。本文不讲细节，只讲外部的自适应架构">一、前言 在如今各个分辨率显示器N足鼎立的时期，页面采用流动性布局（亦可称自适应布局）不失为一个好选择。当然，具体实现不是那么容易，需要一定的css功力和 实践经验。本文不讲细节，只讲外部的自适应架构&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="23 8月 2015" class="post-list__meta--date date">23 8月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a>, <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/08/23/wo-shou-zhi-de-san-chong-san-lan-wang-ye-kuan-du-zi-gua-ying-bu-ju-fang-fa-mian-shi-chang-chang-wen-dao/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../01/chang-yong-pai-xu-suan-fa-javascriptshi-xian-yi/index.html" title="link to 常用排序算法javascript实现(一)">常用排序算法javascript实现(一)</a></h5>
+       <p class="excerpt" title="分享一下几个常用的排序算法，用javascript语言实现！ 今天先分享两个：一个是冒泡排序，另一个是选择排序！      冒泡排序：   核心想法：每次比较相邻的两个值，若后面的值比前面的值小，则交">分享一下几个常用的排序算法，用javascript语言实现！ 今天先分享两个：一个是冒泡排序，另一个是选择排序！      冒泡排序：   核心想法：每次比较相邻的两个值，若后面的值比前面的值小，则交&hellip;</p>
+       <div class="post-list__meta"><time datetime="01 8月 2015" class="post-list__meta--date date">01 8月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a>, <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/08/01/chang-yong-pai-xu-suan-fa-javascriptshi-xian-yi/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

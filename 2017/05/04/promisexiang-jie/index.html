@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Promise详解</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Promise详解">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Promise详解">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/05/04/promisexiang-jie/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Promise详解" />
+    <meta property="og:description" content="2017-05-04 星期四 丁酉年 四月初九      【鸡年】甲辰月 辛卯日      宜：祭祀 祈福 裁衣 合帐 安床      忌：掘井 安门 嫁娶 纳采 什么是ES6 Promise？ 复杂的概念先不讲，我们先简单粗暴地把Promise用一下，有个直观感受。那么第一个问题来了，Promise是什么玩意呢？是一个类？对象？数组？函数？ 别猜了，直接打印出来看看吧，console.dir(Promise)，就这么简单粗暴。 这么一看就明白了，Promise是一个构造函数，自己身上有all、reject、resolve这几个眼熟的方法，..." />
+    <meta property="og:url" content="http://localhost:2368/2017/05/04/promisexiang-jie/" />
+    <meta property="article:published_time" content="2017-05-04T03:35:36.958Z" />
+    <meta property="article:modified_time" content="2017-05-04T06:13:44.730Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Promise详解" />
+    <meta name="twitter:description" content="2017-05-04 星期四 丁酉年 四月初九      【鸡年】甲辰月 辛卯日      宜：祭祀 祈福 裁衣 合帐 安床      忌：掘井 安门 嫁娶 纳采 什么是ES6 Promise？ 复杂的概念先不讲，我们先简单粗暴地把Promise用一下，有个直观感受。那么第一个问题来了，Promise是什么玩意呢？是一个类？对象？数组？函数？ 别猜了，直接打印出来看看吧，console.dir(Promise)，就这么简单粗暴。 这么一看就明白了，Promise是一个构造函数，自己身上有all、reject、resolve这几个眼熟的方法，..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/05/04/promisexiang-jie/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Promise详解",
+    "url": "http://localhost:2368/2017/05/04/promisexiang-jie/",
+    "datePublished": "2017-05-04T03:35:36.958Z",
+    "dateModified": "2017-05-04T06:13:44.730Z",
+    "keywords": "js",
+    "description": "2017-05-04 星期四 丁酉年 四月初九      【鸡年】甲辰月 辛卯日      宜：祭祀 祈福 裁衣 合帐 安床      忌：掘井 安门 嫁娶 纳采 什么是ES6 Promise？ 复杂的概念先不讲，我们先简单粗暴地把Promise用一下，有个直观感受。那么第一个问题来了，Promise是什么玩意呢？是一个类？对象？数组？函数？ 别猜了，直接打印出来看看吧，console.dir(Promise)，就这么简单粗暴。 这么一看就明白了，Promise是一个构造函数，自己身上有all、reject、resolve这几个眼熟的方法，..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="04 5月 2017" class="post-meta__date date">04 5月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">Promise详解</h1>
+    </header>
+
+    <section class="post tag-js">
+      <blockquote>
+  <p>2017-05-04 星期四 丁酉年 四月初九</p>
+  
+  <p>【鸡年】甲辰月 辛卯日</p>
+  
+  <p>宜：祭祀 祈福 裁衣 合帐 安床</p>
+  
+  <p>忌：掘井 安门 嫁娶 纳采</p>
+</blockquote>
+
+<h3 id="es6promise">什么是ES6 Promise？</h3>
+
+<p>复杂的概念先不讲，我们先简单粗暴地把Promise用一下，有个直观感受。那么第一个问题来了，Promise是什么玩意呢？是一个类？对象？数组？函数？</p>
+
+<p>别猜了，直接打印出来看看吧，<code>console.dir(Promise)</code>，就这么简单粗暴。</p>
+
+<p><img src="../../../../content/images/2017/05/Promise.jpg" alt="" /></p>
+
+<p>这么一看就明白了，<code>Promise</code>是一个构造函数，自己身上有<code>all</code>、<code>reject</code>、<code>resolve</code>这几个眼熟的方法，原型上有<code>then</code>、<code>catch</code>等同样很眼熟的方法。这么说用<code>Promise</code> <code>new</code>出来的对象肯定就有<code>then</code>、<code>catch</code>方法喽，没错。</p>
+
+<p>那就new一个玩玩吧。</p>
+
+<pre><code>var p = new Promise(function(resolve, reject){  
+    // 做一些异步操作
+    setTimeout(function(){
+        console.log('执行完成');
+        resolve('随便什么数据');
+    }, 2000);
+});
+</code></pre>
+
+<p><code>Promise</code>的构造函数接收一个参数，是函数，并且传入两个参数：<code>resolve</code>，<code>reject</code>，分别表示异步操作执行成功后的回调函数和异步操作执行失败后的回调函数。其实这里用“成功”和“失败”来描述并不准确，按照标准来讲，<code>resolve</code>是将<code>Promise</code>的状态置为<code>fullfiled</code>，<code>reject</code>是将<code>Promise</code>的状态置为<code>rejected</code>。不过在我们开始阶段可以先这么理解，后面再细究概念。</p>
+
+<p>在上面的代码中，我们执行了一个异步操作，也就是<code>setTimeou</code>t，2秒后，输出“执行完成”，并且调用<code>resolve</code>方法。</p>
+
+<p>运行代码，会在2秒后输出“执行完成”。注意！我只是<code>new</code>了一个对象，并没有调用它，我们传进去的函数就已经执行了，这是需要注意的一个细节。所以我们用<code>Promise</code>的时候一般是包在一个函数中，在需要的时候去运行这个函数，如：</p>
+
+<pre><code>function runAsync(){  
+    var p = new Promise(function(resolve, reject){
+        // 做一些异步操作
+        setTimeout(function(){
+            console.log('执行完成');
+            resolve('随便什么数据');
+        }, 2000);
+    });
+    return p;            
+}
+runAsync();  
+</code></pre>
+
+<p>这时候你应该有两个疑问：</p>
+
+<pre><code>1.包装这么一个函数有毛线用？
+
+2.resolve('随便什么数据');这是干毛的？
+</code></pre>
+
+<p>我们继续来讲。在我们包装好的函数最后，会<code>return</code>出<code>Promise</code>对象，也就是说，执行这个函数我们得到了一个<code>Promise</code>对象。还记得<code>Promise</code>对象上有<code>then</code>、<code>catch</code>方法吧？这就是强大之处了，看下面的代码：</p>
+
+<pre><code>runAsync().then(function(data){  
+    console.log(data);
+    // 后面可以用传过来的数据做些其他操作
+    // ......
+});
+</code></pre>
+
+<p>在<code>runAsync()</code>的返回上直接调用<code>then</code>方法，<code>then</code>接收一个参数，是函数，并且会拿到我们在<code>runAsync</code>中调用<code>resolve</code>时传的的参数。运行这段代码，会在2秒后输出“执行完成”，紧接着输出“随便什么数据”。</p>
+
+<p>这时候你应该有所领悟了，原来<code>then</code>里面的函数就跟我们平时的回调函数一个意思，能够在<code>runAsync</code>这个异步任务执行完成之后被执行。这就是<code>Promise</code>的作用了，简单来讲，就是能把原来的回调写法分离出来，在异步操作执行完后，用链式调用的方式执行回调函数。</p>
+
+<p>你可能会不屑一顾，那么牛逼轰轰的<code>Promise</code>就这点能耐？我把回调函数封装一下，给<code>runAsync</code>传进去不也一样吗，就像这样：</p>
+
+<pre><code>function runAsync(callback){  
+    setTimeout(function(){
+        console.log('执行完成');
+        callback('随便什么数据');
+    }, 2000);
+}
+
+runAsync(function(data){  
+    console.log(data);
+});
+</code></pre>
+
+<p>效果也是一样的，还费劲用<code>Promise</code>干嘛。那么问题来了，有多层回调该怎么办？如果<code>callback</code>也是一个异步操作，而且执行完后也需要有相应的回调函数，该怎么办呢？总不能再定义一个<code>callback2</code>，然后给<code>callback</code>传进去吧。而<code>Promise</code>的优势在于，可以在<code>then</code>方法中继续写<code>Promise</code>对象并返回，然后继续调用<code>then</code>来进行回调操作。</p>
+
+<h3 id="">链式操作的用法</h3>
+
+<p>所以，从表面上看，<code>Promise</code>只是能够简化层层回调的写法，而实质上，<code>Promise</code>的精髓是“状态”，用维护状态、传递状态的方式来使得回调函数能够及时调用，它比传递<code>callback</code>函数要简单、灵活的多。所以使用<code>Promise</code>的正确场景是这样的：</p>
+
+<pre><code>runAsync1()  
+.then(function(data){
+    console.log(data);
+    return runAsync2();
+})
+.then(function(data){
+    console.log(data);
+    return runAsync3();
+})
+.then(function(data){
+    console.log(data);
+});
+</code></pre>
+
+<p>这样能够按顺序，每隔两秒输出每个异步回调中的内容，在<code>runAsync2</code>中传给<code>resolve</code>的数据，能在接下来的<code>then</code>方法中拿到。运行结果如下：</p>
+
+<p><img src="../../../../content/images/2017/05/123.jpg" alt="" /></p>
+
+<p>猜猜<code>runAsync1</code>、<code>runAsync2</code>、<code>runAsync3</code>这三个函数都是如何定义的？没错，就是下面这样:</p>
+
+<pre><code>function runAsync1(){  
+    var p = new Promise(function(resolve, reject){
+        // 做一些异步操作
+        setTimeout(function(){
+            console.log('异步任务1执行完成');
+            resolve('随便什么数据1');
+        }, 1000);
+    });
+    return p;            
+}
+function runAsync2(){  
+    var p = new Promise(function(resolve, reject){
+        // 做一些异步操作
+        setTimeout(function(){
+            console.log('异步任务2执行完成');
+            resolve('随便什么数据2');
+        }, 2000);
+    });
+    return p;            
+}
+function runAsync3(){  
+    var p = new Promise(function(resolve, reject){
+        // 做一些异步操作
+        setTimeout(function(){
+            console.log('异步任务3执行完成');
+            resolve('随便什么数据3');
+        }, 2000);
+    });
+    return p;            
+}
+</code></pre>
+
+<p>在then方法中，你也可以直接<code>return</code>数据而不是<code>Promise</code>对象，在后面的<code>then</code>中就可以接收到数据了，比如我们把上面的代码修改成这样：</p>
+
+<pre><code>runAsync1()  
+.then(function(data){
+    console.log(data);
+    return runAsync2();
+})
+.then(function(data){
+    console.log(data);
+    return '直接返回数据';  // 这里直接返回数据
+})
+.then(function(data){
+    console.log(data);
+});
+</code></pre>
+
+<p>那么输出就变成了这样：</p>
+
+<p><img src="../../../../content/images/2017/05/234.jpg" alt="" /></p>
+
+<h3 id="reject"><code>reject</code>的用法</h3>
+
+<p>到这里，你应该对<code>Promise</code>是什么玩意有了最基本的了解。那么我们接着来看看<code>ES6</code>的<code>Promise</code>还有哪些功能。我们光用了<code>resolve</code>，还没用<code>reject</code>呢，它是做什么的呢？事实上，我们前面的例子都是只有“执行成功”的回调，还没有“失败”的情况，<code>reject</code>的作用就是把<code>Promise</code>的状态置为<code>rejected</code>，这样我们在<code>then</code>中就能捕捉到，然后执行“失败”情况的回调。看下面的代码。</p>
+
+<pre><code>function getNumber(){  
+    var p = new Promise(function(resolve, reject){
+        // 做一些异步操作
+        setTimeout(function(){
+            var num = Math.ceil(Math.random()*10); // 生成1-10的随机数
+            if(num&lt;=5){
+                resolve(num);
+            }
+            else{
+                reject('数字太大了');
+            }
+        }, 2000);
+    });
+    return p;            
+}
+
+getNumber()  
+.then(
+    function(data){
+        console.log('resolved');
+        console.log(data);
+    }, 
+    function(reason, data){
+        console.log('rejected');
+        console.log(reason);
+    }
+);
+</code></pre>
+
+<p><code>getNumber</code>函数用来异步获取一个数字，2秒后执行完成，如果数字小于等于5，我们认为是“成功”了，调用<code>resolve</code>修改<code>Promise</code>的状态。否则我们认为是“失败”了，调用<code>reject</code>并传递一个参数，作为失败的原因。</p>
+
+<p>运行<code>getNumber</code>并且在<code>then</code>中传了两个参数，<code>then</code>方法可以接受两个参数，第一个对应<code>resolve</code>的回调，第二个对应<code>reject</code>的回调。所以我们能够分别拿到他们传过来的数据。多次运行这段代码，你会随机得到下面两种结果：</p>
+
+<p><img src="../../../../content/images/2017/05/6892A243-FD7C-40B1-A5BB-5595DDDE6B36.png" alt="" /></p>
+
+<h3 id="catch">catch的用法</h3>
+
+<p>我们知道<code>Promise</code>对象除了<code>then</code>方法，还有一个<code>catch</code>方法，它是做什么用的呢？其实它和<code>then</code>的第二个参数一样，用来指定<code>reject</code>的回调，用法是这样：</p>
+
+<pre><code>getNumber()  
+.then(function(data){
+    console.log('resolved');
+    console.log(data);
+})
+.catch(function(reason){
+    console.log('rejected');
+    console.log(reason);
+});
+</code></pre>
+
+<p>效果和写在<code>then</code>的第二个参数里面一样。不过它还有另外一个作用：在执行<code>resolve</code>的回调（也就是上面<code>then</code>中的第一个参数）时，如果抛出异常了（代码出错了），那么并不会报错卡死<code>js</code>，而是会进到这个<code>catch</code>方法中。请看下面的代码：</p>
+
+<pre><code>getNumber()  
+.then(function(data){
+    console.log('resolved');
+    console.log(data);
+    console.log(somedata); // 此处的somedata未定义
+})
+.catch(function(reason){
+    console.log('rejected');
+    console.log(reason);
+});
+</code></pre>
+
+<p>在<code>resolve</code>的回调中，我们<code>console.log(somedata)</code>;而<code>somedata</code>这个变量是没有被定义的。如果我们不用<code>Promise</code>，代码运行到这里就直接在控制台报错了，不往下运行了。但是在这里，会得到这样的结果：</p>
+
+<p><img src="../../../../content/images/2017/05/456.jpg" alt="" /></p>
+
+<p>也就是说进到<code>catch</code>方法里面去了，而且把错误原因传到了<code>reason</code>参数中。即便是有错误的代码也不会报错了，这与我们的<code>try/catch</code>语句有相同的功能。</p>
+
+<h3 id="all"><code>all</code>的用法</h3>
+
+<p><code>Promise</code>的<code>all</code>方法提供了并行执行异步操作的能力，并且在所有异步操作执行完后才执行回调。我们仍旧使用上面定义好的<code>runAsync1</code>、<code>runAsync2</code>、<code>runAsync3</code>这三个函数，看下面的例子：</p>
+
+<pre><code>Promise  
+.all([runAsync1(), runAsync2(), runAsync3()])
+.then(function(results){
+    console.log(results);
+});
+</code></pre>
+
+<p>用<code>Promise.all</code>来执行，<code>all</code>接收一个数组参数，里面的值最终都算返回<code>Promise</code>对象。这样，三个异步操作的并行执行的，等到它们都执行完后才会进到<code>then</code>里面。那么，三个异步操作返回的数据哪里去了呢？都在<code>then</code>里面呢，<code>all</code>会把所有异步操作的结果放进一个数组中传给<code>then</code>，就是上面的<code>results</code>。所以上面代码的输出结果就是：</p>
+
+<p><img src="../../../../content/images/2017/05/678.jpg" alt="" /></p>
+
+<p>有了<code>all</code>，你就可以并行执行多个异步操作，并且在一个回调中处理所有的返回数据，是不是很酷？有一个场景是很适合用这个的，一些游戏类的素材比较多的应用，打开网页时，预先加载需要用到的各种资源如图片、<code>flash</code>以及各种静态文件。所有的都加载完后，我们再进行页面的初始化。</p>
+
+<h3 id="race"><code>race</code>的用法</h3>
+
+<p><code>all</code>方法的效果实际上是「谁跑的慢，以谁为准执行回调」，那么相对的就有另一个方法「谁跑的快，以谁为准执行回调」，这就是<code>race</code>方法，这个词本来就是赛跑的意思。<code>race</code>的用法与<code>all</code>一样，我们把上面<code>runAsync1</code>的延时改为1秒来看一下：</p>
+
+<pre><code>Promise  
+.race([runAsync1(), runAsync2(), runAsync3()])
+.then(function(results){
+    console.log(results);
+});
+</code></pre>
+
+<p>这三个异步操作同样是并行执行的。结果你应该可以猜到，1秒后<code>runAsync1</code>已经执行完了，此时<code>then</code>里面的就执行了。结果是这样的：</p>
+
+<p>你猜对了吗？不完全，是吧。在then里面的回调开始执行时，<code>runAsync2()</code>和<code>runAsync3()</code>并没有停止，仍旧再执行。于是再过1秒后，输出了他们结束的标志。</p>
+
+<p>这个<code>race</code>有什么用呢？使用场景还是很多的，比如我们可以用<code>race</code>给某个异步请求设置超时时间，并且在超时后执行相应的操作，代码如下：</p>
+
+<pre><code>// 请求某个图片资源
+function requestImg(){  
+    var p = new Promise(function(resolve, reject){
+        var img = new Image();
+        img.onload = function(){
+            resolve(img);
+        }
+        img.src = 'xxxxxx';
+    });
+    return p;
+}
+
+// 延时函数，用于给请求计时
+function timeout(){  
+    var p = new Promise(function(resolve, reject){
+        setTimeout(function(){
+            reject('图片请求超时');
+        }, 5000);
+    });
+    return p;
+}
+
+Promise  
+.race([requestImg(), timeout()])
+.then(function(results){
+    console.log(results);
+})
+.catch(function(reason){
+    console.log(reason);
+});
+</code></pre>
+
+<p><code>requestImg</code>函数会异步请求一张图片，我把地址写为"xxxxxx"，所以肯定是无法成功请求到的。<code>timeout</code>函数是一个延时5秒的异步操作。我们把这两个返回<code>Promise</code>对象的函数放进<code>race</code>，于是他俩就会赛跑，如果5秒之内图片请求成功了，那么遍进入<code>then</code>方法，执行正常的流程。如果5秒钟图片还未成功返回，那么<code>timeout</code>就跑赢了，则进入<code>catch</code>，报出“图片请求超时”的信息。运行结果如下：</p>
+
+<p><img src="../../../../content/images/2017/05/789.jpg" alt="" /></p>
+
+<h3 id="">总结</h3>
+
+<p><code>ES6 Promise</code>的内容就这些吗？是的，能用到的基本就这些。
+我怎么还见过<code>done</code>、<code>finally</code>、<code>success</code>、<code>fail</code>等，这些是啥？这些并不在<code>Promise</code>标准中，而是我们自己实现的语法糖。</p>
+
+<p>本文中所有异步操作均以<code>setTimeout</code>为例子，之所以不使用<code>ajax</code>是为了避免引起混淆，因为谈起<code>ajax</code>，很多人的第一反应就是<code>jquery</code>的<code>ajax</code>，而<code>jquery</code>又有自己的<code>Promis</code>e实现。如果你理解了原理，就知道使用<code>setTimeout</code>和使用<code>ajax</code>是一样的意思。说起<code>jquery</code>，我不得不吐槽一句，<code>jquery</code>的<code>Promise</code>实现太过垃圾，各种语法糖把人都搞蒙了，我认为<code>Promise</code>之所以没有全面普及和<code>jquery</code>有很大的关系。</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../10/17chong-bu-ke-cuo-guo-de-javascriptmi-ni-ku/index.html" title="link to 17种不可错过的Javascript迷你库">17种不可错过的Javascript迷你库</a>
+      </h5>
+       <p class="excerpt" title="2017-05-10 星期三 丁酉年 四月十五      【鸡年】乙巳月 丁酉日      宜：开市 交易 立券 挂匾 祭祀      忌：作灶 嫁娶 移徙 入宅 理发 这个看上去已经很老了，很">2017-05-10 星期三 丁酉年 四月十五      【鸡年】乙巳月 丁酉日      宜：开市 交易 立券 挂匾 祭祀      忌：作灶 嫁娶 移徙 入宅 理发 这个看上去已经很老了，很&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="10 5月 2017" class="post-list__meta--date date">10 5月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/05/10/17chong-bu-ke-cuo-guo-de-javascriptmi-ni-ku/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../03/eslintjing-tai-dai-ma-jian-cha/index.html" title="link to Eslint静态代码检查">Eslint静态代码检查</a></h5>
+       <p class="excerpt" title="2017-05-03 星期三 丁酉年 【鸡年】四月初八      【鸡年】甲辰月 庚寅日      宜：订盟 纳采 嫁娶 进人口 会亲友      忌：入殓 安葬 入宅 安床 简介 ESLint">2017-05-03 星期三 丁酉年 【鸡年】四月初八      【鸡年】甲辰月 庚寅日      宜：订盟 纳采 嫁娶 进人口 会亲友      忌：入殓 安葬 入宅 安床 简介 ESLint&hellip;</p>
+       <div class="post-list__meta"><time datetime="03 5月 2017" class="post-list__meta--date date">03 5月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/05/03/eslintjing-tai-dai-ma-jian-cha/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

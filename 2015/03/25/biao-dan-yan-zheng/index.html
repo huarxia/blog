@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>表单验证</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="表单验证">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="表单验证">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/03/25/biao-dan-yan-zheng/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="表单验证" />
+    <meta property="og:description" content="开始之前必须先引 其他css自己书写即可 如果是select必须这样 *请选择放在select同级，里面的信息可以自己更改 如果是 &amp;lt;input type=&quot;file&quot;/&amp;gt; 那么他的父级必须加上class=&quot;uploadfile&quot; 同样如果input是输入电话时得加上class=”tel” 同理电子邮件也是一样 示例html： &amp;lt;!doctype html&amp;gt;   &amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;   &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;   &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;   &amp;lt;link..." />
+    <meta property="og:url" content="http://localhost:2368/2015/03/25/biao-dan-yan-zheng/" />
+    <meta property="article:published_time" content="2015-03-25T06:25:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-16T06:32:34.653Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="表单验证" />
+    <meta name="twitter:description" content="开始之前必须先引 其他css自己书写即可 如果是select必须这样 *请选择放在select同级，里面的信息可以自己更改 如果是 &amp;lt;input type=&quot;file&quot;/&amp;gt; 那么他的父级必须加上class=&quot;uploadfile&quot; 同样如果input是输入电话时得加上class=”tel” 同理电子邮件也是一样 示例html： &amp;lt;!doctype html&amp;gt;   &amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;   &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;   &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;   &amp;lt;link..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/03/25/biao-dan-yan-zheng/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "表单验证",
+    "url": "http://localhost:2368/2015/03/25/biao-dan-yan-zheng/",
+    "datePublished": "2015-03-25T06:25:00.000Z",
+    "dateModified": "2016-11-16T06:32:34.653Z",
+    "keywords": "js",
+    "description": "开始之前必须先引 其他css自己书写即可 如果是select必须这样 *请选择放在select同级，里面的信息可以自己更改 如果是 &amp;lt;input type=&quot;file&quot;/&amp;gt; 那么他的父级必须加上class=&quot;uploadfile&quot; 同样如果input是输入电话时得加上class=”tel” 同理电子邮件也是一样 示例html： &amp;lt;!doctype html&amp;gt;   &amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;   &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;   &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;   &amp;lt;link..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="25 3月 2015" class="post-meta__date date">25 3月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">表单验证</h1>
+    </header>
+
+    <section class="post tag-js">
+      <p>开始之前必须先引
+<img src="../../../../content/images/2016/11/201503251427254211264338.png" alt="" />
+其他css自己书写即可</p>
+
+<p>如果是select必须这样
+<img src="../../../../content/images/2016/11/201503251427254280303108.png" alt="" />
+*请选择放在select同级，里面的信息可以自己更改</p>
+
+<p>如果是 <code>&lt;input type="file"/&gt;</code></p>
+
+<p>那么他的父级必须加上class="uploadfile"
+<img src="../../../../content/images/2016/11/201503251427254391815478.png" alt="" />
+同样如果input是输入电话时得加上class=”tel”
+<img src="../../../../content/images/2016/11/201503251427254499455012.png" alt="" />
+同理电子邮件也是一样
+<img src="../../../../content/images/2016/11/201503251427259880358436.png" alt="" />
+示例html：</p>
+
+<pre><code>&lt;!doctype html&gt;  
+&lt;html&gt;  
+&lt;head&gt;  
+&lt;meta charset="utf-8"&gt;  
+&lt;title&gt;&lt;/title&gt;  
+&lt;link rel="stylesheet" href="css/style.css" /&gt;  
+&lt;script src="js/jquery-1.6.4.min.js"&gt;&lt;/script&gt;  
+&lt;script src="js/verify.min.js"&gt;&lt;/script&gt;  
+&lt;script src="js/script.js"&gt;&lt;/script&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+&lt;div class="autor"&gt;  
+    &lt;div class="form_tb"&gt;作者信息填写&lt;/div&gt;
+    &lt;div class="autorBox"&gt;
+        &lt;div class="autor_msg clearfix"&gt;
+            &lt;i class="autor_no fl"&gt;1&lt;/i&gt;
+            &lt;div class="fl clearfix autor_msg_box"&gt;
+                &lt;div class="autor_msg_con fl"&gt;
+                    &lt;div class="autor_top clearfix"&gt;
+                        &lt;div class="autor_msg autor_msg1 fl authorname"&gt;
+                            &lt;div class="auto_name autor_ip_txt"&gt;作者姓名&lt;/div&gt;
+                            &lt;input type="text" placeholder="第一作者" class="autor_ip1"&gt;
+                            &lt;span class="message hide"&gt;*作者姓名不能为空&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="autor_msg autor_msg2 fl sex"&gt;
+                            &lt;div class="auto_sex autor_ip_txt"&gt;性别&lt;/div&gt;
+                            &lt;select name="" id=""&gt;
+                                &lt;option value="0"&gt;请选择&lt;/option&gt;
+                                &lt;option value="1"&gt;男&lt;/option&gt;
+                                &lt;option value="2"&gt;女&lt;/option&gt;
+                            &lt;/select&gt;
+                            &lt;span class="message hide"&gt;*请选择&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="autor_msg autor_msg3 fl job"&gt;
+                            &lt;div class="auto_unit autor_ip_txt"&gt;单位&lt;/div&gt;
+                            &lt;input type="text" placeholder="单位" class="autor_ip3"&gt;
+                            &lt;span class="message hide"&gt;*单位名不能为空&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="autor_msg autor_msg4 fl ident"&gt;
+                            &lt;div class="auto_id autor_ip_txt"&gt;身份证&lt;/div&gt;
+                            &lt;input type="text" placeholder="身份证号" class="autor_ip4"&gt;
+                            &lt;span class="message hide"&gt;*身份证号不能为空&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="autor_bottom clearfix"&gt;
+                        &lt;div class="autor_msg autor_msg1 fl phone"&gt;
+                            &lt;div class="auto_phone autor_ip_txt"&gt;联系电话&lt;/div&gt;
+                            &lt;input type="text" placeholder="联系电话" class="autor_ip1 tel"&gt;
+                            &lt;span class="message hide"&gt;*不能为空&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="autor_msg autor_msg2 fl auto_code post"&gt;
+                            &lt;div class="auto_code autor_ip_txt"&gt;邮编&lt;/div&gt;
+                            &lt;input type="text" placeholder="邮编" class="autor_ip2"&gt;
+                            &lt;span class="message hide"&gt;*不能为空&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="autor_msg autor_msg3 fl email"&gt;
+                            &lt;div class="auto_unit autor_ip_txt"&gt;电子邮箱&lt;/div&gt;
+                            &lt;input type="text" placeholder="电子邮箱" class="autor_ip3 email"&gt;
+                            &lt;span class="message hide"&gt;*电子邮箱不能为空&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="autor_msg autor_msg4 fl del"&gt;
+                            &lt;div class="auto_id autor_ip_txt"&gt;通讯地址&lt;/div&gt;
+                            &lt;input type="text" placeholder="通讯地址" class="autor_ip4 address"&gt;
+                            &lt;span class="message hide"&gt;*通讯地址不能为空&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="upload_img fl headUrl"&gt;
+                    &lt;div class="autor_img"&gt;
+                        &lt;img alt="" src="images/autor_img.png"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="uploadfile" val="1"&gt;
+                        &lt;div class="img_upload"&gt;浏览&lt;/div&gt;
+                        &lt;input type="file" value="" name="headPic" id="headUrl" class="uploadfile_ip"&gt;
+                        &lt;span class="message hide"&gt;*请上传照片!&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="summary"&gt;
+        &lt;span class="summary_txt lw_suminn_txt"&gt;摘要&lt;/span&gt;
+        &lt;textarea placeholder="必填（不超过500字）" class="textarea" rows="10" cols="30" id="summary" name=""&gt;&lt;/textarea&gt;
+        &lt;span class="message hide"&gt;*摘要不能为空&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;label class="clearfix checkbox_label" for="agree"&gt;
+        &lt;input type="checkbox" id="agree" class="fl" name=""&gt;
+        &lt;span class="label_txt fl"&gt;我(们)在此确认上述论文为我(们)的原创作品，不涉及和侵占他人的著作权；我们同意作品出版权等公益性应用权属中央电化教育馆；
+我(们)同意中央电化教育杂志社使用我（们）的作品并将其制作成《中国电化教育》期刊出版。&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;a href="javascript:;" class="submit"&gt;提交&lt;/a&gt;
+&lt;/div&gt;  
+&lt;/body&gt;  
+&lt;/html&gt;  
+</code></pre>
+
+<p>示例js配置</p>
+
+<pre><code>$(function(){
+    $(".autor").changedVal();//失去焦点时显示提示信息调用，$(".autor")为最大DOM
+    $(".submit").click(function(){
+        if($(".autor").checked()){
+            //如果都填写并且都验证，那么提交
+            alert("上传成功");
+        }
+    });
+});
+</code></pre>
+
+<p><a href="http://www.huar.love/demo/form/">查看演示</a></p>
+
+<p>由於<del>360雲盤</del>(流氓)停止服務,所以源碼不見了，只有demo里有源碼~~</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../26/javascript-zhi-gao-bi-ge-dai-ma/index.html" title="link to Javascript 之高逼格代码">Javascript 之高逼格代码</a>
+      </h5>
+       <p class="excerpt" title="在 学习javascript的路上，偶尔会遇到那么几个看不懂的代码或者符号之类的就忍不住百度一下！搜嘎~ 原来如此！也许这就是装逼的一种效果吧！但是作为程序员也不想让别人一眼就看出你的代码！所以就有那">在 学习javascript的路上，偶尔会遇到那么几个看不懂的代码或者符号之类的就忍不住百度一下！搜嘎~ 原来如此！也许这就是装逼的一种效果吧！但是作为程序员也不想让别人一眼就看出你的代码！所以就有那&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="26 3月 2015" class="post-list__meta--date date">26 3月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a>, <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/03/26/javascript-zhi-gao-bi-ge-dai-ma/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../15/mei-ti-cha-xun-media/index.html" title="link to 媒体查询media">媒体查询media</a></h5>
+       <p class="excerpt" title="@media all and (min-width: 400px) {     .box     {         width:400px;height:400px;background:red;">@media all and (min-width: 400px) {     .box     {         width:400px;height:400px;background:red;&hellip;</p>
+       <div class="post-list__meta"><time datetime="15 3月 2015" class="post-list__meta--date date">15 3月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/css/">css</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/03/15/mei-ti-cha-xun-media/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

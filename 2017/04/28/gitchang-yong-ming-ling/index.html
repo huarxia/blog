@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>git常用命令</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="git常用命令">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="git常用命令">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/04/28/gitchang-yong-ming-ling/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="git常用命令" />
+    <meta property="og:description" content="2017-04-28 星期五 丁酉年 四月初三      【鸡年】甲辰月 乙酉日      宜：祭祀 祈福 开光 求嗣 斋醮      忌：开市 动土 掘井 开池 1.设置用户名 ssh-keygen -t ras -C &quot;email@xxx&quot; 2.设置用户名 git config --global user.name &quot;cc&quot;   git config --global user.email &quot;cc@..." />
+    <meta property="og:url" content="http://localhost:2368/2017/04/28/gitchang-yong-ming-ling/" />
+    <meta property="article:published_time" content="2017-04-28T02:36:31.526Z" />
+    <meta property="article:modified_time" content="2017-04-28T02:36:31.522Z" />
+    <meta property="article:tag" content="工具" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="git常用命令" />
+    <meta name="twitter:description" content="2017-04-28 星期五 丁酉年 四月初三      【鸡年】甲辰月 乙酉日      宜：祭祀 祈福 开光 求嗣 斋醮      忌：开市 动土 掘井 开池 1.设置用户名 ssh-keygen -t ras -C &quot;email@xxx&quot; 2.设置用户名 git config --global user.name &quot;cc&quot;   git config --global user.email &quot;cc@..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/04/28/gitchang-yong-ming-ling/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "git常用命令",
+    "url": "http://localhost:2368/2017/04/28/gitchang-yong-ming-ling/",
+    "datePublished": "2017-04-28T02:36:31.526Z",
+    "dateModified": "2017-04-28T02:36:31.522Z",
+    "keywords": "工具",
+    "description": "2017-04-28 星期五 丁酉年 四月初三      【鸡年】甲辰月 乙酉日      宜：祭祀 祈福 开光 求嗣 斋醮      忌：开市 动土 掘井 开池 1.设置用户名 ssh-keygen -t ras -C &quot;email@xxx&quot; 2.设置用户名 git config --global user.name &quot;cc&quot;   git config --global user.email &quot;cc@..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-gong-ju">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="28 4月 2017" class="post-meta__date date">28 4月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/gong-ju/index.html">工具</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">git常用命令</h1>
+    </header>
+
+    <section class="post tag-gong-ju">
+      <blockquote>
+  <p>2017-04-28 星期五 丁酉年 四月初三</p>
+  
+  <p>【鸡年】甲辰月 乙酉日</p>
+  
+  <p>宜：祭祀 祈福 开光 求嗣 斋醮</p>
+  
+  <p>忌：开市 动土 掘井 开池</p>
+</blockquote>
+
+<p>1.设置用户名</p>
+
+<pre><code>ssh-keygen -t ras -C "email@xxx"
+</code></pre>
+
+<p>2.设置用户名</p>
+
+<pre><code>git config --global user.name "cc"  
+git config --global user.email "cc@xx"
+</code></pre>
+
+<p>3.初始化当前目录的项目</p>
+
+<pre><code>git init
+</code></pre>
+
+<p>4.在该目录下新建一个文件，然后查看，将修改添加到暂存区</p>
+
+<pre><code>echo "# test" &gt;&gt; README.md  
+git add *  // 将工作区所有修改添加到暂存区  
+git add .  // 将工作区所有修改添加到暂存区  
+git add filename // 将指定文件添加到暂存区
+
+git status  // 列出变更文件
+</code></pre>
+
+<p>5.将暂存区修改添加到本地仓库</p>
+
+<pre><code>git commit -m '备注信息'
+</code></pre>
+
+<p>6.创建仓库，并将上诉改动<code>push</code>到远程</p>
+
+<pre><code>git remote add origin https://github.com/huarxia/xxx.git  
+git push -u origin master
+</code></pre>
+
+<p>注：在这里遇到一个问题：每次push都要输入用户名和密码，原因是https方式 push，解决方法如下</p>
+
+<pre><code>git remote rm origin   //移除  
+git remote add origin git@github.com:gitname/test.git       //添加
+</code></pre>
+
+<p>7.从远程clone项目</p>
+
+<pre><code>git clone url
+</code></pre>
+
+<p>8.放弃暂存区修改</p>
+
+<pre><code>git checkout -- filename  // 放弃暂存区修改（修改不在）  
+git rm --cached filename  // 放弃add（修改还在，但产生一条delete记录）  
+git reset HEAD filename   // 同上（没有delete记录）
+
+git stash     // 暂时放弃未提交的修改  
+git stash pop  // 恢复
+</code></pre>
+
+<p>9.分支操作</p>
+
+<pre><code>/* 查看分支 */
+git branch     // 所有本地分支  
+git branch -r  // 所有远程分支  
+git branch -a  // 所有远程分支和本地分支
+
+/* 创建分支 */
+git branch branchName     // 留在当前分支  
+git checkout -b branchName   // 创建并切换分支  
+git branch --set-upstream-to=&lt;remote&gt;/branchName  // 建立本地分支与远程分支的追踪关系  
+git branch --track branchName  [remote branch]   // 新建一个分支，并与远程建立追踪关系  
+git checkout branchName  // 切到指定分支
+
+/*分支合并*/
+git pull origin branch   // 取回远程更新并与本地分支合并  
+git fetch origin branch // 取回远程更新  
+git merge branch  // 合并指定分支到当前分支(产生提交记录)  
+git rebase branch  // 合并指定分支到当前分支(不产生提交记录，比较适合有强迫症的)
+
+git cherry-pick commitId  // 将与commitId对应的提交合进当前分支
+</code></pre>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../../05/03/eslintjing-tai-dai-ma-jian-cha/index.html" title="link to Eslint静态代码检查">Eslint静态代码检查</a>
+      </h5>
+       <p class="excerpt" title="2017-05-03 星期三 丁酉年 【鸡年】四月初八      【鸡年】甲辰月 庚寅日      宜：订盟 纳采 嫁娶 进人口 会亲友      忌：入殓 安葬 入宅 安床 简介 ESLint">2017-05-03 星期三 丁酉年 【鸡年】四月初八      【鸡年】甲辰月 庚寅日      宜：订盟 纳采 嫁娶 进人口 会亲友      忌：入殓 安葬 入宅 安床 简介 ESLint&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="03 5月 2017" class="post-list__meta--date date">03 5月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/05/03/eslintjing-tai-dai-ma-jian-cha/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../27/cssqiao-miao-shi-xian-fen-ge-xian-de-ji-chong-fang-fa/index.html" title="link to CSS巧妙实现分隔线的几种方法">CSS巧妙实现分隔线的几种方法</a></h5>
+       <p class="excerpt" title="2017-04-27 星期四 丁酉年 四月初二      【鸡年】甲辰月 甲申日      宜：造车器 祭祀 祈福 求嗣 斋醮      忌：入宅 动土 开仓 出货财 单个标签实现分隔线： 优点">2017-04-27 星期四 丁酉年 四月初二      【鸡年】甲辰月 甲申日      宜：造车器 祭祀 祈福 求嗣 斋醮      忌：入宅 动土 开仓 出货财 单个标签实现分隔线： 优点&hellip;</p>
+       <div class="post-list__meta"><time datetime="27 4月 2017" class="post-list__meta--date date">27 4月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/css/">css</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/04/27/cssqiao-miao-shi-xian-fen-ge-xian-de-ji-chong-fang-fa/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

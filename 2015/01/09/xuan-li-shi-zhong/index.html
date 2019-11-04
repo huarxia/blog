@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>绚丽时钟</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="绚丽时钟">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="绚丽时钟">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/01/09/xuan-li-shi-zhong/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="绚丽时钟" />
+    <meta property="og:description" content="html: &amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&amp;gt;   &amp;lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta http-equiv=&quot;Content-Type&quot;..." />
+    <meta property="og:url" content="http://localhost:2368/2015/01/09/xuan-li-shi-zhong/" />
+    <meta property="article:published_time" content="2015-01-09T13:12:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-12T13:25:00.687Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="绚丽时钟" />
+    <meta name="twitter:description" content="html: &amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&amp;gt;   &amp;lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta http-equiv=&quot;Content-Type&quot;..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/01/09/xuan-li-shi-zhong/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "绚丽时钟",
+    "url": "http://localhost:2368/2015/01/09/xuan-li-shi-zhong/",
+    "datePublished": "2015-01-09T13:12:00.000Z",
+    "dateModified": "2016-11-12T13:25:00.687Z",
+    "keywords": "js",
+    "description": "html: &amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&amp;gt;   &amp;lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta http-equiv=&quot;Content-Type&quot;..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="09 1月 2015" class="post-meta__date date">09 1月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">绚丽时钟</h1>
+    </header>
+
+    <section class="post tag-js">
+      <blockquote>
+  <p>html:</p>
+</blockquote>
+
+<pre><code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;  
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;  
+&lt;head&gt;  
+    &lt;title&gt;绚丽时钟&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="css/style.css" /&gt;
+    &lt;script type="text/javascript" src="js/digit.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="js/time.js"&gt;&lt;/script&gt;
+    &lt;!--[if lt IE 9]&gt;
+   &lt;script type="text/javascript"&gt;
+       (function(){if(!/*@cc_on!@*/0)return;var e = "abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(','),i=e.length;while(i--){document.createElement(e[i])}})()&lt;![endif]--&gt; 
+    &lt;/script&gt;
+&lt;/head&gt;  
+&lt;body&gt;  
+&lt;canvas id="canvas" width="1024" height="768"&gt;  
+当前浏览器不支持Canvas，请更换浏览器后再试
+&lt;/canvas&gt;  
+&lt;/body&gt;  
+&lt;/html&gt;  
+</code></pre>
+
+<blockquote>
+  <p>css:</p>
+</blockquote>
+
+<pre><code>@charset "utf-8";
+/* CSS Document */
+body, div, h1, h2, h3, h4, h5, span, a, img, input, ul, li, ol, dl, dt, dd, table, tr, td, p{ margin: 0px; padding: 0px; border: 0px; list-style: none }  
+body { background:white; font-family: "微软雅黑"; font-size: 12px; background: #f9f9f9 }  
+input:focus {outline:none;}  
+a:link, a:visited { text-decoration: none }  
+a:hover{ text-decoration:underline}  
+.lb-clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+*html .lb-clearfix{height:1%}
+#canvas{ border:1px solid #ccc;display: block;margin:50px auto 0px;}
+</code></pre>
+
+<blockquote>
+  <p>js:</p>
+</blockquote>
+
+<pre><code>digit =  
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,1,1,0],
+            [0,1,1,0],
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,1,1,0],
+            [0,1,1,0],
+            [0,0,0,0],
+            [0,0,0,0]
+        ]//:
+    ];
+</code></pre>
+
+<blockquote>
+  <p>js:</p>
+</blockquote>
+
+<pre><code>var WINDOW_WIDTH = 1024;  
+var WINDOW_HEIGHT = 425;  
+var ballCorlor = "rgb(0,102,153)";//小圆的颜色  
+var RADIUS = 8;//小圆的半径  
+var MARGIN_TOP = 60;  
+var MARGIN_LEFT = 30;
+
+var curShowTimeSeconds = 0;//定义一个变量为当前到结束时间所有的毫秒数  
+var balls = [];//定义一个数组来存放产生的彩色掉落小球  
+const colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"]//掉落小球随机颜色对照表  
+window.onload=function(){  
+    var canvas = document.getElementById("canvas");
+    if(canvas.getContext("2d")){
+        var context = canvas.getContext("2d");
+    }
+    canvas.width = WINDOW_WIDTH;
+    canvas.height = WINDOW_HEIGHT;
+    CurShowTimeSeconds = getCurShowTimeSeconds();
+    setInterval(function(){//动画函数包含构建时间的显示即动画的update更新
+        render(context);
+        update();
+    },50);
+}
+function update(){  
+    var nextShowTimeSeconds = getCurShowTimeSeconds();
+    var nextHours = parseInt(nextShowTimeSeconds/3600);//获得倒计时下一次的小时数
+    var nextMinutes = parseInt(nextShowTimeSeconds-nextHours*3600)/60;//获得倒计时下一次的分钟数
+    var nextSeconds = nextShowTimeSeconds%60;//获得倒计时下一次的秒数
+
+    var curHours = parseInt(CurShowTimeSeconds/3600);//获得倒计时的小时数
+    var curMinutes = parseInt(CurShowTimeSeconds-curHours*3600)/60;//获得倒计时的分钟数
+    var curSeconds = CurShowTimeSeconds%60;//获得倒计时的秒数
+    if(nextSeconds!=curSeconds){
+        if(parseInt(curHours/10)!=parseInt(nextHours/10)){
+            addBalls(MARGIN_LEFT, MARGIN_TOP, parseInt(curHours/10));
+        }
+        if(parseInt(curHours%10)!=parseInt(nextHours%10)){
+            addBalls(MARGIN_LEFT + 15*(RADIUS+1), MARGIN_TOP, parseInt(curHours%10));
+        }
+        if(parseInt(curMinutes/10)!=parseInt(nextMinutes/10)){
+            addBalls(MARGIN_LEFT + 39*(RADIUS+1), MARGIN_TOP, parseInt(curMinutes/10));
+        }
+        if(parseInt(curMinutes%10)!=parseInt(nextMinutes%10)){
+            addBalls(MARGIN_LEFT + 54*(RADIUS+1), MARGIN_TOP, parseInt(curMinutes%10));
+        }
+        if(parseInt(curSeconds/10)!=parseInt(nextSeconds/10)){
+            addBalls(MARGIN_LEFT + 78*(RADIUS+1), MARGIN_TOP, parseInt(curSeconds/10));
+        }
+        if(parseInt(curHours%10)!=parseInt(nextSeconds%10)){
+            addBalls(MARGIN_LEFT + 93*(RADIUS+1), MARGIN_TOP, parseInt(curSeconds%10));
+        }
+        CurShowTimeSeconds=nextShowTimeSeconds;
+    }
+    updateBalls();
+}
+function updateBalls(){  
+    for(var i=0;i&lt;balls.length;i++){
+        balls[i].x += balls[i].vx;
+        balls[i].y += balls[i].vy;
+        balls[i].vy += balls[i].g;
+        if(balls[i].y&gt;WINDOW_HEIGHT){
+            balls[i].y = WINDOW_HEIGHT;
+            balls[i].vy = -balls[i].vy*0.65;
+        }
+    }
+    //减少内存让跳出显示画布外的小球从数组中移除
+    var cnt = 0
+    for( var i = 0; i &lt; balls.length; i ++ ){
+        if( balls[i].x + RADIUS &gt; 0 &amp;&amp; balls[i].x -RADIUS &lt; WINDOW_WIDTH ){
+            balls[cnt++] = balls[i];
+        }
+    }
+    while(balls.length &gt; cnt){
+        balls.pop();
+    }
+}
+function addBalls(x,y,num){  
+    for(var i=0; i&lt;digit[num].length; i++){//该数字的点阵行
+        for(var j=0; j&lt;digit[num][i].length; j++){//该数字的点阵列
+            if(digit[num][i][j]==1){
+                var aBall ={
+                    x:x+j*2*(RADIUS+1)+(RADIUS+1),//x方向的坐标
+                    y:y+i*2*(RADIUS+1)+(RADIUS+1),//y方向的坐标
+                    g:1.5+Math.random(),//y方向的加速度
+                    vx:Math.pow( -1 , Math.ceil( Math.random()*1000 ) ) * 5,//x方向的速度
+                    vy:-5,//y方向的速度
+                    color: colors[ Math.floor( Math.random()*colors.length ) ]//小球的颜色值
+                }
+                balls.push( aBall );
+            }
+            //console.log(balls);
+        }
+    }
+}
+function getCurShowTimeSeconds(){  
+    var curTime = new Date();//获取单签时间
+    var ret = curTime.getHours()*3600+curTime.getMinutes()*60+curTime.getSeconds();//获取当前时间已经走了多少秒
+    return ret&gt;=0?ret:0;//如果当前到结束时间所有的秒数不大于等于0则让其等于0
+}
+function render(cxt){  
+    cxt.clearRect(0, 0, cxt.canvas.width, cxt.canvas.height);//对矩形画布内进行刷新以免图形重叠
+    var hours = parseInt(CurShowTimeSeconds/3600);//获得倒计时的小时数
+    var minutes = parseInt(CurShowTimeSeconds-hours*3600)/60;//获得倒计时的分钟数
+    var seconds = CurShowTimeSeconds%60;//获得倒计时的秒数
+    renderDigit(MARGIN_LEFT, MARGIN_TOP, parseInt(hours/10),cxt);//小时的十位
+    renderDigit(MARGIN_LEFT+15*(RADIUS+1), MARGIN_TOP, parseInt(hours%10),cxt);//小时的个位
+    renderDigit(MARGIN_LEFT+30*(RADIUS+1), MARGIN_TOP, 10,cxt);//：
+    renderDigit(MARGIN_LEFT+39*(RADIUS+1), MARGIN_TOP, parseInt(minutes/10),cxt);//分钟的十位
+    renderDigit(MARGIN_LEFT+54*(RADIUS+1), MARGIN_TOP, parseInt(minutes%10),cxt);//分钟的个位
+    renderDigit(MARGIN_LEFT+69*(RADIUS+1), MARGIN_TOP, 10,cxt);//：
+    renderDigit(MARGIN_LEFT+78*(RADIUS+1), MARGIN_TOP, parseInt(seconds/10),cxt);//秒的十位
+    renderDigit(MARGIN_LEFT+93*(RADIUS+1), MARGIN_TOP, parseInt(seconds%10),cxt);//秒的个位
+    for( var i = 0; i &lt; balls.length; i ++ ){
+        cxt.fillStyle=balls[i].color;
+        cxt.beginPath();
+        cxt.arc(balls[i].x , balls[i].y , RADIUS , 0 , 2*Math.PI , true);
+        cxt.closePath();
+        cxt.fill();
+    }
+}
+function renderDigit(x,y,num,cxt){//从digit.js文件中遍历数字要绘出的数字点阵  
+    cxt.fillStyle = ballCorlor;//小球的颜色
+    for(var i=0; i&lt;digit[num].length; i++){//该数字的点阵行
+        for(var j=0; j&lt;digit[num][i].length; j++){//该数字的点阵列
+            if(digit[num][i][j]==1){
+                cxt.beginPath();
+                cxt.arc( x+j*2*(RADIUS+1)+(RADIUS+1), y+i*2*(RADIUS+1)+(RADIUS+1), RADIUS, 0, 2*Math.PI);
+                cxt.closePath();
+                cxt.fill();
+            }
+        }
+    }
+}
+</code></pre>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../yuan-sheng-jsshe-zhi-yang-shi-bing-hui-fu-mo-ren-yang-shi/index.html" title="link to 原生JS设置样式并恢复默认样式">原生JS设置样式并恢复默认样式</a>
+      </h5>
+       <p class="excerpt" title="&lt;!DOCTYPE HTML&gt;   &lt;html&gt;   &lt;head&gt;   &lt;meta http-equiv="Content-Type" Content="te">&lt;!DOCTYPE HTML&gt;   &lt;html&gt;   &lt;head&gt;   &lt;meta http-equiv="Content-Type" Content="te&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="09 1月 2015" class="post-list__meta--date date">09 1月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/01/09/yuan-sheng-jsshe-zhi-yang-shi-bing-hui-fu-mo-ren-yang-shi/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../07/jie-jue-jsdui-ge-liu-lan-qi-de-jian-rong-wen-ti-bu-shi-zhi-you-csscai-you-jian-rong-wen-ti-jstong-yang-you/index.html" title="link to 解决JS对各浏览器的兼容问题（不是只有css才有兼容问题，JS同样有！！！）">解决JS对各浏览器的兼容问题（不是只有css才有兼容问题，JS同样有！！！）</a></h5>
+       <p class="excerpt" title="var eventUtil={                // 添加句柄              addHandler:function(element,type,handler){">var eventUtil={                // 添加句柄              addHandler:function(element,type,handler){&hellip;</p>
+       <div class="post-list__meta"><time datetime="07 1月 2015" class="post-list__meta--date date">07 1月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/01/07/jie-jue-jsdui-ge-liu-lan-qi-de-jian-rong-wen-ti-bu-shi-zhi-you-csscai-you-jian-rong-wen-ti-jstong-yang-you/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>deploy-git  提交指定目錄到github</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="deploy-git  提交指定目錄到github">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="deploy-git  提交指定目錄到github">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2016/11/12/deploy-git-ti-jiao-zhi-ding-mu-lu-dao-github/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="deploy-git  提交指定目錄到github" />
+    <meta property="og:description" content="2016-11-12 星期六 丙申年      [猴年] 己亥月 戊戌日      宜：合帐 裁衣 嫁娶 安床 入殓      忌：置产 造船 开光 掘井 作灶  在Github Pages 上搭建 Ghost 博客 - 教程与心得一篇中我們講到在github上搭建ghost平台博客，但是在本地寫好博客后，生成靜態頁面后，要將靜態頁面文件push到github對應倉庫的指定分支，這裡一般是 gh-pages 分支，原因是訪問username.github.io/xxx 指向的及時xxx倉庫的gh-pages 分支。   1.那麼我們是不是要將靜態文件複製出來手動push呢？      2...." />
+    <meta property="og:url" content="http://localhost:2368/2016/11/12/deploy-git-ti-jiao-zhi-ding-mu-lu-dao-github/" />
+    <meta property="article:published_time" content="2016-11-12T12:46:46.645Z" />
+    <meta property="article:modified_time" content="2016-11-12T12:53:55.586Z" />
+    <meta property="article:tag" content="工具" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="deploy-git  提交指定目錄到github" />
+    <meta name="twitter:description" content="2016-11-12 星期六 丙申年      [猴年] 己亥月 戊戌日      宜：合帐 裁衣 嫁娶 安床 入殓      忌：置产 造船 开光 掘井 作灶  在Github Pages 上搭建 Ghost 博客 - 教程与心得一篇中我們講到在github上搭建ghost平台博客，但是在本地寫好博客后，生成靜態頁面后，要將靜態頁面文件push到github對應倉庫的指定分支，這裡一般是 gh-pages 分支，原因是訪問username.github.io/xxx 指向的及時xxx倉庫的gh-pages 分支。   1.那麼我們是不是要將靜態文件複製出來手動push呢？      2...." />
+    <meta name="twitter:url" content="http://localhost:2368/2016/11/12/deploy-git-ti-jiao-zhi-ding-mu-lu-dao-github/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "deploy-git  提交指定目錄到github",
+    "url": "http://localhost:2368/2016/11/12/deploy-git-ti-jiao-zhi-ding-mu-lu-dao-github/",
+    "datePublished": "2016-11-12T12:46:46.645Z",
+    "dateModified": "2016-11-12T12:53:55.586Z",
+    "keywords": "工具",
+    "description": "2016-11-12 星期六 丙申年      [猴年] 己亥月 戊戌日      宜：合帐 裁衣 嫁娶 安床 入殓      忌：置产 造船 开光 掘井 作灶  在Github Pages 上搭建 Ghost 博客 - 教程与心得一篇中我們講到在github上搭建ghost平台博客，但是在本地寫好博客后，生成靜態頁面后，要將靜態頁面文件push到github對應倉庫的指定分支，這裡一般是 gh-pages 分支，原因是訪問username.github.io/xxx 指向的及時xxx倉庫的gh-pages 分支。   1.那麼我們是不是要將靜態文件複製出來手動push呢？      2...."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-gong-ju">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="12 11月 2016" class="post-meta__date date">12 11月 2016</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/gong-ju/index.html">工具</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">deploy-git  提交指定目錄到github</h1>
+    </header>
+
+    <section class="post tag-gong-ju">
+      <blockquote>
+  <p>2016-11-12 星期六 丙申年</p>
+  
+  <p>[猴年] 己亥月 戊戌日</p>
+  
+  <p>宜：合帐 裁衣 嫁娶 安床 入殓</p>
+  
+  <p>忌：置产 造船 开光 掘井 作灶 </p>
+</blockquote>
+
+<p>在<a href="../../../10/30/zai-github-pages-shang-da-jian-ghost-bo-ke-jiao-cheng-yu-xin-de/index.html">Github Pages 上搭建 Ghost 博客 - 教程与心得</a>一篇中我們講到在github上搭建ghost平台博客，但是在本地寫好博客后，生成靜態頁面后，要將靜態頁面文件push到github對應倉庫的指定分支，這裡一般是 gh-pages 分支，原因是訪問username.github.io/xxx 指向的及時xxx倉庫的gh-pages 分支。</p>
+
+<blockquote>
+  <p>1.那麼我們是不是要將靜態文件複製出來手動push呢？</p>
+  
+  <p>2.手動？既然是長期重複的動作，遵循重複動作都可以使用工具解決原理；</p>
+  
+  <p>3.沒有工具我們製造工具！</p>
+</blockquote>
+
+<p>首先我們尋找工具，由於另一篇博文<a href="http://www.huar.love/shuangshiji/">雙食記</a>是使用hexo搭建的，他內部寫了一套工具，借用一下唄，遺憾的是：太過於耦合他自己的項目了，但是也還是可以利用的哦，</p>
+
+<p>其次看來下hexo的插件的源碼，發現很多都是可以利用的 hexo-fs  hexo-util等等，</p>
+
+<p>原理：</p>
+
+<blockquote>
+  <p>1.首先將static下的靜態文件複製到一個臨時文件夾中；</p>
+  
+  <p>2.其次使用git命令將對應gh-pages分支(沒有會自動創建)拉取到臨時目錄；</p>
+  
+  <p>3.再次將臨時目錄文件push至gh-pages分支；</p>
+</blockquote>
+
+<p>裡面很多複雜的地方，不一一敘述了；使用了hexo的一些插件，雖然可以自己完全手寫，但是有點浪費時間，我的主要目的不是在這，就借用了；</p>
+
+<p>具體使用方法請移步github: <a href="https://github.com/liubiao0810/deploy-git">deploy-git</a></p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../15/mian-shi-ti-ku-1/index.html" title="link to 面試題庫1">面試題庫1</a>
+      </h5>
+       <p class="excerpt" title="面试题库（@花夏 liubiao@itoxs.com） 1.初级： 1、position四个属性 absolute   relative   fixed   static   2、移动端：CSS">面试题库（@花夏 liubiao@itoxs.com） 1.初级： 1、position四个属性 absolute   relative   fixed   static   2、移动端：CSS&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="15 11月 2016" class="post-list__meta--date date">15 11月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/11/15/mian-shi-ti-ku-1/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../09/http-proxydai-li-zhuan-fa-post/index.html" title="link to http-proxy代理转发post">http-proxy代理转发post</a></h5>
+       <p class="excerpt" title="2016-11-09 星期三 丙申年      [猴年] 己亥月 乙未日      宜：祭祀 祈福 求嗣 开光 解除      忌：嫁娶 进人口 入宅 移徙 出火 此工具在於使用nodejs的p">2016-11-09 星期三 丙申年      [猴年] 己亥月 乙未日      宜：祭祀 祈福 求嗣 开光 解除      忌：嫁娶 进人口 入宅 移徙 出火 此工具在於使用nodejs的p&hellip;</p>
+       <div class="post-list__meta"><time datetime="09 11月 2016" class="post-list__meta--date date">09 11月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/11/09/http-proxydai-li-zhuan-fa-post/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

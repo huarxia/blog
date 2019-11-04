@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>2016.10.19 小米前端面试</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="2016.10.19 小米前端面试">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="2016.10.19 小米前端面试">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/02/23/2016-10-19-xiao-mi-qian-duan-mian-shi/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="2016.10.19 小米前端面试" />
+    <meta property="og:description" content="一面 1. 说一下CSS的盒模型？ 盒模型：文档中的每个元素被描绘为矩形盒子，渲染引擎的目的就是判定大小，属性——比如它的颜色、背景、边框方面——及这些盒子的位置。 在CSS中，这些矩形盒子用标准盒模型来描述。这个模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界margin edge，边框边界border edge，内边距边界padding edge和内容边界content edge。 内容区域是真正包含元素内容的区域，位于内容边界的内部，它的大小为内容宽度或content-box宽及内容高度或content-box高。如果box-sizing为默认值，width、min-width、max-width、height、min-height和max-height控制内容大小。 内边距区域padding area用内容可能的边框之间的空白区域扩展内容区域。通常有背景——颜色或图片（不透明图片盖住背景颜色）。 边框区域扩展了内边距区域。它位于边框边界内部，大小为border-box宽和border-box高。 外边距区域margin..." />
+    <meta property="og:url" content="http://localhost:2368/2017/02/23/2016-10-19-xiao-mi-qian-duan-mian-shi/" />
+    <meta property="article:published_time" content="2017-02-23T03:33:08.761Z" />
+    <meta property="article:modified_time" content="2017-03-07T03:02:22.755Z" />
+    <meta property="article:tag" content="面試" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="2016.10.19 小米前端面试" />
+    <meta name="twitter:description" content="一面 1. 说一下CSS的盒模型？ 盒模型：文档中的每个元素被描绘为矩形盒子，渲染引擎的目的就是判定大小，属性——比如它的颜色、背景、边框方面——及这些盒子的位置。 在CSS中，这些矩形盒子用标准盒模型来描述。这个模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界margin edge，边框边界border edge，内边距边界padding edge和内容边界content edge。 内容区域是真正包含元素内容的区域，位于内容边界的内部，它的大小为内容宽度或content-box宽及内容高度或content-box高。如果box-sizing为默认值，width、min-width、max-width、height、min-height和max-height控制内容大小。 内边距区域padding area用内容可能的边框之间的空白区域扩展内容区域。通常有背景——颜色或图片（不透明图片盖住背景颜色）。 边框区域扩展了内边距区域。它位于边框边界内部，大小为border-box宽和border-box高。 外边距区域margin..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/02/23/2016-10-19-xiao-mi-qian-duan-mian-shi/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "2016.10.19 小米前端面试",
+    "url": "http://localhost:2368/2017/02/23/2016-10-19-xiao-mi-qian-duan-mian-shi/",
+    "datePublished": "2017-02-23T03:33:08.761Z",
+    "dateModified": "2017-03-07T03:02:22.755Z",
+    "keywords": "面試",
+    "description": "一面 1. 说一下CSS的盒模型？ 盒模型：文档中的每个元素被描绘为矩形盒子，渲染引擎的目的就是判定大小，属性——比如它的颜色、背景、边框方面——及这些盒子的位置。 在CSS中，这些矩形盒子用标准盒模型来描述。这个模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界margin edge，边框边界border edge，内边距边界padding edge和内容边界content edge。 内容区域是真正包含元素内容的区域，位于内容边界的内部，它的大小为内容宽度或content-box宽及内容高度或content-box高。如果box-sizing为默认值，width、min-width、max-width、height、min-height和max-height控制内容大小。 内边距区域padding area用内容可能的边框之间的空白区域扩展内容区域。通常有背景——颜色或图片（不透明图片盖住背景颜色）。 边框区域扩展了内边距区域。它位于边框边界内部，大小为border-box宽和border-box高。 外边距区域margin..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-mian-shi">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="23 2月 2017" class="post-meta__date date">23 2月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/mian-shi/index.html">面試</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">2016.10.19 小米前端面试</h1>
+    </header>
+
+    <section class="post tag-mian-shi">
+      <h2 id="">一面</h2>
+
+<h3 id="1css">1. 说一下CSS的盒模型？</h3>
+
+<p>盒模型：文档中的每个元素被描绘为矩形盒子，渲染引擎的目的就是判定大小，属性——比如它的颜色、背景、边框方面——及这些盒子的位置。</p>
+
+<p>在CSS中，这些矩形盒子用标准盒模型来描述。这个模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界margin edge，边框边界border edge，内边距边界padding edge和内容边界content edge。</p>
+
+<p>内容区域是真正包含元素内容的区域，位于内容边界的内部，它的大小为内容宽度或content-box宽及内容高度或content-box高。如果box-sizing为默认值，width、min-width、max-width、height、min-height和max-height控制内容大小。</p>
+
+<p>内边距区域padding area用内容可能的边框之间的空白区域扩展内容区域。通常有背景——颜色或图片（不透明图片盖住背景颜色）。</p>
+
+<p>边框区域扩展了内边距区域。它位于边框边界内部，大小为border-box宽和border-box高。</p>
+
+<p>外边距区域margin area用空白区域扩展边框区域，以分开相邻的元素。它的大小为margin-box的高宽。</p>
+
+<p>在外边距合并的情况下，由于盒之间共享外边距，外边距不容易弄清楚。</p>
+
+<p>对于非替换的行内元素来说，尽管内容周围存在内边距与边框，但其占用空间（行高）由line-height属性决定。</p>
+
+<h3 id="2">2. 常用的跨域方法：</h3>
+
+<p>.图像Ping：使用<img>标签，因为网页可以从任何网页中加载图片，而不用担心跨域。请求数据通过字符串形式发送，而响应可以是任何内容。这种方法，1）只能发送get请求。2）浏览器无法获取响应数据。3）只适用于浏览器与服务器之间的单向通信</p>
+
+<p>.JSONP：通过动态<code>&lt;script&gt;</code>元素使用，使用时为src指定一个跨域url。有两部分：1）回调函数：响应到来时在页面中使用；2）数据：传入回调函数中的JSON数据</p>
+
+<p>.后台代理方法：将后台作为代理，每次对其它域的请求转交给本域的后台，本域的后台通过模拟http请求去访问其它域，再将返回的结果返回给前台</p>
+
+<p>.设置document.domain：只适用于主域相同子域不同</p>
+
+<p>.使用window.name：+iframe。应用页面创建iframe，src指向数据页面；数据页面把数据附加到window.name上；应用界面监听iframe的onload事件，在此事件中设置这个iframe的src指向本地域的代理文件；获取数据后销毁iframe</p>
+
+<p>.使用html5新方法：window.postMessage(message, targetOrigin)</p>
+
+<h3 id="3js">3. 说一下js中的事件</h3>
+
+<p>事件模型在不断发展，早期的事件模型称为DOM0级别。DOM0事件模型，所有的浏览器都支持。直接在dom对象上注册事件名称，就是DOM0写法，比如：</p>
+
+<pre><code> document.getElementById("test").onclick = function(e){};
+</code></pre>
+
+<p>意思就是注册一个onclick事件。当然，它和这种写法是一个意思：</p>
+
+<pre><code>document.getElementById("test")["onmousemove"] = function(e){};  
+</code></pre>
+
+<p>这没什么，只不过是两种访问js对象属性的方法，[]的形式主要是为了解决属性名不是合法的标识符，比如：<code>object.123</code>肯定报错，但是<code>object["123"]</code>就避免了这个问题，与此同时，[]的写法，也把js写活了，用字符串表示属性名称，可以在运行时动态绑定事件。</p>
+
+<p>言归正传，事件被触发时，会默认传入一个参数e，表示事件对象，通过e，我们可以获取很多有用的信息，比如点击的坐标、具体触发该事件的dom元素等等。</p>
+
+<p>基于DOM0的事件，对于同一个dom节点而言，只能注册一个，后边注册的同种事件会覆盖之前注册的。例如：</p>
+
+<pre><code>var btn = document.getElementById("test");
+
+btn.onmousemove = function(e){  
+  alert("ok");
+};
+
+btn["onmousemove"] = function(e){  
+  alert("ok1");
+};
+</code></pre>
+
+<p>结果会输出ok1。</p>
+
+<p>接下来再说说this。事件触发时，this就是指该事件在哪个dom对象上触发。例如：</p>
+
+<pre><code>var btn = document.getElementById("test");
+
+btn.onmousemove = function(e){  
+  alert(this.id);
+};
+</code></pre>
+
+<p>结果输出test。因为事件就是在id为test的dom节点上注册的，事件触发时，this当然代表这个dom节点，可以理解为事件是被这个dom节点调用的。</p>
+
+<p>所以，想解除事件就相当简单了，只需要再注册一次事件，把值设成null，例如：</p>
+
+<pre><code>var btn = document.getElementById("test");
+
+btn.onclick = function(e){  
+  alert("ok");
+};
+
+btn.onclick = null;  
+</code></pre>
+
+<p>原理就是最后注册的事件要覆盖之前的，最后一次注册事件设置成null，也就解除了事件绑定。</p>
+
+<p>事情还没结束，DOM0事件模型还涉及到直接写在html中的事件。例如：</p>
+
+<pre><code>&lt;div id="test" class="test" onclick="exec();" &gt;&lt;/div&gt;  
+</code></pre>
+
+<p>通过这种方式注册的事件，同样遵循覆盖原则，同样只能注册一个，最后一个生效。</p>
+
+<p>区别就是，这样注册的事件，相当于动态调用函数(有点eval的意思)，因此不会传入event对象，同时，this指向的是window，不再是触发事件的dom对象。</p>
+
+<blockquote>
+  <p>DOM2事件模型:</p>
+</blockquote>
+
+<p>DOM2事件模型相对于DOM0:</p>
+
+<p>·DOM2支持同一dom元素注册多个同种事件。</p>
+
+<p>·DOM2新增了捕获和冒泡的概念。</p>
+
+<p>DOM2事件通过<code>addEventListener</code>和<code>removeEventListener</code>管理，当然，这是标准。</p>
+
+<p>但IE8及其以下版本浏览器，自娱自乐，搞出了对应的<code>attachEvent</code>和<code>detachEvent</code>，由于我才疏学浅，本文不做讨论。</p>
+
+<p><code>addEventListener</code>当然就是注册事件，她有三个参数，分别为："事件名称", "事件回调", "捕获/冒泡"。举个例子：</p>
+
+<pre><code>var btn = document.getElementById("test");
+
+btn.addEventListener("click", function(e){  
+  alert("ok");
+}, false);
+</code></pre>
+
+<p>事件名称就不用多说了，相比DOM0，去掉了前边的on而已。</p>
+
+<p>事件回调也很好理解，事件触发了总得通知你吧！回调时和DOM0一样，也会默认传入一个event参数，同时this是指触发该事件的dom节点。</p>
+
+<p>最后一个参数是布尔型，true代表捕获事件，false代表冒泡事件。其实很好理解（默認 false），先来个示意图：</p>
+
+<p><img src="../../../../content/images/2017/02/282221104503701.gif" alt="" /></p>
+
+<p>意思就是说，某个元素触发了某个事件，最先得到通知的是window，然后是document，依次而入，直到真正触发事件的那个元素(目标元素)为止，这个过程就是捕获。接下来，事件会从目标元素开始起泡，再依次而出，直到window对象为止，这个过程就是冒泡。</p>
+
+<p>为什么要这样设计呢？这貌似是由于深厚的历史渊源，我也不怎么了解，就不乱说了。</p>
+
+<p>由此可以看出，捕获事件要比冒泡事件先触发。</p>
+
+<p>假设有这样的html结构：</p>
+
+<pre><code>&lt;div id="test" class="test"&gt;  
+    &lt;div id="testInner" class="test-inner"&gt;&lt;/div&gt;
+&lt;/div&gt;  
+</code></pre>
+
+<p>然后我们在外层div上注册两个click事件，分别是捕获事件和冒泡事件，代码如下：</p>
+
+<pre><code>var btn = document.getElementById("test");
+
+//捕获事件
+btn.addEventListener("click", function(e){  
+  alert("ok1");
+}, true);
+
+//冒泡事件
+btn.addEventListener("click", function(e){  
+  alert("ok");
+}, false);
+</code></pre>
+
+<p>最后，点击内层的div，先弹出ok1，后弹出ok。结合上边的原理图，外层div相当于图中的body，内层div相当于图中最下边的div，证明了捕获事件先执行，然后执行冒泡事件。</p>
+
+<p>为什么要强调点击内层的div呢？因为真正触发事件的dom元素，必须是内层的，外层dom元素才有机会模拟捕获事件和冒泡事件，从原理图上就看出了。</p>
+
+<p>如果在真正触发事件的dom元素上注册捕获事件和冒泡事件呢？</p>
+
+<p>html结构同上，js代码如下：</p>
+
+<pre><code>var btnInner = document.getElementById("testInner");
+
+//冒泡事件
+btnInner.addEventListener("click", function(e){  
+  alert("ok");
+}, false);
+
+//捕获事件
+btnInner.addEventListener("click", function(e){  
+  alert("ok1");
+}, true);
+</code></pre>
+
+<p>当然还是点击内层div，结果是先弹出ok，再弹出ok1。理论上应该先触发捕获事件，也就是先弹出ok1，但是这里比较特殊，因为我们是在真正触发事件的dom元素上注册的事件，相当于在图中的div上注册，由图可以看出真正触发事件的dom元素，是捕获事件的终点，是冒泡事件的起点，所以这里就不区分事件了，哪个先注册，就先执行哪个。本例中，冒泡事件先注册，所以先执行。</p>
+
+<p>这个道理适用于多个同种事件，比如说一下子注册了3个冒泡事件，那么执行顺序就按照注册的顺序来，先注册先执行。例如：</p>
+
+<pre><code>var btnInner = document.getElementById("testInner");
+
+btnInner.addEventListener("click", function(e){  
+  alert("ok");
+}, false);
+
+btnInner.addEventListener("click", function(e){  
+  alert("ok1");
+}, false);
+
+btnInner.addEventListener("click", function(e){  
+  alert("ok2");
+}, false);
+</code></pre>
+
+<p>结果当然是依次弹出ok、ok1、ok2。</p>
+
+<p>为了进一步理解事件模型，还有一种场景，假如说外层div和内层div同时注册了捕获事件，那么点击内层div时，外层div的事件一定是先触发的，代码如下：</p>
+
+<pre><code>var btn = document.getElementById("test");  
+var btnInner = document.getElementById("testInner");
+
+btnInner.addEventListener("click", function(e){  
+  alert("ok");
+}, true);
+
+btn.addEventListener("click", function(e){  
+  alert("ok1");
+}, true);
+</code></pre>
+
+<p>结果是先弹出ok1。</p>
+
+<p>假如外层div和内层div都是注册的冒泡事件，点击内层div时，一定是内层div事件先执行，原理相同。</p>
+
+<p>细心的读者会发现，对于div嵌套的情况，如果点击内层的div，外层的div也会触发事件，这貌似会有问题！</p>
+
+<p>点击的明明是内层div，但是外层div的事件也触发了，这的确是个问题。</p>
+
+<p>其实，事件触发时，会默认传入一个event对象，前边提过了，这个event对象上有一个方法：stopPropagation，通过此方法，可以阻止冒泡，这样外层div就接收不到事件了。代码如下：</p>
+
+<pre><code>var btn = document.getElementById("test");  
+var btnInner = document.getElementById("testInner");
+
+btn.addEventListener("click", function(e){  
+  alert("ok1");
+}, false);
+
+btnInner.addEventListener("click", function(e){  
+  //阻止冒泡
+e.stopPropagation();  
+  alert("ok");
+}, false);
+</code></pre>
+
+<p>终于要说说怎么解除事件了。解除事件语法：<code>btn.removeEventListener("事件名称", "事件回调", "捕获/冒泡")</code>;
+这和绑定事件的参数一样，详细说明下：</p>
+
+<p>·  事件名称，就是说解除哪个事件呗。</p>
+
+<p>·  事件回调，是一个函数，这个函数必须和注册事件的函数是同一个。</p>
+
+<p>·  事件类型，布尔值，这个必须和注册事件时的类型一致。</p>
+
+<p>也就是说，名称、回调、类型，三者共同决定解除哪个事件，缺一不可。举个例子：</p>
+
+<pre><code>var btn = document.getElementById("test");  
+//将回调存储在变量中
+var fn = function(e){  
+  alert("ok");
+};
+//绑定
+btn.addEventListener("click", fn, false);
+
+//解除
+btn.removeEventListener("click", fn, false);  
+</code></pre>
+
+<p>要想注册过的事件能够被解除，必须将回调函数保存起来，否则无法解除。</p>
+
+<p><a href="http://www.huar.love/demo/click.html">演示地址</a></p>
+
+<h3 id="4cookielocalestoragesessionstorage">4. 说一下<code>cookie</code>和<code>localeStorage</code>，<code>sessionStorage</code>。</h3>
+
+<p>cookie:</p>
+
+<p>cookie是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。</p>
+
+<p>cookie数据始终在同源的http请求中携带（即使不需要），记会在浏览器和服务器间来回传递。</p>
+
+<p>sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。</p>
+
+<blockquote>
+  <p>存储大小：</p>
+</blockquote>
+
+<p>cookie数据大小不能超过4k。 <br />
+sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。</p>
+
+<blockquote>
+  <p>有期时间：</p>
+</blockquote>
+
+<p>localStorage    存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；</p>
+
+<p>sessionStorage  数据在当前浏览器窗口关闭后自动删除。</p>
+
+<p>cookie  设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</p>
+
+<blockquote>
+  <p>作用域不同:</p>
+</blockquote>
+
+<p>sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面； <br />
+localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。</p>
+
+<p>Web Storage 支持事件通知机制，可以将数据更新的通知发送给监听者。 <br />
+Web Storage 的 api 接口使用更方便。</p>
+
+<p>sessionStorage 和 localStorage 是HTML5 Web Storage API 提供的，这两种方式都允许开发者使用js设置的键值对进行操作，在在重新加载不同的页面的时候读出它们。这一点与cookie类似。可以方便的在web请求之间保存数据。有了本地数据，就可以避免数据在浏览器和服务器间不必要地来回传递。</p>
+
+<p>sessionStorage、localStorage、cookie都是在浏览器端存储的数据， 其中sessionStorage的概念很特别，引入了一个“浏览器窗口”的概念。</p>
+
+<p>sessionStorage是在同源的同窗口（或tab）中，始终存在的数据。也就是说只要这个浏览器窗口没有关闭，即使刷新页面或进入同源另一页面，数据仍然存在。关闭窗口后，sessionStorage即被销毁。同时“独立”打开的不同窗口，即使是同一页面，sessionStorage对象也是不同的。</p>
+
+<p>Web Storage 数据完全存储在客户端, 不需要通过浏览器的请求将数据传给服务器, 因此比cookies能够存储更多的数据,大概5M左右</p>
+
+<blockquote>
+  <p>Web Storage带来的好处：</p>
+</blockquote>
+
+<p>使用 local storage和session storage主要通过在js中操作这两个对象来实现，分别为window.localStorage和window.sessionStorage. 这两个对象均是Storage类的两个实例，自然也具有Storage类的属性和方法。</p>
+
+<p>减少网络流量：一旦数据保存在本地后，就可以避免再向服务器请求数据，因此减少不必要的数据请求，减少数据在浏览器和服务器间不必要地来回传递。</p>
+
+<p>快速显示数据：性能好，从本地读数据比通过网络从服务器获得数据快得多，本地数据可以即时获得。再加上网页本身也可以有缓存，因此整个页面和数据都在本地的话，可以立即显示。</p>
+
+<p>临时存储：很多时候数据只需要在用户浏览一组页面期间使用，关闭窗口后数据就可以丢弃了，这种情况使用sessionStorage非常方便。</p>
+
+<h3 id="5getpost">5. get和post的区别</h3>
+
+<p>答出常見的區別后，</p>
+
+<p>1). 可以試著說出post的不一樣，會進行握手請求（options）；</p>
+
+<p>2). 本質上是get和post是沒有區別的，詳見互聯網的答案；</p>
+
+<h3 id="6js">6. js继承</h3>
+
+<p><a href="../../../../2015/03/01/yuan-xing-ji-cheng-ji-zong-jie/index.html">原型继承及总结</a></p>
+
+<p><a href="../../../../2015/03/01/jsmian-xiang-dui-xiang-de-lei-ji-cheng/index.html">JS面向对象的类继承</a></p>
+
+<p><a href="../../../../2015/01/29/jsmian-xiang-dui-xiang-de-kao-bei-ji-cheng/index.html">JS面向对象的拷贝继承</a></p>
+
+<h3 id="7">7. 写一个把数组打乱顺序的函数</h3>
+
+<pre><code>function randomsort (a, b) {  
+    return Math.random() &gt; .5;
+    //用Math.random()函数生成0~1之间的随机数与0.5比较，返回true或false
+}
+var arr = [1, 2, 3, 4, 5];  
+arr.sort(randomsort);  
+</code></pre>
+
+<h3 id="8jsurl">8. js实现url解析</h3>
+
+<pre><code>String.prototype.parseURL = function(){  
+    var url =this.toString()
+    var a = document.createElement('a');
+    a.href = url;
+    return {
+        source: url,
+        protocol: a.protocol.replace(':', ''),
+        host: a.hostname,
+        port: a.port,
+        query: a.search,
+        file: (a.pathname.match(/\/([^\/?#]+)$/i) || [, ''])[1],
+        hash: a.hash.replace('#', ''),
+        path: a.pathname.replace(/^([^\/])/, '/$1'),
+        relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ''])[1],
+        segments: a.pathname.replace(/^\//, '').split('/'),
+        params: (function() {
+            var ret = {};
+            var seg = a.search.replace(/^\?/, '').split('&amp;').filter(function(v,i){
+                if (v!==''&amp;&amp;v.indexOf('=')) {
+                    return true;
+                }
+            });
+            seg.forEach( function(element, index) {
+                var idx = element.indexOf('=');
+                var key = element.substring(0, idx);
+                var val = element.substring(idx+1);
+                ret[key] = val;
+            });
+            return ret;
+        })()
+    };
+}
+</code></pre>
+
+<pre><code>location.href.parseURL();
+
+'http://a.com:8888/a/b.html?c=1&amp;0=0&amp;d===&amp;=1'.parseURL();  
+//上面故意把参数写的很乱，为了测试，如果上面你的浏览器报错，说明版本较低，可以如下写法
+
+('http://a.com:8888/a/b.html?c=1&amp;0=0&amp;d===&amp;=1').parseURL();
+</code></pre>
+
+<h3 id="9css">9. 讲一下css的动画</h3>
+
+<p>主要是: <code>@keyframes</code> 和 <code>animation</code></p>
+
+<p>keyframes有： 百分數、from / to</p>
+
+<p>animation主要是調用keyframes動畫：</p>
+
+<table>  
+<thead>  
+<tr>  
+<th id="属性" style="text-align:left;">属性</th>  
+<th id="描述" style="text-align:left;">描述</th>  
+<th id="css" style="text-align:left;">CSS</th>  
+</tr>  
+</thead>
+
+<tbody>  
+<tr>  
+<td style="text-align:left;"><p><code>@keyframes</code></p></td>  
+<td style="text-align:left;"><p>规定动画。</p></td>  
+<td style="text-align:left;"><p>3</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>animation</code></p></td>  
+<td style="text-align:left;"><p>所有动画属性的简写属性，除了 animation-play-state 属性。</p></td>  
+<td style="text-align:left;"><p>3</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>animation-name</code></p></td>  
+<td style="text-align:left;"><p>规定 @keyframes 动画的名称。</p></td>  
+<td style="text-align:left;"><p>3</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>animation-duration</code></p></td>  
+<td style="text-align:left;"><p>规定动画完成一个周期所花费的秒或毫秒。默认是 0。</p></td>  
+<td style="text-align:left;"><p>3</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>animation-timing-function</code></p></td>  
+<td style="text-align:left;"><p>规定动画的速度曲线。默认是 <code>ease</code>。</p></td>  
+<td style="text-align:left;"><p>3</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>animation-delay</code></p></td>  
+<td style="text-align:left;"><p>规定动画何时开始。默认是 0。</p></td>  
+<td style="text-align:left;"><p>3</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>animation-iteration-count</code></p></td>  
+<td style="text-align:left;"><p>规定动画被播放的次数。默认是 1</p></td>  
+<td style="text-align:left;"><p>3</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>animation-direction</code></p></td>  
+<td style="text-align:left;"><p>规定动画是否在下一周期逆向地播放。默认是 "normal"。</p></td>  
+<td style="text-align:left;"><p>3</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>animation-play-state</code></p></td>  
+<td style="text-align:left;"><p>规定动画是否正在运行或暂停。默认是 <code>running</code>。</p></td>  
+<td style="text-align:left;"><p>3</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p><code>animation-fill-mode</code></p></td>  
+<td style="text-align:left;"><p>规定对象动画时间之外的状态。</p></td>  
+<td style="text-align:left;"><p>3</p></td>  
+</tr>
+
+</tbody>  
+</table>  
+
+<h3 id="10">10. 猜一下，如果要绑定动画的话，在哪里绑定？怎么绑定？</h3>
+
+<p>綁定到選擇器中</p>
+
+<h2 id="">二面</h2>
+
+<h3 id="1margindivdivmargindivmarginmargin">1. 说一下margin吧。如果两个div，上面的div一个margin，下面的div一个margin，那么它们之间的距离会是谁的margin？</h3>
+
+<p>這道題說的是塌陷問題：誰的margin大就是誰的</p>
+
+<h3 id="2margindivmarginmarginmargin">2. 如果是父级margin和子div的margin呢？父元素到上面的margin是多少？子元素到上面元素的margin是多少？</h3>
+
+<p>父级的实际<code>margin-top</code>实际自己是多少就是多少，子级是多少就是多少，但是父级盒子会受到子级影响，谁最大实际效果就是多少，有点类似塌陷；</p>
+
+<h3 id="3div">3. 还是上面那个，如果子div是浮动的呢？</h3>
+
+<p>这个是IE6的双边距bug，解决办法是设置为：<code>display:inline</code></p>
+
+<h3 id="4fontsize10pxlineheight2px">4. 如果是行内元素呢？如果字体font-size是10px，行高line-height是2px，显示多高？</h3>
+
+<p>显示高为： 2px,超过的文字会重叠在一起</p>
+
+<h3 id="5nginx">5. nginx匹配规则：</h3>
+
+<p>没有做过不会，网上找的答案</p>
+
+<p>=　　表示精确匹配</p>
+
+<p>~　　表示区分大小写的正则匹配</p>
+
+<p>^~　表示以某个常规字符串开头的url即可；</p>
+
+<p>~*　表示不区分大小寫的正则匹配</p>
+
+<p>!~（*!~）表示不区分大小写不匹配的正则</p>
+
+<p>/　　通配符，任何请求都能匹配到这个location，如果有任何其他location可以匹配，则会覆盖该location</p>
+
+<p>匹配顺序：</p>
+
+<p>1）先匹配普通url，在匹配正则</p>
+
+<p>2）“普通 location ”的匹配规则是“最大前缀”，因此“普通 location ”的确与 location 编辑顺序无关；</p>
+
+<p>3）location的执行逻辑基本上跟顺序没有关系；但是针对正则匹配的方式，匹配上第一个url，就不在继续匹配后面的url；</p>
+
+<p>这种情况，如果匹配上普通localtion，没有正则匹配，则使用普通匹配；如果既有普通location的最大前缀匹配，也有正则匹配，则正则匹配覆盖最大前缀匹配。</p>
+
+<p>4）匹配完“普通 location ”后，有的时候需要继续匹配“正则 location ”，有的时候则不需要继续匹配“正则 location ”。</p>
+
+<p>两种情况下，不需要继续匹配正则 location ：(1) 当普通 location 前面指定了“ ^~ ”，特别告诉 Nginx 本条普通 location 一旦匹配上，则不需要继续正则匹配；(2) 当普通location 恰好严格匹配上，不是最大前缀匹配，则不再继续匹配正则。</p>
+
+<h3 id="6emrem">6. 说一下em和rem的区别：</h3>
+
+<p>em 是指相对于父级设置的大小进行百分比设置，通常会设置body为62.%（10 / 16）</p>
+
+<p>rem 是指相对于文档body的大小进行设置，不存在相對於父級的複雜的换算</p>
+
+<h3 id="7ajax">7. ajax原生</h3>
+
+<pre><code>function createXMLHTTPRequest() {  
+    //1.创建XMLHttpRequest对象     
+    //这是XMLHttpReuquest对象无部使用中最复杂的一步     
+    //需要针对IE和其他类型的浏览器建立这个对象的不同方式写不同的代码     
+    var xmlHttpRequest;  
+    if (window.XMLHttpRequest) {     
+        //针对FireFox，Mozillar，Opera，Safari，IE7，IE8     
+        xmlHttpRequest = new XMLHttpRequest();     
+        //针对某些特定版本的mozillar浏览器的BUG进行修正     
+        if (xmlHttpRequest.overrideMimeType) {
+            xmlHttpRequest.overrideMimeType("text/xml");     
+        }     
+    } else if (window.ActiveXObject) {     
+        //针对IE6，IE5.5，IE5     
+        //两个可以用于创建XMLHTTPRequest对象的控件名称，保存在一个js的数组中     
+        //排在前面的版本较新     
+        var activexName = [ "MSXML2.XMLHTTP", "Microsoft.XMLHTTP" ];     
+        for ( var i = 0; i &lt; activexName.length; i++) {     
+            try {     
+                //取出一个控件名进行创建，如果创建成功就终止循环     
+                //如果创建失败，回抛出异常，然后可以继续循环，继续尝试创建     
+                xmlHttpRequest = new ActiveXObject(activexName[i]);   
+                if(xmlHttpRequest){  
+                    break;  
+                }  
+            } catch (e) {     
+            }     
+        }     
+    }     
+    return xmlHttpRequest;  
+}     
+</code></pre>
+
+<p>get请求:</p>
+
+<pre><code>function get(){  
+    var req = createXMLHTTPRequest();
+    if(req){
+        req.open("GET", "http://test.com/?keywords=手机", true);
+        req.onreadystatechange = function(){
+            if(req.readyState == 4){
+                if(req.status == 200){
+                    alert("success");
+                }else{
+                    alert("error");
+                }
+            }
+        }
+        req.send(null);
+    }
+}
+</code></pre>
+
+<p>post请求</p>
+
+<pre><code>function post(){  
+    var req = createXMLHTTPRequest();
+    if(req){
+        req.open("POST", "http://test.com/", true);
+        req.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=gbk;");   
+        req.send("keywords=手机");
+        req.onreadystatechange = function(){
+            if(req.readyState == 4){
+                if(req.status == 200){
+                    alert("success");
+                }else{
+                    alert("error");
+                }
+            }
+        }
+    }
+}
+</code></pre>
+
+<h3 id="8">8. 实现一个小游戏，一个页面，上半部分很多方块，然后有一个小球，可以手指拖动控制位置和弹射方向，碰到方块后方块会消失。怎么实现？</h3>
+
+<p>詳見： <a href="../../../../2015/01/29/zhong-li-tuo-zhuai-peng-zhuang-de-yan-shi/index.html">重力+拖拽+碰撞的演示</a></p>
+
+<h3 id="9jquerysizzlejquery">9. 了解jQuery吗？（我说看过部分的源码），然后她问选择器了解吗？（我说这个没看，知道是用sizzle，然后说了下我的一些理解，比如判断jQuery对象啦，取字符串正则匹配这样）</h3>
+
+<h2 id="">三面：(其他的是硬件的不貼了)</h2>
+
+<h3 id="1jpgpng">1.jpg和png的区别？</h3>
+
+<p>我不懂，就说是压缩和无压缩吗？但是当然不是。。</p>
+
+<p>　　然后说起来png也有png-8，png-24，png-32这样。然后问我知道是什么意思吗？不懂。面试官解释是指存储位数，png-32是存储32=8*4位，255,255,255,255，分别是rgba。而png-24没有alpha值，那么png-8是怎么存储的呢？怎么能把32位压缩成8位呢？我想了半天，感觉不能把8位压缩成2位，如果8个像素点一组的话也太失真了感觉。。。然后面试官让我说一下思路，我就直说想不出来，想不到怎么把8位信息用2位来表示出来，于是他给了提示是索引……然后我就猜是有一个数组保存一些颜色的值，然后png-8每个像素点存储的是索引值……好厉害。然后问到索引里保存的是什么？是频率最高的颜色吗？我说应该是一个范围吧……但是这样会不会失真太严重，然后他说这都还是个坑，还在研究中。。。</p>
+
+<p><a href="http://www.cnblogs.com/Fran-Lily/p/3792641.html">詳細解釋</a></p>
+
+<p>原文來自互聯網，答案自己有貼上去的~~</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../../03/12/jing-dian-javascriptguan-yu-thiszhi-shi-dian-de-mian-shi-ti/index.html" title="link to 经典javascript关于this知识点的面试题！">经典javascript关于this知识点的面试题！</a>
+      </h5>
+       <p class="excerpt" title="在 ECMAScript 中，要掌握的最重要的概念之一是关键字 this 的用法，它用在对象的方法中。关键字 this 总是指向调用该方法的对象。简单说的就是调用了该方法this就是谁。 var a=">在 ECMAScript 中，要掌握的最重要的概念之一是关键字 this 的用法，它用在对象的方法中。关键字 this 总是指向调用该方法的对象。简单说的就是调用了该方法this就是谁。 var a=&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="12 3月 2017" class="post-list__meta--date date">12 3月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/03/12/jing-dian-javascriptguan-yu-thiszhi-shi-dian-de-mian-shi-ti/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../20/wen-for-xun-huan-zhong-de-bian-liang-zuo-yong-yu-wen-ti-2/index.html" title="link to 问 for 循环中的变量作用域问题">问 for 循环中的变量作用域问题</a></h5>
+       <p class="excerpt" title="for (var i = 0; i &lt; 5; i++) {       setTimeout(function () {         console.log('i=' + i);     }">for (var i = 0; i &lt; 5; i++) {       setTimeout(function () {         console.log('i=' + i);     }&hellip;</p>
+       <div class="post-list__meta"><time datetime="20 2月 2017" class="post-list__meta--date date">20 2月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/02/20/wen-for-xun-huan-zhong-de-bian-liang-zuo-yong-yu-wen-ti-2/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

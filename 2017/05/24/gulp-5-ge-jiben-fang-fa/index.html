@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Gulp 5个基本方法</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Gulp 5个基本方法">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Gulp 5个基本方法">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/05/24/gulp-5-ge-jiben-fang-fa/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Gulp 5个基本方法" />
+    <meta property="og:description" content="2017-05-24 星期三 丁酉年 四月廿九      【鸡年】乙巳月 辛亥日      宜：祭祀 沐浴 解除 破屋 坏垣      忌：行丧 安葬 Gulp有5个基本方法：src、dest、task、run、watch   1.Gulp.src() gulp模块的src方法，用于产生数据流。它的参数表示索要处理的文件，一般有以下几种形式： js/app.js：指定确切的文件名 js/*.js：某个目录所有后缀为js的文件 js/**/*.js：某个目录及其所有子目录中的所有后缀为js的文件 !js/..." />
+    <meta property="og:url" content="http://localhost:2368/2017/05/24/gulp-5-ge-jiben-fang-fa/" />
+    <meta property="article:published_time" content="2017-05-24T02:40:21.382Z" />
+    <meta property="article:modified_time" content="2017-05-24T03:10:58.219Z" />
+    <meta property="article:tag" content="工具" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Gulp 5个基本方法" />
+    <meta name="twitter:description" content="2017-05-24 星期三 丁酉年 四月廿九      【鸡年】乙巳月 辛亥日      宜：祭祀 沐浴 解除 破屋 坏垣      忌：行丧 安葬 Gulp有5个基本方法：src、dest、task、run、watch   1.Gulp.src() gulp模块的src方法，用于产生数据流。它的参数表示索要处理的文件，一般有以下几种形式： js/app.js：指定确切的文件名 js/*.js：某个目录所有后缀为js的文件 js/**/*.js：某个目录及其所有子目录中的所有后缀为js的文件 !js/..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/05/24/gulp-5-ge-jiben-fang-fa/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Gulp 5个基本方法",
+    "url": "http://localhost:2368/2017/05/24/gulp-5-ge-jiben-fang-fa/",
+    "datePublished": "2017-05-24T02:40:21.382Z",
+    "dateModified": "2017-05-24T03:10:58.219Z",
+    "keywords": "工具",
+    "description": "2017-05-24 星期三 丁酉年 四月廿九      【鸡年】乙巳月 辛亥日      宜：祭祀 沐浴 解除 破屋 坏垣      忌：行丧 安葬 Gulp有5个基本方法：src、dest、task、run、watch   1.Gulp.src() gulp模块的src方法，用于产生数据流。它的参数表示索要处理的文件，一般有以下几种形式： js/app.js：指定确切的文件名 js/*.js：某个目录所有后缀为js的文件 js/**/*.js：某个目录及其所有子目录中的所有后缀为js的文件 !js/..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-gong-ju">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="24 5月 2017" class="post-meta__date date">24 5月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/gong-ju/index.html">工具</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">Gulp 5个基本方法</h1>
+    </header>
+
+    <section class="post tag-gong-ju">
+      <blockquote>
+  <p>2017-05-24 星期三 丁酉年 四月廿九</p>
+  
+  <p>【鸡年】乙巳月 辛亥日</p>
+  
+  <p>宜：祭祀 沐浴 解除 破屋 坏垣</p>
+  
+  <p>忌：行丧 安葬</p>
+</blockquote>
+
+<p>Gulp有5个基本方法：<code>src</code>、<code>dest</code>、<code>task</code>、<code>run</code>、<code>watch</code></p>
+
+<blockquote>
+  <p>1.<code>Gulp.src()</code></p>
+</blockquote>
+
+<p><code>gulp</code>模块的<code>src</code>方法，用于产生数据流。它的参数表示索要处理的文件，一般有以下几种形式：</p>
+
+<pre><code>js/app.js：指定确切的文件名
+js/*.js：某个目录所有后缀为js的文件
+js/**/*.js：某个目录及其所有子目录中的所有后缀为js的文件
+!js/app.js：除了js/app.js以后的所有文件
+*.+(js|css)：匹配项目更目录下，所有后缀为js/css的文件
+</code></pre>
+
+<p><code>src</code>方法的参数还可以是一个数组，用来指定多个成员：</p>
+
+<pre><code>gulp.src(['js/**/*.js','!js/**/*.min.js']);  
+</code></pre>
+
+<blockquote>
+  <p>2.<code>Gulp.dest()</code></p>
+</blockquote>
+
+<p><code>gulp</code>模块的<code>dest</code>方法，可以用来传递文件，同时写入文件到指定目录。可以重复的发送传递给它的数据，因此可以讲文件传送到多个目录中：</p>
+
+<pre><code>gulp.src('app/templates/*.jade')  
+       .pipe(jade())
+       .pipe(gulp.dest('/dist/templates'))
+       .pipe(minify())
+       .pipe(gulp.dest('/dist/minified_templates'));
+</code></pre>
+
+<blockquote>
+  <p>3.<code>Gulp.task()</code></p>
+</blockquote>
+
+<p><code>gulp</code>模块的<code>task</code>方法，用于定义具体的任务。它的第一个参数是人物名，第二个参数是任务函数。</p>
+
+<pre><code>var gulp = require('gulp');  
+var htmlmin = require('gulp-htmlmin');
+
+gulp.task('minify',function(){  
+      gulp.src('app/*.html')
+          .pipe(htmlmin({collapseWhitespace:true}))
+          .pipe(gulp.dest('dist'))
+});
+</code></pre>
+
+<p>上述创建了一个压缩html的任务，在命令行模式中使用下列命令继续执行</p>
+
+<pre><code>gulp minify  
+</code></pre>
+
+<p><code>task</code>方法还可以指定按顺序运行的一组任务：</p>
+
+<pre><code>gulp.task('build',['css','js','imgs']);  
+</code></pre>
+
+<p>上述代码先指定了 <code>build</code> 任务，它按次序由<code>css</code>、<code>js</code>、<code>imgs</code>三个任务组成。
+ps:由于每个任务都是异步调用，所以没有办法保证js任务开始的时间，就是css任务结束的时间。 <br />
+如果希望各个任务严格按次序运行，可以把前一个任务写成后一个任务的依赖模块：</p>
+
+<pre><code>gulp.task('css',['minify'],function(){  
+    //代码
+})
+</code></pre>
+
+<p>上面代码表明，<code>css</code>任务依赖<code>minify</code>任务，所以<code>css</code>一定会在<code>minify</code>运行完成后再运行。
+如果一个任务的名字为<code>defaul</code>t，就表明它是“默认任务”，在命令行直接输入<code>gulp</code>
+命令，就会运行该任务：</p>
+
+<pre><code>gulp.task('default',function(){  
+     // your default task
+})
+</code></pre>
+
+<blockquote>
+  <p>4.<code>Gulp.run()</code></p>
+</blockquote>
+
+<p><code>gulp</code>模块的<code>run</code>方法，表示要执行的任务。可能会使用单个参数的形式传递多个任务。
+ps:任务是尽可能多的并行执行，并且可能不会按照指定的顺序执行。</p>
+
+<pre><code>gulp.run('scripts','copyfiles','builddocs');
+
+gulp.run('scripts','copyfiles','builddocs',function(err){  
+     // 所有任务完成，或者出发错误而终止
+});
+</code></pre>
+
+<p>可以使用<code>gulp.run</code>在其他任务中运行任务。也可以在默认任务（<code>default</code>）中使用<code>gulp.run</code>组织多个更小的任务为一个大任务。</p>
+
+<blockquote>
+  <p>5.<code>gulp.watch()</code></p>
+</blockquote>
+
+<p><code>gulp</code>模块的<code>watch</code>方法，用于指定需要监视的文件。一旦这些文件发生变动，就运行指定任务：</p>
+
+<pre><code>gulp.task('watch',function(){  
+     gulp.watch('app/tamplates/*.jade',['build']);
+});
+</code></pre>
+
+<p>上面代码指定，一旦<code>templates</code>目录下后缀为<code>.jade</code>的文件发生变化，就运行<code>build</code>任务。
+<code>watch</code>方法也可以用毁掉函数，代替指定的任务：</p>
+
+<pre><code>gulp.watch('app/templates/*.jade',function(event){  
+     console.log('Event type:' + event.type);
+     console.log('Event path:' + event.path);
+});
+</code></pre>
+
+<p>另一种写法是<code>watch</code>方法所监控的文件发生变化时（修改，增加，删除文件），会出发<code>change</code>事件，可以对<code>change</code>事件指定回调函数：</p>
+
+<pre><code>var watcher = gulp.watch('app/templates/*.jade',['build']);
+
+gulp.on('change',function(event){  
+     console.log('Event type:' + event.type);
+     console.log('Event path:' + event.path);
+});
+</code></pre>
+
+<p>除了<code>change</code>事件，<code>watch</code>方法还可以触发以下事件：</p>
+
+<p><code>end</code>：回调函数运行完毕后触发。</p>
+
+<p><code>error</code>：发生错误时触发。</p>
+
+<p><code>ready</code>：当开始监听文件时触发。</p>
+
+<p><code>nomatch</code>：没有匹配的监听文件时触发。</p>
+
+<p><code>watcher</code>对象还包含其他一些方法：</p>
+
+<p><code>watcher.end()</code>：停止<code>watcher</code>对象，不会再调用任务或回调函数。</p>
+
+<p><code>watcher.files()</code>：返回<code>watcher</code>对象监视的文件</p>
+
+<p><code>watcher.add(glob)</code>：增加所要监视的文件，它还可以附件第二个参数，表示回调函数。</p>
+
+<p><code>watcher.remove(filepath)</code>：从<code>watcher</code>对象中移走一个监视的文件。</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../25/mian-xiang-wei-lai-de-css-variable/index.html" title="link to 面向未來的 CSS Variable">面向未來的 CSS Variable</a>
+      </h5>
+       <p class="excerpt" title="2017-05-25 星期四 丁酉年 四月三十      【鸡年】乙巳月 壬子日      宜：沐浴 扫舍 余事勿取      忌：斋醮 开市 嫁娶 作灶 CSS Variable 即CSS變量">2017-05-25 星期四 丁酉年 四月三十      【鸡年】乙巳月 壬子日      宜：沐浴 扫舍 余事勿取      忌：斋醮 开市 嫁娶 作灶 CSS Variable 即CSS變量&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="25 5月 2017" class="post-list__meta--date date">25 5月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/05/25/mian-xiang-wei-lai-de-css-variable/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../22/360/index.html" title="link to 360面试记录 2017-05-18">360面试记录 2017-05-18</a></h5>
+       <p class="excerpt" title="2017-05-22 星期一 丁酉年 四月廿七      【鸡年】乙巳月 己酉日      宜：祭祀 祈福 斋醮 求嗣 安机械      忌：动土 破土 嫁娶 嫁娶 没有设么可说的，笔试题比较基">2017-05-22 星期一 丁酉年 四月廿七      【鸡年】乙巳月 己酉日      宜：祭祀 祈福 斋醮 求嗣 安机械      忌：动土 破土 嫁娶 嫁娶 没有设么可说的，笔试题比较基&hellip;</p>
+       <div class="post-list__meta"><time datetime="22 5月 2017" class="post-list__meta--date date">22 5月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/05/22/360/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

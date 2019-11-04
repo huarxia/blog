@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Grunt初探</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Grunt初探">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Grunt初探">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/02/28/gruntchu-tan/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Grunt初探" />
+    <meta property="og:description" content="今天学习构建工具Grunt :www.gruntjs.org 构建工具拿来干嘛呢？常见可以这样的： 比如一个大的项目有许多开发者，最后要发布到线上了，相关的JS最好合并为一个JS文件，并且压缩最好了 呐！！，现在就可以用到grunt了，然而grunt是基于nodejs的，那么到底呀怎么安装使用呢？ 首先我们去node官网 www.nodejs.org 下载支持自己电脑的版本 安装流程 ： 先安装nodejs和npm(包管理工具) npm install -g grunt-cli npm install grunt –save-dev grunt –version   然后下一步下一步安装即可 然后打开命令行 cmd  一次输入下面命令，你可以选择复制进去即可 npm install -g..." />
+    <meta property="og:url" content="http://localhost:2368/2015/02/28/gruntchu-tan/" />
+    <meta property="article:published_time" content="2015-02-28T06:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-16T06:09:38.192Z" />
+    <meta property="article:tag" content="工具" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Grunt初探" />
+    <meta name="twitter:description" content="今天学习构建工具Grunt :www.gruntjs.org 构建工具拿来干嘛呢？常见可以这样的： 比如一个大的项目有许多开发者，最后要发布到线上了，相关的JS最好合并为一个JS文件，并且压缩最好了 呐！！，现在就可以用到grunt了，然而grunt是基于nodejs的，那么到底呀怎么安装使用呢？ 首先我们去node官网 www.nodejs.org 下载支持自己电脑的版本 安装流程 ： 先安装nodejs和npm(包管理工具) npm install -g grunt-cli npm install grunt –save-dev grunt –version   然后下一步下一步安装即可 然后打开命令行 cmd  一次输入下面命令，你可以选择复制进去即可 npm install -g..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/02/28/gruntchu-tan/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Grunt初探",
+    "url": "http://localhost:2368/2015/02/28/gruntchu-tan/",
+    "datePublished": "2015-02-28T06:00:00.000Z",
+    "dateModified": "2016-11-16T06:09:38.192Z",
+    "keywords": "工具",
+    "description": "今天学习构建工具Grunt :www.gruntjs.org 构建工具拿来干嘛呢？常见可以这样的： 比如一个大的项目有许多开发者，最后要发布到线上了，相关的JS最好合并为一个JS文件，并且压缩最好了 呐！！，现在就可以用到grunt了，然而grunt是基于nodejs的，那么到底呀怎么安装使用呢？ 首先我们去node官网 www.nodejs.org 下载支持自己电脑的版本 安装流程 ： 先安装nodejs和npm(包管理工具) npm install -g grunt-cli npm install grunt –save-dev grunt –version   然后下一步下一步安装即可 然后打开命令行 cmd  一次输入下面命令，你可以选择复制进去即可 npm install -g..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-gong-ju">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="28 2月 2015" class="post-meta__date date">28 2月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/gong-ju/index.html">工具</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">Grunt初探</h1>
+    </header>
+
+    <section class="post tag-gong-ju">
+      <p>今天学习构建工具Grunt :www.gruntjs.org
+构建工具拿来干嘛呢？常见可以这样的：</p>
+
+<p>比如一个大的项目有许多开发者，最后要发布到线上了，相关的JS最好合并为一个JS文件，并且压缩最好了</p>
+
+<p>呐！！，现在就可以用到grunt了，然而grunt是基于nodejs的，那么到底呀怎么安装使用呢？</p>
+
+<p>首先我们去node官网 www.nodejs.org 下载支持自己电脑的版本</p>
+
+<p>安装流程 ：</p>
+
+<p>先安装nodejs和npm(包管理工具)</p>
+
+<pre><code>npm install -g grunt-cli
+
+npm install grunt –save-dev
+
+grunt –version  
+</code></pre>
+
+<p><img src="../../../../content/images/2016/11/201502281425101611624181.png" alt="" /></p>
+
+<p>然后下一步下一步安装即可</p>
+
+<p>然后打开命令行</p>
+
+<p>cmd <br />
+<img src="../../../../content/images/2016/11/201502281425101749282442.png" alt="" /></p>
+
+<p>一次输入下面命令，你可以选择复制进去即可</p>
+
+<pre><code>npm install -g grunt-cli
+
+npm install grunt –save-dev
+
+grunt -version  
+</code></pre>
+
+<p>最后输入grunt -version这个时候显示
+<img src="../../../../content/images/2016/11/201502281425101883621661.png" alt="" />
+即证明安装成功</p>
+
+<p>接下来我们来用这个试试，</p>
+
+<p>在要处理的文件的根目录下创建一个package.json文件
+<img src="../../../../content/images/2016/11/201502281425102078855214.png" alt="" /></p>
+
+<p>这个文件里面是</p>
+
+<pre><code>{
+  "name": "my-project-name",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat":"~0.4.0",//grunt官网找到的合并文件插件
+    "grunt-contrib-uglify":"~0.4.0"//grunt官网找到的压缩文件插件
+  }
+}
+</code></pre>
+
+<p>然后在命令行中进入该项目合并文件的根目录（命令自己百度即可）</p>
+
+<p>接下来就是下载插件到本地，在命令行中输入 npm install 等待下载</p>
+
+<p>当出现这个 <img src="../../../../content/images/2016/11/201502281425102328552893.png" alt="" title="" />
+并且本地目录下存在这些
+<img src="../../../../content/images/2016/11/201502281425102376490029.png" alt="" />
+说明下载成功</p>
+
+<p>那么现在我们可以开始合并压缩了</p>
+
+<p>在合并文件的更目录创建Gruntfile.js</p>
+
+<p>里面编写需要执行的命令，具体可以去官网相应插件查找文档</p>
+
+<pre><code>module.exports = function(grunt){  
+    grunt.initConfig({
+      pkg: grunt.file.readJSON('package.json'),
+      concat: {
+        test:{
+            files:{
+                "dis/main.js":["move.js","script.js"]//表示将"move.js","script.js"合并为main.js创建dis文件夹放置
+            }
+        }
+      },
+      uglify: {
+        test:{
+            files:{
+                "dis/main.min.js":["dis/main.js"]//表示将dis/main.js压缩为main.min.js放置在dis文件夹中
+            }
+        }
+      }
+    });
+    //下面的事官网的示例代码拿出来的，相当于执行上面的配置
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.registerTask('default', ['concat',"uglify"]);
+}
+</code></pre>
+
+<p>一切准备继续在命令行中输入grunt执行最后出现这个
+<img src="../../../../content/images/2016/11/201502281425102711885395.png" alt="" />
+即成功了，</p>
+
+<p>我们看看本地文件
+<img src="../../../../content/images/2016/11/201502281425102761379526.png" alt="" />
+再看看代码：
+<img src="../../../../content/images/2016/11/201502281425102831562929.png" alt="" />
+是一行吧，说明操作成功</p>
+
+<p>但有人问了，就这个啊，合并压缩，网上工具多的是，何必还命令行什么的多麻烦，</p>
+
+<p>此言差矣我只是用这简单的例子说明grunt的强大而已</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../oopgao-ji/index.html" title="link to OOP高级">OOP高级</a>
+      </h5>
+       <p class="excerpt" title="hasOwnproperty :看是不是对象自身下的属性  constructor :查看对象的构造函数  编写原型链的时候有两种方法   1. Test.prototype.name = "maxc">hasOwnproperty :看是不是对象自身下的属性  constructor :查看对象的构造函数  编写原型链的时候有两种方法   1. Test.prototype.name = "maxc&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="28 2月 2015" class="post-list__meta--date date">28 2月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/02/28/oopgao-ji/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../27/mo-kuai-hua-seajs/index.html" title="link to 模块化-seajs">模块化-seajs</a></h5>
+       <p class="excerpt" title="利用模块可以避免 冲突、依赖、优化性能 先去www.seajs.org下载sea.js html: &lt;!DOCTYPE html PUBLIC "-//W3C//h2D XHTML 1.0 Tr">利用模块可以避免 冲突、依赖、优化性能 先去www.seajs.org下载sea.js html: &lt;!DOCTYPE html PUBLIC "-//W3C//h2D XHTML 1.0 Tr&hellip;</p>
+       <div class="post-list__meta"><time datetime="27 2月 2015" class="post-list__meta--date date">27 2月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/02/27/mo-kuai-hua-seajs/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

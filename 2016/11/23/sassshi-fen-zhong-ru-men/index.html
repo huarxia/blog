@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>sass十分钟入门</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="sass十分钟入门">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="sass十分钟入门">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2016/11/23/sassshi-fen-zhong-ru-men/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="sass十分钟入门" />
+    <meta property="og:description" content="变量   sass中可以定义变量，方便统一修改和维护。 //sass style //----------------------------------- $fontStack:    Helvetica, sans-serif; $primaryColor: #333; body {     font-family: $fontStack;   color: $primaryColor; } //css style //----------------------------------- body {     font-family: Helvetica, sans-serif;   color: #333; } 嵌套   sass可以进行选择器的嵌套，表示层级关系，看起来很优雅整齐。 //sass style //----------------------------------- nav {     ul {     margin: 0;     padding: 0;     list-style: none;..." />
+    <meta property="og:url" content="http://localhost:2368/2016/11/23/sassshi-fen-zhong-ru-men/" />
+    <meta property="article:published_time" content="2016-11-23T08:17:22.730Z" />
+    <meta property="article:modified_time" content="2016-11-23T08:24:12.476Z" />
+    <meta property="article:tag" content="css" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="sass十分钟入门" />
+    <meta name="twitter:description" content="变量   sass中可以定义变量，方便统一修改和维护。 //sass style //----------------------------------- $fontStack:    Helvetica, sans-serif; $primaryColor: #333; body {     font-family: $fontStack;   color: $primaryColor; } //css style //----------------------------------- body {     font-family: Helvetica, sans-serif;   color: #333; } 嵌套   sass可以进行选择器的嵌套，表示层级关系，看起来很优雅整齐。 //sass style //----------------------------------- nav {     ul {     margin: 0;     padding: 0;     list-style: none;..." />
+    <meta name="twitter:url" content="http://localhost:2368/2016/11/23/sassshi-fen-zhong-ru-men/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "sass十分钟入门",
+    "url": "http://localhost:2368/2016/11/23/sassshi-fen-zhong-ru-men/",
+    "datePublished": "2016-11-23T08:17:22.730Z",
+    "dateModified": "2016-11-23T08:24:12.476Z",
+    "keywords": "css",
+    "description": "变量   sass中可以定义变量，方便统一修改和维护。 //sass style //----------------------------------- $fontStack:    Helvetica, sans-serif; $primaryColor: #333; body {     font-family: $fontStack;   color: $primaryColor; } //css style //----------------------------------- body {     font-family: Helvetica, sans-serif;   color: #333; } 嵌套   sass可以进行选择器的嵌套，表示层级关系，看起来很优雅整齐。 //sass style //----------------------------------- nav {     ul {     margin: 0;     padding: 0;     list-style: none;..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-css">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="23 11月 2016" class="post-meta__date date">23 11月 2016</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/css/index.html">css</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">sass十分钟入门</h1>
+    </header>
+
+    <section class="post tag-css">
+      <h4 id="">变量</h4>
+
+<blockquote>
+  <p>sass中可以定义变量，方便统一修改和维护。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-----------------------------------
+$fontStack:    Helvetica, sans-serif;
+$primaryColor: #333;
+
+body {  
+  font-family: $fontStack;
+  color: $primaryColor;
+}
+</code></pre>
+
+<pre><code>//css style
+//-----------------------------------
+body {  
+  font-family: Helvetica, sans-serif;
+  color: #333;
+}
+</code></pre>
+
+<h4 id="">嵌套</h4>
+
+<blockquote>
+  <p>sass可以进行选择器的嵌套，表示层级关系，看起来很优雅整齐。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-----------------------------------
+nav {  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+</code></pre>
+
+<pre><code>//css style
+//-----------------------------------
+nav ul {  
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {  
+  display: inline-block;
+}
+
+nav a {  
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+</code></pre>
+
+<h4 id="">导入</h4>
+
+<blockquote>
+  <p>sass中如导入其他sass文件，最后编译为一个css文件，优于纯css的<code>@import</code></p>
+</blockquote>
+
+<pre><code>//sass style
+//-----------------------------------
+// _reset.scss
+
+html,  
+body,  
+ul,  
+ol {  
+   margin: 0;
+  padding: 0;
+}
+</code></pre>
+
+<pre><code>//sass style
+//-----------------------------------
+// base.scss 
+
+@import 'reset';
+
+body {  
+  font-size: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+</code></pre>
+
+<pre><code>//css style
+//-----------------------------------
+html, body, ul, ol {  
+  margin: 0;
+  padding: 0;
+}
+
+body {  
+  background-color: #efefef;
+  font-size: 100% Helvetica, sans-serif;
+}
+</code></pre>
+
+<h4 id="mixin">mixin</h4>
+
+<blockquote>
+  <p>sass中可用mixin定义一些代码片段，且可传参数，方便日后根据需求调用。从此处理css3的前缀兼容轻松便捷。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-----------------------------------
+@mixin box-sizing ($sizing) {
+    -webkit-box-sizing:$sizing;     
+       -moz-box-sizing:$sizing;
+            box-sizing:$sizing;
+}
+.box-border{
+    border:1px solid #ccc;
+    @include box-sizing(border-box);
+}
+</code></pre>
+
+<pre><code>//css style
+//-----------------------------------
+.box-border {
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+</code></pre>
+
+<h4 id="">扩展/继承</h4>
+
+<blockquote>
+  <p>sass可通过@extend来实现代码组合声明，使代码更加优越简洁。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-----------------------------------
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+.error {
+  @extend .message;
+  border-color: red;
+}
+
+.warning {
+  @extend .message;
+  border-color: yellow;
+}
+</code></pre>
+
+<pre><code>//css style
+//-----------------------------------
+.message, .success, .error, .warning {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+</code></pre>
+
+<h4 id="">运算</h4>
+
+<blockquote>
+  <p>sass可进行简单的加减乘除运算等</p>
+</blockquote>
+
+<pre><code>//sass style
+//-----------------------------------
+.container { width: 100%; }
+
+article[role="main"] {  
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role="complimentary"] {  
+  float: right;
+  width: 300px / 960px * 100%;
+}
+</code></pre>
+
+<pre><code>//css style
+//-----------------------------------
+.container {
+  width: 100%;
+}
+
+article[role="main"] {  
+  float: left;
+  width: 62.5%;
+}
+
+aside[role="complimentary"] {  
+  float: right;
+  width: 31.25%;
+}
+</code></pre>
+
+<h4 id="">颜色</h4>
+
+<blockquote>
+  <p>sass中集成了大量的颜色函数，让变换颜色更加简单。</p>
+</blockquote>
+
+<pre><code>//sass style
+//-----------------------------------
+$linkColor: #08c;
+a {  
+    text-decoration:none;
+    color:$linkColor;
+    &amp;:hover{
+      color:darken($linkColor,10%);
+    }
+}
+</code></pre>
+
+<pre><code>//css style
+//-----------------------------------
+a {  
+  text-decoration: none;
+  color: #0088cc;
+}
+a:hover {  
+  color: #006699;
+}
+</code></pre>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../sassyu-fa/index.html" title="link to sass语法">sass语法</a>
+      </h5>
+       <p class="excerpt" title="文件后缀名   sass有两种后缀名文件：一种后缀名为sass，不使用大括号和分号；另一种就是我们这里使用的scss文件，这种和我们平时写的css文件格式差不多，使用大括号和分号。這裡所说的所有sas">文件后缀名   sass有两种后缀名文件：一种后缀名为sass，不使用大括号和分号；另一种就是我们这里使用的scss文件，这种和我们平时写的css文件格式差不多，使用大括号和分号。這裡所说的所有sas&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="23 11月 2016" class="post-list__meta--date date">23 11月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/css/">css</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/11/23/sassyu-fa/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../20/mian-shi-ti-ku-2/index.html" title="link to 面試題庫3">面試題庫3</a></h5>
+       <p class="excerpt" title="1. n是一个奇数，求证n(n^2-1)能被24整除   n=2*k+1；那么 n(n^2-1) = 4*k(k+1)*(2k+1)   // 使用公式： // k // Σ n^2 = k(k+1)">1. n是一个奇数，求证n(n^2-1)能被24整除   n=2*k+1；那么 n(n^2-1) = 4*k(k+1)*(2k+1)   // 使用公式： // k // Σ n^2 = k(k+1)&hellip;</p>
+       <div class="post-list__meta"><time datetime="20 11月 2016" class="post-list__meta--date date">20 11月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/11/20/mian-shi-ti-ku-2/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>mock server</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="mock server">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="mock server">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2016/12/23/mock-server-ji-shu-dian-gui-na/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="mock server" />
+    <meta property="og:description" content="mock server 時間：   2016-12-22 星期四  十一月廿四丙申年 【猴年】庚子月 戊寅日 宜   订盟 纳采 会亲友 安机械 开光 忌   祈福 出火 嫁娶 入宅 开市 地點   40.0501100630,116.2840624531 作者   @花夏 前景提要 請點擊查看 優點 1.前後端開發互不掣肘，且分工明確； 2.mock server由雙方制定接口后共同維護，當然具體誰維護自己定，這並不重要，只要能提高效率就好，..." />
+    <meta property="og:url" content="http://localhost:2368/2016/12/23/mock-server-ji-shu-dian-gui-na/" />
+    <meta property="article:published_time" content="2016-12-23T03:10:46.988Z" />
+    <meta property="article:modified_time" content="2016-12-23T03:10:46.982Z" />
+    <meta property="article:tag" content="工具" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="mock server" />
+    <meta name="twitter:description" content="mock server 時間：   2016-12-22 星期四  十一月廿四丙申年 【猴年】庚子月 戊寅日 宜   订盟 纳采 会亲友 安机械 开光 忌   祈福 出火 嫁娶 入宅 开市 地點   40.0501100630,116.2840624531 作者   @花夏 前景提要 請點擊查看 優點 1.前後端開發互不掣肘，且分工明確； 2.mock server由雙方制定接口后共同維護，當然具體誰維護自己定，這並不重要，只要能提高效率就好，..." />
+    <meta name="twitter:url" content="http://localhost:2368/2016/12/23/mock-server-ji-shu-dian-gui-na/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "mock server",
+    "url": "http://localhost:2368/2016/12/23/mock-server-ji-shu-dian-gui-na/",
+    "datePublished": "2016-12-23T03:10:46.988Z",
+    "dateModified": "2016-12-23T03:10:46.982Z",
+    "keywords": "工具, js",
+    "description": "mock server 時間：   2016-12-22 星期四  十一月廿四丙申年 【猴年】庚子月 戊寅日 宜   订盟 纳采 会亲友 安机械 开光 忌   祈福 出火 嫁娶 入宅 开市 地點   40.0501100630,116.2840624531 作者   @花夏 前景提要 請點擊查看 優點 1.前後端開發互不掣肘，且分工明確； 2.mock server由雙方制定接口后共同維護，當然具體誰維護自己定，這並不重要，只要能提高效率就好，..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-gong-ju tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="23 12月 2016" class="post-meta__date date">23 12月 2016</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/gong-ju/index.html">工具</a>, <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">mock server 技術點歸納</h1>
+    </header>
+
+    <section class="post tag-gong-ju tag-js">
+      <h3 id="mockserver">mock server</h3>
+
+<h5 id="">時間：</h5>
+
+<blockquote>
+  <p>2016-12-22 星期四  十一月廿四丙申年 【猴年】庚子月 戊寅日</p>
+</blockquote>
+
+<h5 id="">宜</h5>
+
+<blockquote>
+  <p>订盟 纳采 会亲友 安机械 开光</p>
+</blockquote>
+
+<h5 id="">忌</h5>
+
+<blockquote>
+  <p>祈福 出火 嫁娶 入宅 开市</p>
+</blockquote>
+
+<h5 id="">地點</h5>
+
+<blockquote>
+  <p>40.0501100630,116.2840624531</p>
+</blockquote>
+
+<h5 id="">作者</h5>
+
+<blockquote>
+  <p><a href="mailto:liubiao@itoxs.com">@花夏</a></p>
+</blockquote>
+
+<h4 id="">前景提要</h4>
+
+<p><a href="http://www.huar.love/blog/2016/11/25/mock-server-chu-ding/index.html">請點擊查看</a></p>
+
+<h5 id="">優點</h5>
+
+<p>1.前後端開發互不掣肘，且分工明確；</p>
+
+<p>2.mock server由雙方制定接口后共同維護，當然具體誰維護自己定，這並不重要，只要能提高效率就好，別老是加班加班了，為什麼程序員一定要加吧，你在逗我吧！！！</p>
+
+<p>3.雙方完全按照前期制定接口開發，誰修改誰負責（因修改帶來的多成本）</p>
+
+<p>雖然前期制定接口時間增加了，（其實並未增加，只是將制定接口的時間統一到一個時間段，做這件事情而已），所以有了良好的規範，開發效率那是嗖嗖的，加毛線班啊，見鬼去吧~<del></p>
+
+<p>所以要開始做一個提高前後端分離的解決方案，我知道市面上已經很多這樣的產品了，比如阿里的<a href="http://rapapi.net/">rap</a> 但是他是java開發的，很多FE根本不會搞，而且搞起來很麻煩，我就只想在開發時獲取一份有意義並且合適json數據而已，搞那麼複雜幹嘛。當然也有很多歪果仁的東西，寫得相當不錯，功能特別強大，但是可能我只想用其中一部分功能，或者其他沒有的功能，（勿噴！）還是那句話別人的輪子能用但是其中的構造沒有完全去拆開看過的，我特別不放心的。所以還是自己造一個輪子吧，並且把輪子拆解成若干個細小單元，讓使用者能知道到底發生了什麼，這點看起來很重要；就好比一本武功秘籍一樣，開始都會用，但只是用其形，而未用其神，當你融會貫通后，哪怕一招，用其神，即可稱霸江湖</del>~</p>
+
+<p>這就是我要自己寫一本武功秘籍的原因，每招每式都是特別精簡而又精細。</p>
+
+<h4 id="">打算使用的技術選型</h4>
+
+<blockquote>
+  <p>1.前端頁面: vue + semanticUI</p>
+  
+  <p>2.後端server: （nodejs + express) \ python + mongodb</p>
+</blockquote>
+
+<h4 id="">前端要做的事情：</h4>
+
+<p>0.註冊頁面；</p>
+
+<p>1.登錄頁面；</p>
+
+<p>2.創建產品線；</p>
+
+<p>3.根據產品線創建接口服務（同其他產品線接口服務隔離開，互不影響）；</p>
+
+<p>4.可以複製已經存在的接口服務至新的接口服務；</p>
+
+<p>5.編輯已存在的接口服務；</p>
+
+<p>6.刪除已存在的接口服務；</p>
+
+<p>7.提供歷史接口服務記錄，輕鬆回滾；（使用指向回滾，並不是文件替換回滾）</p>
+
+<p>8.restful接口風格，統一儲存，json數據保存至mongodb;</p>
+
+<h4 id="server">後端server要做的事情：</h4>
+
+<p>0.註冊功能；（前期只允許管理員添加賬號）；</p>
+
+<p>1.登陸功能；</p>
+
+<p>2.各個產品線不能相互影響，數據不能串；</p>
+
+<p>3.根據自己賬號下的請求接口返回對應數據；如果不存在，返回默認提示數據；</p>
+
+<p>4.返回的數據需要動態變化的；參考mockjs</p>
+
+<p>5.支持 <code>post</code> <code>put</code> <code>delate</code> 等等方式，需要支持功能：比如<code>delate</code>列表的數據后會刷請求列表，需要真正的返回剛剛刪掉的某條數據，但是實際上列表接口不能真正刪除，否則就給下次或者以後造成混亂，需要做的事，創建臨時文件，然後複製真正接口數據并刪掉對應的數據即可，並且帶有垃圾回收機制：當不使用時刪除！！！；</p>
+
+<p>6.其他功能參照前端功能對應做；</p>
+
+<p>後續會有增加功能，歡迎提建議，你需要的功能，合理我會繼續加上去，目前只是一個原型，我正在加緊開發中，奈何是年底並且工作又很忙，只能有時間擼代碼了~<del></p>
+
+<p>彩蛋: 細心的觀眾可能會想到，不管你想沒想到，來一波彩蛋</p>
+
+<p>使用vue開發的頁面，對seo極不友好，通過搜索引擎出來的頁面，可能就是一個空表頁面或者只有header和footer；所以這也是一個關鍵點。吶吶吶...彩蛋來襲</del>~ 這個點要做的就是，使用靜態化技術讓爬蟲爬取靜態頁面，當用戶通過搜索引擎進入時又重新定向到實際地址，怎麼做，什麼功能敬請期待，當然這裡我敢說，就不怕你去做，你去做了我就省得做了，我是一個很懶的人~<del> 哇咔咔</del></p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../25/2016nian-nozong-jie/index.html" title="link to 2016年の总结">2016年の总结</a>
+      </h5>
+       <p class="excerpt" title="時間： 2016-12-25 星期日   十一月廿七丙申年 【猴年】庚子月 辛巳日       宜： 嫁娶 订盟 纳采 祭祀 祈福      忌： 出行 掘井 破土 行丧 安葬      地點：">時間： 2016-12-25 星期日   十一月廿七丙申年 【猴年】庚子月 辛巳日       宜： 嫁娶 订盟 纳采 祭祀 祈福      忌： 出行 掘井 破土 行丧 安葬      地點：&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="25 12月 2016" class="post-list__meta--date date">25 12月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/wen-zhang/">文章</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/12/25/2016nian-nozong-jie/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../15/cssshui-ping-ju-zhong-he-chui-zhi-ju-zhong-duo-chong-jie-jue-fang-an/index.html" title="link to CSS水平居中和垂直居中多种解决方案">CSS水平居中和垂直居中多种解决方案</a></h5>
+       <p class="excerpt" title="水平居中：   1）对于行内元素,设置其父元素的text-align为center即可。      2）对于块级元素,设置其本身的margin-left,margin-right为auto即可。简写：">水平居中：   1）对于行内元素,设置其父元素的text-align为center即可。      2）对于块级元素,设置其本身的margin-left,margin-right为auto即可。简写：&hellip;</p>
+       <div class="post-list__meta"><time datetime="15 12月 2016" class="post-list__meta--date date">15 12月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/css/">css</a>, <a href="/tag/mian-shi/">面試</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/12/15/cssshui-ping-ju-zhong-he-chui-zhi-ju-zhong-duo-chong-jie-jue-fang-an/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

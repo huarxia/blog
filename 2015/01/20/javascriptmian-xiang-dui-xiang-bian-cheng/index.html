@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>JavaScript面向对象编程</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JavaScript面向对象编程">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="JavaScript面向对象编程">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/01/20/javascriptmian-xiang-dui-xiang-bian-cheng/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="JavaScript面向对象编程" />
+    <meta property="og:description" content="许多Web开发人员对JavaScript的了解仅仅停留在简单的表单数据操作，以及浏览器DOM对象的简单操作上，以达到一些数据验证和动态页面的效 果。所以当要实现的功能比较复杂时，写出的代码就显得凌乱并且难以维护，更不用说实现一个基于JavaScript的UI框架了。事实 上，JavaScript 提供了完善的机制来实现面向对象的开发思想。 本章假设读者已经了解面向对象思想的基本概念，熟悉对象、类、继承等基本术语。以此为基础，将重点介绍如何在 JavaScript 中使用面向对象的思想，包括实现的原理、机制和技巧。我们将使用JavaScript来实现以下面向对象特性： ¾ 对象、类； ¾ 封装； ¾ 多态； ¾ 继承。   1．对象 在JavaScript中创建一个对象非常简单，我们可以使用内建的Object对象来创建一个对象： var myObj=new Object;    //创建一个名为myObj的对象 myObj.name=’sam’;         //给myObj对象添加一个name属性，..." />
+    <meta property="og:url" content="http://localhost:2368/2015/01/20/javascriptmian-xiang-dui-xiang-bian-cheng/" />
+    <meta property="article:published_time" content="2015-01-20T13:16:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-12T13:24:19.997Z" />
+    <meta property="article:tag" content="js" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="JavaScript面向对象编程" />
+    <meta name="twitter:description" content="许多Web开发人员对JavaScript的了解仅仅停留在简单的表单数据操作，以及浏览器DOM对象的简单操作上，以达到一些数据验证和动态页面的效 果。所以当要实现的功能比较复杂时，写出的代码就显得凌乱并且难以维护，更不用说实现一个基于JavaScript的UI框架了。事实 上，JavaScript 提供了完善的机制来实现面向对象的开发思想。 本章假设读者已经了解面向对象思想的基本概念，熟悉对象、类、继承等基本术语。以此为基础，将重点介绍如何在 JavaScript 中使用面向对象的思想，包括实现的原理、机制和技巧。我们将使用JavaScript来实现以下面向对象特性： ¾ 对象、类； ¾ 封装； ¾ 多态； ¾ 继承。   1．对象 在JavaScript中创建一个对象非常简单，我们可以使用内建的Object对象来创建一个对象： var myObj=new Object;    //创建一个名为myObj的对象 myObj.name=’sam’;         //给myObj对象添加一个name属性，..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/01/20/javascriptmian-xiang-dui-xiang-bian-cheng/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "JavaScript面向对象编程",
+    "url": "http://localhost:2368/2015/01/20/javascriptmian-xiang-dui-xiang-bian-cheng/",
+    "datePublished": "2015-01-20T13:16:00.000Z",
+    "dateModified": "2016-11-12T13:24:19.997Z",
+    "keywords": "js",
+    "description": "许多Web开发人员对JavaScript的了解仅仅停留在简单的表单数据操作，以及浏览器DOM对象的简单操作上，以达到一些数据验证和动态页面的效 果。所以当要实现的功能比较复杂时，写出的代码就显得凌乱并且难以维护，更不用说实现一个基于JavaScript的UI框架了。事实 上，JavaScript 提供了完善的机制来实现面向对象的开发思想。 本章假设读者已经了解面向对象思想的基本概念，熟悉对象、类、继承等基本术语。以此为基础，将重点介绍如何在 JavaScript 中使用面向对象的思想，包括实现的原理、机制和技巧。我们将使用JavaScript来实现以下面向对象特性： ¾ 对象、类； ¾ 封装； ¾ 多态； ¾ 继承。   1．对象 在JavaScript中创建一个对象非常简单，我们可以使用内建的Object对象来创建一个对象： var myObj=new Object;    //创建一个名为myObj的对象 myObj.name=’sam’;         //给myObj对象添加一个name属性，..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="20 1月 2015" class="post-meta__date date">20 1月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">JavaScript面向对象编程</h1>
+    </header>
+
+    <section class="post tag-js">
+      <p>许多Web开发人员对JavaScript的了解仅仅停留在简单的表单数据操作，以及浏览器DOM对象的简单操作上，以达到一些数据验证和动态页面的效 果。所以当要实现的功能比较复杂时，写出的代码就显得凌乱并且难以维护，更不用说实现一个基于JavaScript的UI框架了。事实 上，JavaScript 提供了完善的机制来实现面向对象的开发思想。</p>
+
+<p>本章假设读者已经了解面向对象思想的基本概念，熟悉对象、类、继承等基本术语。以此为基础，将重点介绍如何在 JavaScript 中使用面向对象的思想，包括实现的原理、机制和技巧。我们将使用JavaScript来实现以下面向对象特性：</p>
+
+<p>¾ 对象、类；</p>
+
+<p>¾ 封装；</p>
+
+<p>¾ 多态；</p>
+
+<p>¾ 继承。</p>
+
+<blockquote>
+  <p>1．对象</p>
+</blockquote>
+
+<p>在JavaScript中创建一个对象非常简单，我们可以使用内建的Object对象来创建一个对象：</p>
+
+<pre><code>var myObj=new Object;    //创建一个名为myObj的对象
+
+myObj.name=’sam’;         //给myObj对象添加一个name属性，其值为sam
+
+myObj.age=28;             //给myObj对象添加一个age属性，其值为28  
+</code></pre>
+
+<p>我们也可以使用JSON（JavaScript Object Notation）[1] 来创建一个对象：</p>
+
+<pre><code>var myObj={name:’sam’,age:28}  
+//创建一个包含name属性值为sam，age属性值为28的对象
+</code></pre>
+
+<blockquote>
+  <p>2．类</p>
+</blockquote>
+
+<p>JavaScript不同于Java、C++、C#等面向对象语言，它通过构造函数和原型对象（prototype）来实现类的创建。为了创建一个类，还需要创建一个构造函数：  </p>
+
+<pre><code>function Person(name,age){
+
+this.name=name;
+
+this.age=age;
+
+}
+</code></pre>
+
+<p>这样我们就创建了一个构造函数（类），它包含两个属性：name和age。</p>
+
+<pre><code>var sam=new Person(‘sam’,28);   //创建一个Person对象，name为sam，age为28  
+</code></pre>
+
+<p>我们可以通过“.”运算符来访问它的属性：</p>
+
+<pre><code>alert(sam.name);   //输出结果为sam
+
+var bob=new Person(‘bob’,30);   //创建一个Person对象，name为bob，age为30
+
+alert(bob.age);   //输出结果为30  
+</code></pre>
+
+<p>细心的读者可能会发现，到目前为止，我们通过函数创建的对象只是封装了数据成员，并没有封装相应的方法。下面我们将在Person类中添加一个方法：</p>
+
+<pre><code>function Person(name,age){
+
+this.name=name;
+
+this.age=age;
+
+this.introduceSelf=function(){
+
+alert('I am '+name+' , I am '+age +' years old.');
+
+}
+
+}
+
+var sam=new Person('sam',28);
+
+sam.introduceSelf() //输出结果为：I am sam，I am 28 years old
+
+var bob=new Person('bob',30);
+
+bob.introduceSelf() //输出结果为：I am bob，I am 30 years old  
+</code></pre>
+
+<p>但是上面这种添加方法的方式不是很好。因为introduceSelf函数对于所有Person的实例来说，都是一样的，我们不希望在实例级别加上一个对于所有实例来说都一样的方法。这里我们要引入原型对象（prototype）的介绍。</p>
+
+<p>每个JavaScript构造函数都有一个内部引用指向另一个称为原型对象（prototype）的对象。对于这个构造函数所产生的对象实例，该 构造函数的原型对象所有属性对于它们来说都是可见的，并且是共享的。所以有时候也称该原型对象是这些实例的原型对象。对于这些实例，对原型对象的属性的访 问方式和对自身的属性的访问方式是一致的。下面我们举例说明。</p>
+
+<p>首先定义一个构造函数（类）：</p>
+
+<pre><code>function Person(name,age){
+
+this.name=name;
+
+this.age=age;
+
+}
+</code></pre>
+
+<p>然后，在函数的原型对象中添加一个属性kind：</p>
+
+<pre><code>Person.prototype.kind=’animal’;  
+</code></pre>
+
+<p>接着创建两个Person的实例：</p>
+
+<pre><code>var p1=new Person(‘sam’,28);
+
+var p2=new Person(‘bob’,30);  
+</code></pre>
+
+<p>访问这两个实例的kind属性：</p>
+
+<pre><code>alert(p1.kind); //输出animal
+
+alert(p2.kind); //输出animal  
+</code></pre>
+
+<p>通过上面的例子，我们可以看到函数的原型对象对于所有实例来说是共享的，并且属性的访问方式和实例本身的属性的访问方式完全一致。</p>
+
+<p>如果修改这个属性，会怎么样呢？让我们接着往下看：</p>
+
+<pre><code>p1.kind=’male’;
+
+alert(p1.kind); //输出male
+
+alert(p2.kind); //输出animal  
+</code></pre>
+
+<p>这是怎么回事呢？原来对于原型对象的操作，读写是不对称的。通过实例对属性名的引用并不能修改原型对象属性的值，它只是在实例本身添加了一个和原 型对象属性名一样的属性，并将该值赋给自身的那个属性。而对属性的访问，JavaScript首先会从对象本身开始查找，如果找到则返回该属性的值；如果 没有找到，才会在其原型对象中查找。所以对于p1,当执行了p1.kind=’male’之后，p1本身就有了一个kind属性，所以当再次访问p1的 kind属性时，就会直接返回p1本身kind属性值“male”，而不是其原型对象里的值“animal”。</p>
+
+<p>在了解了原型对象之后，我们再回到原来的例子。我们需要在构造函数Person的原型对象上添加一个方法，这样这个方法就会被所有的Person对象共享：</p>
+
+<pre><code>Person.prototype. introduceSelf=function(){
+
+alert(‘I am ‘+this.name+’ , I am ‘+this.age +’ years old.’);
+
+}
+
+var p1=new Person(‘sam’,28);
+
+var p2=new Person(‘bob’,30);
+
+p1.introduceSelf() //输出结果为：I am sam，I am 28 years old
+
+p2.introduceSelf() //输出结果为：I am bob，I am 30 years old  
+</code></pre>
+
+<blockquote>
+  <p>3．多态</p>
+</blockquote>
+
+<p>JavaScript允许我们将任意一个函数（function）分配给对象的一个属性。当使用 obj.function 的语法调用函数时，将把函数原来定义this 的指向当前这个对象obj（就像它在构造函数中的那样）。所以，我们可以通过定义有相同名字的方法的对象，来简单地实现多态性 （polymorphism）。  </p>
+
+<pre><code>//定义一个dogSpeek函数
+
+function dogSpeek(){
+
+alert('I am '+this.name);
+
+}
+
+//定义一个Dog类
+
+function Dog(){
+
+this.name='dog';
+
+this.speek= dogSpeek;//将dogSpeek 函数赋给Dog的speek属性
+
+}
+
+//定义一个catSpeek函数
+
+function catSpeek(){
+
+alert('I am '+this.name);
+
+}
+
+//定义一个Cat类
+
+function Cat(){
+
+this.name='cat';
+
+this.speek= catSpeek; //将catSpeek ()函数赋给Cat的speek属性
+
+}
+
+var dog=new Dog;
+
+dog.speek();//输出“I am dog”
+
+var cat=new Cat;
+
+cat.speek();//输出“I am cat”  
+</code></pre>
+
+<p>对于同一个方法，不同类的对象就展现出不同的行为，这样就实现了多态性。</p>
+
+<blockquote>
+  <p>4．继承</p>
+</blockquote>
+
+<p>继承是面向对象开发的又一个重要概念，在JavaScript中通过原型链机制来实现类的继承，当然也可以通过将一个类的prototype拷贝到另外一个类来实现继承。</p>
+
+<pre><code>function Base(x)                      // 定义一个父类
+
+{
+
+this.x = x;
+
+}
+
+Base.prototype.doIt = function()  //在父类中添加一个方法
+
+{
+
+this.x += 1;
+
+}
+
+function Sub(x,y)               //定义一个子类
+
+{
+
+Base.call(this,x);              // 调用父类的构造函数（非必需）
+
+this.y = y;
+
+}
+
+Sub.prototype = new Base;   // 将Sub的原型对象修改为Base的实例，这是实现继承的关键一步
+
+//因为Sub类的原型对象是由构造函数Base产生的，所以它的constructor属性是Base，
+
+//我们需要把它改成Sub
+
+Sub.prototype.constructor=Sub;
+
+var obj = new  Sub（1，1）;
+
+alert(obj.x);    //输出1
+
+alert(obj.y);     //输出1
+
+obj.doIt();
+
+alert(obj.x);     //输出2  
+</code></pre>
+
+<p>从上面的例子我们可以看到，Sub类的实例obj继承了Base类的属性x，以及方法doIt。</p>
+
+<p>我们还可以通过拷贝父类中的方法来实现继承。</p>
+
+<pre><code>function Inherit(superclass, subclass) {
+
+var from = superclass.prototype;  // 父类的原型对象
+
+var to = subclass.prototype;       // 子类的原型对象
+
+for(m in from) {  //搜索原型对象中的所有属性
+
+if (typeof from[m] != “function”) continue; // 忽略非函数
+
+to[m] = from[m];  // 拷贝方法
+
+}
+
+}
+</code></pre>
+
+<p>下面我们用这个函数来实现继承。</p>
+
+<pre><code>function Base(x){
+
+this.x=x;
+
+}
+
+Base.prototype.doIt=function(){
+
+this.x+=1;
+
+}
+
+function Sub(x,y){
+
+Base.call(this,x);
+
+this.y=y;
+
+}
+
+Inherit(Base,Sub);
+
+var obj = new  Sub（1，1）;
+
+alert(obj.x);    //输出1
+
+alert(obj.y);     //输出1
+
+obj.doIt();
+
+alert(obj.x);     //输出2  
+</code></pre>
+
+<p>通过上面的方式，同样实现了继承。对于第二种方式，说是继承并不严格，因为它只是借用Base类中的方法，它们之间没有真正的继承关系。我们可以使用instanceof方法来证明这一点。</p>
+
+<p>对于第一种方式：</p>
+
+<pre><code>alert(obj instanceof  Base); //输出true，说明Sub类对象是一个Base类的实例  
+</code></pre>
+
+<p>对于第二种方式：</p>
+
+<pre><code>alert(obj instanceof  Base); //输出false，说明Sub类对象不是一个Base类的实例  
+</code></pre>
+
+<p>总结：JavaScript不同于Java、C++、C#等基于类的面向对象语言，它是基于原型对象的面向对象语言。它通过原型对象和构造函数可以很好地实现面向对象的开发，这为使用JavaScript开发大型的、复杂的程序提供了可能。</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../google-chrome-input-zi-ding-yi-gao-du-he-xing-gao-hou-shu-ru-wen-zi-qian-guang-biao-cuo-wei/index.html" title="link to Google Chrome input 自定义高度和行高后输入文字前光标错位">Google Chrome input 自定义高度和行高后输入文字前光标错位</a>
+      </h5>
+       <p class="excerpt" title="自从 Google Chrome 37-38 中如果对一个文本输入框定义了height和line-height，并且他们的值相同，那么在输入文字前 Google Chrome 文本输入框的光标会向上移">自从 Google Chrome 37-38 中如果对一个文本输入框定义了height和line-height，并且他们的值相同，那么在输入文字前 Google Chrome 文本输入框的光标会向上移&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="20 1月 2015" class="post-list__meta--date date">20 1月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/css/">css</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/01/20/google-chrome-input-zi-ding-yi-gao-du-he-xing-gao-hou-shu-ru-wen-zi-qian-guang-biao-cuo-wei/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../09/yuan-sheng-jsshe-zhi-yang-shi-bing-hui-fu-mo-ren-yang-shi/index.html" title="link to 原生JS设置样式并恢复默认样式">原生JS设置样式并恢复默认样式</a></h5>
+       <p class="excerpt" title="&lt;!DOCTYPE HTML&gt;   &lt;html&gt;   &lt;head&gt;   &lt;meta http-equiv="Content-Type" Content="te">&lt;!DOCTYPE HTML&gt;   &lt;html&gt;   &lt;head&gt;   &lt;meta http-equiv="Content-Type" Content="te&hellip;</p>
+       <div class="post-list__meta"><time datetime="09 1月 2015" class="post-list__meta--date date">09 1月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/01/09/yuan-sheng-jsshe-zhi-yang-shi-bing-hui-fu-mo-ren-yang-shi/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

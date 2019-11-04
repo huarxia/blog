@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>HTTP状态码总览</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="HTTP状态码总览">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="HTTP状态码总览">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/04/15/httpzhuang-tai-ma-zong-lan/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="HTTP状态码总览" />
+    <meta property="og:description" content="2017-04-15 星期六 丁酉年      【鸡年】甲辰月 壬申日      宜：祭祀 祈福 求嗣 斋醮 沐浴      忌：移徙 入宅 嫁娶 出行 安床          状态代码   状态信息   含义            100   Continue   初始的请求已经接受，客户应当继续发送请求的其余部分。（HTTP 1.1新）      101   Switching Protocols   服务器将遵从客户的请求转换到另外一种协议（HTTP 1.1新）      200   OK   一切正常，对GET和POST请求的应答文档跟在后面。      201..." />
+    <meta property="og:url" content="http://localhost:2368/2017/04/15/httpzhuang-tai-ma-zong-lan/" />
+    <meta property="article:published_time" content="2017-04-15T07:26:45.678Z" />
+    <meta property="article:modified_time" content="2017-04-15T07:44:59.023Z" />
+    <meta property="article:tag" content="工具" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="HTTP状态码总览" />
+    <meta name="twitter:description" content="2017-04-15 星期六 丁酉年      【鸡年】甲辰月 壬申日      宜：祭祀 祈福 求嗣 斋醮 沐浴      忌：移徙 入宅 嫁娶 出行 安床          状态代码   状态信息   含义            100   Continue   初始的请求已经接受，客户应当继续发送请求的其余部分。（HTTP 1.1新）      101   Switching Protocols   服务器将遵从客户的请求转换到另外一种协议（HTTP 1.1新）      200   OK   一切正常，对GET和POST请求的应答文档跟在后面。      201..." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/04/15/httpzhuang-tai-ma-zong-lan/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "HTTP状态码总览",
+    "url": "http://localhost:2368/2017/04/15/httpzhuang-tai-ma-zong-lan/",
+    "datePublished": "2017-04-15T07:26:45.678Z",
+    "dateModified": "2017-04-15T07:44:59.023Z",
+    "keywords": "工具",
+    "description": "2017-04-15 星期六 丁酉年      【鸡年】甲辰月 壬申日      宜：祭祀 祈福 求嗣 斋醮 沐浴      忌：移徙 入宅 嫁娶 出行 安床          状态代码   状态信息   含义            100   Continue   初始的请求已经接受，客户应当继续发送请求的其余部分。（HTTP 1.1新）      101   Switching Protocols   服务器将遵从客户的请求转换到另外一种协议（HTTP 1.1新）      200   OK   一切正常，对GET和POST请求的应答文档跟在后面。      201..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-gong-ju">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="15 4月 2017" class="post-meta__date date">15 4月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/gong-ju/index.html">工具</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">HTTP状态码总览</h1>
+    </header>
+
+    <section class="post tag-gong-ju">
+      <blockquote>
+  <p>2017-04-15 星期六 丁酉年</p>
+  
+  <p>【鸡年】甲辰月 壬申日</p>
+  
+  <p>宜：祭祀 祈福 求嗣 斋醮 沐浴</p>
+  
+  <p>忌：移徙 入宅 嫁娶 出行 安床</p>
+</blockquote>
+
+<table>  
+<thead>  
+<tr>  
+<th id="状态代码" style="text-align:left;">状态代码</th>  
+<th id="状态信息" style="text-align:left;">状态信息</th>  
+<th id="含义" style="text-align:left;">含义</th>  
+</tr>  
+</thead>
+
+<tbody>  
+<tr>  
+<td style="text-align:left;"><p>100</p></td>  
+<td style="text-align:left;"><p>Continue</p></td>  
+<td style="text-align:left;"><p>初始的请求已经接受，客户应当继续发送请求的其余部分。（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>101</p></td>  
+<td style="text-align:left;"><p>Switching Protocols</p></td>  
+<td style="text-align:left;"><p>服务器将遵从客户的请求转换到另外一种协议（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>200</p></td>  
+<td style="text-align:left;"><p>OK</p></td>  
+<td style="text-align:left;"><p>一切正常，对GET和POST请求的应答文档跟在后面。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>201</p></td>  
+<td style="text-align:left;"><p>Created</p></td>  
+<td style="text-align:left;"><p>服务器已经创建了文档，Location头给出了它的URL。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>202</p></td>  
+<td style="text-align:left;"><p>Accepted</p></td>  
+<td style="text-align:left;"><p>已经接受请求，但处理尚未完成。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>203</p></td>  
+<td style="text-align:left;"><p>Non-Authoritative Information</p></td>  
+<td style="text-align:left;"><p>文档已经正常地返回，但一些应答头可能不正确，因为使用的是文档的拷贝（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>204</p></td>  
+<td style="text-align:left;"><p>No Content</p></td>  
+<td style="text-align:left;"><p>没有新文档，浏览器应该继续显示原来的文档。如果用户定期地刷新页面，而Servlet可以确定用户文档足够新，这个状态代码是很有用的。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>205</p></td>  
+<td style="text-align:left;"><p>Reset Content</p></td>  
+<td style="text-align:left;"><p>没有新的内容，但浏览器应该重置它所显示的内容。用来强制浏览器清除表单输入内容（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>206</p></td>  
+<td style="text-align:left;"><p>Partial Content</p></td>  
+<td style="text-align:left;"><p>客户发送了一个带有Range头的GET请求，服务器完成了它（HTTP 1.1新）。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>300</p></td>  
+<td style="text-align:left;"><p>Multiple Choices</p></td>  
+<td style="text-align:left;"><p>客户请求的文档可以在多个位置找到，这些位置已经在返回的文档内列出。如果服务器要提出优先选择，则应该在Location应答头指明。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>301</p></td>  
+<td style="text-align:left;"><p>Moved Permanently</p></td>  
+<td style="text-align:left;"><p>客户请求的文档在其他地方，新的URL在Location头中给出，浏览器应该自动地访问新的URL</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>302</p></td>  
+<td style="text-align:left;"><p>Found</p></td>  
+<td style="text-align:left;"><p>类似于301，但新的URL应该被视为临时性的替代，而不是永久性的。注意，在HTTP1.0中对应的状态信息是“Moved Temporatily”。出现该状态代码时，浏览器能够自动访问新的URL，因此它是一个很有用的状态代码。注意这个状态代码有时候可以和301替换使用。例如，如果浏览器错误地请求<code>http://host/~user</code>（缺少了后面的斜杠），有的服务器 返回301，有的则返回302。严格地说，我们只能假定只有当原来的请求是GET时浏览器才会自动重定向。请参见307。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>303</p></td>  
+<td style="text-align:left;"><p>See Other</p></td>  
+<td style="text-align:left;"><p>类似于301/302，不同之处在于，如果原来的请求是POST，Location头指定的重定向目标文档应该通过GET提取（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>304</p></td>  
+<td style="text-align:left;"><p>Not Modified</p></td>  
+<td style="text-align:left;"><p>客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告 诉客户，原来缓冲的文档还可以继续使用。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>305</p></td>  
+<td style="text-align:left;"><p>Use Proxy</p></td>  
+<td style="text-align:left;"><p>客户请求的文档应该通过Location头所指明的代理服务器提取（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>307</p></td>  
+<td style="text-align:left;"><p>Temporary Redirect</p></td>  
+<td style="text-align:left;"><p>和302 （Found）相同。许多浏览器会错误地响应302应答进行重定向，即使原来的请求是POST，即使它实际上只能在POST请求的应答是303时才能重定 向。由于这个原因，HTTP 1.1新增了307，以便更加清除地区分几个状态代码：当出现303应答时，浏览器可以跟随重定向的GET和POST请求；如果是307应答，则浏览器只 能跟随对GET请求的重定向。（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>400</p></td>  
+<td style="text-align:left;"><p>Bad Request</p></td>  
+<td style="text-align:left;"><p>请求出现语法错误</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>401</p></td>  
+<td style="text-align:left;"><p>Unauthorized</p></td>  
+<td style="text-align:left;"><p>客户试图未经授权访问受密码保护的页面。应答中会包含一个WWW-Authenticate头，浏览器据此显示用户名字/密码对话框，然后在填 写合适的Authorization头后再次发出请求</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>403</p></td>  
+<td style="text-align:left;"><p>Forbidden</p></td>  
+<td style="text-align:left;"><p>资源不可用。服务器理解客户的请求，但拒绝处理它。通常由于服务器上文件或目录的权限设置导致。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>404</p></td>  
+<td style="text-align:left;"><p>Not Found</p></td>  
+<td style="text-align:left;"><p>无法找到指定位置的资源。这也是一个常用的应答</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>405</p></td>  
+<td style="text-align:left;"><p>Method Not Allowed</p></td>  
+<td style="text-align:left;"><p>请求方法（GET、POST、HEAD、DELETE、PUT、TRACE等）对指定的资源不适用。（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>406</p></td>  
+<td style="text-align:left;"><p>Not Acceptable</p></td>  
+<td style="text-align:left;"><p>指定的资源已经找到，但它的MIME类型和客户在Accpet头中所指定的不兼容（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>407</p></td>  
+<td style="text-align:left;"><p>Proxy Authentication Required</p></td>  
+<td style="text-align:left;"><p>类似于401，表示客户必须先经过代理服务器的授权。（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>408</p></td>  
+<td style="text-align:left;"><p>Request Timeout</p></td>  
+<td style="text-align:left;"><p>在服务器许可的等待时间内，客户一直没有发出任何请求。客户可以在以后重复同一请求。（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>409</p></td>  
+<td style="text-align:left;"><p>Conflict</p></td>  
+<td style="text-align:left;"><p>通常和PUT请求有关。由于请求和资源的当前状态相冲突，因此请求不能成功。（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>410</p></td>  
+<td style="text-align:left;"><p>Gone</p></td>  
+<td style="text-align:left;"><p>所请求的文档已经不再可用，而且服务器不知道应该重定向到哪一个地址。它和404的不同在于，返回407表示文档永久地离开了指定的位置，而 404表示由于未知的原因文档不可用。（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>411</p></td>  
+<td style="text-align:left;"><p>Length Required</p></td>  
+<td style="text-align:left;"><p>服务器不能处理请求，除非客户发送一个Content-Length头。（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>412</p></td>  
+<td style="text-align:left;"><p>Precondition Failed</p></td>  
+<td style="text-align:left;"><p>请求头中指定的一些前提条件失败（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>413</p></td>  
+<td style="text-align:left;"><p>Request Entity Too Large</p></td>  
+<td style="text-align:left;"><p>目标文档的大小超过服务器当前愿意处理的大小。如果服务器认为自己能够稍后再处理该请求，则应该提供一个Retry-After头（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>414</p></td>  
+<td style="text-align:left;"><p>Request URI Too Long</p></td>  
+<td style="text-align:left;"><p>URI太长（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>416</p></td>  
+<td style="text-align:left;"><p>Requested Range Not Satisfiable</p></td>  
+<td style="text-align:left;"><p>服务器不能满足客户在请求中指定的Range头。（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>500</p></td>  
+<td style="text-align:left;"><p>Internal Server Error</p></td>  
+<td style="text-align:left;"><p>服务器遇到了意料不到的情况，不能完成客户的请求。</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>501</p></td>  
+<td style="text-align:left;"><p>Not Implemented</p></td>  
+<td style="text-align:left;"><p>服务器不支持实现请求所需要的功能。例如，客户发出了一个服务器不支持的PUT请求</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>502</p></td>  
+<td style="text-align:left;"><p>Bad Gateway</p></td>  
+<td style="text-align:left;"><p>服务器作为网关或者代理时，为了完成请求访问下一个服务器，但该服务器返回了非法的应答</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>503</p></td>  
+<td style="text-align:left;"><p>Service Unavailable</p></td>  
+<td style="text-align:left;"><p>服务器由于维护或者负载过重未能应答。例如，Servlet可能在数据库连接池已满的情况下返回503。服务器返回503时可以提供一个 Retry-After头</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>504</p></td>  
+<td style="text-align:left;"><p>Gateway Timeout</p></td>  
+<td style="text-align:left;"><p>由作为代理或网关的服务器使用，表示不能及时地从远程服务器获得应答。（HTTP 1.1新）</p></td>  
+</tr>
+
+<tr>  
+<td style="text-align:left;"><p>505</p></td>  
+<td style="text-align:left;"><p>HTTP Version Not Supported</p></td>  
+<td style="text-align:left;"><p>服务器不支持请求中所指明的HTTP版本。（HTTP 1.1新）</p></td>  
+</tr>
+
+</tbody>  
+</table>  
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../26/vuekai-yuan-xiang-mu-ku-hui-zong/index.html" title="link to Vue开源项目库汇总">Vue开源项目库汇总</a>
+      </h5>
+       <p class="excerpt" title="2017-04-26 星期三 丁酉年      【鸡年】甲辰月 癸未日      宜：祭祀 作灶 平治道涂 余事勿取      忌：嫁娶 安葬 动土 安床 治病 UI组件： element ★9">2017-04-26 星期三 丁酉年      【鸡年】甲辰月 癸未日      宜：祭祀 作灶 平治道涂 余事勿取      忌：嫁娶 安葬 动土 安床 治病 UI组件： element ★9&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="26 4月 2017" class="post-list__meta--date date">26 4月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/gong-ju/">工具</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/04/26/vuekai-yuan-xiang-mu-ku-hui-zong/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../10/chun-cssshi-xian-dian-ji-bian-se-lei-si-hoverxiao-guo/index.html" title="link to 纯css实现点击变色，类似hover效果">纯css实现点击变色，类似hover效果</a></h5>
+       <p class="excerpt" title="2017-04-10 星期一  三月十四丁酉年       【鸡年】甲辰月 丁卯日      宜：祭祀 出行 修造 动土 合帐      忌：移徙 入宅 作灶 理发 开光 常常给一个dom添加h">2017-04-10 星期一  三月十四丁酉年       【鸡年】甲辰月 丁卯日      宜：祭祀 出行 修造 动土 合帐      忌：移徙 入宅 作灶 理发 开光 常常给一个dom添加h&hellip;</p>
+       <div class="post-list__meta"><time datetime="10 4月 2017" class="post-list__meta--date date">10 4月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/04/10/chun-cssshi-xian-dian-ji-bian-se-lei-si-hoverxiao-guo/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

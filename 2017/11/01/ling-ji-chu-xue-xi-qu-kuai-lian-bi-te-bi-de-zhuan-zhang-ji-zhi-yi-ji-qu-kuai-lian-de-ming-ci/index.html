@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>零基础学习区块链-3.比特币转账运行原理</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="零基础学习区块链-3.比特币转账运行原理">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="零基础学习区块链-3.比特币转账运行原理">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2017/11/01/ling-ji-chu-xue-xi-qu-kuai-lian-bi-te-bi-de-zhuan-zhang-ji-zhi-yi-ji-qu-kuai-lian-de-ming-ci/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="零基础学习区块链-3.比特币转账运行原理" />
+    <meta property="og:description" content="2017-11-01 星期三 丁酉年 九月十三      【鸡年】庚戌月 壬辰日      宜：破屋 坏垣 余事勿取      忌：诸事不宜 2008年发生了全球经济危机，就在那时候中本聪发明了比特币，发明的时候，他想的是，发生金融危机，货币被无限超发，每个人手里的纸币，一直在贬值。这样就是底层大众在受打不公正待遇，于是就想能不能有一种没有一个机构来控制价值体系呢？所以他就发明了比特币这样一个去中心化的一个体系。 那么，在一个没有中心化机构的情况下，比特币的发行、记账、交易是怎样进行的呢？ 比特币的发行机制 首先，规定了比特币的总量为2100万枚，这一总量是恒定不变的，并不会受到无限制印刷产生。比特币网络大约每10min产生一页账单,没产生一个比特币就会伴随每一页账单的产生，同时也是每一个区块的问世和发行。而最初比特币的奖励是50枚，没产生21万枚时候减半，大约是3...." />
+    <meta property="og:url" content="http://localhost:2368/2017/11/01/ling-ji-chu-xue-xi-qu-kuai-lian-bi-te-bi-de-zhuan-zhang-ji-zhi-yi-ji-qu-kuai-lian-de-ming-ci/" />
+    <meta property="article:published_time" content="2017-11-01T02:57:37.268Z" />
+    <meta property="article:modified_time" content="2017-11-01T06:39:52.618Z" />
+    <meta property="article:tag" content="区块链" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="零基础学习区块链-3.比特币转账运行原理" />
+    <meta name="twitter:description" content="2017-11-01 星期三 丁酉年 九月十三      【鸡年】庚戌月 壬辰日      宜：破屋 坏垣 余事勿取      忌：诸事不宜 2008年发生了全球经济危机，就在那时候中本聪发明了比特币，发明的时候，他想的是，发生金融危机，货币被无限超发，每个人手里的纸币，一直在贬值。这样就是底层大众在受打不公正待遇，于是就想能不能有一种没有一个机构来控制价值体系呢？所以他就发明了比特币这样一个去中心化的一个体系。 那么，在一个没有中心化机构的情况下，比特币的发行、记账、交易是怎样进行的呢？ 比特币的发行机制 首先，规定了比特币的总量为2100万枚，这一总量是恒定不变的，并不会受到无限制印刷产生。比特币网络大约每10min产生一页账单,没产生一个比特币就会伴随每一页账单的产生，同时也是每一个区块的问世和发行。而最初比特币的奖励是50枚，没产生21万枚时候减半，大约是3...." />
+    <meta name="twitter:url" content="http://localhost:2368/2017/11/01/ling-ji-chu-xue-xi-qu-kuai-lian-bi-te-bi-de-zhuan-zhang-ji-zhi-yi-ji-qu-kuai-lian-de-ming-ci/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "零基础学习区块链-3.比特币转账运行原理",
+    "url": "http://localhost:2368/2017/11/01/ling-ji-chu-xue-xi-qu-kuai-lian-bi-te-bi-de-zhuan-zhang-ji-zhi-yi-ji-qu-kuai-lian-de-ming-ci/",
+    "datePublished": "2017-11-01T02:57:37.268Z",
+    "dateModified": "2017-11-01T06:39:52.618Z",
+    "keywords": "区块链",
+    "description": "2017-11-01 星期三 丁酉年 九月十三      【鸡年】庚戌月 壬辰日      宜：破屋 坏垣 余事勿取      忌：诸事不宜 2008年发生了全球经济危机，就在那时候中本聪发明了比特币，发明的时候，他想的是，发生金融危机，货币被无限超发，每个人手里的纸币，一直在贬值。这样就是底层大众在受打不公正待遇，于是就想能不能有一种没有一个机构来控制价值体系呢？所以他就发明了比特币这样一个去中心化的一个体系。 那么，在一个没有中心化机构的情况下，比特币的发行、记账、交易是怎样进行的呢？ 比特币的发行机制 首先，规定了比特币的总量为2100万枚，这一总量是恒定不变的，并不会受到无限制印刷产生。比特币网络大约每10min产生一页账单,没产生一个比特币就会伴随每一页账单的产生，同时也是每一个区块的问世和发行。而最初比特币的奖励是50枚，没产生21万枚时候减半，大约是3...."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-qu-kuai-lian">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="01 11月 2017" class="post-meta__date date">01 11月 2017</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/qu-kuai-lian/index.html">区块链</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">零基础学习区块链-3.比特币转账运行原理</h1>
+    </header>
+
+    <section class="post tag-qu-kuai-lian">
+      <blockquote>
+  <p>2017-11-01 星期三 丁酉年 九月十三</p>
+  
+  <p>【鸡年】庚戌月 壬辰日</p>
+  
+  <p>宜：破屋 坏垣 余事勿取</p>
+  
+  <p>忌：诸事不宜</p>
+</blockquote>
+
+<p>2008年发生了全球经济危机，就在那时候中本聪发明了比特币，发明的时候，他想的是，发生金融危机，货币被无限超发，每个人手里的纸币，一直在贬值。这样就是底层大众在受打不公正待遇，于是就想能不能有一种没有一个机构来控制价值体系呢？所以他就发明了比特币这样一个去中心化的一个体系。</p>
+
+<p>那么，在一个没有中心化机构的情况下，比特币的发行、记账、交易是怎样进行的呢？</p>
+
+<h3 id="">比特币的发行机制</h3>
+
+<p>首先，规定了比特币的总量为2100万枚，这一总量是恒定不变的，并不会受到无限制<code>印刷</code>产生。比特币网络大约每10min产生一页账单,没产生一个比特币就会伴随每一页账单的产生，同时也是每一个区块的问世和发行。而最初比特币的奖励是50枚，没产生21万枚时候减半，大约是3.99年减半一次。所以会一直持续到2140年，所有的比特币才会发行完毕。</p>
+
+<p>前面提到枚3.99年奖励的比特币减半一次，那么这个3.99年是怎么来的呢？凭空说的？中本聪规定的？那我们来算一算吧，每有计算我会凭空乱说？</p>
+
+<p>最开始我们说了，每21万个区块减半一次，那么来我们算一算，平均每10分钟就会产生一个区块，出21万个区块需要多久呢？理论上需要<code>1458.3</code>天，也就是<code>3.99</code>年。这也就是大众说的 “比特币每四年减半” 的由来。<code>2016年7月8</code>日开始，比特币第二次减半，也就是每个区块伴随的比特币奖励为<code>12.5</code>枚。</p>
+
+<p>到这里我们知道了现在减半道理多少，挖出一个区块会奖励多少，但是你知道现在事多是个区块么？是不是凭着自己的算力获得这个奖励会值得呢？so,当前是第几块区块怎么算？</p>
+
+<p>第几块区块大家习惯 "区块高度" 来标记它。也就是一个区块的高度是从比特币诞生之后，第多少个区块！打开任意一个比特币的区块浏览器，我们可以看到现在出来的最新的区块高度。通过区块高度，我们可以计算大概还有多久，比特币会进行下一次减半、多久会进行难度的调整、多久进行一次大事件。</p>
+
+<h3 id="">比特币的记账</h3>
+
+<p>前面我们说到，比特币是使用的<code>工作量证明机制</code>，也就是<code>POW</code>。所有的矿工会通过自己的最大算力通过哈希碰撞这种计算算法，去争夺最大价值的记账权利。打个比方，就好像是没10分钟，网络上会出现一道特别复杂的数学题，谁最快的计算出答案，那么他就可以在这上就行记账，并且获得产生的比特币奖励。当他记录打包本页账单，大家都要以此为准，接下来，产生下一页账单，会在这页账单的加密基础上产生，大家就开始新一轮的挖矿竞争了。这种共识机制解决了一个去中心化体系下，账本的唯一性权益。</p>
+
+<p>可以看到为了获得记账，矿工其实是需要花费很多的电力、人力等能源的，如果是免费的肯定是没有人会去这样做的，因为在获得记账权利的同时，可以同时获得新发行的比特币，这样的体系才能够走得更远。把比特币的发行和竞争记账绑定在了一起，记账人每获得一次记账权利，就会获得系统产生的新的比特币作为奖励。也就是说算的最快的计算机，就会"挖"到一定数量的比特币。</p>
+
+<p>在每一轮记账的竞争中，谁获得记账权，谁就获得这一个区块里的新诞生比特币奖励和被记录在账单里的交易的手续费。在2017年，如果你是一个矿工，在一轮竞争中获得了记账权，你就会获得12.5个新发行的比特币奖励，还有这个区块上所有的手续费，大约零点几到2个比特币手续费。随着新生比特币每四年减半，新生比特币奖励越来越少，那么矿工还会有动力去挖矿吗？</p>
+
+<p>答案是肯定的。因为他们还有另外一部分收入，就是大家给的比特币转账的手续费。是否还记得在比特币的世界里转账手续费是可以自己填写的吗？随着使用比特币的人和机构越来越多，全球比特币转账越来越频繁，转账手续费总量也会越来越大，手续费会未来成为矿工的主要收入来源。大家又会这么想，既然比特币手续费可以自己填，那如果我们每个人都填写0手续费，矿工就不会得到收益，这个体系就不会运行下去，答案是否定的，有点博弈论意思在里面，你不付手续费并不代表别人不，因为他可以获得更高的收益，如果被记录得越慢他就会遭受损失，为了更快的获取收益，肯定会有人支付手续费的。你不支付你的账单将不会被矿工记录或者更多时间的被记录。</p>
+
+<h3 id="">比特币的交易</h3>
+
+<p>上一讲我们已经讲过了比特币的交易，其实就和银行卡转账一样简单，只需要自己的地址，对方地址，转账金额，手续费即可。而保证自己和别人的比特币安全的做法就是随机生成的一个私钥只能对应一个地址，保证了每个地址发出比特币的合法性。</p>
+
+<p>比特币现在的每个区块大小是1M字节，大概能容纳数千笔交易。当网络转账的人比较少时，等待矿工确认的你可能只需要等10分钟，就能被下一个区块确认了。如果当前转账的人比较多，你可能要排队，多等一个10分钟，甚至更长时间。矿工们会不断的等待记录的转账交易里面去选择手续费比较高的转账信息来进行记账，如果你的手续费不排在前面，可能就要排在很后面才能够记你的账了。这也就是上面我们说到的，肯定会有人愿意去支付高额手续费，因为他需要获取更高的利益。</p>
+
+<p>本次讲解结束~</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../../12/26/2017nian-nozong-jie/index.html" title="link to 2017年の总结">2017年の总结</a>
+      </h5>
+       <p class="excerpt" title="2017-12-26 星期二 十一月初九      【鸡年】壬子月 丁亥日      宜：纳采 订盟 祭祀 沐浴 冠笄      忌：嫁娶 祈福 开光 掘井 安葬      地点: 中关村768">2017-12-26 星期二 十一月初九      【鸡年】壬子月 丁亥日      宜：纳采 订盟 祭祀 沐浴 冠笄      忌：嫁娶 祈福 开光 掘井 安葬      地点: 中关村768&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="26 12月 2017" class="post-list__meta--date date">26 12月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/wen-zhang/">文章</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/12/26/2017nian-nozong-jie/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../../10/30/ling-ji-chu-xue-xi-qu-kuai-lian-bi-te-bi-de-zhuan-zhang-ji-zhi-yi-ji-chang-shi-ming-ci/index.html" title="link to 零基础学习区块链-2.比特币的转账机制以及区块链的名词">零基础学习区块链-2.比特币的转账机制以及区块链的名词</a></h5>
+       <p class="excerpt" title="2017-10-30 星期一 丁酉年 九月十一      【鸡年】庚戌月 庚寅日      宜：捕捉 结网 入殓 除服 成服      忌：嫁娶 祭祀 入宅 造屋 移徙 上讲内容我们说到人类社会">2017-10-30 星期一 丁酉年 九月十一      【鸡年】庚戌月 庚寅日      宜：捕捉 结网 入殓 除服 成服      忌：嫁娶 祭祀 入宅 造屋 移徙 上讲内容我们说到人类社会&hellip;</p>
+       <div class="post-list__meta"><time datetime="30 10月 2017" class="post-list__meta--date date">30 10月 2017</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/qu-kuai-lian/">区块链</a></span> -->
+        <!-- <a class="btn-border-small" href=/2017/10/30/ling-ji-chu-xue-xi-qu-kuai-lian-bi-te-bi-de-zhuan-zhang-ji-zhi-yi-ji-chang-shi-ming-ci/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>关于曲边阴影和翘边阴影</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="关于曲边阴影和翘边阴影">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="关于曲边阴影和翘边阴影">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/02/07/guan-yu-qu-bian-yin-ying-he-qiao-bian-yin-ying/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="关于曲边阴影和翘边阴影" />
+    <meta property="og:description" content="多的不说贴代码： &amp;lt;!DOCTYPE html&amp;gt;   &amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;   &amp;lt;meta charset=utf-8 /&amp;gt;   &amp;lt;title&amp;gt;box-shadow&amp;lt;/title&amp;gt;   &amp;lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&amp;gt;   &amp;lt;/head&amp;gt;   &amp;lt;body&amp;gt;     &amp;lt;div..." />
+    <meta property="og:url" content="http://localhost:2368/2015/02/07/guan-yu-qu-bian-yin-ying-he-qiao-bian-yin-ying/" />
+    <meta property="article:published_time" content="2015-02-07T09:07:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-15T09:09:06.021Z" />
+    <meta property="article:tag" content="css" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="关于曲边阴影和翘边阴影" />
+    <meta name="twitter:description" content="多的不说贴代码： &amp;lt;!DOCTYPE html&amp;gt;   &amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;   &amp;lt;meta charset=utf-8 /&amp;gt;   &amp;lt;title&amp;gt;box-shadow&amp;lt;/title&amp;gt;   &amp;lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&amp;gt;   &amp;lt;/head&amp;gt;   &amp;lt;body&amp;gt;     &amp;lt;div..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/02/07/guan-yu-qu-bian-yin-ying-he-qiao-bian-yin-ying/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "关于曲边阴影和翘边阴影",
+    "url": "http://localhost:2368/2015/02/07/guan-yu-qu-bian-yin-ying-he-qiao-bian-yin-ying/",
+    "datePublished": "2015-02-07T09:07:00.000Z",
+    "dateModified": "2016-11-15T09:09:06.021Z",
+    "keywords": "css",
+    "description": "多的不说贴代码： &amp;lt;!DOCTYPE html&amp;gt;   &amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;   &amp;lt;meta charset=utf-8 /&amp;gt;   &amp;lt;title&amp;gt;box-shadow&amp;lt;/title&amp;gt;   &amp;lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&amp;gt;   &amp;lt;/head&amp;gt;   &amp;lt;body&amp;gt;     &amp;lt;div..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-css">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="07 2月 2015" class="post-meta__date date">07 2月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/css/index.html">css</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">关于曲边阴影和翘边阴影</h1>
+    </header>
+
+    <section class="post tag-css">
+      <p>多的不说贴代码：</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;  
+&lt;html&gt;  
+&lt;head&gt;  
+&lt;meta charset=utf-8 /&gt;  
+&lt;title&gt;box-shadow&lt;/title&gt;  
+&lt;link rel="stylesheet" href="css/style.css"&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+  &lt;div class="wrap effect"&gt;
+     &lt;h3&gt;Shadow Effect&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;ul class="box"&gt;
+      &lt;li&gt;&lt;img src="images/photo1.jpg"/&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src="images/photo2.jpg"/&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src="images/photo3.jpg"/&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;  
+&lt;/html&gt;  
+</code></pre>
+
+<pre><code>body{font-family:Arial;  
+     font-size:23px;}
+.wrap h3{
+  text-align:center;
+  position:relative;
+  top:80px;
+}
+.wrap {
+  width:70%;
+  height:200px;
+  background:#FFF;
+  margin:40px auto;
+}
+
+.effect{
+    position: relative;
+     box-shadow: 0px 1px 4px rgba(0,0,0,0.3),0px 0px 30px rgba(0,0,0,0.1) inset;
+}
+.effect:after,.effect:before{ content: "";
+position: absolute;  
+top:50%;  
+left:10px;  
+right: 10px;  
+bottom: 0;  
+box-shadow: 0px 1px 10px rgba(0,0,0,0.3);  
+z-index: -1;border-radius: 100px/10px  
+}
+ul.box{ width: 980px;  
+    height: auto;
+    margin: 20px auto;
+    clear:both;
+}
+.box li { list-style: none;
+    float: left;
+    margin:20px 10px;
+    padding: 0;
+    width: 300px;
+    height: 220px;
+    position: relative;
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.3),0px 0px 60px rgba(0,0,0,0.1) inset}
+
+.box li img{ width: 290px;
+    height: 210px;
+    background: white;
+    border: 2px solid #efefef;
+    padding:5px;}
+.box li:after{ content: "";
+position: absolute;  
+background: transparent;  
+width: 90%;  
+height: 80%;  
+left: 20px;  
+bottom:8px;  
+box-shadow: 0px 8px 15px rgba(0,0,0,0.6);  
+z-index: -1;  
+transform: skew(12deg) rotate(4deg);  
+}
+.box li:before{ content: "";
+position: absolute;  
+ background: transparent; 
+ width: 90%;
+ height: 80%;
+ left: 20px;
+ bottom:8px;
+ box-shadow: 0px 8px 15px rgba(0,0,0,0.6);
+ z-index: -1;
+ transform: skew(-12deg) rotate(-4deg);}
+</code></pre>
+
+<p>至于产生的阴影都是用几个盒子产生的，但是我们不用div去做而是用：afeter :before伪类做的，</p>
+
+<p>：afeter表示在盒子内容后面添加东西；</p>
+
+<p>:before表示在盒子前面添加东西；</p>
+
+<p>而且z-index:-1,放在盒子下面才行哦，记住content：“”；设为空，不然盒子会出现设置的文字
+<a href="http://www.huar.love/demo/shadow/">查看演示</a></p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../10/shu-biao-gun-lun-shi-jian-2/index.html" title="link to 鼠标滚轮事件">鼠标滚轮事件</a>
+      </h5>
+       <p class="excerpt" title="function addEvent(element,type,fn){           if(element.addEventListener){             element.addE">function addEvent(element,type,fn){           if(element.addEventListener){             element.addE&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="10 2月 2015" class="post-list__meta--date date">10 2月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/02/10/shu-biao-gun-lun-shi-jian-2/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../06/yong-zheng-ze-biao-da-shi-xie-de-getbyclass/index.html" title="link to 用正则表达式写的getByClass">用正则表达式写的getByClass</a></h5>
+       <p class="excerpt" title="最开始我们使用笨笨的方法解决通过class选取元素见：class获取DOM 这里我们再次使用正则表达式来优化 ;function getByClass(obj,sclass){     var all">最开始我们使用笨笨的方法解决通过class选取元素见：class获取DOM 这里我们再次使用正则表达式来优化 ;function getByClass(obj,sclass){     var all&hellip;</p>
+       <div class="post-list__meta"><time datetime="06 2月 2015" class="post-list__meta--date date">06 2月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/js/">js</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/02/06/yong-zheng-ze-biao-da-shi-xie-de-getbyclass/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

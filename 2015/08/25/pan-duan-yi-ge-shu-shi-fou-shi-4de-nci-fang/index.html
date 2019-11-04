@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>判断一个数是否是4的N次方</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="判断一个数是否是4的N次方">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="判断一个数是否是4的N次方">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2015/08/25/pan-duan-yi-ge-shu-shi-fou-shi-4de-nci-fang/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="判断一个数是否是4的N次方" />
+    <meta property="og:description" content="前几天面试遇到一个问题，想了半天没想出来，后来用了最笨的方法写出来，就是利用递归，最后被告知运算速度太低。 回到家后百度了下，关于JS想找到一种高效的方法真的是不容易啊。 首先： 2的整数次幂的二进制数都为: (4)100、(16)10000、(64)1000000……另外，4的幂次方4n也可以写为2*2*n，即也可以写为2的幂次方，当然就满足2的幂次方的条件了，即num&amp;amp;(num – 1) === 0。 思路：首先用条件num&amp;amp;(num – 1) === 0来判断是否为2的幂次方，若不满足，则不是； function isFourN(num) {       return (!(num &amp;amp;..." />
+    <meta property="og:url" content="http://localhost:2368/2015/08/25/pan-duan-yi-ge-shu-shi-fou-shi-4de-nci-fang/" />
+    <meta property="article:published_time" content="2015-08-25T07:19:00.000Z" />
+    <meta property="article:modified_time" content="2016-11-21T06:53:47.726Z" />
+    <meta property="article:tag" content="js" />
+    <meta property="article:tag" content="面試" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="判断一个数是否是4的N次方" />
+    <meta name="twitter:description" content="前几天面试遇到一个问题，想了半天没想出来，后来用了最笨的方法写出来，就是利用递归，最后被告知运算速度太低。 回到家后百度了下，关于JS想找到一种高效的方法真的是不容易啊。 首先： 2的整数次幂的二进制数都为: (4)100、(16)10000、(64)1000000……另外，4的幂次方4n也可以写为2*2*n，即也可以写为2的幂次方，当然就满足2的幂次方的条件了，即num&amp;amp;(num – 1) === 0。 思路：首先用条件num&amp;amp;(num – 1) === 0来判断是否为2的幂次方，若不满足，则不是； function isFourN(num) {       return (!(num &amp;amp;..." />
+    <meta name="twitter:url" content="http://localhost:2368/2015/08/25/pan-duan-yi-ge-shu-shi-fou-shi-4de-nci-fang/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "判断一个数是否是4的N次方",
+    "url": "http://localhost:2368/2015/08/25/pan-duan-yi-ge-shu-shi-fou-shi-4de-nci-fang/",
+    "datePublished": "2015-08-25T07:19:00.000Z",
+    "dateModified": "2016-11-21T06:53:47.726Z",
+    "keywords": "js, 面試",
+    "description": "前几天面试遇到一个问题，想了半天没想出来，后来用了最笨的方法写出来，就是利用递归，最后被告知运算速度太低。 回到家后百度了下，关于JS想找到一种高效的方法真的是不容易啊。 首先： 2的整数次幂的二进制数都为: (4)100、(16)10000、(64)1000000……另外，4的幂次方4n也可以写为2*2*n，即也可以写为2的幂次方，当然就满足2的幂次方的条件了，即num&amp;amp;(num – 1) === 0。 思路：首先用条件num&amp;amp;(num – 1) === 0来判断是否为2的幂次方，若不满足，则不是； function isFourN(num) {       return (!(num &amp;amp;..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-js tag-mian-shi">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="25 8月 2015" class="post-meta__date date">25 8月 2015</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/js/index.html">js</a>, <a href="../../../../tag/mian-shi/index.html">面試</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">判断一个数是否是4的N次方</h1>
+    </header>
+
+    <section class="post tag-js tag-mian-shi">
+      <p>前几天面试遇到一个问题，想了半天没想出来，后来用了最笨的方法写出来，就是利用递归，最后被告知运算速度太低。</p>
+
+<p>回到家后百度了下，关于JS想找到一种高效的方法真的是不容易啊。</p>
+
+<p>首先：
+2的整数次幂的二进制数都为: (4)100、(16)10000、(64)1000000……另外，4的幂次方4n也可以写为<code>2*2*n</code>，即也可以写为2的幂次方，当然就满足2的幂次方的条件了，即<code>num&amp;(num – 1) === 0</code>。</p>
+
+<p>思路：首先用条件<code>num&amp;(num – 1) === 0</code>来判断是否为2的幂次方，若不满足，则不是；</p>
+
+<pre><code>function isFourN(num) {  
+    return (!(num &amp; (num-1)) &amp;&amp; ((num%10 === 4) || (num%10 === 6))) || (num === 1);
+}
+</code></pre>
+
+<p>完美解决！！！</p>
+
+<p>解析：</p>
+
+<blockquote>
+  <p>1.<code>!(num &amp; (num-1))</code></p>
+</blockquote>
+
+<p>此步意思是：判断是否为2的幂次方；</p>
+
+<blockquote>
+  <p>2.<code>(num%10 === 4) || (num%10 === 6)</code></p>
+</blockquote>
+
+<p>這句話的意思是：1的只是2的N次冪還不行，比如2^1 2^3 這樣的奇次冪，所以這句話的意思是排除2的奇次冪，只需要2的偶次冪即可，2的偶次冪即為%10為4或者6的數；</p>
+
+<blockquote>
+  <p>3.<code>num === 1</code></p>
+</blockquote>
+
+<p>這句話的意思是 <code>4^0 === 1</code>,那麼他也是4的N次冪，但是1條件已經排除了，所以單獨加上即可；</p>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../29/javascriptbian-ma-gui-fan/index.html" title="link to JavaScript编码规范">JavaScript编码规范</a>
+      </h5>
+       <p class="excerpt" title="JavaScript编码规范">JavaScript编码规范&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="29 8月 2015" class="post-list__meta--date date">29 8月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/08/29/javascriptbian-ma-gui-fan/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../23/wo-shou-zhi-de-san-chong-san-lan-wang-ye-kuan-du-zi-gua-ying-bu-ju-fang-fa-mian-shi-chang-chang-wen-dao/index.html" title="link to 我熟知的三种三栏网页宽度自适应布局方法(面试常常问到)">我熟知的三种三栏网页宽度自适应布局方法(面试常常问到)</a></h5>
+       <p class="excerpt" title="一、前言 在如今各个分辨率显示器N足鼎立的时期，页面采用流动性布局（亦可称自适应布局）不失为一个好选择。当然，具体实现不是那么容易，需要一定的css功力和 实践经验。本文不讲细节，只讲外部的自适应架构">一、前言 在如今各个分辨率显示器N足鼎立的时期，页面采用流动性布局（亦可称自适应布局）不失为一个好选择。当然，具体实现不是那么容易，需要一定的css功力和 实践经验。本文不讲细节，只讲外部的自适应架构&hellip;</p>
+       <div class="post-list__meta"><time datetime="23 8月 2015" class="post-list__meta--date date">23 8月 2015</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a>, <a href="/tag/jing-yan/">經驗</a></span> -->
+        <!-- <a class="btn-border-small" href=/2015/08/23/wo-shou-zhi-de-san-chong-san-lan-wang-ye-kuan-du-zi-gua-ying-bu-ju-fang-fa-mian-shi-chang-chang-wen-dao/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

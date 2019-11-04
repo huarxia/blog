@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>面試題庫3</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="面試題庫3">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="面試題庫3">
+    <meta property="og:description" content="">
+
+    <link rel="icon" type="image/png" href="../../../../assets/images/favicon.png" />
+    <link href="../../../../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="http://127.0.0.1:2368/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/vno.css" />
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/monokai_sublime.min.css">
+    <link rel="canonical" href="http://localhost:2368/2016/11/20/mian-shi-ti-ku-2/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="等下！前面端菜的" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="面試題庫3" />
+    <meta property="og:description" content="1. n是一个奇数，求证n(n^2-1)能被24整除   n=2*k+1；那么 n(n^2-1) = 4*k(k+1)*(2k+1)   // 使用公式： // k // Σ n^2 = k(k+1)(2k+1)/6 // n=0  4*6k(k+1)*(2k+1)/6..." />
+    <meta property="og:url" content="http://localhost:2368/2016/11/20/mian-shi-ti-ku-2/" />
+    <meta property="article:published_time" content="2016-11-20T06:50:12.954Z" />
+    <meta property="article:modified_time" content="2016-11-30T08:43:03.993Z" />
+    <meta property="article:tag" content="面試" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="面試題庫3" />
+    <meta name="twitter:description" content="1. n是一个奇数，求证n(n^2-1)能被24整除   n=2*k+1；那么 n(n^2-1) = 4*k(k+1)*(2k+1)   // 使用公式： // k // Σ n^2 = k(k+1)(2k+1)/6 // n=0  4*6k(k+1)*(2k+1)/6..." />
+    <meta name="twitter:url" content="http://localhost:2368/2016/11/20/mian-shi-ti-ku-2/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "等下！前面端菜的",
+    "author": {
+        "@type": "Person",
+        "name": "花夏",
+        "image": "http://localhost:2368/content/images/2016/10/---1.jpg",
+        "url": "http://localhost:2368/author/hua",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "面試題庫3",
+    "url": "http://localhost:2368/2016/11/20/mian-shi-ti-ku-2/",
+    "datePublished": "2016-11-20T06:50:12.954Z",
+    "dateModified": "2016-11-30T08:43:03.993Z",
+    "keywords": "面試",
+    "description": "1. n是一个奇数，求证n(n^2-1)能被24整除   n=2*k+1；那么 n(n^2-1) = 4*k(k+1)*(2k+1)   // 使用公式： // k // Σ n^2 = k(k+1)(2k+1)/6 // n=0  4*6k(k+1)*(2k+1)/6..."
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "4f713bf66121"
+});
+</script>
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="等下！前面端菜的" href="http://localhost:2368/rss/" />
+
+</head>
+<body class="post-template tag-mian-shi">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed" >
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="index.html#blog" class="blog-button" title="前往 等下！前面端菜的 的主页"><img src="../../../../content/images/2016/10/--.jpg" width="80" alt="等下！前面端菜的 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="../../../../index.html###" class="blog-index" title="前往 等下！前面端菜的 的主页">等下！前面端菜的</a></h1>
+        <span class="panel-cover__subtitle panel-subtitle">西江水流月不流</span>
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">好好端菜，别洒了</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/huarxia" title="@huarxia 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/huarxia/blog" title="@huarxia 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+  <!-- Twitter -->
+  <!-- <li class="navigation__item">
+    <a href="http://twitter.com/onevcat" title="@onevcat" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li> -->
+  
+  <!-- RSS -->
+  <!-- <li class="navigation__item">
+    <a href="http://localhost:2368/rss/" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li> -->
+
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:liubiao@itoxs.com" title="邮件联系我">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+  </ul>
+</nav>          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div>
+</header>
+    <!-- 右側菜單導航 -->
+<!-- 2016-11-06 16:58:47 花夏 -->
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/component.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/lib/menu/css/default.css">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/menu.css">
+<section class="right-menu">
+    <div id="shade-box" class="shade-box"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <h3>菜單</h3>
+                <a href="../../../../tag/js/index.html#blog" class="tag-item">js (68)</a>
+                <a href="../../../../tag/gong-ju/index.html#blog" class="tag-item">工具 (22)</a>
+                <a href="../../../../tag/jing-yan/index.html#blog" class="tag-item">經驗 (17)</a>
+                <a href="../../../../tag/css/index.html#blog" class="tag-item">css (13)</a>
+                <a href="../../../../tag/python/index.html#blog" class="tag-item">Python (13)</a>
+                <a href="../../../../tag/mian-shi/index.html#blog" class="tag-item">面試 (12)</a>
+                <a href="../../../../tag/wen-zhang/index.html#blog" class="tag-item">文章 (6)</a>
+                <a href="../../../../tag/qu-kuai-lian/index.html#blog" class="tag-item">区块链 (3)</a>
+                <a href="../../../../tag/express/index.html#blog" class="tag-item">express (2)</a>
+                <a href="../../../../tag/php/index.html#blog" class="tag-item">php (1)</a>
+        <button id="showRightPush"></button>
+    </nav>
+</section>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../../../../assets/lib/menu/js/classie.js"></script>
+<script>
+var showRightPush = document.getElementById('showRightPush');
+var body = document.body;
+var menuRight = document.getElementById('cbp-spmenu-s2');
+var shadeBox = document.getElementById('shade-box');
+shadeBox.onclick = showRightPush.onclick = function() {
+    classie.toggle(this, 'active');
+    classie.toggle(body, 'cbp-spmenu-push-toleft');
+    classie.toggle(menuRight, 'cbp-spmenu-open');
+    classie.toggle(showRightPush, 'showleft');
+    classie.toggle(shadeBox,'shade-box-show')
+};
+</script>    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="20 11月 2016" class="post-meta__date date">20 11月 2016</time> &#8226; <span class="post-meta__tags tags">于 <a href="../../../../tag/mian-shi/index.html">面試</a></span>
+        <!--<span class="post-meta__author author"><img src="/content/images/2016/10/---1.jpg" alt="profile image for 花夏" class="avatar post-meta__avatar" /> by 花夏</span>-->
+      </div>
+      <h1 class="post-title">面試題庫3</h1>
+    </header>
+
+    <section class="post tag-mian-shi">
+      <h4 id="1nnn2124">1. n是一个奇数，求证n(n^2-1)能被24整除</h4>
+
+<blockquote>
+  <p>n=2*k+1；那么</p>
+</blockquote>
+
+<pre><code>n(n^2-1) = 4*k(k+1)*(2k+1)  
+// 使用公式：
+// k
+// Σ n^2 = k(k+1)(2k+1)/6
+// n=0 
+4*6k(k+1)*(2k+1)/6 = 4*6*(1^2+...+k^2)  
+</code></pre>
+
+<blockquote>
+  <p>显然能被24整除。</p>
+</blockquote>
+
+<h4 id="2dowhilewhiledo">2.do...while和while...do有什么区别</h4>
+
+<blockquote>
+  <p>前者先执行一遍循环体，在进行条件判断；后者先进性判断，然后根据判断结果来决定是否执行；所以前者的循环体至少执行一次。</p>
+</blockquote>
+
+<h4 id="3ab">3.两个整数集合A和B，求其交集</h4>
+
+<blockquote>
+  <p>构造一个map，遍历A中的元素，插入到map中；然后遍历B中的元素，看是否在map中出现。</p>
+</blockquote>
+
+<h4 id="444">4.甲乙丙丁4个人轮流顺序抽签（共4张签）。任何第一个抽中“请客”的人即请大家吃饭。假设：</h4>
+
+<p>A) 4张签中共有1张请客的签； <br />
+B) 4张签中共有2张请客的签； <br />
+C) 4张签中共有3张请客的签； <br />
+请问A）、B）、C）三种情况下甲乙丙丁每个人请大家吃饭的概率分别有多大？</p>
+
+<blockquote>
+  <p>A) 第一个人请客的概率 1/4；第二个人请客的概率是 3/4 * 1/3 = 1/4；第三个人请客的概率是 3/4 * 2/3 * 1/2 = 1/4；第四个人请客的概率是 3/4 * 2/3 * 1/2 * 1 = 1/4。</p>
+  
+  <p>B) 第一个人请客的概率是 2/4 = 1/2；第二个人请客的概率是 2/4 * 2/3 = 1/3；第三个人请客的概率是 2/4 * 1/3 = 1/6；第四个人请客的概率是 0。</p>
+  
+  <p>C) 第一个人请客的概率是 3/4；第二个人请客的概率是 1/4；第三四个人请客的概率是0。（跟自己想的出入挺大，自己少考虑了比较多的情况）</p>
+</blockquote>
+
+<h4 id="5">5.兄弟该如何分钱：</h4>
+
+<p>妈妈有2000元，要分给她的2个孩子。由哥哥先提出分钱的方式，如果弟弟同意，那么就这么分。但如果弟弟不同意，妈妈会没收1000元，由弟弟提出剩下 1000元的分钱方式，这时如果哥哥同意了，就分掉这剩下的1000元。但如果哥哥也不同意，妈妈会把剩下的1000元也拿走，然后分别只给他们每人100元。问：如果你是哥哥，你会提出什么样的分钱方式，使你有可能得到最多的钱？(最小单位1元)</p>
+
+<blockquote>
+  <p>只要模仿海盗分金问题，采用从后往前推的思路就可以了，比较简单。</p>
+</blockquote>
+
+<p>哥哥提出分配方案时，弟弟是否同意取决于拒绝后是否可以获得更多利益。弟弟分配时，哥哥是否同意也取决于拒绝后是否可以获得更多好处。所以采取由后向前推导的方法。如果在两次分配中弟弟和哥哥都不同意，则弟弟和哥哥各获得100元。弟弟分钱时，为保证哥哥同意，会提出哥哥101元，弟弟899元的分配方法。因为哥哥获得了比拒绝后的更多利益，所以必然会同意。哥哥分钱时，为保证弟弟同意，会提出哥哥1100元，弟弟900元的分配方法。因为弟弟获得了比拒绝后的更多利益，所以必然会同意。也就是说，最终哥哥会提出哥哥1100元，弟弟900元的分配方法。</p>
+
+<h4 id="6">6.在一个重男轻女的国家里，每个家庭都想生男孩，如果他们生的孩子是女孩，就再生一个，直到生下的是男孩为止。这样的国家，男女比例会是多少？</h4>
+
+<blockquote>
+  <p>我的答案是1:1，或者说接近于1:1,；可以考虑采用数学的方法，对与一个家庭，如果说有N个小孩，则会出现如下情况：</p>
+</blockquote>
+
+<p>1/2 N=1：1个男孩</p>
+
+<p>1/4 N=2：1个男孩，1个女孩</p>
+
+<p>1/2^n N=n：1个男孩，(n-1)个女孩</p>
+
+<p>我们统计Boy(n)近似为1，Girl(n)=1-(n-1)/2^n，数学上来说当n比较大时，接近于1:1；但是现实生活中n都不是太大，并且人为流产（人工干预）等因素，造成生男生女的概率不相等，所以也就出现了性别失调。</p>
+
+<h4 id="7sessioncookie">7.session和cookie的区别?</h4>
+
+<blockquote>
+  <p>由于http是无状态的协议，所以我们需要使用cookie和session来维护服务器和客户端交互过程中的上下文信息。
+  cookie是存储在客户端的数据。服务器通过在http响应头，或者通过网页中的脚本在客户端中生成cookie。当客户端访问某个页面时，会把符合条件的cookie一并传送给服务器。这样服务器就可以获得以前记录的状态了。 <br />
+  session是存储在服务器端以sessionid作为key数据。服务器通过cookie（或者在url加入sessionid信息）将sessionid传给客户端，当客户端再次请求时，服务端就可以识别这个sessionid，并获得相应的上下文信息了</p>
+</blockquote>
+
+<p>cookie 和session 的区别： <br />
+1、cookie数据存放在客户的浏览器上，session数据放在服务器上。 <br />
+2、cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗考虑到安全应当使用session <br />
+3、session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，应当使用COOKIE <br />
+4、单个cookie在客户端的限制是3K，就是说一个站点在客户端存放的COOKIE不能3K</p>
+
+<h4 id="8">8.疯子坐飞机问题</h4>
+
+<blockquote>
+  <p>飞机上有100个座位，按顺序从1到100编号。有100个乘客，他们分别拿到了从1号到100号的座位，他们按号码顺序登机并应当对号入座，如果 他们发现对应号座位被别人坐了，他会在剩下空的座位随便挑一个坐。现在假如1号乘客疯了 -_-! (其他人没疯)，他会在100个座位中随机坐一个座位。那么第100人正确坐自己座位的概率是多少？ 注意登机是从1到100按顺序的。</p>
+  
+  <p>假设飞机上只有两个座位，那么显然第二个人有50%的概率坐在自己的座位上。
+  假设飞机上只有三个座位，如果1号坐了自己的座位，则3号会坐在自己的座位上；如果1号坐了3号的座位，则3号不能坐到自己的座位上；如果1号坐了2号的座位，则对于3号来说，效果和2号应该坐到1号座位上，但他会随机坐相同，也就是等价于1号没疯，2号疯了，根据上面只有两个座位时的情况，知道这种情况下3号有50%的概率坐到自己的座位上。所以总体来说3号有50%的概率坐到自己的座位上。
+  .....
+  以此类推，可以知道当有100个座位时，100号坐到自己座位上的概率为50%</p>
+</blockquote>
+
+<h4 id="9100">9.谁能先说出总和为100的数</h4>
+
+<blockquote>
+  <p>甲乙两人，玩一个游戏。每人轮流说出1-10的一个数字，从甲开始。轮到某个人，使得所有说出的数字的总和等于100，就算谁赢。
+  请问甲或乙谁有必胜的把握，为什么？</p>
+  
+  <p>先假设X必胜，Y必输。
+  那么不论Y最后说出的数字是1还是10，X都能说出一个数使得总数为100。可以推出Y最后一次说之前的总和为89。
+  同理可以推出Y倒数第二次说之前总和为78。
+  依次类推，可以知道Y说之前的数字分别为1，12，23 ... 78, 89。
+  可以看出X就是甲。他的策略就是，先说出1，然后乙说出数字n，甲就说11-n</p>
+</blockquote>
+
+<h4 id="10110w10w2">10.有1到10w这10w个数，去除2个并打乱次序，如何找出那两个数？</h4>
+
+<blockquote>
+  <p>申请10w个bit的空间，每个bit代表一个数字是否出现过。
+  开始时将这10w个bit都初始化为0，表示所有数字都没有出现过。
+  然后依次读入已经打乱循序的数字，并将对应的bit设为1。
+  当处理完所有数字后，根据为0的bit得出没有出现的数字。</p>
+</blockquote>
+
+<h4 id="113009510">11.如果在高速公路上30分钟内看到一辆车开过的几率是0.95，那么在10分钟内看到一辆车开过的几率是多少？(假设为常概率条件下)</h4>
+
+<blockquote>
+  <p>假设10分钟内看到一辆车开过的概率是x，那么没有看到车开过的概率就是1-x，30分钟没有看到车开过的概率是(1-x)^3，也就是0.05。所以得到方程
+  (1-x)^3 = 0.05 解方程得到x大约是0.63</p>
+</blockquote>
+
+<h4 id="12255253">12.有25匹马，每次比赛只能有5匹马参加，问最少进行几次比赛才可以得到25匹马中跑得最快的前3名？</h4>
+
+<blockquote>
+  <p>最少需要7次。
+  首先将马分成a,b,c,d,e 5个组，每组5匹，每组单独比赛。然后将每组的第一名放在一起比赛。假设结果如下
+  a0,a1,a2,a3,a4 <br />
+  b0,b1,b2,b3,b4 <br />
+  c0,c1,c2,c3,c4 <br />
+  d0,d1,d2,d3,d4 <br />
+  e0,e1,e2,e3,e4 <br />
+  其中a, b,c,d,e小组都是按照名次排列（速度a0>a1>a2>a3>a4, b0>b1....)。并第6次比赛的结果为a0>b0>c0>d0>e0。
+  那么第6次比赛结束后，我们知道最快的一匹为a0。
+  我们知道第2名的马一定是a1或者b0，所以在接下来的比赛中要包含这两匹马。如果a1快，那么第3名是a2或者b0，如果b0快，那么第3名是a1，b1或者c0。也就是说第2名和第3名一定在a1，a2，b0，b1和c0当中，所以在第7场比赛中包括这5匹马就可以得到第2名和第3名。
+  所以7次比赛就可以获得前3名的马。</p>
+</blockquote>
+
+<h4 id="130123456789">13.根据上排给出十个数，在其下排填出对应的十个数, 要求下排每个数都是上排对应位置的数在下排出现的次数。上排的数：0，1，2，3，4，5，6，7，8，9。</h4>
+
+<blockquote>
+  <p>0，1，2，3，4，5，6，7，8，9</p>
+  
+  <p>6，2，1，0，0，0，1，0，0，0</p>
+</blockquote>
+
+<h4 id="1441644">14.只有三只酒杯，如何将酒平均分给4个人喝？总共16两酒，4个人喝，平均每人喝4两。</h4>
+
+<blockquote>
+  <p>假设下面的三个数是8两，8两和4两酒杯中的酒。
+  8 8 0 <br />
+  8 5 3 <br />
+  第一个人先喝3两，变成
+  8 5 0 <br />
+  8 2 3 <br />
+  第二个人先喝2两，变成
+  8 0 3 <br />
+  8 3 0 <br />
+  5 3 3 <br />
+  5 6 0 <br />
+  2 6 3 <br />
+  2 8 1 <br />
+  第一个人再喝1两，就刚刚喝了4两，变成
+  2 8 0 <br />
+  0 8 2 <br />
+  0 7 3 <br />
+  3 7 0 <br />
+  3 4 3 <br />
+  6 4 0 <br />
+  6 1 3 <br />
+  第三个人先喝1两，变成
+  6 0 3 <br />
+  8 0 1 <br />
+  第四个人先喝1两，变成
+  8 0 0 <br />
+  5 0 3 <br />
+  第三个人再喝3两，就刚刚喝了4两，变成
+  5 0 0 <br />
+  2 0 3 <br />
+  第二个人再喝2两，就刚刚喝了4两，变成
+  0 0 3 <br />
+  第四个人再喝3两，就刚刚喝了4两</p>
+</blockquote>
+
+<h4 id="1516ab124">15.16个硬币，A和B轮流拿走一些，每次拿走的个数只能是1，2，4中的一个数。谁最后拿完硬币谁输。</h4>
+
+<p>问：A或B有无策略保证自己赢？</p>
+
+<blockquote>
+  <p>B可以保证自己赢。
+  如果A拿1个，则B拿2个；如果A拿2个，则B拿1个；如果A拿4个，则B拿2个。这样每次AB加起来都是3或者6，所以最后会剩下1个或4个。如果是1个则A直接输了；如果剩下4个，A全拿则输了，如果不全拿，B继续采取上面的策略，最后还是剩下1个，还是A输。</p>
+</blockquote>
+
+<p>倒推法：
+怎麼都不能讓最後剩下2個硬幣！！！所以只能剩下1或者4個硬幣，所以前幾次的綜合只能是15或者12，是3的倍數，所以每次那只要保證都是3的倍數即可，第一人無論怎麼拿，第二人都能保證是3的倍數，所以第一人拿必輸</p>
+
+<h4 id="1632">16.有一位警长，抓了三个逃犯。现警长决定给他们一次机会。他拿出3顶黑帽子，2顶白帽子，然后往这三个逃犯头上每人戴了一顶帽子，每个逃犯只能看到另外两个逃犯帽子的颜色，不能看到自己帽子的颜色，而且不能进行通讯，不能进行讨论，只能靠自己的推理推出来，如果猜出来了，放一条生路，否则处死。</h4>
+
+<p>警长先问第一逃犯，结果第一逃犯猜错了，被杀掉了。
+警长问第二个逃犯，结果还是猜错了，同样被杀掉了。
+警长再问第三个逃犯，结果第三个逃犯猜对了。
+说明一下，每个逃犯在回答问题时，其他逃犯是听不到的。
+为什么第三个一定能猜中，请你给出解释。</p>
+
+<blockquote>
+  <p>如果第二个和第三个人都是白帽子，则第一个人肯定可以知道自己是黑帽子。第一个人没有猜对，说明第二和第三个人中肯定有黑帽子。
+  如果第三个人是白帽子，由于第二和第三个中肯定有黑帽子，那么第二个人肯定是黑帽子。第二个人没有猜对，说明第三个人不是白帽子。
+  所以第三个人知道自己肯定是黑帽子。</p>
+</blockquote>
+
+<h4 id="171517">17.给定能随机生成整数1到5的函数，写出能随机生成整数1到7的函数</h4>
+
+<blockquote>
+  <p>产生K个数(k>1) 假定产生的数分别为n1,n2,n3,n4...
+  那么定义产生的数为n1-1+（n2-1）<em>5+（n3-1）</em>5^2+（n4-1）*5^3........
+  于是产生的数位于区间（0，5^k-1)
+  然后把5^k分成k等分，产生的数位于哪个等分就是那个产生的随机数（0~6），然后+1即可
+  如果位于k等分的余数范围，则重新执行一次上述过程
+  不用担心余数问题，当k取3时落到余数范围的概率就已经降低为6/125</p>
+</blockquote>
+
+<p>解答：</p>
+
+<p>假设我们要等概率生成一个3位的10进制数(000 - 999)，我们可以在 随机生成整数0到9的函数 基础上，随机生成3个数字组成三位数就得到了结果。</p>
+
+<p>这里类似，我们首先必须认识到：任何一个数都可以用5进制的数来表示，如12 = 5进制(22) = 2*5 + 2。因此假设我们要随机生成[0,444]范围的数，我们只要随机生成3个5进制的数字组合就可以。</p>
+
+<p>这里的主要问题是：7不是5的幂次方。</p>
+
+<p>但是我们可以将某一个5的幂次方均分成 7 段(分别为0 - 6，等概率的落到每一段)，利用5进制随机成一个数，看这个数在哪一个段，就代表我们要生成哪一个数字，这样就保证了等概率的生成0 - 6.</p>
+
+<p>有一个小的问题就是：5的幂次方不能整除7，会遗漏最高的几个数。但是我们这里只要数字足够大，则遗漏的概率相当的小</p>
+
+<h4 id="181405090271405090">18.利用天平砝码，三次将140克的盐 分成50、90克两份？有一个天平，2克和7克砝码各一个。如何利用天平砝码在三次内将140克盐分成50，90克两份</h4>
+
+<blockquote>
+  <p>第一种方法：</p>
+</blockquote>
+
+<p>1.先称 7+2克盐 (相当于有三个法码2,7,9) <br />
+2.称2+7+9=18克盐 (相当于有2,7,9,18四个法码) <br />
+2.称7+18=x+2,得出x是23，23+9+18=50克盐. <br />
+剩下就是90克了.</p>
+
+<blockquote>
+  <p>第二种方法：</p>
+</blockquote>
+
+<p>1.先把140克盐分为两份，每份70克 <br />
+2.在把70克分为两份，每份35克 <br />
+3.然后把两个砝码放在天平两边，把35克盐分成两份也放在两边（15+7=20+2） <br />
+现在有四堆面粉70，35，15，20，分别组合得到
+70+20=90 <br />
+35+15=50</p>
+
+<h4 id="19">19.有三个水果篮。其中一个里面只有苹果，一个里面只有橘子，另外一个既有苹果又有橘子。每个水果篮上都有标签，但标签都是错的。如何检查某个水果篮中的一个水果，然后正确标注每个水果篮？</h4>
+
+<blockquote>
+  <p>从标注成既有苹果也有橘子的水果篮中选取一个进行检查。
+  如果是橘子，则此篮中只有橘子；标有橘子的水果篮中只有苹果；标有苹果的水果篮中既有苹果也有橘子。
+  如果是苹果，则此篮中只有苹果；标有苹果的水果篮中只有橘子；标有橘子的水果篮中既有苹果也有橘子。</p>
+</blockquote>
+
+<h4 id="208883083034">20.有一座山，山上有座庙，只有一条路可以从山上的庙到山脚，每周一早上8点，有一个聪明的小和尚去山下化缘，周二早上8点从山脚回山上的庙里，小和尚的上下山的速度是任意的，在每个往返中，他总是能在周一和周二的同一钟点到达山路上的同一点。例如，有一次他发现星期一的8点30和星期二的8点30他都到了山路靠山脚的3/4的地方，问这是为什么？</h4>
+
+<blockquote>
+  <p>可以用画图法来解释：
+  在一个平面上，x 轴代表从8点开始的时间，y 轴代表距庙的距离。那么从庙到山脚就是一条从左下到右上的一条曲线，从山脚到庙就是一条从左上到右下的一条曲线。考虑到两条曲线的起始点和终点，两线必定交于一点。</p>
+</blockquote>
+
+<h4 id="2177">21.快速求取一个整数的7倍 给出一种快速求一个整数7倍的方法。</h4>
+
+<blockquote>
+  <p>乘法相对比较慢，所以快速的方法就是将这个乘法转换成加减法和移位操作。
+  可以将此整数先左移三位（×8）然后再减去原值：(X &lt;&lt; 3) - X。</p>
+  
+  <p><code>n*8-n --- n*(8-1) ---- 7n</code></p>
+</blockquote>
+
+<h4 id="22">22.三只蚂蚁不相撞的概率是多少</h4>
+
+<blockquote>
+  <p>在三角形的三个顶点上各有一只蚂蚁，它们向另一个顶点运动，目标随机（可能为另外两个顶点的任意一个）。问三只蚂蚁不相撞的概率是多少？
+  如果蚂蚁顺时针爬行记为0，逆时针爬行记为1。那么三只蚂蚁的状态可能为000，001，...，110，111中的任意一个，且为每种状态的概率相等。在这8种状态中，只有000和111可以避免相撞，所以蚂蚁不相撞的概率是1/4。</p>
+</blockquote>
+
+<p>题目的一些扩展：
+1. 如果将三角形变成正方形，并且有四只蚂蚁，那么不相撞的概率是多少？</p>
+
+<blockquote>
+  <p>2/16 = 1/8</p>
+</blockquote>
+
+<ol>
+<li>如果将正方形的对角线相连，蚂蚁也可以在对角线上爬行，那么不相撞的概率是多少？（假设对角线相交处有立交桥）</li>
+</ol>
+
+<h4 id="23httpgetposthttpgetpost">23.HTTP中Get和Post的区别;解释HTTP中Get和Post。它们有什么区别，哪个使用时更加安全？</h4>
+
+<blockquote>
+  <p>Get和Post都是浏览器向网页服务器提交数据的方法。
+  Get把要提交的数据编码在url中，比如 <code>http://hi.baidu.com/mianshiti?key1=value1&amp;key2=value2</code> 中就编码了键值对 key1，value1 和key2，value2。受限于url的长度限制，Get方法能传输的数据有限（不同浏览器对url长度限制不同，比如微软IE设为2048）。 <br />
+  Post把要提交的数据放在请求的body中，而不会显示在url中，因此，也没有数据大小的限制。 <br />
+  由于Get把数据编码在URL中，所以这些变量显示在浏览器的地址栏，也会被记录在服务器端的日志中。所以Post方法更加安全。</p>
+</blockquote>
+
+<h4 id="24iptcpudp">24.IP，TCP和UDP协议的定义和主要作用</h4>
+
+<blockquote>
+  <p>IP协议是网络层的协议。IP协议规定每个互联网网上的电脑都有一个唯一的IP地址，这样数据包就可以通过路由器的转发到达指定的电脑。但IP协议并不保证数据传输的可靠性。
+  TCP协议是传输层的协议。它向下屏蔽了IP协议不能可靠传输的缺点，向上提供面向连接的可靠的数据传输。 <br />
+  UDP协议也是传输层的协议。它提供无连接的不可靠传输。</p>
+</blockquote>
+
+<h4 id="25666100">25.6个整数，每个数中都包含'6'（在个位或十位上），6个数的和为100可能吗？</h4>
+
+<blockquote>
+  <p>可能，这六个数的取值为：60，16，6，6，6，6
+  首先，6不可能都在个位数上出现，否则6个数的和个位也是会是6。
+  其次，最多有一个数在十位上出现6，否则6个数的和会大于100。
+  这六个数为 6?，?6，?6，?6，?6，?6。不考虑？部分，总和等于90。所以最终的结果60，16，6，6，6，6。</p>
+</blockquote>
+
+<h4 id="26200100">26.到商店里买200的商品返还100优惠券（可以在本商店代替现金）。请问实际上折扣是多少？</h4>
+
+<blockquote>
+  <p>由于优惠券可以代替现金，所以可以使用200元优惠券买东西，然后还可以获得100元的优惠券。
+  假设开始时花了x元，那么可以买到 x + x/2 + x/4 + ...的东西。所以实际上折扣是50%.（当然，大部分时候很难一直兑换下去，所以50%是折扣的上限）
+  如果使用优惠券买东西不能获得新的优惠券，那么
+  总过花去了200元，可以买到200+100元的商品，所以实际折扣为 200/300 = 67%.</p>
+</blockquote>
+
+<h4 id="2727">27.有27个人去买矿泉水，商店正好在搞三个空矿泉水瓶可以换一瓶矿泉水的活动，他们至少要买几瓶矿泉水才能每人喝到一瓶矿泉水？</h4>
+
+<blockquote>
+  <p>如果开始买3瓶，那么可以四个人喝，并且还能剩一个空瓶。
+  如果开始买9瓶，可以13个人喝，最后还剩一个空瓶。
+  如果开始买18瓶，那么26个人喝，可以剩下两个空瓶。
+  如果开始买19瓶，那么27个人喝，最后剩下三个空瓶。所以最少买19瓶。
+  如果可以向商店先欲借一个空瓶，那么买18瓶，最后一个人喝完再将空瓶还给商店。
+  那么买18瓶也可以满足要求。</p>
+</blockquote>
+
+<h4 id="28104">28.10个人分成4组 有几种分法？</h4>
+
+<blockquote>
+  <p>每组的人数可能为下面的值：
+  1，1，1，7 <br />
+  1，1，2，6 <br />
+  1，1，3，5 <br />
+  1，1，4，4 <br />
+  1，2，2，5 <br />
+  1，2，3，4 <br />
+  1，3，3，3 <br />
+  2，2，2，4 <br />
+  2，2，3，3 <br />
+  下面分别计算每种人数对应的分法数：</p>
+</blockquote>
+
+<pre><code>1，1，1，7 = 10*9*8/(1*2*3)=120  
+1，1，2，6 = 10*9/(1*2) * 8*7/(1*2) = 1260  
+1，1，3，5 = 10*9/(1*2) * 8*7*6/(1*2*3) = 2520  
+1，1，4，4 = 10*9/(1*2) * 8*7*6*5/(1*2*3*4) / (1*2) = 1575  
+1，2，2，5 = 10 * 9*8/2 * 7*6/2 /2 = 3780  
+1，2，3，4 = 10 * 9*8/2 * 7*6*5/(2*3) = 12600  
+1，3，3，3 = 10 * 9*8*7/(2*3) * 6*5*4/(2*3) / (2*3) = 2800  
+2，2，2，4 = 10*9/2 * 8*7/2 * 6*5/2 /(2*3) = 3150  
+2，2，3，3 = 10*9/2 * 8*7/2 * 6*5*4/(2*3) / 2 / 2 = 6300  
+</code></pre>
+
+<p>所以总的分法为
+120 + 1260 + 2520 + 1575 + 3780 + 12600 + 2800 + 3150 + 6300 = 34105</p>
+
+<h4 id="2936">29.普查员问一女人，“你有多少个孩子，他们多少岁？”女人回答：“我有三个孩子，他们的岁数相乘是36，岁数相加就等于旁边屋的门牌号码。“普查员立刻走到旁边屋，看了一看，回来说：“我还需要多少资料。”女人回答：“我现在很忙，我最大的孩子正在楼上睡觉。”普查员说：”谢谢，我己知道了。”</h4>
+
+<p>问题：那三个孩子的岁数是多少。</p>
+
+<blockquote>
+  <p>36 = 1 × 2 × 2 × 3 × 3
+  所有的可能为</p>
+</blockquote>
+
+<pre><code>1，1，36；sum = 38  
+1，2，18；sum = 21  
+1，3，12；sum = 16  
+1，4，9；sum = 14  
+1，6，6；sum = 13  
+2，2，9；sum = 13  
+2，3，6；sum = 11  
+3，3，4；sum = 10  
+</code></pre>
+
+<p>由于普查员知道了年龄和之后还是不能确定每个孩子的年龄，所以可能性为
+1，6，6；sum = 13 <br />
+2，2，9；sum = 13 <br />
+由于最大（暗含只有一个最大）的孩子在睡觉，所以只可能是
+2，2，9；sum = 13</p>
+
+<h4 id="3010050501">30.一个小猴子边上有100根香蕉，它要走过50米才能到家，每次它最多搬50根香蕉，每走1米就要吃掉一根，请问它最多能把多少根香蕉搬到家里。</h4>
+
+<blockquote>
+  <p>小猴子可以采用如下策略：
+  小猴子先搬50根，走到1米处，路上吃掉1根，放下48根后返回起始点，并在返回路上吃剩下的1根。然后将起始点处的50根香蕉搬到1米处，又在路上吃掉1根。这样总共消耗了3根香蕉，将所有香蕉向前搬动了1米。采用类似的策略搬动16米后，总共消耗了48根香蕉，还剩下52根香蕉。
+  如果继续按照同样的策略向前移动到17米处，则剩下49根香蕉；如果直接在16米处丢掉2根香蕉，搬着50根香蕉向前走，在17米处也是有49根香蕉。所以猴子在17米处最多可以保留49根香蕉。
+  继续搬到家还有33米，所以最后剩的香蕉数16根。</p>
+  
+  <p>40.將數字用千分位,分隔開：</p>
+</blockquote>
+
+<pre><code>Number(n).toLocaleString();
+
+Number(1000).toLocaleString();  
+// 1,000
+</code></pre>
+    </section>
+    <div class="reward">
+        <span class="reward-button">賞</span>
+        <div>
+            <img src="../../../../content/images/public/wechat.jpg" alt="微信打賞" width="50%">
+            <p>微信打賞</p>
+        </div>
+        <div>
+            <img src="../../../../content/images/public/alipay.jpg" alt="支付寶打賞" width="50%">
+            <p>支付寶打賞</p>
+        </div>
+    </div>
+  </article>
+  
+  <div class="read-more">
+   <div class="read-more-item read-more-item-left">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h5 class="post-list__post-title post-title">
+        <a href="../../23/sassshi-fen-zhong-ru-men/index.html" title="link to sass十分钟入门">sass十分钟入门</a>
+      </h5>
+       <p class="excerpt" title="变量   sass中可以定义变量，方便统一修改和维护。 //sass style //----------------------------------- $fontStack:    Helvet">变量   sass中可以定义变量，方便统一修改和维护。 //sass style //----------------------------------- $fontStack:    Helvet&hellip;</p>
+       <div class="post-list__meta">
+        <time datetime="23 11月 2016" class="post-list__meta--date date">23 11月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/css/">css</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/11/23/sassshi-fen-zhong-ru-men/>继续阅读</a> -->
+      </div>
+   </div>
+   
+   <div class="read-more-item read-more-item-right">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h5 class="post-list__post-title post-title"><a href="../../15/mianshitu/index.html" title="link to 面試題庫2">面試題庫2</a></h5>
+       <p class="excerpt" title="面试题库2（@花夏 liubiao@itoxs.com） HTML 1、请描述下块级元素和内联元素的差别 块元素(block element)：   块级元素生成一个元素框，（默认地）它会填充其">面试题库2（@花夏 liubiao@itoxs.com） HTML 1、请描述下块级元素和内联元素的差别 块元素(block element)：   块级元素生成一个元素框，（默认地）它会填充其&hellip;</p>
+       <div class="post-list__meta"><time datetime="15 11月 2016" class="post-list__meta--date date">15 11月 2016</time> &#8226;
+        <!-- <span class="post-list__meta--tags tags">于 <a href="/tag/mian-shi/">面試</a></span> -->
+        <!-- <a class="btn-border-small" href=/2016/11/15/mianshitu/>继续阅读</a> -->
+      </div>
+   </div>
+</div>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy;2014-2019  All rights reserved.
+    </span>
+    <span class="footer__copyright">
+        <a target="_self" href="http://www.huar.love/blog/">西水月</a>
+        theme by
+        <a href="https://github.com/onevcat/vno">@onevcat</a>
+    </span>
+</footer>
+<script src="../../../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260920122'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260920122%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+
+    
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript" src="../../../../assets/js/jquery.2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
